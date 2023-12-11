@@ -50,7 +50,7 @@
             </div>
         </form>
         <div class="w-1/2 h-full overflow-hidden hidden lg:block">
-            <img src="https://images.unsplash.com/photo-1515886657613-9f3515b0c78f?auto=format&fit=crop&q=60&w=600&ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxzZWFyY2h8Mnx8ZmFzaGlvbnxlbnwwfHwwfHx8MA%3D%3D" alt="">
+            <img src="https://images.unsplash.com/premium_photo-1694607587276-c0ef403b943c" alt="">
         </div>
     </div>
 </div>

@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../bootstrap.php';
 
-define('APPNAME', 'Jeikei Store');
+define('APPNAME', 'GUNDAM BANDAI | Jeikei');
 
 session_start();
 

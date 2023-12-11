@@ -9,7 +9,7 @@
     <title><?= $this->e($title) ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
 
     <!-- Use tailwind library through cdn (Content Delivery Network) -->
@@ -28,7 +28,7 @@
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="text-[16px] md:text-[18px] font-bold uppercase">JeiKei <span class="text-[#4169E1]">Store</span></a>
+                    <a href="/home" class="text-[16px] md:text-[20px] font-bold uppercase">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
@@ -37,7 +37,7 @@
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
                         <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[200px] lg:w-[420px] p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
-                        <button type="submit"><i class="text-[#4169e1] fa-solid fa-magnifying-glass absolute top-[10px] left-[93%] translate-x-[50%] cursor-pointer"></i>
+                        <button type="submit"><i class="text-[#DC143C] fa-solid fa-magnifying-glass absolute top-[10px] left-[93%] translate-x-[50%] cursor-pointer"></i>
                         </button>
                     </form>
                 </div>
@@ -55,7 +55,7 @@
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                         </div>
-                        <div class="absolute top-[-25%] right-[-20%] bg-[#1E90FF] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products">0</div>
+                        <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products">0</div>
                     </button>
                 </div>
             </nav>
@@ -90,12 +90,12 @@
         <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JeiKei <span class="text-[#4169E1]">Store</span> Cart</h1>
+                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">GUNDAM <span class="text-[#DC143C]">BANDAI</span> CART</h1>
                 </div>
                 <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
             </div>
             <div class="absolute bottom-0 w-full grid grid-cols-2 font-semibold text-[#fff]">
-                <div class="bg-[#4169E1] w-full p-2 text-center total">0 đ</div>
+                <div class="bg-[#DC143C] w-full p-2 text-center total">0 đ</div>
                 <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
             </div>
         </div>
