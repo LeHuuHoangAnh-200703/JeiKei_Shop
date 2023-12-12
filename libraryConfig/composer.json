@@ -1,5 +1,5 @@
 {
-    "name": "vanhuong_hoanganh/ecommerce_website",
+    "name": "hoanganh/ecommerce_website",
     "type": "project",
     "autoload": {
         "psr-4": {

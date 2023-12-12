@@ -77,8 +77,8 @@ class HomeController extends Controller
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;
-        $data["color"] = $color;
-        $data["size"] = $size;
+        // $data["color"] = $color;
+        // $data["size"] = $size;
         $data["amount"] = $_POST["total_amount"];
         $data["payment"] = $_POST["payment"];
         $data["address"] = $_POST["address"];
@@ -133,15 +133,17 @@ class HomeController extends Controller
 
         $resultArray = [];
         foreach ($products as $product) {
-            if (strpos($product->name, $_POST["search"]) !== false) {
+            if (stripos($product->name, $_POST["search"]) !== false) {
                 $resultArray[$product->id] = $product;
                 continue;
-            } else if (strpos($product->type, $_POST["search"]) !== false) {
-                $resultArray[$product->id] = $product;
             }
+            // } else if (stripos($product->type, $_POST["search"]) !== false) {
+            //     $resultArray[$product->id] = $product;
+            // }
         }
         if (empty($resultArray)) {
-            $this->sendPage("home/index", ["errors" => "There is no result match keyword'" . $_POST["search"] . "'"]);
+            $errorMessage = "Không có kết quả nào phù hợp với từ khóa '" . $_POST["search"] . "'";
+            $this->sendPage("home/index", ["errors" => $errorMessage]);
         } else {
             $this->sendPage("home/searchresult", ["resultArray" => $resultArray]);
         }

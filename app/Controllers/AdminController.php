@@ -73,8 +73,6 @@ class AdminController extends Controller
             'name' => $data['name'] ?? '',
             'price' => $data['price'] ?? '',
             'image' => $data["image"] ?? '',
-            'size' => $data['size'] ?? 'M',
-            'color' => $data["color"] ?? '',
             'quantity' => $data["quantity"] ?? '',
             'description' => $data["description"] ?? ''
         ];

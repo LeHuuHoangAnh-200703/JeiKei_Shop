@@ -4,7 +4,11 @@ module.exports = {
     "./views/layouts/*.{php, html, js}", 
   ],
   theme: {
-    extend: {},
+    extend: {
+      fontFamily: {
+        body: ['Gasoek One']
+      }
+    },
   },
   plugins: [],
 }

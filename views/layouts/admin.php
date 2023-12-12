@@ -5,7 +5,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/favicon-32x32.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png"/>
 
     <title><?= $this->e($title) ?></title>
     <!-- <link rel="stylesheet" href="./css/output.css"> -->
@@ -74,14 +74,14 @@
             </div>
         </div>
         <!-- Footer -->
-        <footer class="bg-[#333] text-[#fff] md:px-5 py-3 max-w-[1200px] mx-auto">
-            <div class="flex justify-center flex-col md:flex-row md:justify-between items-center">
-                <div class="flex flex-col md:flex-row text-[14px] md:text-sm">
+        <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
+            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+                <div class="flex flex-col md:flex-row md:text-sm">
                     <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed by JeiKei & PaulTo</p>
+                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
                 </div>
-                <div class="text-[14px] md:text-sm">
-                    <p>The last upgrade was on August 26, 2023</p>
+                <div class="md:text-sm">
+                    <p>Products provided by BANDAI</p>
                 </div>
             </div>
         </footer>

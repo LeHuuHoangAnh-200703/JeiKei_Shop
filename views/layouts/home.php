@@ -9,9 +9,11 @@
     <title><?= $this->e($title) ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/logo.png"/>
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caprasimo&family=Fruktur:ital@1&family=Kanit:wght@400;500&family=Kaushan+Script&family=Lilita+One&family=Luckiest+Guy&family=Lunasima&family=Mr+Dafoe&family=Open+Sans:wght@500;600&family=Orbitron:wght@600&family=Permanent+Marker&family=Poppins:wght@500&family=Roboto+Slab&family=Staatliches&family=Yellowtail&display=swap" rel="stylesheet">
     <!-- Use tailwind library through cdn (Content Delivery Network) -->
     <script src="https://cdn.tailwindcss.com"></script>
 
@@ -28,16 +30,21 @@
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="text-[16px] md:text-[20px] font-bold uppercase">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
+                    <a href="/home" class="text-[18px] md:text-[20px] font-bold uppercase font-body">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
-                        <li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Order History</a>
+                        <!-- <li class="px-[15px] lg:px-[20px] text-[18px]">
+                            <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Home</a>
+                        </li> -->
+                        <li class="px-[15px] lg:px-[20px] text-[18px]">
+                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Order History</a>
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[200px] lg:w-[420px] p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
-                        <button type="submit"><i class="text-[#DC143C] fa-solid fa-magnifying-glass absolute top-[10px] left-[93%] translate-x-[50%] cursor-pointer"></i>
+                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[210px] lg:w-[420px] p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <button type="submit">
+                            <i class="text-[#DC143C] fa-solid fa-magnifying-glass absolute top-[10px] left-[92%] translate-x-[50%] cursor-pointer"></i>
                         </button>
                     </form>
                 </div>
@@ -70,10 +77,13 @@
                 <ul class="flex flex-col">
                     <form action="/search" method="post" class="relative mb-4">
                         <input type="text" name="search" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-full p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
-                        <i class="fa-solid fa-magnifying-glass absolute top-[25%] right-3 cursor-pointer"></i>
+                        <i class="fa-solid fa-magnifying-glass absolute top-[27%] right-3 text-[#DC143C] cursor-pointer"></i>
                     </form>
+                    <!-- <li class="pb-[15px]">
+                        <a href="/" class="font-bold transition-all duration-300 hover:text-[#4169E1] text-[20px]">Home</a>
+                    </li> -->
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="no-underline font-semibold text-[20px] transition-colors hover:text-[#4169E1]">Orders History</a>
+                        <a href="/orderhistory" class="no-underline font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Orders History</a>
                     </li>
                 </ul>
             </div>
@@ -81,7 +91,7 @@
 
         <!-- Navigation button to Home page-->
         <div class="px-4">
-            <i class="fa-solid fa-arrow-left text-[#4169E1]"></i> <a href="/" class="font-bold transition-all duration-300 hover:text-[#4169E1] text-[20px]">Home</a>
+            <i class="fa-solid fa-arrow-left text-[#DC143C]"></i> <a href="/" class="font-bold transition-all duration-300 hover:text-[#DC143C] text-[20px]">Home</a>
         </div>
         <!-- main content -->
         <?= $this->section("page") ?>
@@ -101,14 +111,14 @@
         </div>
 
         <!-- footer -->
-        <footer class="bg-[#333] text-[#fff] p-5 w-full">
+        <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
             <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
                 <div class="flex flex-col md:flex-row md:text-sm">
                     <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed by JeiKei & PaulTo</p>
+                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
                 </div>
                 <div class="md:text-sm">
-                    <p>The last upgrade was on August 26, 2023</p>
+                    <p>Products provided by C3 Gundam</p>
                 </div>
             </div>
         </footer>
@@ -159,7 +169,7 @@
         <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
 
         <!-- Arrow to top -->
-        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#4169E1] rounded-full justify-center items-center text-white font-semibold shadow-md"><i class="fa-solid fa-arrow-up"></i></a>
+        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg"><i class="fa-solid fa-angles-up"></i></a>
     </div>
     <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div>
     <!-- Loading -->
@@ -233,80 +243,80 @@
             });
 
             //filter products
-            $("#shirts").click(function() {
-                $(".shirts").show();
-                $(".shoes").hide();
-                $(".hats").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#BANDAI").click(function() {
+                $(".BANDAI").show();
+                $(".SDCS").hide();
+                $(".RG").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
             });
-            $("#shoes").click(function() {
-                $(".shoes").show();
-                $(".hats").hide();
-                $(".shirts").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#SDCS").click(function() {
+                $(".SDCS").show();
+                $(".RG").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#skirts").click(function() {
-                $(".skirts").show();
-                $(".shirts").hide();
-                $(".hats").hide();
-                $(".backpacks").hide();
-                $(".shoes").hide();
+            $("#RG").click(function() {
+                $(".RG").show();
+                $(".SDCS").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#hats").click(function() {
-                $(".hats").show();
-                $(".shoes").hide();
-                $(".shirts").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#SD-BBLEGEND").click(function() {
+                $(".SD-BBLEGEND").show();
+                $(".RG").hide();
+                $(".SDCS").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#backpacks").click(function() {
-                $(".backpacks").show();
-                $(".shoes").hide();
-                $(".hats").hide();
-                $(".shirts").hide();
-                $(".skirts").hide();
+            $("#MGSD").click(function() {
+                $(".MGSD").show();
+                $(".SD-BBLEGEND").hide();
+                $(".RG").hide();
+                $(".SDCS").hide();
+                $(".BANDAI").hide();
             });
             $("#all").click(function() {
                 $(".style").show();
             });
 
             //filter mobile
-            $("#shirts_1").click(function() {
-                $(".shirts").show();
-                $(".shoes").hide();
-                $(".hats").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#BANDAI_1").click(function() {
+                $(".BANDAI").show();
+                $(".SDCS").hide();
+                $(".RG").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
             });
-            $("#shoes_1").click(function() {
-                $(".shoes").show();
-                $(".hats").hide();
-                $(".shirts").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#SDCS_1").click(function() {
+                $(".SDCS").show();
+                $(".RG").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#skirts_1").click(function() {
-                $(".skirts").show();
-                $(".shirts").hide();
-                $(".hats").hide();
-                $(".backpacks").hide();
-                $(".shoes").hide();
+            $("#RG_1").click(function() {
+                $(".RG").show();
+                $(".SDCS").hide();
+                $(".SD-BBLEGEND").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#hats_1").click(function() {
-                $(".hats").show();
-                $(".shoes").hide();
-                $(".shirts").hide();
-                $(".backpacks").hide();
-                $(".skirts").hide();
+            $("#SD-BBLEGEND_1").click(function() {
+                $(".SD-BBLEGEND").show();
+                $(".RG").hide();
+                $(".SDCS").hide();
+                $(".MGSD").hide();
+                $(".BANDAI").hide();
             });
-            $("#backpacks_1").click(function() {
-                $(".backpacks").show();
-                $(".shoes").hide();
-                $(".hats").hide();
-                $(".shirts").hide();
-                $(".skirts").hide();
+            $("#MGSD_1").click(function() {
+                $(".MGSD").show();
+                $(".SD-BBLEGEND").hide();
+                $(".RG").hide();
+                $(".SDCS").hide();
+                $(".BANDAI").hide();
             });
             $("#all_1").click(function() {
                 $(".style").show();
@@ -316,16 +326,16 @@
             let cart_items = [];
             $(".add").click(function() {
                 var productElement = $(this).closest(".style");
-                var productName = productElement.find(".text-base").text().trim();
+                var productName = productElement.find(".name").text().trim();
+                console.log(productName)
                 let price = parseFloat(
-                    productElement.find(".text-gray-500").text().trim().split("$")[0].trim()
+                    productElement.find(".price").text().trim().split("$")[0].trim()
                 );
-                var productWarehouse = productElement
-                    .find(".text-red-400")
+                let productWarehouse = productElement
+                    .find(".warehouse")
                     .text()
                     .trim()
-                    .split(":")[1]
-                    .trim();
+                    .split(":")[1];
                 var productImage = productElement.find("img").attr("src");
                 var productID = productElement.find(".productID").text();
                 add_to_cart(productName, price, productWarehouse, productImage, productID);
@@ -376,10 +386,10 @@
                 </div>
                 <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
                     <h1>${cart_items[i].name}</h1>
-                    <p>Price : <span class="text-[#4169E1] price">${cart_items[i].price}.00$</span></p>
+                    <p>Price : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
                     <p>Warehouse: <span class="text-[#DC143C] warehouse">${cart_items[i].warehousem}</span></p>
                     <div class="flex items-center gap-4">
-                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#FFD700] transition-all duration-500 hover:text-[#fff] hover:bg-[#4169E1]"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
+                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
                         <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Delete</button>
                     </div>
                 </div>
@@ -388,35 +398,35 @@
                     $(".cart_product").append(product);
                 }
 
-                $(".plus").click(function() {
-                    var productElement = $(this).closest(".cart");
-                    var productNameCart = productElement.find("h1").text();
-                    var productIndex = find_CartItem(productNameCart);
-                    var initialPrice = cart_items[productIndex].price;
-                    cart_items[productIndex].quantity++;
-                    var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                    productElement.find(".price").text(currentPrice + ".00$");
-                    productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                    updateTotalPrice();
-                });
+                // $(".plus").click(function() {
+                //     var productElement = $(this).closest(".cart");
+                //     var productNameCart = productElement.find("h1").text();
+                //     var productIndex = find_CartItem(productNameCart);
+                //     var initialPrice = cart_items[productIndex].price;
+                //     cart_items[productIndex].quantity++;
+                //     var currentPrice = cart_items[productIndex].quantity * initialPrice;
+                //     productElement.find(".price").text(currentPrice + ".00$");
+                //     productElement.find(".quantity").val(cart_items[productIndex].quantity);
+                //     updateTotalPrice();
+                // });
 
-                $(".minus").click(function() {
-                    var productElement = $(this).closest(".cart");
-                    var productNameCart = productElement.find("h1").text();
-                    var productIndex = find_CartItem(productNameCart);
-                    var initialPrice = cart_items[productIndex].price;
-                    if (cart_items[productIndex].quantity > 1) {
-                        cart_items[productIndex].quantity--;
-                        var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                        productElement.find(".price").text(currentPrice + ".00$");
-                        productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                    } else {
-                        productElement.remove();
-                        cart_items.splice(productIndex, 1);
-                        updateCount();
-                    }
-                    updateTotalPrice();
-                });
+                // $(".minus").click(function() {
+                //     var productElement = $(this).closest(".cart");
+                //     var productNameCart = productElement.find("h1").text();
+                //     var productIndex = find_CartItem(productNameCart);
+                //     var initialPrice = cart_items[productIndex].price;
+                //     if (cart_items[productIndex].quantity > 1) {
+                //         cart_items[productIndex].quantity--;
+                //         var currentPrice = cart_items[productIndex].quantity * initialPrice;
+                //         productElement.find(".price").text(currentPrice + ".00$");
+                //         productElement.find(".quantity").val(cart_items[productIndex].quantity);
+                //     } else {
+                //         productElement.remove();
+                //         cart_items.splice(productIndex, 1);
+                //         updateCount();
+                //     }
+                //     updateTotalPrice();
+                // });
 
                 $(".del").click(function() {
                     var productElement = $(this).closest(".cart");

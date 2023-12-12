@@ -13,8 +13,6 @@
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">ID</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Price</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Size</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Color</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Category</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Quantity</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">State</th>
@@ -28,11 +26,7 @@
                         <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($product->id) ?></th>
                         <td class="px-6 py-4"><?= $this->e($product->name) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->price) ?></td>
-                        <td class="px-6 py-4"><?= $this->e($product->size) ?></td>
-                        <td class="px-6 py-4"><?= $this->e($product->color) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->type)  ?></td>
-
-
                         <td class="px-6 py-4"><?= $this->e($product->quantity) ?></td>
                         <td class="px-6 py-4">
                             <span class="inline-flex items-center gap-1 rounded-full bg-green-50 px-2 py-1 text-xs font-semibold text-green-600">

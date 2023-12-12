@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../bootstrap.php';
 
-define('APPNAME', 'GUNDAM BANDAI | Jeikei');
+define('APPNAME', 'GUNDAM BANDAI | JK Gundam');
 
 session_start();
 

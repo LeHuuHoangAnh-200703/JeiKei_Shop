@@ -7,7 +7,7 @@ use App\Models\Order;
 class Products extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['name', 'description', 'price', 'image', 'size', 'color', 'type', 'quantity', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at'];
     public function orders()
     {
         return $this->hasMany(Order::class, 'product_id');
@@ -22,17 +22,8 @@ class Products extends Model
         if (!$data['price']) {
             $errors['price'] = 'Price is required.';
         }
-
-        
-        if (!$data['size']) {
-            $errors['size'] = 'Size is required.';
-        }
-
-        if (!$data['color']) {
-            $errors['color'] = 'Color is required.';
-        }
         if (!$data['quantity']) {
-            $errors['quantity'] = 'Color is required.';
+            $errors['quantity'] = 'Quantity is required.';
         }
 
         if (strlen($data['description']) > 2000) {

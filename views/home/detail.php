@@ -1,82 +1,39 @@
-<?php $this->layout("layouts/home", ["title" => "Products detail"]) ?>
+<?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
-<div class="grid grid-cols-1 lg:grid-cols-4 lg:gap-x-6 gap-y-6 w-[95%] min-h-screen mx-auto mt-3 mb-5 p-5">
-    <div class="w-full">
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[95%] min-h-screen mx-auto mt-3 mb-5 p-5">
+    <div class="w-full flex justify-center lg:block">
         <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
     </div>
-    <div class="col-span-2">
-        <h1 class="text-[18px] text-[#333] font-bold mb-4 lg:text-[28px]"><?php echo $this->e($product->name); ?></h1>
+    <div>
+        <h1 class="text-[18px] text-[#333] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
+        <div class="mb-2 flex items-center gap-3">
+            <p class="text-[13px] font-medium border-r-2 border-[#333] pr-3">SKU : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
+            <p class="text-[13px] font-medium">Trademark : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
+        </div>
         <hr>
-        <div class="flex flex-col gap-3">
-            <div class="py-2">
-                <p class="text-[#333] text-[20px] font-medium">Price :<span class="font-normal text-[#DC143C]">
+        <div class="flex flex-col gap-1">
+            <div class="mt-1">
+                <p class="text-[#333] text-[24px] font-bold"><span class="text-[#DC143C]">
                         $<?php echo $this->e($product->price); ?></span></p>
             </div>
-            <div class="flex gap-x-4 justify-start flex-wrap md:flex-row">
-                <p class="text-[20px] font-medium">Color :</p>
-                <?php
-                $colorArray = explode(",", $product->color);
-                for ($i = 0; $i < count($colorArray); $i++) {
-                ?>
-                    <input type="checkbox"><?php echo $colorArray[$i] ?></input>
-                <?php } ?>
-            </div>
             <div>
-                <p class="text-[20px]">Size : <span class="text-lg font-medium">Select Size</span></p>
-                <div class="flex gap-4 py-2 flex-wrap">
-                    <?php
-                    $sizeArray = explode("/", $product->size);
-                    for ($i = 0; $i < count($sizeArray); $i++) {
-                    ?>
-                        <input type="checkbox"><?php echo $sizeArray[$i] ?></input>
-                    <?php } ?>
-                </div>
+                <p class="text-[#333] text-[14px] font-medium mb-1">Tình trạng : 
+                    <span class="text-[#DC143C]">Còn hàng</span>
+                </p>
+                <p class="text-[#333] text-[14px] font-medium">Phân phối bởi : 
+                    <span class="text-[#DC143C]">C3 Gundam</span>
+                </p>
             </div>
-            <div>
-                <h3 class="text-[20px] font-medium">Details :</h3>
-                <?php
-                $detailArray = explode("/", $product->description);
-                for ($i = 0; $i < count($detailArray); $i++) {
-                ?>
-                    <?php
-                    if ($detailArray[$i] == "") {
-                        continue;
-                    }
-                    ?>
-                    <li><?php echo $detailArray[$i] ?></li>
-
-                <?php } ?>
-
-                <li><span class="font-medium">Product Dimensions : </span>12 x 8 x 4 inches; 1.92 Pounds</li>
-                <li><span class="font-medium">Item model number : </span>FD7039</li>
-                <li><span class="font-medium">Manufacturer : </span>NIKE</li>
-            </div>
-        </div>
-    </div>
-    <div class="relative text-[16px]">
-        <div class="flex flex-col border border-[#333] rounded-md p-3 gap-2">
-            <p>No Import Fees Deposit & $30.03 Shipping to Vietnam</p>
-            <p>Delivery <span class="font-medium">Monday, August 28</span></p>
-            <p class="text-[#1E90FF]"><i class="fa-solid fa-plane-departure text-[#000]"></i> Transporting water
-                out</p>
-            <a href="/orders/<?php echo $product->id ?>" class="flex justify-center items-center gap-x-1 bg-yellow-400 py-1 font-medium hover:bg-[#1E90FF] hover:text-[#fff] transition-all duration-[0.4s]"><i class="fa-solid fa-cart-shopping"></i> Buy
-                Now</a>
-            <div>
-                <div class="flex justify-between items-center">
-                    <span>Payment :</span>
-                    <span class="text-[#1E90FF]">Secure transaction</span>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span>Ships form :</span>
-                    <a href="#" class="hover:underline hover:text-[#1E90FF] transition-all duration-[0.2s]">Amazon.com</a>
-                </div>
-                <div class="flex justify-between items-center">
-                    <span>Guarantee :</span>
-                    <span class="text-[#1E90FF]">30 days</span>
-                </div>
-            </div>
-            <p class="text-[18px] font-medium">After the warranty period, no returns</p>
+            <ul class="ml-4 my-3 flex flex-col gap-[6px]">
+                <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm Gunpla chính hãng của Bandai, sản xuất tại Nhật Bản.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm giúp phát triển trí não và rèn luyện tính kiên nhẫn cho người chơi.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Người chơi sẽ thỏa sức sáng tạo với hàng nghìn mẫu và chi tiết để có thể tạo ra sản phẩm của bản thân.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm gắn với nhau bằng khớp nối, không dùng keo dán.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Mô hình lắp ráp <?php echo $this->e($product->name); ?> Gunpla chính hãng Nhật Bản.</li>
+            </ul>
+            <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ $<?php echo $this->e($product->price); ?><span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
+            <p class="text-center text-[15px] mt-2">Hotline đặt hàng: <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
         </div>
     </div>
 </div>

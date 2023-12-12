@@ -11,7 +11,7 @@ class Order extends Model
 
     protected $table = 'orders';
     protected $fillable = [
-        'user_id', 'product_id', 'name', 'price', 'size', 'color',
+        'user_id', 'product_id', 'name', 'price',
         'amount', 'order_date', 'total_amount', 'username', 'address', 'phone', 'payment', 'image'
     ];
 
@@ -30,14 +30,6 @@ class Order extends Model
         $product = Products::find($data["product_id"]);
 
         $errors = [];
-
-        if (!$data["color"]) {
-            $errors["color"] = "You must choose at least 1 color.";
-        }
-
-        if (!$data["size"]) {
-            $errors["size"] = "You must choose at least 1 size.";
-        }
 
         if (!$data["address"] && $data["address"] < 20) {
             $errors["address"] = "Invalid address";
