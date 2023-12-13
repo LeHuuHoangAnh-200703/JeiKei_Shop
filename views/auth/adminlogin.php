@@ -2,7 +2,6 @@
 
 <?php $this->start("page") ?>
 <div class="w-full min-h-screen flex justify-center items-center">
-
     <?php
 
     if (isset($messages["success"])) {
@@ -12,9 +11,10 @@
             <p>Continue logging in to use the application</p>
         </div>
     <?php } ?>
-    <div class="max-w-[1300px] lg:w-10/12 w-full min-h-screen lg:m-5 flex overflow-hidden">
+
+    <div class="max-w-[1300px] lg:w-10/12 w-full min-h-screen lg:m-5 flex overflow-hidden shadow-xl">
         <div class="w-1/2 h-full overflow-hidden hidden lg:block">
-            <img src="/path/to/main2.jpg" alt="">
+            <img src="https://www.polywork.fagis.fr/assets/images/crew-right.png" alt="">
         </div>
         <form action="/admin/login" method="POST" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3">
             <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl lg:shadow-md gap-y-3">

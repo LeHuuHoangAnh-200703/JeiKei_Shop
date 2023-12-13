@@ -12,9 +12,9 @@
         </div>
     <?php } ?>
 
-    <div class="max-w-[1300px] lg:w-10/12 w-full min-h-screen lg:m-5 flex overflow-hidden">
+    <div class="max-w-[1300px] lg:w-10/12 w-full min-h-screen lg:m-5 flex overflow-hidden shadow-xl">
         <div class="w-1/2 h-full overflow-hidden hidden lg:block">
-            <img src="./assets/main.jpg" alt="">
+            <img src="https://www.polywork.fagis.fr/assets/images/crew-right.png" alt="">
         </div>
         <form action="/login" method="POST" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3 gap-2">
             <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 gap-2 shadow-lg lg:shadow-md">
