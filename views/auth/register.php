@@ -1,13 +1,13 @@
 <?php $this->layout("layouts/auth", ["title" =>  "Sign up"]) ?>
 
 <?php $this->start("page") ?>
-<div class="w-full min-h-screen flex justify-center items-center">
-    <div class="max-w-[1300px] lg:w-10/12 w-full min-h-screen lg:m-5 flex overflow-hidden shadow-xl">
+<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-purple-500 to-pink-500">
+    <div class="max-w-[1300px] lg:w-10/12 w-full min-[1025px]:min-h-screen lg:bg-[#fff] lg:m-5 flex overflow-hidden lg:shadow-xl rounded-md">
         <form method="POST" action="/register" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3">
-            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl lg:shadow-md gap-y-3">
+            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-lg gap-y-3">
                 <div class="mb-2">
                     <h1 class="font-bold text-[27px]">JK Register</h1>
-                    <p class="text-[13px] text-[#333f48] font-medium">Please fill your detail to access your account.</p>
+                    <p class="text-[13px] text-[#333f48] font-medium">Please fill your detail to register your account.</p>
                 </div>
                 <label for="name" class="font-medium text-[16px]">Your name</label>
                 <input name="name" value="<?= isset($old['name']) ? $this->e($old['name']) : '' ?>" required autofocus type="text" placeholder="Jackson Micheal" class="<?= isset($errors['name']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
