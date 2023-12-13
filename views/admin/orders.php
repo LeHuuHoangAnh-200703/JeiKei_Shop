@@ -25,10 +25,10 @@
                     </div>
                     <div class="flex justify-between items-center">
                         <form action="/admin/deleteorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="px-4 py-2 bg-red-400 rounded-md">Delete</button>
+                            <button type="submit" class="px-4 py-2 bg-[#DC143C] text-[#fff] font-medium rounded-md">Delete</button>
                         </form>
                         <form action="/admin/updateorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="px-4 py-2 bg-[#1e3a8a] text-white rounded-md">Update</button>
+                            <button type="submit" class="px-4 py-2 bg-[#4169E1] text-[#fff] font-medium rounded-md">Update</button>
                         </form>
                     </div>
                 </div>
