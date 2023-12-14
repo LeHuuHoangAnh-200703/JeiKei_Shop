@@ -98,6 +98,8 @@ class HomeController extends Controller
             // Link the order to the currently logged in user
             $order->user()->associate(Guard::user());
             $order->save();
+            $product->sold_count++;
+            $product->save();
             $this->sendPage('home/order', ["success" => "Đặt hàng thành công", "product" => $product]);
         }
 

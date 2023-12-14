@@ -7,10 +7,18 @@ use App\Models\Order;
 class Products extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at','sold_count'];
     public function orders()
     {
         return $this->hasMany(Order::class, 'product_id');
+    }
+
+    public function getSoldCountAttribute()
+    {
+        // Tính số lượng đơn hàng liên quan đến sản phẩm
+        $ordersCount = $this->orders()->count();
+
+        return $ordersCount;
     }
     public static function validate(array $data)
     {
