@@ -14,8 +14,8 @@
             <div class="w-full flex items-center justify-center">
                 <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($order['image']); ?>" />
             </div>
-            <div class="col-span-2 flex flex-col gap-y-3">
-                <h1 class="text-xl font-bold py-2"><?php echo $this->e($order->name); ?></h1>
+            <div class="col-span-2 flex flex-col gap-2">
+                <h1 class="text-xl font-bold"><?php echo $this->e($order->name); ?></h1>
                 <p class="text-[18px] font-bold">Price : <span class="text-[#DC143C]">$<?php echo $this->e($order->price); ?></span></p>
                 <div class="flex justify-start items-center gap-x-2 font-bold">
                     <p>Quantiy: </p>

@@ -12,8 +12,8 @@ class Products extends Model
     {
         return $this->hasMany(Order::class, 'product_id');
     }
-    public static function validate(array $data) // Sửa hàm  ràng buộc này lại 
-    { // Ở đây t chỉ làm cơ bản thôi 
+    public static function validate(array $data)
+    {
         $errors = [];
         if (!$data['name']) {
             $errors['name'] = 'Name is required.';
