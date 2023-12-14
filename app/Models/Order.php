@@ -36,7 +36,7 @@ class Order extends Model
         }
 
         // Regex to check phone number 
-        $pattern = "/^0\d{2}-\d{4}-\d{4}$/";
+        $pattern = "/^(\d{3}-){2}\d{4}$/";
         if (!$data["phone"]) {
             $errors["phone"] = "Error! Empty phone number.";
         } else if (!preg_match($pattern, $data["phone"])) {

@@ -46,30 +46,32 @@
                     ["type" => "SDCS", "imgHeight" => "h-20"],   ["type" => "SD-BBLEGEND", "imgHeight" => "h-20"], ["type" => "MGSD", "imgHeight" => "h-20"]
                 ];
                 for ($i = 0; $i < count($type); $i++) {
-                    foreach ($productinfo as $product) {
-                        if ($product->type == $type[$i]["type"]) {
+                    if (!empty($productinfo)) {
+                        foreach ($productinfo as $product) {
+                            if ($product->type == $type[$i]["type"]) {
                 ?>
-                            <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-lg style">
-                                <div class="p-4">
-                                    <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
-                                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
-                                        <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
+                                <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-lg style">
+                                    <div class="p-4">
+                                        <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+                                            <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
+                                        </div>
+                                        <h3 class="text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></h3>
+                                        <div class="flex justify-center items-center p-1">
+                                            <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
+                                            <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($product->quantity) ?></small>
+                                        </div>
                                     </div>
-                                    <h3 class="text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></h3>
-                                    <div class="flex justify-center items-center p-1">
-                                        <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
-                                        <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($product->quantity) ?></small>
+                                    <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
+                                    <div class="w-full">
+                                        <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
+                                            <button class="add_to_cart w-100 text-[#333] border border-1 px-4 py-2 bg-transparent font-semibold transition-all duration-300 hover:bg-[#DC143C] hover:text-[#fff] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
+                                            <a href="/orders/<?php echo $this->e($product->id) ?>" class="bg-[#333] text-center px-4 py-2 text-white font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90">Buy Now</a>
+                                        </div>
                                     </div>
                                 </div>
-                                <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
-                                <div class="w-full">
-                                    <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
-                                        <button class="add_to_cart w-100 text-[#333] border border-1 px-4 py-2 bg-transparent font-semibold transition-all duration-300 hover:bg-[#DC143C] hover:text-[#fff] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
-                                        <a href="/orders/<?php echo $this->e($product->id) ?>" class="bg-[#333] text-center px-4 py-2 text-white font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90">Buy Now</a>
-                                    </div>
-                                </div>
-                            </div>
                 <?php }
+                        }
                     }
                 }
                 ?>
