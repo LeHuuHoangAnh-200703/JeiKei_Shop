@@ -188,6 +188,6 @@ class HomeController extends Controller
         $user->save();
 
         $user_data = Guard::user();
-        redirect("/profile", ["success" => "User information has been updated", "user_data" => $user_data]);
+        redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
     }
 }
