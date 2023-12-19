@@ -45,30 +45,30 @@ class HomeController extends Controller
         // 
         $user = Guard::user();
         // Receive the product color and size the customer has selected
-        $string1 = 'color_';
-        $string2 = 'size_';
-        $color = "";
-        $filteredColorKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
-            return strpos($key, $string1) !== false;
-        });
-        for ($i = 0; $i < count($filteredColorKeys); $i++) {
-            if ($i < 1) {
-                $color = $_POST[$filteredColorKeys[$i]];
-            } else {
-                $color = ',' . $_POST[$filteredColorKeys[$i]];
-            }
-        }
-        $size = "";
-        $filteredSizeKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
-            return strpos($key, $string1) !== false;
-        });
-        for ($i = 0; $i < count($filteredSizeKeys); $i++) {
-            if ($i < 1) {
-                $size = $_POST[$filteredSizeKeys[$i]];
-            } else {
-                $size = ',' . $_POST[$filteredSizeKeys[$i]];
-            }
-        }
+        // $string1 = 'color_';
+        // $string2 = 'size_';
+        // $color = "";
+        // $filteredColorKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
+        //     return strpos($key, $string1) !== false;
+        // });
+        // for ($i = 0; $i < count($filteredColorKeys); $i++) {
+        //     if ($i < 1) {
+        //         $color = $_POST[$filteredColorKeys[$i]];
+        //     } else {
+        //         $color = ',' . $_POST[$filteredColorKeys[$i]];
+        //     }
+        // }
+        // $size = "";
+        // $filteredSizeKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
+        //     return strpos($key, $string1) !== false;
+        // });
+        // for ($i = 0; $i < count($filteredSizeKeys); $i++) {
+        //     if ($i < 1) {
+        //         $size = $_POST[$filteredSizeKeys[$i]];
+        //     } else {
+        //         $size = ',' . $_POST[$filteredSizeKeys[$i]];
+        //     }
+        // }
 
         // Validate data
         $data["product_id"] = $productId;

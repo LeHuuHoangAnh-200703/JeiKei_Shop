@@ -1,6 +1,6 @@
 <?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
 
-<?php $this->start("page")?>
+<?php $this->start("page") ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[95%] min-h-screen mx-auto mt-3 mb-5 p-5">
     <div class="w-full flex justify-center lg:block">
         <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
@@ -8,7 +8,7 @@
     <div>
         <h1 class="text-[18px] text-[#333] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
         <div class="mb-2 flex items-center gap-3">
-            <p class="text-[13px] font-medium border-r-2 border-[#333] pr-3">SKU : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
+            <p class="text-[13px] font-medium border-r-2 border-[#333f48] pr-3">SKU : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
             <p class="text-[13px] font-medium">Trademark : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
         </div>
         <hr>

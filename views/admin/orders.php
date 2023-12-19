@@ -10,17 +10,17 @@
             <div class="relative w-[250px] h-[413px] bg-white text-black border border-1">
                 <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('data:image/jpg;charset=utf8;base64,<?php echo base64_encode($order['image']); ?>')"></div>
                 <div class="p-4">
-                    <h3 class="mb-3"><?= $this->e($order->name) ?></h3>
-                    <p><?= $this->e($order->username) ?></p>
+                    <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
+                    <p class="font-semibold"><?= $this->e($order->username) ?></p>
                     <div class="flex justify-between items-center">
-                        <span><small>Date:</small> <?= $this->e($order->order_date) ?></span>
-                        <span><small>Price: $</small><?= $this->e($order->price) ?></span>
+                        <span class="font-normal text-[#4169E1]"><small class="font-semibold text-black">Date:</small> <?= $this->e($order->order_date) ?></span>
+                        <span class="text-[#DC143C]"><small class="font-semibold text-black">Price: </small>$<?= $this->e($order->price) ?></span>
                     </div>
                     <div>
-                        <p><small>Total: $</small><?= $this->e($order->total_amount) ?></p>
+                        <p class="text-[#DC143C]"><small class="font-semibold text-black">Total: </small>$<?= $this->e($order->total_amount) ?></p>
                     </div>
                     <div class="mb-3">
-                        <p> <small>Method: </small>payment via card
+                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Method: </small>payment via card
                         </p>
                     </div>
                     <div class="flex justify-between items-center">
@@ -35,12 +35,12 @@
                 <?php
                 if ($order->state == 1) {
                     echo '<div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-green-400 px-3 py-2">Đã giao</span>
+                    <span class="w-fit h-fit bg-green-400 px-3 py-2 font-semibold">Đã giao</span>
                     <span class="absolute right-0 w-[27px] h-[39px] bg-green-600 z-[-1] skew-y-[333deg]"></span>
                 </div>';
                 } else {
                     echo ' <div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-yellow-400 px-3 py-2">Chưa giao </span>
+                    <span class="w-fit h-fit bg-yellow-400 px-3 py-2 font-semibold">Chưa giao </span>
                     <span class="absolute right-0 w-[27px] h-[39px] bg-yellow-600 z-[-1] skew-y-[333deg]"></span>
                 </div>';
                 }
