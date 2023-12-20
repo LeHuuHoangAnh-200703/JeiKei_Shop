@@ -5,6 +5,7 @@ namespace App\Controllers;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
+use App\Models\Cart;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
 
@@ -190,4 +191,5 @@ class HomeController extends Controller
         $user_data = Guard::user();
         redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
     }
+    
 }
