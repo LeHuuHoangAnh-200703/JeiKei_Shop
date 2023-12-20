@@ -33,7 +33,10 @@
                 <li class="list-disc text-[15px] text-[#333f48]">Mô hình lắp ráp <?php echo $this->e($product->name); ?> Gunpla chính hãng Nhật Bản.</li>
             </ul>
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ $<?php echo $this->e($product->price); ?><span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
-            <p class="text-[#333f48] ml-2 my-2 text-[15px]"><i class="fa-solid fa-tag text-[#A0522D]"></i> Có <span class="font-bold"><?php echo $product->sold_count ?></span> lượt mua sản phẩm</p>
+            <div class="flex items-center gap-2">
+                <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Có <span class="font-bold"><?php echo $product->sold_count ?></span> lượt mua sản phẩm</p>
+                <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#4169E1]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
+            </div>
             <hr>
             <p class="text-center text-[15px] mt-2">Hotline đặt hàng: <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
         </div>

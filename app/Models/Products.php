@@ -7,7 +7,7 @@ use App\Models\Order;
 class Products extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at','sold_count'];
+    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at','sold_count', 'view_count'];
     public function orders()
     {
         return $this->hasMany(Order::class, 'product_id');

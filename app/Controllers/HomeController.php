@@ -119,6 +119,9 @@ class HomeController extends Controller
             $this->sendNotFound();
         }
 
+        $product->view_count++;
+        $product->save();
+
         $this->sendPage("home/detail", ["product" => $product]);
     }
 
@@ -191,5 +194,5 @@ class HomeController extends Controller
         $user_data = Guard::user();
         redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
     }
-    
+
 }
