@@ -36,10 +36,10 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                     <i class="fa-regular fa-envelope"></i></i>
                     <?= htmlspecialchars($user_data["email"]) ?>
                 </div>
-                <div class="mb-2 text-blueGray-600 mt-10">
-                    <i class="fa-solid fa-location-dot text-[#4169E1]"></i> <?= htmlspecialchars($user_data["address"]) ?>
+                <div class="mb-2 text-blueGray-600 mt-10 font-medium">
+                    <i class="fa-solid fa-location-dot text-[#4169E1] font-"></i> <?= htmlspecialchars($user_data["address"]) ?>
                 </div>
-                <div class="mb-2 text-blueGray-600">
+                <div class="mb-2 text-blueGray-600 font-medium">
                     <i class="fa-solid fa-phone mr-2 text-lg text-[#4169E1]"></i> <?= htmlspecialchars($user_data["phone"]) ?>
                 </div>
                 <hr />
