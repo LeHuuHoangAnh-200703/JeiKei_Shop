@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
+<?php $this->layout("layouts/home", ["title" => $this->e($product->name)]) ?>
 
 <?php $this->start("page") ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[95%] min-h-screen mx-auto mt-3 mb-5 p-5">
