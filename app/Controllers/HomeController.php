@@ -148,7 +148,7 @@ class HomeController extends Controller
             // }
         }
         if (empty($resultArray)) {
-            $errorMessage = "Không có kết quả nào phù hợp với từ khóa '" . $_POST["search"] . "'";
+            $errorMessage = "Sản phẩm '" . $_POST["search"] . "' hiện tại không tìm thấy, hãy tìm sản phẩm khác!";
             $this->sendPage("home/index", ["errors" => $errorMessage]);
         } else {
             $this->sendPage("home/searchresult", ["resultArray" => $resultArray]);

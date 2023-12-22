@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="mx-auto p-5 mb-5">
     <?php if (isset($errors)) {
-    ?> <div id="success-notification" class="bg-red-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+    ?> <div id="success-notification" class="bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
             <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Failed</p>
             <p class="font-bold"><?php echo $errors; ?></p>
         </div> <?php } ?>
