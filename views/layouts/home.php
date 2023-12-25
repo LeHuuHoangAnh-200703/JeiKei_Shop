@@ -9,7 +9,7 @@
     <title><?= $this->e($title) ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/logo.png" />
+    <link rel="icon" type="image/x-icon" href="./assets/OIG__1_-removebg-preview.png" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -18,7 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwindcss local using -->
-    <link rel="stylesheet" href="./css/test.css">
+    <!-- <link rel="stylesheet" href="./css/test.css"> -->
 </head>
 
 
@@ -30,7 +30,7 @@
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase font-body">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
+                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
