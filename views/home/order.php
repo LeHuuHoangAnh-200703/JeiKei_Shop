@@ -22,11 +22,11 @@
             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
         </div>
         <form action="/orders/<?= $this->e($product->id) ?>" method="POST" class="col-span-2">
-            <h1 class="text-xl font-bold py-2"><?php echo $this->e($product->name); ?></h1>
-            <p class="text-[20px] font-bold">Price : <span class="text-[#DC143C]">$<?php echo $this->e($product->price); ?></span></p>
-            <p class="text-[20px] font-bold py-2 flex justify-start items-center gap-x-2">Warehouse:<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> <small>products available</small></span></p>
+            <h1 class="text-[25px] font-semibold py-2"><?php echo $this->e($product->name); ?></h1>
+            <p class="text-[18px] font-semibold">Price : <span class="text-[#DC143C]">$<?php echo $this->e($product->price); ?></span></p>
+            <p class="text-[18px] font-semibold py-2 flex justify-start items-center gap-x-2">Warehouse:<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> <small>products available</small></span></p>
             <div class="py-2">
-                <p class="text-[20px] font-bold">Choose product quantity: </p>
+                <p class="text-[18px] font-semibold">Choose product quantity: </p>
                 <div class="py-2 flex gap-1">
                     <button type="button" id="decrease" class="text-xl border border-1 border-slate-950 py-1 px-3 font-semibold">-</button>
                     <input id="quantity" name="total_amount" value="1" style="appearance: textfield;" type="number" min="1" class="border border-1 font-semibold border-slate-950 h-10 w-12 text-center" />
@@ -38,7 +38,7 @@
                     </span>
                 <?php endif ?>
             </div>
-            <p class="text-[20px] font-bold mb-2">Choose Delivery Method :</p>
+            <p class="text-[18px] font-semibold mb-2">Choose Delivery Method :</p>
             <select class="relative mb-2 border border-[#333] p-2 rounded-md cursor-pointer outline-none" name="payment">
                 <div class="flex justify-between items-center p-[10px] border border-[#7a7a7a] rounded-[10px] cursor-pointer clickdown_2">
                     <p>Direct payment</p>

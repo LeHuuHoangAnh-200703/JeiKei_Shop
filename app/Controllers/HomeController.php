@@ -101,14 +101,14 @@ class HomeController extends Controller
             $product->save();
             $order->user()->associate(Guard::user());
             $order->save();
-            $this->sendPage('home/order', ["success" => "Đặt hàng thành công", "product" => $product]);
+            $this->sendPage('home/order', ["success" => "Order Success", "product" => $product]);
         }
 
         // Save the values that the user has entered and selected in the order form.
         $this->saveFormValues($_POST);
 
         // Save errors into $_SESSTION["errors"]
-        $this->sendPage('home/order', ['errors' => "Đặt hàng thất bại", "product" => $product]);
+        $this->sendPage('home/order', ['errors' => "Set rows failed", "product" => $product]);
     }
 
 
@@ -148,7 +148,7 @@ class HomeController extends Controller
             // }
         }
         if (empty($resultArray)) {
-            $errorMessage = "Sản phẩm '" . $_POST["search"] . "' hiện tại không tìm thấy, hãy tìm sản phẩm khác!";
+            $errorMessage = "Product '" . $_POST["search"] . "' is currently not found, please find another product!";
             $this->sendPage("home/index", ["errors" => $errorMessage]);
         } else {
             $this->sendPage("home/searchresult", ["resultArray" => $resultArray]);
@@ -192,7 +192,7 @@ class HomeController extends Controller
         $user->save();
 
         $user_data = Guard::user();
-        redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
+        redirect("/profile", ["success" => "Your information has been updated", "user_data" => $user_data]);
     }
 
 }

@@ -42,9 +42,9 @@
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[210px] lg:w-[420px] p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
-                            <i class="text-[#DC143C] fa-solid fa-magnifying-glass absolute top-[10px] left-[92%] translate-x-[50%] cursor-pointer"></i>
+                            <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
                     </form>
                 </div>
@@ -110,18 +110,7 @@
             </div>
         </div>
 
-        <!-- footer -->
-        <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
-                <div class="flex flex-col md:flex-row md:text-sm">
-                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
-                </div>
-                <div class="md:text-sm">
-                    <p>Products provided by C3 Gundam</p>
-                </div>
-            </div>
-        </footer>
+        
 
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
@@ -169,8 +158,20 @@
         <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
 
         <!-- Arrow to top -->
-        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg"><i class="fa-solid fa-angles-up"></i></a>
+        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg transition-all duration-500 hover:-translate-y-5"><i class="fa-solid fa-angles-up"></i></a>
     </div>
+    <!-- footer -->
+    <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
+            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+                <div class="flex flex-col md:flex-row md:text-sm">
+                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
+                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
+                </div>
+                <div class="md:text-sm">
+                    <p>Products provided by C3 Gundam</p>
+                </div>
+            </div>
+        </footer>
     <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div>
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">

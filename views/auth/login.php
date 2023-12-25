@@ -22,7 +22,7 @@
                     <h1 class="font-bold text-[27px]">JK Access</h1>
                     <p class="text-[13px] text-[#333f48] font-medium">Please fill your detail to access your account.</p>
                 </div>
-                <label for="" class="font-medium text-[16px]">Email</label>
+                <label for="" class="font-semibold text-[14px]">Email</label>
                 <input name="email" id="email" type="text" required autofocus placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?>  block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md" name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>">
                 <?php if (isset($errors['email'])) : ?>
                     <span class="text-red-500">
@@ -30,7 +30,7 @@
                     </span>
                 <?php endif ?>
 
-                <label for="password" class="font-medium text-[16px]">Password</label>
+                <label for="password" class="font-semibold text-[14px]">Password</label>
                 <input name="password" id="password" type="password" placeholder="••••••••" class=" <?= isset($errors['password']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['password'])) : ?>
                     <span class="text-red-500">
