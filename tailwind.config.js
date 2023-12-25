@@ -1,14 +1,16 @@
 /** @type {import('tailwindcss').Config} */
 module.exports = {
   content: [
-    "./views/layouts/*.{php, html, js}", 
+    "./views/layouts/*.{php, html, js}",
   ],
   theme: {
     extend: {
       fontFamily: {
-        body: ['Gasoek One']
+        custom: ['PT Serif', 'serif'],
+        gasoek: ['Gasoek One', 'sans-serif'],
       }
     },
+
   },
   plugins: [],
 }

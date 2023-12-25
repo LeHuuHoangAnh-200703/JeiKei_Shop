@@ -1,4 +1,9 @@
 @import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caprasimo&family=Fruktur:ital@1&family=Kanit:wght@400;500&family=Kaushan+Script&family=Lilita+One&family=Luckiest+Guy&family=Lunasima&family=Mr+Dafoe&family=Open+Sans:wght@500;600&family=Orbitron:wght@600&family=Permanent+Marker&family=Poppins:wght@500&family=Roboto+Slab&family=Staatliches&family=Yellowtail&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Gasoek+One&display=swap');
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+.test{
+    font-family: 'Gasoek One', sans-serif;
+}

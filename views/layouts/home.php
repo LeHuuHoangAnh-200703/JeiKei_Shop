@@ -18,7 +18,7 @@
     <script src="https://cdn.tailwindcss.com"></script>
 
     <!-- Tailwindcss local using -->
-    <!-- <link rel="stylesheet" href="./css/output.css"> -->
+    <link rel="stylesheet" href="./css/test.css">
 </head>
 
 
@@ -30,7 +30,7 @@
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="text-[18px] md:text-[20px] font-bold uppercase font-body">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
+                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase font-body">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
