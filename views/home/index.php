@@ -85,7 +85,7 @@
     </div>
     <!-- Notifications -->
     <div id="added_to_cart_successfully" class="hidden bg-green-500 text-white px-4 py-2 fixed top-0 right-2 mt-2 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-check"></i> Đã thêm sản phẩm vào giỏ hàng thành công!</p>
+        <p class="font-bold"><i class="fa-solid fa-check"></i> The product has been added to cart!</p>
     </div>
 </div>
 <!-- ALERT BOX -->

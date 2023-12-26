@@ -76,18 +76,6 @@
                 </div>
             </div>
         </div>
-        <!-- Footer -->
-        <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
-                <div class="flex flex-col md:flex-row md:text-sm">
-                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
-                </div>
-                <div class="md:text-sm">
-                    <p>Products provided by BANDAI</p>
-                </div>
-            </div>
-        </footer>
         <!-- Sidebar -->
         <div id="sidebar" class="fixed bg-[#272a2f] w-[80%] h-screen top-0 -left-[100%] p-5 transition-all duration-300">
             <div id="closesidebar" class="text-white mb-2"><i class="fa-solid fa-arrow-left"></i></div>
@@ -102,6 +90,18 @@
             </div>
         </div>
     </div>
+    <!-- Footer -->
+    <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
+            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+                <div class="flex flex-col md:flex-row md:text-sm">
+                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
+                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
+                </div>
+                <div class="md:text-sm">
+                    <p>Products provided by C3 GUNDAM</p>
+                </div>
+            </div>
+        </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

@@ -1,7 +1,7 @@
 <?php $this->layout("layouts/auth", ["title" => "Admin Log in"]) ?>
 
 <?php $this->start("page") ?>
-<div class="w-full min-h-screen flex justify-center items-center">
+<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-300">
     <?php
 
     if (isset($messages["success"])) {
@@ -12,12 +12,12 @@
         </div>
     <?php } ?>
 
-    <div class="max-w-[1300px] lg:bg-[#fff] lg:w-10/12 w-full min-[1025px]:min-h-screen lg:m-5 flex overflow-hidden">
-        <div class="w-1/2 h-full overflow-hidden hidden lg:block bg-gradient-to-r from-purple-500 to-pink-500 rounded-md">
-            <img src="https://www.polywork.fagis.fr/assets/images/crew-left.png" alt="" class="mt-10">
+    <div class="max-w-[1300px] min-[1025px]:min-h-screen flex justify-center lg:bg-[#fff] lg:w-10/12 w-full lg:m-5 overflow-hidden lg:shadow-lg">
+        <div class="w-1/2 h-full overflow-hidden hidden lg:block rounded-md mt-20">
+            <img src="https://www.polywork.fagis.fr/assets/images/crew-left.png" alt="">
         </div>
         <form action="/admin/login" method="POST" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3">
-            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl gap-y-3 border-2">
+            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl gap-y-3">
                 <div class="mb-2">
                     <h1 class="font-bold text-[27px]">JK Admin Access</h1>
                     <p class="text-[13px] text-[#333f48] font-medium">Please fill your detail to access your account.</p>
@@ -45,8 +45,6 @@
                     <p class="text-[14px] text-[#333] font-medium">Don’t have an account yet?</p>
                     <a href="/admin/register" class="text-[15px] text-[#5429FF] font-semibold cursor-pointer hover:underline">Register</a>
                 </div>
-
-
             </div>
         </form>
     </div>

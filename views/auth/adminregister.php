@@ -1,9 +1,10 @@
 <?php $this->layout("layouts/auth", ["title" =>  "Admin register"]) ?>
 <?php $this->start("page") ?>
-<div class="w-full min-h-screen flex justify-center items-center">
-    <div class="max-w-[1300px] lg:w-10/12 w-full lg:bg-[#fff] min-[1025px]:min-h-screen lg:m-5 flex overflow-hidden">
+
+<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-300">
+    <div class="max-w-[1300px] min-[1025px]:min-h-screen flex justify-center lg:w-10/12 w-full lg:bg-[#fff] lg:m-5 overflow-hidden lg:shadow-lg">
         <form method="POST" action="/admin/register" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3">
-            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl gap-y-3 border-2">
+            <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl gap-y-3">
                 <div class="mb-2">
                     <h1 class="font-bold text-[27px]">JK Admin Register</h1>
                     <p class="text-[13px] text-[#333f48] font-medium">Please fill your detail to register your account.</p>
@@ -52,7 +53,7 @@
                 </div>
             </div>
         </form>
-        <div class="w-1/2 h-full overflow-hidden hidden rounded-md lg:block bg-gradient-to-r from-purple-500 to-pink-500">
+        <div class="w-1/2 h-full overflow-hidden hidden rounded-md lg:block">
             <img src="https://www.polywork.fagis.fr/assets/images/crew-right.png" alt="">
         </div>
     </div>

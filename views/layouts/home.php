@@ -66,7 +66,7 @@
                     </button>
                 </div>
             </nav>
-            <div class="sidebar fixed top-0 left-[-100%] bg-[#fff] p-4 w-full h-full z-40">
+            <div class="sidebar fixed top-0 -left-[100%] bg-[#fff] p-4 w-full h-full z-40">
                 <div class="mb-4">
                     <button class="closed">
                         <div class="relative border border-[#a3a3a3] rounded w-[40px] h-[40px]">
@@ -77,7 +77,9 @@
                 <ul class="flex flex-col">
                     <form action="/search" method="post" class="relative mb-4">
                         <input type="text" name="search" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-full p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
-                        <i class="fa-solid fa-magnifying-glass absolute top-[27%] right-3 text-[#DC143C] cursor-pointer"></i>
+                        <button type="submit">
+                            <div class="absolute top-0 right-0 rounded-e-md bg-[#DC143C] px-3 py-[6.8px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
+                        </button>
                     </form>
                     <!-- <li class="pb-[15px]">
                         <a href="/" class="font-bold transition-all duration-300 hover:text-[#4169E1] text-[20px]">Home</a>
@@ -208,11 +210,11 @@
 
             //sidebar
             $(".bar").click(function() {
-                $(".sidebar").toggleClass("left-[-100%]");
+                $(".sidebar").toggleClass("left-0");
             });
 
             $(".closed").click(function() {
-                $(".sidebar").toggleClass("left-[-100%]");
+                $(".sidebar").toggleClass("left-0");
             });
 
             //ẩn hiện thanh ngang
