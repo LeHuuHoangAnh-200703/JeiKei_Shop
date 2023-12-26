@@ -1,3 +1,9 @@
+<?php
+    $userImage = \App\SessionGuard::user()->image;
+    $baseURL = "http://ecommercewebsite.localhost/";
+    $imageURL = ($userImage != "") ? $baseURL . $userImage : $baseURL . "assets/user_avatar.jpg";
+?>
+
 <!DOCTYPE html>
 <html>
 
@@ -50,13 +56,7 @@
                 </div>
 
                 <div class="flex justify-center items-center gap-4">
-                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="<?php
-                                                                                                                                                                                    if (\App\SessionGuard::user()->image != "") {                                                                       
-                                                                                                                                                                                        echo "background-image:url('" . \App\SessionGuard::user()->image . "')";
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        echo "background-image:url(./assets/user_avatar.jpg)";
-                                                                                                                                                                                    }
-                                                                                                                                                                                    ?>">
+                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
                     </div>
                     <button class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
@@ -111,20 +111,14 @@
             </div>
         </div>
 
-        
+
 
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">
                 <div class="flex items-center gap-3">
                     <div class="relative h-10 w-10">
-                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex justify-center items-center bg-center bg-cover" style="<?php
-                                                                                                                                                    if (\App\SessionGuard::user()->image != "") {
-                                                                                                                                                        echo "background-image:url('" . \App\SessionGuard::user()->image . "')";
-                                                                                                                                                    } else {
-                                                                                                                                                        echo "background-image:url('./assets/user_avatar.jpg')";
-                                                                                                                                                    }
-                                                                                                                                                    ?>">
+                        <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex justify-center items-center bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
                         </div>
                         <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
@@ -163,16 +157,16 @@
     </div>
     <!-- footer -->
     <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
-                <div class="flex flex-col md:flex-row md:text-sm">
-                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
-                </div>
-                <div class="md:text-sm">
-                    <p>Products provided by C3 Gundam</p>
-                </div>
+        <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+            <div class="flex flex-col md:flex-row md:text-sm">
+                <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
+                <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
             </div>
-        </footer>
+            <div class="md:text-sm">
+                <p>Products provided by C3 Gundam</p>
+            </div>
+        </div>
+    </footer>
     <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div>
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">
