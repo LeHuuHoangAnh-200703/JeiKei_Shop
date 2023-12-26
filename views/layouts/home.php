@@ -51,10 +51,10 @@
 
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="<?php
-                                                                                                                                                                                    if (\App\SessionGuard::user()->image != "") {
+                                                                                                                                                                                    if (\App\SessionGuard::user()->image != "") {                                                                       
                                                                                                                                                                                         echo "background-image:url('" . \App\SessionGuard::user()->image . "')";
                                                                                                                                                                                     } else {
-                                                                                                                                                                                        echo "background-image:url('./assets/user_avatar.jpg')";
+                                                                                                                                                                                        echo "background-image:url(./assets/user_avatar.jpg)";
                                                                                                                                                                                     }
                                                                                                                                                                                     ?>">
                     </div>
@@ -97,7 +97,6 @@
         </div>
         <!-- main content -->
         <?= $this->section("page") ?>
-
         <!-- shopping cart -->
         <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
