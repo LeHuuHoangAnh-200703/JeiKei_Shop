@@ -1,7 +1,7 @@
 <?php $this->layout("layouts/auth", ["title" =>  "Admin register"]) ?>
 <?php $this->start("page") ?>
 
-<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-300">
+<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-red-700 to-white">
     <div class="max-w-[1300px] min-[1025px]:min-h-screen flex justify-center lg:w-10/12 w-full lg:bg-[#fff] lg:m-5 overflow-hidden lg:shadow-lg">
         <form method="POST" action="/admin/register" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3">
             <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 shadow-xl gap-y-3">

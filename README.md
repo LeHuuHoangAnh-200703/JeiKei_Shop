@@ -1,6 +1,6 @@
 # Project Niên Luận Cơ Sở
 
-Học kỳ 1, Năm học 2023-2024
+Học kỳ 2, Năm học 2023-2024
 
 **MSSV**: B2105599
 

@@ -1,7 +1,8 @@
 <?php
-    $userImage = \App\SessionGuard::user()->image;
-    $baseURL = "http://ecommercewebsite.localhost/";
-    $imageURL = ($userImage != "") ? $baseURL . $userImage : $baseURL . "assets/user_avatar.jpg";
+$userImage = \App\SessionGuard::user()->image;
+$baseURL = "http://ecommercewebsite.localhost/";
+$imageURL = ($userImage != "") ? $baseURL . $userImage : $baseURL . "assets/user_avatar.jpg";
+$imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
 ?>
 
 <!DOCTYPE html>
@@ -15,7 +16,7 @@
     <title><?= $this->e($title) ?></title>
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/OIG__1_-removebg-preview.png" />
+    <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -31,12 +32,12 @@
 <body class="relative">
     <div id="content" class="relative w-full max-w-[1200px] m-auto md:flex-row min-h-screen overflow-x-hidden hidden">
         <!-- header -->
-        <header name="top">
+        <header name="top" class="w-full min-h-screen">
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">GUNDAM <span class="text-[#DC143C]">BANDAI</span></a>
+                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">NINTENDO <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
@@ -48,7 +49,7 @@
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -89,8 +90,28 @@
                     </li>
                 </ul>
             </div>
+            <div class="mt-8 flex justify-between items-center w-full px-4">
+                <div class="flex justify-start flex-col gap-2 w-[50%]">
+                    <p class="text-[18px] font-bold uppercase">JeiKei Shop</p>
+                    <p class="text-6xl font-semibold">Nintendo Switch</p>
+                    <p class="mt-2">JeiKei Shop cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
+                    <p class="text-[15px] font-semibold mb-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
+                    <button class="bg-[#DC143C] text-center px-3 py-2 w-[120px] text-[#fff] font-semibold">Learn More</button>
+                    <ul class="flex gap-[20px] mt-5">
+                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-xbox"></i></li>
+                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-playstation"></i></li>
+                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-n"></i></li>
+                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-gamepad"></i></li>
+                    </ul>
+                </div>
+                <div class="relative">
+                    <div class="before:absolute before:bg-[#DC143C] before:w-[320px] before:h-[320px] before:-z-10 before:rounded-full">
+                        <img src="./assets/./Picture1-removebg-preview.png" alt="" class="z-10">
+                    </div>
+                </div>
+            </div>
         </header>
-
+        <hr class="mb-8">
         <!-- Navigation button to Home page-->
         <div class="px-4">
             <i class="fa-solid fa-arrow-left text-[#DC143C]"></i> <a href="/" class="font-bold transition-all duration-300 hover:text-[#DC143C] text-[20px]">Home</a>

@@ -1,7 +1,7 @@
 <?php $this->layout("layouts/auth", ["title" => "Log in"]) ?>
 
 <?php $this->start("page") ?>
-<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-slate-700 to-slate-300">
+<div class="w-full min-h-screen flex justify-center items-center bg-gradient-to-r from-red-700 to-white">
     <?php
 
     if (isset($messages["success"])) {

@@ -42,20 +42,18 @@
                 <p class="font-bold"><?php echo $errors; ?></p>
             </div> <?php } ?>
         <div class="flex flex-col justify-center items-center w-[100%]">
-            <img src="./assets/n24.webp" alt="">
-            <span class="w-[100%] h-[2px] bg-[#DCDCDC] my-5"></span>
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                 <?php
                 $type = [
-                    ["type" => "BANDAI", "imgHeight" => "h-20"], ["type" => "RG", "imgHeight" => "h-20"],
-                    ["type" => "SDCS", "imgHeight" => "h-20"],   ["type" => "SD-BBLEGEND", "imgHeight" => "h-20"], ["type" => "MGSD", "imgHeight" => "h-20"]
+                    ["type" => "Nintendo Oled", "imgHeight" => "h-20"], ["type" => "Nintendo lite", "imgHeight" => "h-20"],
+                    ["type" => "Nintendo old", "imgHeight" => "h-20"]
                 ];
                 for ($i = 0; $i < count($type); $i++) {
                     if (!empty($productinfo)) {
                         foreach ($productinfo as $product) {
                             if ($product->type == $type[$i]["type"]) {
                 ?>
-                                <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-lg style">
+                                <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
                                     <div class="p-4">
                                         <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
                                             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />

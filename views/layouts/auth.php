@@ -1,3 +1,8 @@
+<?php
+    $baseURL = "http://ecommercewebsite.localhost/";
+    $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
+?>
+
 <!DOCTYPE html>
 <html lang="en">
 
@@ -5,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="./assets/OIG__1_-removebg-preview.png" />
+    <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo?>" />
 
     <title><?= $this->e($title) ?></title>
     <!-- Styles -->
