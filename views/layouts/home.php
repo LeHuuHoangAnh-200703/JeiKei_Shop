@@ -171,7 +171,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
 
         <!-- Arrow to top -->
-        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg transition-all duration-500 hover:-translate-y-5"><i class="fa-solid fa-angles-up"></i></a>
+        <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg transition-all duration-500 hover:-translate-y-3"><i class="fa-solid fa-angles-up"></i></a>
     </div>
     <!-- footer -->
     <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
