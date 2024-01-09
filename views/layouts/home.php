@@ -46,7 +46,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                             <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Home</a>
                         </li> -->
                         <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Order History</a>
+                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Order History</a>
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
@@ -93,9 +93,9 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             </div>
             <div class="mt-8 flex justify-between items-center w-full px-4 flex-wrap">
                 <div class="flex justify-start flex-col gap-2 lg:w-[60%] w-full">
-                    <p class="text-[18px]  font-bold uppercase">JeiKei Shop</p>
+                    <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
                     <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
-                    <p class="mt-2 text-[14px]">JeiKei Shop cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
+                    <p class="mt-2 text-[14px]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
                     <p class="text-[15px] font-semibold mb-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
                     <button class="bg-[#DC143C] text-center px-3 py-2 w-[120px] text-[#fff] font-medium">Learn More</button>
                     <ul class="lg:flex gap-[20px] mt-8 hidden">
@@ -257,82 +257,42 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             });
 
             //filter products
-            $("#BANDAI").click(function() {
-                $(".BANDAI").show();
-                $(".SDCS").hide();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
+            $("#Nintendo_OLED").click(function() {
+                $(".Nintendo_OLED").show();
+                $(".Nintendo_Lite").hide();
+                $(".Nintendo_Old").hide();
             });
-            $("#SDCS").click(function() {
-                $(".SDCS").show();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
+            $("#Nintendo_Lite").click(function() {
+                $(".Nintendo_OLED").hide();
+                $(".Nintendo_Lite").show();
+                $(".Nintendo_Old").hide();
             });
-            $("#RG").click(function() {
-                $(".RG").show();
-                $(".SDCS").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#SD-BBLEGEND").click(function() {
-                $(".SD-BBLEGEND").show();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#MGSD").click(function() {
-                $(".MGSD").show();
-                $(".SD-BBLEGEND").hide();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".BANDAI").hide();
+            $("#Nintendo_Old").click(function() {
+                $(".Nintendo_OLED").hide();
+                $(".Nintendo_Lite").hide();
+                $(".Nintendo_Old").show();
             });
             $("#all").click(function() {
                 $(".style").show();
             });
 
             //filter mobile
-            $("#BANDAI_1").click(function() {
-                $(".BANDAI").show();
-                $(".SDCS").hide();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
+            $("#Nintendo_OLED_1").click(function() {
+                $(".Nintendo_OLED").show();
+                $(".Nintendo_Lite").hide();
+                $(".Nintendo_Old").hide();
             });
-            $("#SDCS_1").click(function() {
-                $(".SDCS").show();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
+            $("#Nintendo_Lite_1").click(function() {
+                $(".Nintendo_OLED").hide();
+                $(".Nintendo_Lite").show();
+                $(".Nintendo_Old").hide();
             });
-            $("#RG_1").click(function() {
-                $(".RG").show();
-                $(".SDCS").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
+            $("#Nintendo_Old_1").click(function() {
+                $(".Nintendo_OLED").hide();
+                $(".Nintendo_Lite").hide();
+                $(".Nintendo_Old").show();
             });
-            $("#SD-BBLEGEND_1").click(function() {
-                $(".SD-BBLEGEND").show();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#MGSD_1").click(function() {
-                $(".MGSD").show();
-                $(".SD-BBLEGEND").hide();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".BANDAI").hide();
-            });
-            $("#all_1").click(function() {
+            $("#all").click(function() {
                 $(".style").show();
             });
 

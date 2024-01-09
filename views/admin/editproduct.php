@@ -37,9 +37,9 @@
             <div>
                 <h2 class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Choose type of product</h2>
                 <select name="type" class="outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500">
-                    <option checked value="Nintendo Oled">Nintendo Oled</option>
-                    <option value="Nintendo old">Nintendo old</option>
-                    <option value="Nintendo lite">Nintendo lite</option>
+                    <option checked value="Nintendo_OLED">Nintendo Oled</option>
+                    <option value="Nintendo_Old">Nintendo old</option>
+                    <option value="Nintendo_Lite">Nintendo lite</option>
                 </select>
             </div>
             <div class="">

@@ -4,36 +4,30 @@
 <div class="w-full mx-auto mb-8">
     <div class="w-full flex justify-between items-start flex-col lg:flex-row p-4 gap-3 lg:gap-3 md:gap-x-[60px]">
         <div class="w-[20%] hidden lg:block flex-col py-1 px-2">
-            <h2 class="py-2"><i class="fa-solid fa-jedi text-[#DC143C]"></i><strong> TRADEMARK</strong></h2>
+            <h2 class="py-2 flex items-center gap-2"><i class="fa-solid fa-gamepad text-xl text-[#DC143C]"></i><strong> Machine Type</strong></h2>
             <hr />
             <ul>
                 <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="all">All</li>
-                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="BANDAI">BANDAI</li>
-                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="SDCS">SDCS</li>
-                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="RG">RG</li>
-                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="SD-BBLEGEND">SD - BBLEGEND</li>
-                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="MGSD">MGSD</li>
+                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_OLED">Nintendo OLED</li>
+                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_Lite">Nintendo lite</li>
+                <li class="py-[6px] px-3 border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_Old">Nintendo Old</li>
             </ul>
         </div>
         <div class="relative block lg:hidden w-full">
             <div class="relative border border-[#a3a3a3] rounded py-1 px-2 cursor-pointer clickdown_2">
                 <div class="flex items-center justify-between">
-                    <h2 class="py-2"><i class="fa-solid fa-jedi text-[#DC143C]"></i><strong> TRADEMARK</strong></h2>
+                <h2 class="py-2 flex items-center gap-2"><i class="fa-solid fa-gamepad text-xl text-[#DC143C]"></i><strong> Machine Type</strong></h2>
                     <i class="fa-solid fa-caret-down rotate-180 ease-out duration-500 dropdown_2"></i>
                 </div>
             </div>
             <ul class="absolute top-[100%] left-0 z-40 hidden w-full bg-[#333] p-3 rounded list_2">
                 <li class="mt-1 text-white py-2 px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="all_1">All</li>
                 <hr>
-                <li class="mt-1 text-white py-2 px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="BANDAI_1">BANDAI</li>
+                <li class="mt-1 text-white py-2 px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_OLED_1">Nintendo OLED</li>
                 <hr>
-                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="SDCS_1">SDCS</li>
+                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_lite_1">Nintendo lite</li>
                 <hr>
-                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="RG_1">RG</li>
-                <hr>
-                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="SD-BBLEGEND_1">SD - BBLEGEND</li>
-                <hr>
-                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="MGSD_1">MGSD</li>
+                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_Old_1">Nintendo Old</li>
             </ul>
         </div>
         <?php if (isset($errors)) {
@@ -45,8 +39,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                 <?php
                 $type = [
-                    ["type" => "Nintendo Oled", "imgHeight" => "h-20"], ["type" => "Nintendo lite", "imgHeight" => "h-20"],
-                    ["type" => "Nintendo old", "imgHeight" => "h-20"]
+                    ["type" => "Nintendo_OLED", "imgHeight" => "h-20"], ["type" => "Nintendo_Lite", "imgHeight" => "h-20"],
+                    ["type" => "Nintendo_Old", "imgHeight" => "h-20"]
                 ];
                 for ($i = 0; $i < count($type); $i++) {
                     if (!empty($productinfo)) {
@@ -54,12 +48,14 @@
                             if ($product->type == $type[$i]["type"]) {
                 ?>
                                 <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
-                                    <div class="p-4">
+                                    <div class="p-4 overflow-hidden">
                                         <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
                                             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
                                             <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                         </div>
-                                        <a href="/detail/<?php echo $this->e($product->id) ?>" class="text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
+                                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                                            <a href="/detail/<?php echo $this->e($product->id) ?>" class="inline text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
+                                        </div>
                                         <div class="flex justify-center items-center p-1">
                                             <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
                                             <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($product->quantity) ?></small>
