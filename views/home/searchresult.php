@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
+<?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
 <div class="w-[90%] mb-5 mx-auto">

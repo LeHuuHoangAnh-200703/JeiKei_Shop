@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/home", ["title" => "Orders"]) ?>
+<?php $this->layout("layouts/default", ["title" => "Orders"]) ?>
 
 <?php $this->start("page") ?>
 <div class="mx-auto p-5 mb-5">

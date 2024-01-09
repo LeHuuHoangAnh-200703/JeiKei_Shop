@@ -19,7 +19,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
     <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo ?>" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel='stylesheet' type='text/css' media='screen' href='./css/test.css'>
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caprasimo&family=Fruktur:ital@1&family=Kanit:wght@400;500&family=Kaushan+Script&family=Lilita+One&family=Luckiest+Guy&family=Lunasima&family=Mr+Dafoe&family=Open+Sans:wght@500;600&family=Orbitron:wght@600&family=Permanent+Marker&family=Poppins:wght@500&family=Roboto+Slab&family=Staatliches&family=Yellowtail&display=swap" rel="stylesheet">
     <!-- Use tailwind library through cdn (Content Delivery Network) -->
@@ -30,15 +29,15 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
 </head>
 
 
-<body class="relative">
+<body class="relative" style="font-family: 'Poppins',sans-serif;">
     <div id="content" class="relative w-full max-w-[1200px] m-auto md:flex-row min-h-screen overflow-x-hidden hidden">
         <!-- header -->
-        <header name="top" class="overflow-hidden">
+        <header name="top">
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
+                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">NINTENDO <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
@@ -91,28 +90,11 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     </li>
                 </ul>
             </div>
-            <div class="mt-8 flex justify-between items-center w-full px-4 flex-wrap">
-                <div class="flex justify-start flex-col gap-2 lg:w-[60%] w-full">
-                    <p class="text-[18px]  font-bold uppercase">JeiKei Shop</p>
-                    <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
-                    <p class="mt-2 text-[14px]">JeiKei Shop cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
-                    <p class="text-[15px] font-semibold mb-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
-                    <button class="bg-[#DC143C] text-center px-3 py-2 w-[120px] text-[#fff] font-medium">Learn More</button>
-                    <ul class="lg:flex gap-[20px] mt-8 hidden">
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-xbox"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-playstation"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-n"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-gamepad"></i></li>
-                    </ul>
-                </div>
-                <div class="relative flex justify-center items-center w-full lg:w-[40%]">
-                    <div class="before:absolute before:bg-[#DC143C] before:bottom-[-50%] before:left-[50%] before:translate-x-[-50%] lg:before:top-0 before:w-[450px] before:h-[450px] lg:before:w-[320px] lg:before:h-[320px] before:-z-10 before:rounded-full">
-                        <img src="./assets/./OIG-removebg-preview.png" alt="" class="z-10 w-[400px]">
-                    </div>
-                </div>
-            </div>
         </header>
-        <hr class="lg:my-10 mb-10">
+        <!-- Navigation button to Home page-->
+        <div class="px-4">
+            <i class="fa-solid fa-arrow-left text-[#DC143C]"></i> <a href="/" class="font-bold transition-all duration-300 hover:text-[#DC143C] text-[20px]">Home</a>
+        </div>
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->

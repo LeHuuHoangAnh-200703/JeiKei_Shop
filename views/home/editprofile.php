@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/home", ["title" => "Your profile"]) ?>
+<?php $this->layout("layouts/default", ["title" => "Your profile"]) ?>
 
 <?php $this->start("page");
 

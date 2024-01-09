@@ -6,8 +6,7 @@ module.exports = {
   theme: {
     extend: {
       fontFamily: {
-        custom: ['PT Serif', 'serif'],
-        gasoek: ['Gasoek One', 'sans-serif'],
+        custom: ['Poppins', 'serif'],
       }
     },
 
