@@ -37,13 +37,10 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <button class="flex items-center gap-x-4">
                     <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">NINTENDO <span class="text-[#DC143C]">SWITCH</span></a>
+                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
                     <ul class="ml-3 hidden md:flex lg:ml-4">
-                        <!-- <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Home</a>
-                        </li> -->
                         <li class="px-[15px] lg:px-[20px] text-[18px]">
                             <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Order History</a>
                         </li>
@@ -82,18 +79,15 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                             <div class="absolute top-0 right-0 rounded-e-md bg-[#DC143C] px-3 py-[6.8px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
                     </form>
-                    <!-- <li class="pb-[15px]">
-                        <a href="/" class="font-bold transition-all duration-300 hover:text-[#4169E1] text-[20px]">Home</a>
-                    </li> -->
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="no-underline font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Orders History</a>
+                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Orders History</a>
                     </li>
                 </ul>
             </div>
         </header>
         <!-- Navigation button to Home page-->
         <div class="px-4">
-            <i class="fa-solid fa-arrow-left text-[#DC143C]"></i> <a href="/" class="font-bold transition-all duration-300 hover:text-[#DC143C] text-[20px]">Home</a>
+            <a href="/" class="font-bold border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] transition-all duration-300 text-[20px]">Trang chủ</a>
         </div>
         <!-- main content -->
         <?= $this->section("page") ?>
@@ -101,7 +95,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">GUNDAM <span class="text-[#DC143C]">BANDAI</span> CART</h1>
+                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> CART</h1>
                 </div>
                 <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
             </div>

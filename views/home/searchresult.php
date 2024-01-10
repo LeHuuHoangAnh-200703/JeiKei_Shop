@@ -12,7 +12,9 @@
                         <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($result['image']); ?>" />
                         <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($result->id) ?>"></a>
                     </div>
-                    <h3 class="text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($result->name) ?></h3>
+                    <div class="text-ellipsis whitespace-nowrap overflow-hidden w-52">
+                        <a href="/detail/<?php echo $this->e($result->id) ?>" class="text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($result->name) ?></a>
+                    </div>
                     <div class="flex justify-center items-center p-1">
                         <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($result->price) ?>$</p>
                         <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($result->quantity) ?></small>

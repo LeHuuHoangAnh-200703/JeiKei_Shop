@@ -58,13 +58,13 @@
                                         </div>
                                         <div class="flex justify-center items-center p-1">
                                             <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
-                                            <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($product->quantity) ?></small>
+                                            <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Kho : <?php echo $this->e($product->quantity) ?></small>
                                         </div>
                                     </div>
                                     <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
                                     <div class="w-full">
                                         <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
-                                            <button class="add_to_cart w-100 text-[#fff] border border-1 px-4 py-2 bg-[#333] font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
+                                            <button class="add_to_cart w-100 text-[#fff] border border-1 px-4 py-2 bg-[#333] font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Thêm giỏ hàng</button>
                                         </div>
                                     </div>
                                 </div>
@@ -78,7 +78,7 @@
     </div>
     <!-- Notifications -->
     <div id="added_to_cart_successfully" class="hidden bg-green-500 text-white px-4 py-2 fixed top-0 right-2 mt-2 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-check"></i> The product has been added to cart!</p>
+        <p class="font-bold"><i class="fa-solid fa-check"></i> Sản phẩm đã được thêm vào giỏ hàng!</p>
     </div>
 </div>
 <!-- ALERT BOX -->

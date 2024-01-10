@@ -83,11 +83,8 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                             <div class="absolute top-0 right-0 rounded-e-md bg-[#DC143C] px-3 py-[6.8px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
                     </form>
-                    <!-- <li class="pb-[15px]">
-                        <a href="/" class="font-bold transition-all duration-300 hover:text-[#4169E1] text-[20px]">Home</a>
-                    </li> -->
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="no-underline font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Orders History</a>
+                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Orders History</a>
                     </li>
                 </ul>
             </div>
@@ -119,7 +116,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">GUNDAM <span class="text-[#DC143C]">BANDAI</span> CART</h1>
+                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> CART</h1>
                 </div>
                 <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
             </div>
@@ -360,11 +357,11 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
                 <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
                     <h1>${cart_items[i].name}</h1>
-                    <p>Price : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
-                    <p>Warehouse: <span class="text-[#DC143C] warehouse">${cart_items[i].warehousem}</span></p>
+                    <p>Giá : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
+                    <p>Kho : <span class="text-[#DC143C] warehouse">${cart_items[i].warehousem}</span></p>
                     <div class="flex items-center gap-4">
-                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Delete</button>
+                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
+                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>
                     </div>
                 </div>
             </div>
