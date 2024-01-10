@@ -86,8 +86,8 @@ class HomeController extends Controller
         $data["phone"] = $_POST["phone"];
         $data["image"] = $product->image;
         //Calculate the total amount that the customer must pay
-        $total_pay = number_format(floatval($data["amount"]) * floatval($product->price), 2);
-        $data["total_amount"] = $total_pay;
+        $total_pay = (float)$data["amount"] * (float)$product->price;
+        $data["total_amount"] = sprintf("%.2f", $total_pay);
 
         //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
@@ -101,14 +101,14 @@ class HomeController extends Controller
             $product->save();
             $order->user()->associate(Guard::user());
             $order->save();
-            $this->sendPage('home/order', ["success" => "Order Success", "product" => $product]);
+            $this->sendPage('home/order', ["success" => "Đặt hàng thành công!!", "product" => $product]);
         }
 
         // Save the values that the user has entered and selected in the order form.
         $this->saveFormValues($_POST);
 
         // Save errors into $_SESSTION["errors"]
-        $this->sendPage('home/order', ['errors' => "Set rows failed", "product" => $product]);
+        $this->sendPage('home/order', ['errors' => "Có lỗi xảy ra, vui lòng kiểm tra lại!!", "product" => $product]);
     }
 
 

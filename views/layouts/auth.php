@@ -11,7 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo?>" />
-
     <title><?= $this->e($title) ?></title>
     <!-- Styles -->
 
@@ -25,7 +24,7 @@
 </head>
 
 
-<body class="relative">
+<body class="relative" style="font-family: 'Poppins',sans-serif;">
     <?= $this->section("page") ?>
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>
     <?= $this->section("page_specific_js") ?>

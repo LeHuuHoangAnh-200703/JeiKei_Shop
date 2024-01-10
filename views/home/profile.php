@@ -8,7 +8,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
 ?>
 <div class="w-[95%] h-[647px] sm:h-[570px] mx-auto mt-3 mb-36">
     <div class="relative h-[300px] w-full bg-center bg-cover rounded-sm" style="
-            background-image: url('./assets/wallhaven-x6w8eo.png');
+            background-image: url('./assets/wallhaven-k9ev61.jpg');
           ">
 
         <div class="w-[90%] bg-[#fdfdfd] sm:h-[500px] absolute top-32 left-[50%] translate-x-[-50%] mx-auto shadow-lg rounded-md pt-[50px] px-2 sm:px-10 pb-10 sm:pb-0 h-fit ">
@@ -23,8 +23,8 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
             </div>
             <div class="flex justify-between items-center px-2 lg:px-24">
                 <ul class="flex gap-x-6">
-                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Ordered</span></li>
-                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo  $hour ?></span><span class="text-slate-400">Hours</span></li>
+                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Đã đặt hàng</span></li>
+                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo  $hour ?></span><span class="text-slate-400">Giờ</span></li>
                 </ul>
                 <a href="/editprofile" class="px-2 py-1 sm:px-5 sm:py-2 bg-[#FFD700] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">EDIT PROFILE</a>
             </div>
@@ -45,7 +45,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                 <hr />
                 <div class="mt-5">
                     <p>
-                        An artist of considerable range, Jenna the name taken by Melbourne-raised, Brooklyn-based Nick Murphy writes, performs and records all of his own music, giving it a warm, intimate feel with a solid groove structure. An artist of considerable range.
+                        Xin chào bạn đã đến với JEIKEI SHOP, chúng tôi mong rằng tại đây sẽ thõa mãn được những nhu cầu của bạn. Chúng tôi luôn sẳn sàng hỗ trợ bạn , nếu cần thì mong bạn liên hệ đến Hotline ở trang chủ. Xin cám ơn!!
                     </p>
                 </div>
             </div>

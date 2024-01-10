@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/default", ["title" => "Orders"]) ?>
+<?php $this->layout("layouts/default", ["title" => $this->e($product->name)]) ?>
 
 <?php $this->start("page") ?>
 <div class="mx-auto p-5 mb-5">
@@ -45,8 +45,8 @@
                     <i class="fa-solid fa-caret-down rotate-180 ease-out duration-500 dropdown_2"></i>
                 </div>
                 <div class="bg-[#ededed] p-2 rounded-[10px] hidden list_2">
-                    <option class="transition-all duration-300 hover:text-[#4169E1] cursor-pointer py-1" value="direct payment">Thanh toán trực tiếp</option>
-                    <option class="transition-all duration-300 hover:text-[#4169E1] cursor-pointer py-1" value="payment via card">Thanh toán qua thẻ</option>
+                    <option class="transition-all duration-300 hover:text-[#4169E1] cursor-pointer py-1" value="Thanh toán trực tiếp">Thanh toán trực tiếp</option>
+                    <option class="transition-all duration-300 hover:text-[#4169E1] cursor-pointer py-1" value="Thanh toán qua thẻ">Thanh toán qua thẻ</option>
                 </div>
             </select>
             <div class="flex flex-col bg-[#333f48] p-2">

@@ -18,23 +18,23 @@
                 <h1 class="text-xl font-bold"><?php echo $this->e($order->name); ?></h1>
                 <p class="text-[18px] font-bold">Price : <span class="text-[#DC143C]">$<?php echo $this->e($order->price); ?></span></p>
                 <div class="flex justify-start items-center gap-x-2 font-bold">
-                    <p>Quantiy: </p>
+                    <p>Số lượng : </p>
                     <p class="text-[#DC143C]"><?php echo $this->e($order->amount) ?></p>
                 </div>
                 <div class="flex justify-start items-center gap-x-1">
-                    <p>Delivery method: </p>
+                    <p>Phương thức thanh toán : </p>
                     <b>
                         <?php echo $this->e($order->payment) ?>
                     </b>
                 </div>
                 <div class="flex justify-start items-center gap-x-1">
-                    <p>Address:</p>
+                    <p>Địa chỉ :</p>
                     <b>
                         <?php echo $this->e($order->address) ?>
                     </b>
                 </div>
                 <div class="flex justify-start items-center gap-x-1">
-                    <p>Phone:</p>
+                    <p>Số điện thoại :</p>
                     <b>
                         <?php echo $this->e($order->phone) ?>
                     </b>

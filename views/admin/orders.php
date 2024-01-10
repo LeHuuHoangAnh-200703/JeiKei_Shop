@@ -13,14 +13,14 @@
                     <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
                     <p class="font-semibold"><?= $this->e($order->username) ?></p>
                     <div class="flex justify-between items-center">
-                        <span class="font-normal text-[#4169E1]"><small class="font-semibold text-black">Date:</small> <?= $this->e($order->order_date) ?></span>
-                        <span class="text-[#DC143C]"><small class="font-semibold text-black">Price: </small>$<?= $this->e($order->price) ?></span>
+                        <span class="font-normal text-[#4169E1]"><small class="font-semibold text-black">Ngày :</small> <?= $this->e($order->order_date) ?></span>
+                        <span class="text-[#DC143C]"><small class="font-semibold text-black">Giá: </small>$<?= $this->e($order->price) ?></span>
                     </div>
                     <div>
-                        <p class="text-[#DC143C]"><small class="font-semibold text-black">Total: </small>$<?= $this->e($order->total_amount) ?></p>
+                        <p class="text-[#DC143C]"><small class="font-semibold text-black">Tổng tiền : </small>$<?= $this->e($order->total_amount) ?></p>
                     </div>
                     <div class="mb-3">
-                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Method: </small>payment via card
+                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Phương thức : </small>payment via card
                         </p>
                     </div>
                     <div class="flex justify-between items-center">

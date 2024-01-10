@@ -49,7 +49,7 @@
                 ?>
                                 <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
                                     <div class="p-4 overflow-hidden">
-                                        <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                                        <div class="relative transition-all duration-300 hover:scale-105">
                                             <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
                                             <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                         </div>

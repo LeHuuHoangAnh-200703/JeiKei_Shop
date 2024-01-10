@@ -31,7 +31,7 @@ class Order extends Model
 
         $errors = [];
 
-        if (!$data["address"] && $data["address"] < 20) {
+        if (empty($data["address"])) {
             $errors["address"] = "Invalid address";
         }
 

@@ -11,7 +11,6 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo?>" />
-
     <title><?= $this->e($title) ?></title>
     <!-- <link rel="stylesheet" href="./css/output.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -40,7 +39,7 @@
     }
 </style>
 
-<body>
+<body style="font-family: 'Poppins',sans-serif;">
     <div class="relative w-full max-w-[1200px] overflow-x-hidden mx-auto">
         <div id="dashboard" class="w-full sm:flex">
             <!-- Dashboard controller -->
