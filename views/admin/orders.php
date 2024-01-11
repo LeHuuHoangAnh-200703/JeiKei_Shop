@@ -20,7 +20,7 @@
                         <p class="text-[#DC143C]"><small class="font-semibold text-black">Tổng tiền : </small>$<?= $this->e($order->total_amount) ?></p>
                     </div>
                     <div class="mb-3">
-                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Phương thức : </small>payment via card
+                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Phương thức : </small><?= $this->e($order->payment) ?>
                         </p>
                     </div>
                     <div class="flex justify-between items-center">
