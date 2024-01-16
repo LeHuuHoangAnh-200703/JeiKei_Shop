@@ -104,6 +104,12 @@ class HomeController extends Controller
             $this->sendPage('home/order', ["success" => "Đặt hàng thành công!!", "product" => $product]);
         }
 
+        if (!empty($model_errors)) {
+            // Hiển thị thông báo lỗi chi tiết
+            $this->sendPage('home/order', ['errors' => $model_errors, "product" => $product]);
+            return;
+        }
+
         // Save the values that the user has entered and selected in the order form.
         $this->saveFormValues($_POST);
 

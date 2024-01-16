@@ -44,8 +44,8 @@ class Order extends Model
         }
 
         //If the number of products the customer chooses is greater than the number of products in stock, the user is asked to re-select the appropriate quantity.
-        if ($data["total_amount"] > $product->quantity) {
-            $errors["total_amount"] = "Currently there are only" . $product->quantity . "products left in stock. Please choose the appropriate quantity.";
+        if (!isset($data["total_amount"]) || !is_numeric($data["total_amount"]) || $data["total_amount"] <= 0) {
+            $errors["total_amount"] = "Currently there are only " . $product->quantity . "products left in stock. Please choose the appropriate quantity.";
         }
         return $errors;
     }

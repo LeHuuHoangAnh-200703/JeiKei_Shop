@@ -7,7 +7,7 @@
     </div>
     <div id="all_products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
-            <div class="relative w-[250px] h-[413px] bg-white text-black border border-1">
+            <div class="relative w-[250px] bg-white text-black border border-1 m-3">
                 <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('data:image/jpg;charset=utf8;base64,<?php echo base64_encode($order['image']); ?>')"></div>
                 <div class="p-4">
                     <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>

@@ -5,7 +5,9 @@
     <?php if (isset($errors)) {
     ?> <div id="success-notification" class="bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
             <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
-            <p class="font-bold"><?php echo $errors; ?></p>
+            <p class="font-bold"><?php foreach ($errors as $error) {
+                                        echo $error;
+                                    } ?></p>
         </div> <?php } ?>
 
     <?php if (isset($success)) {
@@ -15,7 +17,7 @@
         </div> <?php } ?>
     <div class="relative w-full flex justify-center mb-3">
         <h1 class="text-[30px] font-semibold">Đặt hàng</h1>
-        <div class="absolute bottom-0 w-24 h-1 bg-[#DC143C]"></div>
+        <div class="absolute bottom-0 w-36 h-1 bg-[#DC143C]"></div>
     </div>
     <div class="w-full h-full grid grid-cols-1 md:grid-cols-3 gap-7 border rounded-xl p-5 shadow-md justify-center items-start">
         <div class="w-full flex items-center justify-center">

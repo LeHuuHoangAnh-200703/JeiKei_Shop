@@ -1,7 +1,7 @@
 <?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
-<div class="w-[90%] mb-5 mx-auto">
+<div class="w-[90%] my-5 mx-auto">
     <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 xl:grid-cols-4 gap-3 gap-y-5 px-5">
         <?php
         foreach ($resultArray as $result) {
@@ -23,8 +23,7 @@
                 <div type="hidden" class="productID hidden"><?php echo $this->e($result->id) ?></div>
                 <div class="w-full">
                     <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
-                        <button class="add_to_cart w-100 text-[#333] border border-1 px-4 py-2 bg-transparent font-semibold transition-all duration-300 hover:bg-[#DC143C] hover:text-[#fff] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
-                        <a href="/orders/<?php echo $this->e($result->id) ?>" class="bg-[#333] text-center px-4 py-2 text-white font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90">Buy Now</a>
+                        <button class="add_to_cart w-100 text-[#fff] border border-1 px-4 py-2 bg-[#333] font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
                     </div>
                 </div>
             </div>
