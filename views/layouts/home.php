@@ -1,7 +1,11 @@
 <?php
-$userImage = \App\SessionGuard::user()->image;
 $baseURL = "http://ecommercewebsite.localhost/";
-$imageURL = ($userImage != "") ? $baseURL . $userImage : $baseURL . "assets/user_avatar.jpg";
+if (\App\SessionGuard::user() !== null) {
+    $userImage = \App\SessionGuard::user()->image;
+    $imageURL = $baseURL . $userImage;
+} else {
+    $imageURL = $baseURL . "assets/user_avatar.jpg";
+}
 $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
 ?>
 
@@ -138,8 +142,12 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                         <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
                     <div class="text-xs">
-                        <div class="font-medium text-gray-700"><?= $this->e(\App\SessionGuard::user()->name) ?></div>
-                        <div class="text-gray-400"><?= $this->e(\App\SessionGuard::user()->email) ?></div>
+                        <div class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
+                            $this->e(\App\SessionGuard::user()->name);
+                        }  echo "Tên của bạn" ?></div>
+                        <div class="text-gray-400"><?php if (\App\SessionGuard::user()) {
+                            $this->e(\App\SessionGuard::user()->email);
+                        }  echo "Email" ?></div>
                     </div>
                 </div>
             </div>

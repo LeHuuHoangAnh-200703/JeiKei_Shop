@@ -13,9 +13,9 @@ class HomeController extends Controller
 {
     public function __construct()
     {
-        if (!Guard::isUserLoggedIn()) {
-            redirect('/login');
-        }
+        // if (!Guard::isUserLoggedIn()) {
+        //     redirect('/login');
+        // }
 
         parent::__construct();
     }
@@ -31,6 +31,10 @@ class HomeController extends Controller
     public function order($productId)
     {
         $product = Products::find($productId);
+        
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
         if (!$product) {
             $this->sendNotFound();
         }
@@ -134,6 +138,9 @@ class HomeController extends Controller
 
     public function orderhistory()
     {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
         $customer = User::find(Guard::user()->id);
         $orders = $customer->orders;
         $this->sendPage("home/orderhistory", ["orders" => $orders]);
@@ -163,6 +170,9 @@ class HomeController extends Controller
 
     public function showprofile()
     {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
         $user = Guard::user();
         $customer = User::find(Guard::user()->id);
         $orders = $customer->orders;
