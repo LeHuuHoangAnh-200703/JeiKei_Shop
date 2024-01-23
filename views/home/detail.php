@@ -2,9 +2,17 @@
 
 
 <?php $this->start("page") ?>
-<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[95%] min-h-screen mx-auto mt-3 mb-5 p-5">
-    <div class="w-full flex justify-center lg:block">
-        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] min-h-screen mx-auto mt-3 mb-5 p-5">
+    <div class="w-full flex justify-center gap-2">
+        <div class="w-[20%] flex flex-col gap-3">
+            <img src="../assets/nintendo-switch-oled-red-blue-joy-con-41-160x160.jpg" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
+            <img src="../assets/nintendo-switch-oled-red-blue-joy-con-42-160x160.jpg" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
+            <img src="../assets/nintendo-switch-oled-red-blue-joy-con-43-160x160.jpg" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
+            <img src="../assets/nintendo-switch-oled-red-blue-joy-con-44-160x160.jpg" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
+        </div>
+        <div class="w-[80%] flex items-start">
+            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+        </div>
     </div>
     <div>
         <h1 class="text-[18px] text-[#333] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
@@ -19,16 +27,16 @@
                         $<?php echo $this->e($product->price); ?></span></p>
             </div>
             <div>
-                <p class="text-[#333] text-[14px] font-medium">Tình trạng : 
+                <p class="text-[#333] text-[14px] font-medium">Tình trạng :
                     <span class="text-[#DC143C]">Còn hàng</span>
                 </p>
-                <p class="text-[#333] text-[14px] font-medium my-1">Nhà sản xuất : 
+                <p class="text-[#333] text-[14px] font-medium my-1">Nhà sản xuất :
                     <span class="text-[#DC143C]">Nintendo</span>
                 </p>
-                <p class="text-[#333] text-[14px] font-medium mb-1">Bảo hành : 
+                <p class="text-[#333] text-[14px] font-medium mb-1">Bảo hành :
                     <span class="text-[#DC143C]">12 tháng</span>
                 </p>
-                <p class="text-[#333] text-[14px] font-medium">Khuyến mãi : 
+                <p class="text-[#333] text-[14px] font-medium">Khuyến mãi :
                     <span class="text-[#DC143C]">Hiện tại shop không còn chương trình khuyến mãi nữa.</span>
                 </p>
             </div>
