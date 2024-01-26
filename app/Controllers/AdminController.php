@@ -39,14 +39,25 @@ class AdminController extends Controller
     }
     public function store()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-            $file = $_FILES['image'];
-            if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                $_POST["image"] = file_get_contents($file['tmp_name']);
-                $data = $this->filterProductData($_POST);
-            } else {
-                $_POST['image'] = '';
-                $data = $this->filterProductData($_POST);
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image']) && isset($_FILES['image_1']) && isset($_FILES['image_2']) && isset($_FILES['image_3']) && isset($_FILES['image_4'])) {
+            $imageFiles = [
+                "image",
+                "image_1",
+                "image_2",
+                "image_3",
+                "image_4"
+            ];
+            foreach ($imageFiles as $image) {
+                if (isset($_FILES[$image])) {
+                    $file = $_FILES[$image];
+                    if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
+                        $_POST[$image] = file_get_contents($file['tmp_name']);
+                        //$data = $this->filterProductData($_POST);
+                    } else {
+                        $_POST[$image] = '';
+                        //$data = $this->filterProductData($_POST);
+                    }
+                }
             }
         }
 
@@ -100,20 +111,30 @@ class AdminController extends Controller
             $this->sendNotFound();
         }
 
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image'])) {
-            $file = $_FILES['image'];
-            if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                $_POST['image'] = file_get_contents($file['tmp_name']);
-                $data = $this->filterProductData($_POST);
-            } else {
-                $_POST['image'] = $product['image'];
-                $data = $this->filterProductData($_POST);
+        $imageFiles = [
+            "image",
+            "image_1",
+            "image_2",
+            "image_3",
+            "image_4"
+        ];
+        foreach ($imageFiles as $image) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
+                if (isset($_FILES[$image])) {
+                    $file = $_FILES[$image];
+                    if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
+                        $_POST[$image] = file_get_contents($file['tmp_name']);
+                        $data = $this->filterProductData($_POST);
+                    } else {
+                        $_POST[$image] = $product[$image];
+                        $data = $this->filterProductData($_POST);
+                    }
+                }
             }
         }
         $model_errors = Products::validate($data);
         $data["type"] = $_POST["type"];
         if (empty($model_errors)) {
-
             $product->fill($data);
             $product->save();
             redirect('/admin');
@@ -128,7 +149,7 @@ class AdminController extends Controller
     {
         $product = Products::find($productId);
 
-        if($product->orders->isNotEmpty()){
+        if ($product->orders->isNotEmpty()) {
             $product->orders()->delete();
         }
         if (!$product) {

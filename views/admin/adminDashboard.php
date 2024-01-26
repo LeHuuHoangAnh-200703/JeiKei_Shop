@@ -11,20 +11,24 @@
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">ID</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Price</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Category</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Quantity</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">State</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Action</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Image</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Tên sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Giá</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Loại sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Số lượng</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Tình trạng</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Hoạt động</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_1</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_2</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_3</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_4</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
                 <?php foreach ($productinfo as $product) : ?>
                     <tr>
                         <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($product->id) ?></th>
-                        <td class="px-6 py-4"><?= $this->e($product->name) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->name) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->price) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->type)  ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->quantity) ?></td>
@@ -45,6 +49,10 @@
                             </form>
                         </td>
                         <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" class="w-[300px]" /> </td>
+                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_1']); ?>" class="w-[300px]" /> </td>
+                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_2']); ?>" class="w-[300px]" /> </td>
+                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_3']); ?>" class="w-[300px]" /> </td>
+                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_4']); ?>" class="w-[300px]" /> </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
