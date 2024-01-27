@@ -39,29 +39,28 @@ class AdminController extends Controller
     }
     public function store()
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES['image']) && isset($_FILES['image_1']) && isset($_FILES['image_2']) && isset($_FILES['image_3']) && isset($_FILES['image_4'])) {
-            $imageFiles = [
-                "image",
-                "image_1",
-                "image_2",
-                "image_3",
-                "image_4"
-            ];
-            foreach ($imageFiles as $image) {
-                if (isset($_FILES[$image])) {
-                    $file = $_FILES[$image];
-                    if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                        $_POST[$image] = file_get_contents($file['tmp_name']);
-                        //$data = $this->filterProductData($_POST);
-                    } else {
-                        $_POST[$image] = '';
-                        //$data = $this->filterProductData($_POST);
-                    }
+        $imageFiles = [
+            "image",
+            "image_1",
+            "image_2",
+            "image_3",
+            "image_4"
+        ];
+        $data = $this->filterProductData($_POST);
+        foreach ($imageFiles as $image) {
+            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
+                $file = $_FILES[$image];
+                if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
+                    $data[$image] = file_get_contents($file['tmp_name']);
+                    //$data = $this->filterProductData($_POST);
+                } else {
+                    $data[$image] = '';
+                    //$data = $this->filterProductData($_POST);
                 }
             }
         }
 
-        $data = $this->filterProductData($_POST);
+        //$data = $this->filterProductData($_POST);
         $model_errors = Products::validate($data);
         $data['created_at'] = date('Y-m-d H:i:s');
         $data["type"] = $_POST["type"];
@@ -118,17 +117,16 @@ class AdminController extends Controller
             "image_3",
             "image_4"
         ];
+        $data = $this->filterProductData($_POST);
         foreach ($imageFiles as $image) {
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
-                if (isset($_FILES[$image])) {
-                    $file = $_FILES[$image];
-                    if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                        $_POST[$image] = file_get_contents($file['tmp_name']);
-                        $data = $this->filterProductData($_POST);
-                    } else {
-                        $_POST[$image] = $product[$image];
-                        $data = $this->filterProductData($_POST);
-                    }
+                $file = $_FILES[$image];
+                if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
+                    $data[$image] = file_get_contents($file['tmp_name']);
+                    //$data[$image] = $this->filterProductData($_POST);
+                } else {
+                    $data[$image] = $product->$image;
+                    //$data = $this->filterProductData($_POST);
                 }
             }
         }
