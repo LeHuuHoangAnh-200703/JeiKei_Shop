@@ -3,15 +3,15 @@
 
 <?php $this->start("page") ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] min-h-screen mx-auto mt-3 mb-5 p-5">
-    <div class="w-full flex justify-center gap-2">
-        <div class="w-[20%] flex flex-col gap-3">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_1']); ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_2']); ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_3']); ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_4']); ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer">
+    <div class="w-full flex justify-center">
+        <div class="w-[20%] flex flex-col gap-3 list_img">
+            <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
         </div>
         <div class="w-[80%] flex items-start">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+            <img src="../assets/<?php echo $product['image']; ?>" alt="" class="img_main">
         </div>
     </div>
     <div>

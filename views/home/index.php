@@ -25,7 +25,7 @@
                 <hr>
                 <li class="mt-1 text-white py-2 px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_OLED_1">Nintendo OLED</li>
                 <hr>
-                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_lite_1">Nintendo lite</li>
+                <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_Lite_1">Nintendo lite</li>
                 <hr>
                 <li class="py-2 text-white px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_Old_1">Nintendo Old</li>
             </ul>
@@ -50,7 +50,7 @@
                                 <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
                                     <div class="p-4 overflow-hidden">
                                         <div class="relative transition-all duration-300 hover:scale-105">
-                                            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+                                            <img src="../assets/<?php echo $product['image']; ?>" />
                                             <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                         </div>
                                         <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">

@@ -130,8 +130,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             </div>
         </div>
 
-
-
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">
@@ -336,8 +334,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 var totalPrice = 0;
                 if (productIndex !== -1) {
                     cart_items[productIndex].quantity++;
-                    cart_items[productIndex].price =
-                        price * cart_items[productIndex].quantity;
+                    cart_items[productIndex].price = price * cart_items[productIndex].quantity;
                 } else {
                     var products = {
                         name: name,

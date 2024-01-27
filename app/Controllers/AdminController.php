@@ -51,8 +51,9 @@ class AdminController extends Controller
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
                 $file = $_FILES[$image];
                 if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                    $data[$image] = file_get_contents($file['tmp_name']);
-                    //$data = $this->filterProductData($_POST);
+                    $imageName = $file['name'];
+                    move_uploaded_file($file['tmp_name'], 'assets/' . $imageName);
+                    $data[$image] = $imageName;
                 } else {
                     $data[$image] = '';
                     //$data = $this->filterProductData($_POST);
@@ -122,8 +123,9 @@ class AdminController extends Controller
             if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
                 $file = $_FILES[$image];
                 if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                    $data[$image] = file_get_contents($file['tmp_name']);
-                    //$data[$image] = $this->filterProductData($_POST);
+                    $imageName = $file['name'];
+                    move_uploaded_file($file['tmp_name'], 'assets/' . $imageName);
+                    $data[$image] = $imageName;
                 } else {
                     $data[$image] = $product->$image;
                     //$data = $this->filterProductData($_POST);

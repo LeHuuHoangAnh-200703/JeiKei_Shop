@@ -1,7 +1,11 @@
 <?php
-$userImage = \App\SessionGuard::user()->image;
 $baseURL = "http://ecommercewebsite.localhost/";
-$imageURL = ($userImage != "") ? $baseURL . $userImage : $baseURL . "assets/user_avatar.jpg";
+if (\App\SessionGuard::user() !== null) {
+    $userImage = \App\SessionGuard::user()->image;
+    $imageURL = $baseURL . $userImage;
+} else {
+    $imageURL = $baseURL . "assets/user_avatar.jpg";
+}
 $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
 ?>
 
@@ -204,19 +208,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 $(".sidebar").toggleClass("left-0");
             });
 
-            //ẩn hiện thanh ngang
-            $(".clickdown_2").click(function() {
-                $(".list_1").addClass("hidden");
-                $(".dropdown_1").addClass("rotate-180");
-                if (!$(".list_2").hasClass("hidden")) {
-                    $(".list_2").addClass("hidden");
-                } else {
-                    $(".list_2").removeClass("hidden");
-                }
-
-                $(".dropdown_2").toggleClass("rotate-180");
-            });
-
             //cart
             $(".close-cart").click(function() {
                 $(".cart-shop").addClass("translate-x-[100%]");
@@ -232,87 +223,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 $("#user_info_panel").toggleClass("right-4");
             });
 
-            //filter products
-            $("#BANDAI").click(function() {
-                $(".BANDAI").show();
-                $(".SDCS").hide();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-            });
-            $("#SDCS").click(function() {
-                $(".SDCS").show();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#RG").click(function() {
-                $(".RG").show();
-                $(".SDCS").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#SD-BBLEGEND").click(function() {
-                $(".SD-BBLEGEND").show();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#MGSD").click(function() {
-                $(".MGSD").show();
-                $(".SD-BBLEGEND").hide();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".BANDAI").hide();
-            });
-            $("#all").click(function() {
-                $(".style").show();
-            });
-
-            //filter mobile
-            $("#BANDAI_1").click(function() {
-                $(".BANDAI").show();
-                $(".SDCS").hide();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-            });
-            $("#SDCS_1").click(function() {
-                $(".SDCS").show();
-                $(".RG").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#RG_1").click(function() {
-                $(".RG").show();
-                $(".SDCS").hide();
-                $(".SD-BBLEGEND").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#SD-BBLEGEND_1").click(function() {
-                $(".SD-BBLEGEND").show();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".MGSD").hide();
-                $(".BANDAI").hide();
-            });
-            $("#MGSD_1").click(function() {
-                $(".MGSD").show();
-                $(".SD-BBLEGEND").hide();
-                $(".RG").hide();
-                $(".SDCS").hide();
-                $(".BANDAI").hide();
-            });
-            $("#all_1").click(function() {
-                $(".style").show();
-            });
-
-            //add products
+            //Thêm giỏ hàng
             let cart_items = [];
             $(".add").click(function() {
                 var productElement = $(this).closest(".style");
@@ -331,7 +242,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 add_to_cart(productName, price, productWarehouse, productImage, productID);
             });
 
-            //Hàm này dùng để kiểm tra xem sản phẩm có không
+            //Hàm dùng để kiểm tra xem sản phẩm có không
             function find_CartItem(productName) {
                 for (var i = 0; i < cart_items.length; i++) {
                     if (cart_items[i].name === productName) {
@@ -341,14 +252,13 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 return -1;
             }
 
-            //Hàm này thêm giỏ hàng
+            //Hàm thêm giỏ hàng
             function add_to_cart(name, price, warehousem, image, productID) {
                 var productIndex = find_CartItem(name);
                 var totalPrice = 0;
                 if (productIndex !== -1) {
                     cart_items[productIndex].quantity++;
-                    cart_items[productIndex].price =
-                        price * cart_items[productIndex].quantity;
+                    cart_items[productIndex].price = price * cart_items[productIndex].quantity;
                 } else {
                     var products = {
                         name: name,
@@ -384,39 +294,9 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     </div>
                 </div>
             </div>
-        `;
+            `;
                     $(".cart_product").append(product);
                 }
-
-                // $(".plus").click(function() {
-                //     var productElement = $(this).closest(".cart");
-                //     var productNameCart = productElement.find("h1").text();
-                //     var productIndex = find_CartItem(productNameCart);
-                //     var initialPrice = cart_items[productIndex].price;
-                //     cart_items[productIndex].quantity++;
-                //     var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                //     productElement.find(".price").text(currentPrice + ".00$");
-                //     productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                //     updateTotalPrice();
-                // });
-
-                // $(".minus").click(function() {
-                //     var productElement = $(this).closest(".cart");
-                //     var productNameCart = productElement.find("h1").text();
-                //     var productIndex = find_CartItem(productNameCart);
-                //     var initialPrice = cart_items[productIndex].price;
-                //     if (cart_items[productIndex].quantity > 1) {
-                //         cart_items[productIndex].quantity--;
-                //         var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                //         productElement.find(".price").text(currentPrice + ".00$");
-                //         productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                //     } else {
-                //         productElement.remove();
-                //         cart_items.splice(productIndex, 1);
-                //         updateCount();
-                //     }
-                //     updateTotalPrice();
-                // });
 
                 $(".del").click(function() {
                     var productElement = $(this).closest(".cart");
@@ -444,7 +324,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 $(".count_products").text(count);
             }
 
-            // Decrease the quantity of product
+            // Giảm số lượng sản phẩm
             $("#decrease").click(function() {
                 if (parseInt($("#quantity").val()) === 1) {
                     $("#quantity").val(1);
@@ -459,7 +339,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 $("#quantity").val(quantity);
             });
 
-            //  Show image when uploading image
+            // Hiển thị hình ảnh khi tải hình ảnh lên
             $("#imageInput").change(function() {
                 var file = this.files[0];
                 var reader = new FileReader();
@@ -471,7 +351,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 reader.readAsDataURL(file);
             });
 
-            // Hide and show the back to top button
+            // ẩn hiện button to top
             $(window).scroll(function() {
                 if ($(this).scrollTop() > 500) {
                     $("#backtotop").addClass("flex");
@@ -480,6 +360,12 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     $("#backtotop").addClass("hidden");
                     $("#backtotop").removeClass("flex");
                 }
+            });
+
+            //Hiển thị ảnh chi tiết sản phẩm
+            $('.list_img img').click(function() {
+                var imgSrc = $(this).attr('src');
+                $('.img_main').attr('src', imgSrc);
             });
         });
     </script>

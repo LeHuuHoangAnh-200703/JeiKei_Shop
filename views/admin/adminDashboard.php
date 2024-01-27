@@ -48,11 +48,11 @@
                                 </button>
                             </form>
                         </td>
-                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" class="w-[300px]" /> </td>
-                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_1']); ?>" class="w-[80px]" /> </td>
-                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_2']); ?>" class="w-[80px]" /> </td>
-                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_3']); ?>" class="w-[80px]" /> </td>
-                        <td><img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image_4']); ?>" class="w-[80px]" /> </td>
+                        <td><img src="../assets/<?php echo $product['image']; ?>" /> </td>
+                        <td><img src="../assets/<?php echo $product['image_1']; ?>" /> </td>
+                        <td><img src="../assets/<?php echo $product['image_2']; ?>" /> </td>
+                        <td><img src="../assets/<?php echo$product['image_3']; ?>" /> </td>
+                        <td><img src="../assets/<?php echo $product['image_4']; ?>" /> </td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
