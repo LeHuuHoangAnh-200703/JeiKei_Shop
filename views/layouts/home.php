@@ -50,7 +50,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                             <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Home</a>
                         </li> -->
                         <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Order History</a>
+                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
@@ -88,7 +88,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                         </button>
                     </form>
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Orders History</a>
+                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Lịch sử đơn hàng</a>
                     </li>
                 </ul>
             </div>

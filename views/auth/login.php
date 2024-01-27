@@ -19,8 +19,8 @@
         <form action="/login" method="POST" class="lg:w-1/2 flex justify-center items-center w-full lg:p-3 gap-2">
             <div class="sm:w-[450px] w-[90%] bg-[#fff] flex flex-col justify-center rounded-md p-6 gap-2 shadow-xl">
                 <div class="mb-2">
-                    <h1 class="font-bold text-[27px]">JK Access</h1>
-                    <p class="text-[13px] text-[#333f48] font-semibold">Please fill your detail to access your account.</p>
+                    <h1 class="font-bold text-[27px]">JeiKei Access</h1>
+                    <p class="text-[13px] text-[#333f48] font-semibold">Vui lòng điền đầy đủ thông tin để đăng nhập.</p>
                 </div>
                 <label for="" class="font-semibold text-[16px]">Email</label>
                 <input name="email" id="email" type="text" required autofocus placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?>  block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md" name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>">
@@ -30,7 +30,7 @@
                     </span>
                 <?php endif ?>
 
-                <label for="password" class="font-semibold text-[16px]">Password</label>
+                <label for="password" class="font-semibold text-[16px]">Mật khẩu</label>
                 <input name="password" id="password" type="password" placeholder="••••••••" class=" <?= isset($errors['password']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['password'])) : ?>
                     <span class="text-red-500">
@@ -38,10 +38,10 @@
                     </span>
                 <?php endif ?>
 
-                <button class="block bg-[#5429FF] text-[#fff] mt-4 p-2 font-bold rounded-sm transition-all duration-300 hover:bg-[#2ea9d2] focus:ring focus:bg-[#4169E1] active:bg-[#4169E1]">Sign in</button>
+                <button class="block bg-[#5429FF] text-[#fff] mt-4 p-2 font-bold rounded-sm transition-all duration-300 hover:bg-[#2ea9d2] focus:ring focus:bg-[#4169E1] active:bg-[#4169E1]">Đăng nhập</button>
                 <div class="flex items-center gap-1 justify-center">
-                    <p class="text-[14px] text-[#333] font-semibold">Don’t have an account yet?</p>
-                    <a href="/register" class="text-[15px] text-[#5429FF] font-semibold cursor-pointer hover:underline">Register</a>
+                    <p class="text-[14px] text-[#333] font-semibold">Nếu chưa có tài khoản?</p>
+                    <a href="/register" class="text-[15px] text-[#5429FF] font-semibold cursor-pointer hover:underline">Đăng ký</a>
                 </div>
             </div>
         </form>

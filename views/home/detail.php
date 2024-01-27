@@ -15,29 +15,26 @@
         </div>
     </div>
     <div>
-        <h1 class="text-[18px] text-[#333] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
+        <h1 class="text-[18px] text-[#333f48] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
         <div class="mb-2 flex items-center gap-3">
-            <p class="text-[13px] font-medium border-r-2 border-[#333f48] pr-3">Model : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
-            <p class="text-[13px] font-medium">Machine type : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
+            <p class="text-[13px] font-medium border-r-2 border-[#333f48] pr-3">Mã máy : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
+            <p class="text-[13px] font-medium">Loại máy : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
         </div>
         <hr>
         <div class="flex flex-col gap-1">
             <div class="mt-1">
-                <p class="text-[#333] text-[24px] font-bold"><span class="text-[#DC143C]">
+                <p class="text-[#333f48] text-[24px] font-bold"><span class="text-[#DC143C]">
                         $<?php echo $this->e($product->price); ?></span></p>
             </div>
             <div>
-                <p class="text-[#333] text-[14px] font-medium">Tình trạng :
+                <p class="text-[#333f48] text-[14px] font-medium">Tình trạng :
                     <span class="text-[#DC143C]">Còn hàng</span>
                 </p>
-                <p class="text-[#333] text-[14px] font-medium my-1">Nhà sản xuất :
+                <p class="text-[#333f48] text-[14px] font-medium my-1">Nhà sản xuất :
                     <span class="text-[#DC143C]">Nintendo</span>
                 </p>
                 <p class="text-[#333] text-[14px] font-medium mb-1">Bảo hành :
                     <span class="text-[#DC143C]">12 tháng</span>
-                </p>
-                <p class="text-[#333] text-[14px] font-medium">Khuyến mãi :
-                    <span class="text-[#DC143C]">Hiện tại shop không còn chương trình khuyến mãi nữa.</span>
                 </p>
             </div>
             <ul class="ml-4 my-3 flex flex-col gap-[6px]">

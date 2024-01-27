@@ -21,7 +21,7 @@
     </div>
     <div class="w-full h-full grid grid-cols-1 md:grid-cols-3 gap-7 border rounded-xl p-5 shadow-md justify-center items-start">
         <div class="w-full flex items-center justify-center">
-            <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($product['image']); ?>" />
+            <img src="../assets/<?php echo $product['image']; ?>" />
         </div>
         <form action="/orders/<?= $this->e($product->id) ?>" method="POST" class="col-span-2">
             <h1 class="text-[25px] font-semibold py-2"><?php echo $this->e($product->name); ?></h1>
