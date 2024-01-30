@@ -9,7 +9,7 @@
             <div class="group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-lg style">
                 <div class="p-4">
                     <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
-                        <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($result['image']); ?>" />
+                        <img src="../assets/<?php echo $result['image']; ?>" />
                         <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($result->id) ?>"></a>
                     </div>
                     <div class="text-ellipsis whitespace-nowrap overflow-hidden w-52">
@@ -17,13 +17,13 @@
                     </div>
                     <div class="flex justify-center items-center p-1">
                         <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($result->price) ?>$</p>
-                        <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Warehouse: <?php echo $this->e($result->quantity) ?></small>
+                        <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Đã bán : <?php echo $this->e($result->sold_count) ?></small>
                     </div>
                 </div>
                 <div type="hidden" class="productID hidden"><?php echo $this->e($result->id) ?></div>
                 <div class="w-full">
-                    <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
-                        <button class="add_to_cart w-100 text-[#fff] border border-1 px-4 py-2 bg-[#333] font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Add to cart</button>
+                    <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
+                        <button class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                     </div>
                 </div>
             </div>
@@ -31,7 +31,9 @@
         }
         ?>
     </div>
-
+    <div id="added_to_cart_successfully" class="hidden bg-green-500 text-white px-4 py-2 fixed top-0 right-2 mt-2 rounded-md shadow-lg animate__animated animate__backInRight">
+        <p class="font-bold"><i class="fa-solid fa-check"></i> Sản phẩm đã được thêm vào giỏ hàng!</p>
+    </div>
 </div>
 <!-- ALERT BOX -->
 <?php $this->stop() ?>

@@ -8,7 +8,7 @@
     <div id="all_products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
             <div class="relative w-[250px] bg-white text-black border border-1 m-3">
-                <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('data:image/jpg;charset=utf8;base64,<?php echo base64_encode($order['image']); ?>')"></div>
+                <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('../assets/<?php echo $order['image']; ?>')"></div>
                 <div class="p-4">
                     <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
                     <p class="font-semibold"><?= $this->e($order->username) ?></p>
@@ -17,10 +17,13 @@
                         <span class="text-[#DC143C]"><small class="font-semibold text-black">Giá: </small>$<?= $this->e($order->price) ?></span>
                     </div>
                     <div>
-                        <p class="text-[#DC143C]"><small class="font-semibold text-black">Tổng tiền : </small>$<?= $this->e($order->total_amount) ?></p>
+                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> </span>$<?= $this->e($order->total_amount) ?></p>
+                    </div>
+                    <div>
+                        <p class="text-[#333] text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>
                     </div>
                     <div class="mb-3">
-                        <p class="text-[#4169E1]"> <small class="font-semibold text-black">Phương thức : </small><?= $this->e($order->payment) ?>
+                        <p class="text-[#333] text-[15px] font-semibold">Phương thức : <span class="font-normal text-[#4169E1]"> <?= $this->e($order->payment) ?></span>
                         </p>
                     </div>
                     <div class="flex justify-between items-center">

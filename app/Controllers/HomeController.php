@@ -161,7 +161,7 @@ class HomeController extends Controller
             // }
         }
         if (empty($resultArray)) {
-            $errorMessage = "Product '" . $_POST["search"] . "' is currently not found, please find another product!";
+            $errorMessage = "Không tìm thấy sản phẩm '" . $_POST["search"] . "' vui lòng nhập lại!";
             $this->sendPage("home/index", ["errors" => $errorMessage]);
         } else {
             $this->sendPage("home/searchresult", ["resultArray" => $resultArray]);
@@ -208,7 +208,7 @@ class HomeController extends Controller
         $user->save();
 
         $user_data = Guard::user();
-        redirect("/profile", ["success" => "Your information has been updated", "user_data" => $user_data]);
+        redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
     }
 
 }

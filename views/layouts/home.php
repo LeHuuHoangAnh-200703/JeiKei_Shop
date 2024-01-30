@@ -40,8 +40,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <header name="top" class="overflow-hidden">
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
-                    <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
-                    </div>
+                    <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
                     <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <div class="relative flex items-center justify-center">
@@ -356,7 +355,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 var totalPrice = 0;
                 for (var i = 0; i < cart_items.length; i++) {
                     var product = `
-            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[20px] cart">
+            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
                 <div class="w-1/3">
                     <img src="${cart_items[i].image}">
                 </div>

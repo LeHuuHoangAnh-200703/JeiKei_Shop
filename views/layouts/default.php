@@ -280,14 +280,13 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 var totalPrice = 0;
                 for (var i = 0; i < cart_items.length; i++) {
                     var product = `
-            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[20px] cart">
+            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
                 <div class="w-1/3">
                     <img src="${cart_items[i].image}">
                 </div>
                 <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
                     <h1>${cart_items[i].name}</h1>
                     <p>Price : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
-                    <p>Warehouse: <span class="text-[#DC143C] warehouse">${cart_items[i].warehousem}</span></p>
                     <div class="flex items-center gap-4">
                         <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
                         <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Delete</button>
