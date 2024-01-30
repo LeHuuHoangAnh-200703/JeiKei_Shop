@@ -54,7 +54,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                         </li>
                     </ul>
                     <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Search for products..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -82,7 +82,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
                 <ul class="flex flex-col">
                     <form action="/search" method="post" class="relative mb-4">
-                        <input type="text" name="search" placeholder="Search for products..." class="relative border-[1px] border-[#646464] bg-transparent w-full p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input type="text" name="search" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1px] border-[#646464] bg-transparent w-full p-[6px] rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md bg-[#DC143C] px-3 py-[6.8px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -98,7 +98,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
                     <p class="mt-2 text-[14px]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
                     <p class="text-[15px] font-semibold mb-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
-                    <button class="bg-[#DC143C] text-center px-3 py-2 w-[120px] text-[#fff] font-medium">Learn More</button>
+                    <button class="bg-[#DC143C] w-[150px] text-center px-3 py-2 text-[#fff] font-medium">Tìm hiểu thêm</button>
                     <ul class="lg:flex gap-[20px] mt-8 hidden">
                         <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-xbox"></i></li>
                         <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-playstation"></i></li>
@@ -108,7 +108,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
                 <div class="relative flex justify-center items-center w-full lg:w-[40%]">
                     <div class="before:absolute before:bg-[#DC143C] before:bottom-[-50%] before:left-[50%] before:translate-x-[-50%] lg:before:top-0 before:w-[450px] before:h-[450px] lg:before:w-[320px] lg:before:h-[320px] before:-z-10 before:rounded-full">
-                        <img src="./assets/./OIG-removebg-preview.png" alt="" class="z-10 w-[400px]">
+                        <img src="./assets/./Picture32-removebg-preview.png" alt="" class="z-10 w-[450px]">
                     </div>
                 </div>
             </div>
@@ -120,7 +120,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> CART</h1>
+                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> Giỏ Hàng</h1>
                 </div>
                 <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
             </div>
@@ -150,15 +150,15 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
             </div>
             <div class="p-1">
-                <a href="/profile" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"><i class="fa-regular fa-user"></i> Profile</a>
-                <a href="/editprofile" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-wrench"></i> Edit profile</a>
+                <a href="/profile" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"><i class="fa-regular fa-user"></i> Hồ sơ</a>
+                <a href="/editprofile" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100"><i class="fa-solid fa-wrench"></i> Chỉnh sửa hồ sơ</a>
             </div>
             <div class="p-1">
                 <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100">
                     <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
                         <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
                     </svg>
-                    Log out
+                    Đăng xuất
                     <span class="inline-flex flex-1 justify-end gap-1 text-xs capitalize text-gray-400">
                         <kbd class="min-w-[1em] font-sans">⌥</kbd>
                         <kbd class="min-w-[1em] font-sans">⇧</kbd>

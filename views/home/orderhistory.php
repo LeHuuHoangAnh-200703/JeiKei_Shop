@@ -12,7 +12,7 @@
     ?>
         <div class="max-w-full h-full grid grid-cols-1 md:grid-cols-3 gap-7 border rounded-sm p-5 shadow-lg mb-5">
             <div class="w-full flex items-center justify-center">
-                <img src="data:image/jpg;charset=utf8;base64,<?php echo base64_encode($order['image']); ?>" />
+                <img src="../assets/<?php echo ($order['image']); ?>" />
             </div>
             <div class="col-span-2 flex flex-col gap-2">
                 <h1 class="text-xl font-bold"><?php echo $this->e($order->name); ?></h1>

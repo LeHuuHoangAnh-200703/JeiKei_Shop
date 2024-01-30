@@ -26,7 +26,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                     <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Đã đặt hàng</span></li>
                     <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo  $hour ?></span><span class="text-slate-400">Giờ</span></li>
                 </ul>
-                <a href="/editprofile" class="px-2 py-1 sm:px-5 sm:py-2 bg-[#FFD700] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">EDIT PROFILE</a>
+                <a href="/editprofile" class="px-2 py-1 sm:px-5 sm:py-2 bg-[#FFD700] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">Chỉnh sửa hồ sơ</a>
             </div>
             <div class="text-center mt-12 pb-4">
                 <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
@@ -45,7 +45,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                 <hr />
                 <div class="mt-5">
                     <p>
-                        Xin chào bạn đã đến với JEIKEI SHOP, chúng tôi mong rằng tại đây sẽ thõa mãn được những nhu cầu của bạn. Chúng tôi luôn sẳn sàng hỗ trợ bạn , nếu cần thì mong bạn liên hệ đến Hotline ở trang chủ. Xin cám ơn!!
+                        Chào mừng <span class="uppercase"><?= htmlspecialchars($user_data["name"]) ?></span> đã đến với JEIKEI SHOP, chúng tôi mong rằng tại đây sẽ thõa mãn được những nhu cầu của bạn. Chúng tôi luôn sẳn sàng hỗ trợ bạn , nếu cần thì mong bạn liên hệ đến Hotline ở trang chủ. Xin cám ơn!!
                     </p>
                 </div>
             </div>
