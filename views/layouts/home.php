@@ -363,7 +363,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
                     <h1>${cart_items[i].name}</h1>
                     <p>Giá : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
-                    <p>Kho : <span class="text-[#DC143C] warehouse">${cart_items[i].warehousem}</span></p>
                     <div class="flex items-center gap-4">
                         <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
                         <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>

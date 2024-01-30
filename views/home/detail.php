@@ -28,7 +28,7 @@
             </div>
             <div>
                 <p class="text-[#333f48] text-[14px] font-medium">Tình trạng :
-                    <span class="text-[#DC143C]">Còn hàng</span>
+                    <span class="text-[#DC143C]">vẫn còn <?php echo $this->e($product->quantity); ?> sản phẩm.</span>
                 </p>
                 <p class="text-[#333f48] text-[14px] font-medium my-1">Nhà sản xuất :
                     <span class="text-[#DC143C]">Nintendo</span>
@@ -41,8 +41,7 @@
                 <li class="list-disc text-[15px] text-[#333f48]">Hỗ trợ thẻ nhớ có dung lượng tối đa 2TB.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 64GB.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Cảm biến : cảm biến gia tốc, con quay hồi chuyển.</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Dung lượng pin : 4310 mAh, thời lượng sử dụng từ 4.5 đến 9 tiếng (đối với máy nintendo OLED).</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Dung lượng pin : 3570mAh, thời lượng sử dụng từ 3 đến 7 tiếng (đối với máy nintendo Lite).</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Dung lượng pin : <?php echo $this->e($product->description); ?></li>
                 <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm <?php echo $this->e($product->name); ?> được sản xuất hoàn toàn bởi Nintendo.</li>
             </ul>
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ $<?php echo $this->e($product->price); ?><span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>

@@ -22,6 +22,7 @@
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_2</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_3</th>
                     <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_4</th>
+                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Mô tả</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
@@ -53,6 +54,7 @@
                         <td><img src="../assets/<?php echo $product['image_2']; ?>" /> </td>
                         <td><img src="../assets/<?php echo$product['image_3']; ?>" /> </td>
                         <td><img src="../assets/<?php echo $product['image_4']; ?>" /> </td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->description) ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

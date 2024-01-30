@@ -56,15 +56,15 @@
                                         <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
                                             <a href="/detail/<?php echo $this->e($product->id) ?>" class="inline text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
                                         </div>
-                                        <div class="flex justify-center items-center p-1">
-                                            <p class="w-1/2 flex-1 text-[15px] max-w-[45ch] text-sm text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
-                                            <small class="text-[#DC143C] text-[15px] lg:text-[13px] font-semibold warehouse">Kho : <?php echo $this->e($product->quantity) ?></small>
+                                        <div class="flex justify-between items-center py-1">
+                                            <p class="w-1/2 text-[14px] text-[#DC143C] font-semibold price"><?php echo $this->e($product->price) ?>$</p>
+                                            <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php echo $this->e($product->sold_count) ?></p>
                                         </div>
                                     </div>
                                     <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
                                     <div class="w-full">
-                                        <div class="px-3 pb-6 w-full flex justify-center flex-col gap-3">
-                                            <button class="add_to_cart w-100 text-[#fff] border border-1 px-4 py-2 bg-[#333] font-semibold transition-all duration-300 hover:bg-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add">Thêm giỏ hàng</button>
+                                        <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
+                                            <button class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                                         </div>
                                     </div>
                                 </div>
