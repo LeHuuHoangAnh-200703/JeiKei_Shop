@@ -212,6 +212,10 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 successNotification.css("display", "none");
             }, 5000);
 
+            $("#addCart").submit(function(e) {
+                e.preventDefault();
+            })
+
             // show notify when user hit ADD button in home page
             $(".add_to_cart").click(function() {
                 const notify = $("#added_to_cart_successfully");
