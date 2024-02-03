@@ -37,7 +37,7 @@
             </div> <?php } ?>
 
         <div class="flex flex-col justify-center items-center w-[100%]">
-            <form method="POST">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"  enctype="multipart/form-data">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                     <?php
                     $type = [
@@ -56,17 +56,20 @@
                                                 <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                             </div>
                                             <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                                                <input type="hidden" class="productID" name="productID" value="<?php echo $product->id ?>">
+                                                <input type="text" class="product_Name" name="product_Name" value="<?php echo $this->e($product->name) ?>" hidden>
                                                 <a href="/detail/<?php echo $this->e($product->id) ?>" name="product_Name" class="inline text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
                                             </div>
                                             <div class="flex justify-between items-center py-1">
                                                 <p class="w-1/2 text-[14px] text-[#DC143C] font-semibold price" name="price"><?php echo $this->e($product->price) ?>$</p>
+                                                <input type="text" class="price" name="price" value="<?php echo $this->e($product->price) ?>" hidden>
                                                 <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php echo $this->e($product->sold_count) ?></p>
                                             </div>
                                         </div>
                                         <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
                                         <div class="w-full">
                                             <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
-                                                <button class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add" type="submit" id="addCart"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
+                                                <button name="add_to_cart" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add" type="submit" id="addCart"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                                             </div>
                                         </div>
                                     </div>

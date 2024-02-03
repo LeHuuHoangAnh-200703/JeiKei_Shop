@@ -63,12 +63,12 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
                     </div>
-                    <button class="relative">
+                    <a href="/cart" class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                         </div>
                         <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products">0</div>
-                    </button>
+                    </a>
                 </div>
             </nav>
             <div class="sidebar fixed top-0 -left-[100%] bg-[#fff] p-4 w-full h-full z-40">
@@ -121,10 +121,36 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <div class="relative mt-[20px]">
                     <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> Giỏ Hàng</h1>
                 </div>
-                <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
+                <?php
+                if (!empty($cart)) {
+                    foreach ($cart as $cartItem) {
+                ?>
+                        <div class="flex justify-center items-center flex-col m-[30px] cart_product">
+                            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
+                                <div class="w-1/3">
+                                    <img src="<?php echo $cartItem['image'] ?>" alt="Product Image">
+                                </div>
+                                <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
+                                    <h1><?php echo $cartItem['name'] ?></h1>
+                                    <p>Giá : <span class="text-[#DC143C] price"><?php echo $cartItem['price'] ?> đ</span></p>
+                                    <div class="flex items-center gap-4">
+                                        <a href="/orders/<?php echo $cartItem['product_id'] ?>" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
+                                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                <?php
+                    }
+                } else {
+                    echo '<div class="flex justify-center items-center mt-10">
+                    <img src="../assets/Picture1.png" class="w-[400px]" alt="">
+                </div>';
+                }
+                ?>
             </div>
             <div class="absolute bottom-0 w-full grid grid-cols-2 font-semibold text-[#fff]">
-                <div class="bg-[#DC143C] w-full p-2 text-center total">0 đ</div>
+                <div class="bg-[#DC143C] w-full p-2 text-center total"> đ</div>
                 <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
             </div>
         </div>
@@ -140,11 +166,13 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     </div>
                     <div class="text-xs">
                         <div class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
-                            $this->e(\App\SessionGuard::user()->name);
-                        }  echo "Tên của bạn" ?></div>
+                                                                    $this->e(\App\SessionGuard::user()->name);
+                                                                }
+                                                                echo "Tên của bạn" ?></div>
                         <div class="text-gray-400"><?php if (\App\SessionGuard::user()) {
-                            $this->e(\App\SessionGuard::user()->email);
-                        }  echo "Email" ?></div>
+                                                        $this->e(\App\SessionGuard::user()->email);
+                                                    }
+                                                    echo "Email" ?></div>
                     </div>
                 </div>
             </div>
@@ -212,12 +240,9 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 successNotification.css("display", "none");
             }, 5000);
 
-            $("#addCart").submit(function(e) {
+            //show notify when user hit ADD button in home page
+            $(".add_to_cart").click(function(e) {
                 e.preventDefault();
-            })
-
-            // show notify when user hit ADD button in home page
-            $(".add_to_cart").click(function() {
                 const notify = $("#added_to_cart_successfully");
                 notify.css("display", "block");
                 setTimeout(() => {
@@ -303,134 +328,134 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             });
 
             //add products
-            let cart_items = [];
-            $(".add").click(function() {
-                var productElement = $(this).closest(".style");
-                var productName = productElement.find(".name").text().trim();
-                console.log(productName)
-                let price = parseFloat(
-                    productElement.find(".price").text().trim().split("$")[0].trim()
-                );
-                let productWarehouse = productElement
-                    .find(".warehouse")
-                    .text()
-                    .trim()
-                    .split(":")[1];
-                var productImage = productElement.find("img").attr("src");
-                var productID = productElement.find(".productID").text();
-                add_to_cart(productName, price, productWarehouse, productImage, productID);
-            });
+            //     let cart_items = [];
+            //     $(".add").click(function() {
+            //         var productElement = $(this).closest(".style");
+            //         var productName = productElement.find(".name").text().trim();
+            //         console.log(productName)
+            //         let price = parseFloat(
+            //             productElement.find(".price").text().trim().split("$")[0].trim()
+            //         );
+            //         let productWarehouse = productElement
+            //             .find(".warehouse")
+            //             .text()
+            //             .trim()
+            //             .split(":")[1];
+            //         var productImage = productElement.find("img").attr("src");
+            //         var productID = productElement.find(".productID").text();
+            //         add_to_cart(productName, price, productWarehouse, productImage, productID);
+            //     });
 
-            //Hàm này dùng để kiểm tra xem sản phẩm có không
-            function find_CartItem(productName) {
-                for (var i = 0; i < cart_items.length; i++) {
-                    if (cart_items[i].name === productName) {
-                        return i;
-                    }
-                }
-                return -1;
-            }
+            //     //Hàm này dùng để kiểm tra xem sản phẩm có không
+            //     function find_CartItem(productName) {
+            //         for (var i = 0; i < cart_items.length; i++) {
+            //             if (cart_items[i].name === productName) {
+            //                 return i;
+            //             }
+            //         }
+            //         return -1;
+            //     }
 
-            //Hàm này thêm giỏ hàng
-            function add_to_cart(name, price, warehousem, image, productID) {
-                var productIndex = find_CartItem(name);
-                var totalPrice = 0;
-                if (productIndex !== -1) {
-                    cart_items[productIndex].quantity++;
-                    cart_items[productIndex].price = price * cart_items[productIndex].quantity;
-                } else {
-                    var products = {
-                        name: name,
-                        price: price,
-                        warehousem: warehousem,
-                        image: image,
-                        quantity: 1,
-                        productID: productID,
-                    };
-                    cart_items.push(products);
-                }
-                updateCount();
-                updateTotalPrice();
-                render_CartItems();
-            }
+            //     //Hàm này thêm giỏ hàng
+            //     function add_to_cart(name, price, warehousem, image, productID) {
+            //         var productIndex = find_CartItem(name);
+            //         var totalPrice = 0;
+            //         if (productIndex !== -1) {
+            //             cart_items[productIndex].quantity++;
+            //             cart_items[productIndex].price = price * cart_items[productIndex].quantity;
+            //         } else {
+            //             var products = {
+            //                 name: name,
+            //                 price: price,
+            //                 warehousem: warehousem,
+            //                 image: image,
+            //                 quantity: 1,
+            //                 productID: productID,
+            //             };
+            //             cart_items.push(products);
+            //         }
+            //         updateCount();
+            //         updateTotalPrice();
+            //         render_CartItems();
+            //     }
 
-            function render_CartItems() {
-                $(".cart_product").empty();
-                var totalPrice = 0;
-                for (var i = 0; i < cart_items.length; i++) {
-                    var product = `
-            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
-                <div class="w-1/3">
-                    <img src="${cart_items[i].image}">
-                </div>
-                <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
-                    <h1>${cart_items[i].name}</h1>
-                    <p>Giá : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
-                    <div class="flex items-center gap-4">
-                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
-                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>
-                    </div>
-                </div>
-            </div>
-        `;
-                    $(".cart_product").append(product);
-                }
+            //     function render_CartItems() {
+            //         $(".cart_product").empty();
+            //         var totalPrice = 0;
+            //         for (var i = 0; i < cart_items.length; i++) {
+            //             var product = `
+            //     <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
+            //         <div class="w-1/3">
+            //             <img src="${cart_items[i].image}">
+            //         </div>
+            //         <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
+            //             <h1>${cart_items[i].name}</h1>
+            //             <p>Giá : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
+            //             <div class="flex items-center gap-4">
+            //                 <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
+            //                 <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>
+            //             </div>
+            //         </div>
+            //     </div>
+            // `;
+            //             $(".cart_product").append(product);
+            //         }
 
-                // $(".plus").click(function() {
-                //     var productElement = $(this).closest(".cart");
-                //     var productNameCart = productElement.find("h1").text();
-                //     var productIndex = find_CartItem(productNameCart);
-                //     var initialPrice = cart_items[productIndex].price;
-                //     cart_items[productIndex].quantity++;
-                //     var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                //     productElement.find(".price").text(currentPrice + ".00$");
-                //     productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                //     updateTotalPrice();
-                // });
+            //         // $(".plus").click(function() {
+            //         //     var productElement = $(this).closest(".cart");
+            //         //     var productNameCart = productElement.find("h1").text();
+            //         //     var productIndex = find_CartItem(productNameCart);
+            //         //     var initialPrice = cart_items[productIndex].price;
+            //         //     cart_items[productIndex].quantity++;
+            //         //     var currentPrice = cart_items[productIndex].quantity * initialPrice;
+            //         //     productElement.find(".price").text(currentPrice + ".00$");
+            //         //     productElement.find(".quantity").val(cart_items[productIndex].quantity);
+            //         //     updateTotalPrice();
+            //         // });
 
-                // $(".minus").click(function() {
-                //     var productElement = $(this).closest(".cart");
-                //     var productNameCart = productElement.find("h1").text();
-                //     var productIndex = find_CartItem(productNameCart);
-                //     var initialPrice = cart_items[productIndex].price;
-                //     if (cart_items[productIndex].quantity > 1) {
-                //         cart_items[productIndex].quantity--;
-                //         var currentPrice = cart_items[productIndex].quantity * initialPrice;
-                //         productElement.find(".price").text(currentPrice + ".00$");
-                //         productElement.find(".quantity").val(cart_items[productIndex].quantity);
-                //     } else {
-                //         productElement.remove();
-                //         cart_items.splice(productIndex, 1);
-                //         updateCount();
-                //     }
-                //     updateTotalPrice();
-                // });
+            //         // $(".minus").click(function() {
+            //         //     var productElement = $(this).closest(".cart");
+            //         //     var productNameCart = productElement.find("h1").text();
+            //         //     var productIndex = find_CartItem(productNameCart);
+            //         //     var initialPrice = cart_items[productIndex].price;
+            //         //     if (cart_items[productIndex].quantity > 1) {
+            //         //         cart_items[productIndex].quantity--;
+            //         //         var currentPrice = cart_items[productIndex].quantity * initialPrice;
+            //         //         productElement.find(".price").text(currentPrice + ".00$");
+            //         //         productElement.find(".quantity").val(cart_items[productIndex].quantity);
+            //         //     } else {
+            //         //         productElement.remove();
+            //         //         cart_items.splice(productIndex, 1);
+            //         //         updateCount();
+            //         //     }
+            //         //     updateTotalPrice();
+            //         // });
 
-                $(".del").click(function() {
-                    var productElement = $(this).closest(".cart");
-                    var productNameCart = productElement.find("h1").text();
-                    var productIndex = find_CartItem(productNameCart);
-                    cart_items.splice(productIndex, 1);
-                    productElement.remove();
-                    updateTotalPrice();
-                    updateCount();
-                });
-            }
+            //         $(".del").click(function() {
+            //             var productElement = $(this).closest(".cart");
+            //             var productNameCart = productElement.find("h1").text();
+            //             var productIndex = find_CartItem(productNameCart);
+            //             cart_items.splice(productIndex, 1);
+            //             productElement.remove();
+            //             updateTotalPrice();
+            //             updateCount();
+            //         });
+            //     }
 
-            function updateTotalPrice() {
-                var totalPrice = 0;
-                for (var i = 0; i < cart_items.length; i++) {
-                    var productTotalPrice = cart_items[i].price * cart_items[i].quantity;
-                    totalPrice += productTotalPrice;
-                }
-                $(".total").text(totalPrice.toFixed(2) + " " + "$");
-            }
+            //     function updateTotalPrice() {
+            //         var totalPrice = 0;
+            //         for (var i = 0; i < cart_items.length; i++) {
+            //             var productTotalPrice = cart_items[i].price * cart_items[i].quantity;
+            //             totalPrice += productTotalPrice;
+            //         }
+            //         $(".total").text(totalPrice.toFixed(2) + " " + "$");
+            //     }
 
-            function updateCount() {
-                var count = 0;
-                count += cart_items.length;
-                $(".count_products").text(count);
-            }
+            //     function updateCount() {
+            //         var count = 0;
+            //         count += cart_items.length;
+            //         $(".count_products").text(count);
+            //     }
 
             // Decrease the quantity of product
             $("#decrease").click(function() {

@@ -5,7 +5,7 @@ namespace App\Controllers;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
-use App\Models\Cart;
+use App\Models\Carts;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
 
@@ -31,7 +31,7 @@ class HomeController extends Controller
     public function order($productId)
     {
         $product = Products::find($productId);
-        
+
         if (!Guard::isUserLoggedIn()) {
             redirect('/login');
         }
@@ -211,4 +211,50 @@ class HomeController extends Controller
         redirect("/profile", ["success" => "Thông tin của bạn đã được cập nhật", "user_data" => $user_data]);
     }
 
+    public function addtocart($productId)
+    {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+
+        $product = Products::find($productId);
+
+        if (!$product) {
+            return ['error' => 'Sản phẩm không tồn tại'];
+        }
+
+        $userId = Guard::user()->id;
+
+        // Kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
+        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+        foreach ($cart as $cartItem) {
+            if ($cartItem['product_id'] == $productId) {
+                return ['error' => 'Sản phẩm đã có trong giỏ hàng của bạn'];
+            }
+        }
+
+        // Thêm sản phẩm vào giỏ hàng
+        $cartItem = [
+            'user_id' => $userId,
+            'product_id' => $productId,
+            'product_name' => $product->name,
+            'product_image' => $product->image,
+            'product_price' => $product->price,
+        ];
+
+        $cart[] = $cartItem;
+        $_SESSION['cart'] = $cart;
+
+        // Redirect hoặc trả về thông báo thành công
+        redirect('/home/index', ['success' => 'Sản phẩm đã được thêm vào giỏ hàng', 'cartItem' => $cartItem]);
+    }
+
+    function calculateTotal($cart)
+    {
+        $total = 0;
+        foreach ($cart as $cartItem) {
+            $total += $cartItem['price'];
+        }
+        return $total;
+    }
 }
