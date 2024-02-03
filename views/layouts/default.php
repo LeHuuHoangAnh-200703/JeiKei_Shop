@@ -58,14 +58,13 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
 
                 <div class="flex justify-center items-center gap-4">
-                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
-                    </div>
-                    <button class="relative">
+                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
+                    <a href="/cart" class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                         </div>
                         <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products">0</div>
-                    </button>
+                    </a>
                 </div>
             </nav>
             <div class="sidebar fixed top-0 -left-[100%] bg-[#fff] p-4 w-full h-full z-40">
@@ -96,7 +95,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->
-        <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
+        <!-- <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
                     <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> CART</h1>
@@ -107,7 +106,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <div class="bg-[#DC143C] w-full p-2 text-center total">0 đ</div>
                 <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
             </div>
-        </div>
+        </div> -->
 
 
 
@@ -165,7 +164,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             </div>
         </div>
     </footer>
-    <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div>
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">
         <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-[#DC143C]"></div>
@@ -222,106 +220,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             $("#user_info").click(function() {
                 $("#user_info_panel").toggleClass("right-4");
             });
-
-            //Thêm giỏ hàng
-            let cart_items = [];
-            $(".add").click(function() {
-                var productElement = $(this).closest(".style");
-                var productName = productElement.find(".name").text().trim();
-                console.log(productName)
-                let price = parseFloat(
-                    productElement.find(".price").text().trim().split("$")[0].trim()
-                );
-                let productWarehouse = productElement
-                    .find(".warehouse")
-                    .text()
-                    .trim()
-                    .split(":")[1];
-                var productImage = productElement.find("img").attr("src");
-                var productID = productElement.find(".productID").text();
-                add_to_cart(productName, price, productWarehouse, productImage, productID);
-            });
-
-            //Hàm dùng để kiểm tra xem sản phẩm có không
-            function find_CartItem(productName) {
-                for (var i = 0; i < cart_items.length; i++) {
-                    if (cart_items[i].name === productName) {
-                        return i;
-                    }
-                }
-                return -1;
-            }
-
-            //Hàm thêm giỏ hàng
-            function add_to_cart(name, price, warehousem, image, productID) {
-                var productIndex = find_CartItem(name);
-                var totalPrice = 0;
-                if (productIndex !== -1) {
-                    cart_items[productIndex].quantity++;
-                    cart_items[productIndex].price = price * cart_items[productIndex].quantity;
-                } else {
-                    var products = {
-                        name: name,
-                        price: price,
-                        warehousem: warehousem,
-                        image: image,
-                        quantity: 1,
-                        productID: productID,
-                    };
-                    cart_items.push(products);
-                }
-                updateCount();
-                updateTotalPrice();
-                render_CartItems();
-            }
-
-            function render_CartItems() {
-                $(".cart_product").empty();
-                var totalPrice = 0;
-                for (var i = 0; i < cart_items.length; i++) {
-                    var product = `
-            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
-                <div class="w-1/3">
-                    <img src="${cart_items[i].image}">
-                </div>
-                <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
-                    <h1>${cart_items[i].name}</h1>
-                    <p>Price : <span class="text-[#DC143C] price">${cart_items[i].price}.00$</span></p>
-                    <div class="flex items-center gap-4">
-                        <a href="/orders/${cart_items[i].productID}" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Buy Now</a>
-                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Delete</button>
-                    </div>
-                </div>
-            </div>
-            `;
-                    $(".cart_product").append(product);
-                }
-
-                $(".del").click(function() {
-                    var productElement = $(this).closest(".cart");
-                    var productNameCart = productElement.find("h1").text();
-                    var productIndex = find_CartItem(productNameCart);
-                    cart_items.splice(productIndex, 1);
-                    productElement.remove();
-                    updateTotalPrice();
-                    updateCount();
-                });
-            }
-
-            function updateTotalPrice() {
-                var totalPrice = 0;
-                for (var i = 0; i < cart_items.length; i++) {
-                    var productTotalPrice = cart_items[i].price * cart_items[i].quantity;
-                    totalPrice += productTotalPrice;
-                }
-                $(".total").text(totalPrice.toFixed(2) + " " + "$");
-            }
-
-            function updateCount() {
-                var count = 0;
-                count += cart_items.length;
-                $(".count_products").text(count);
-            }
 
             // Giảm số lượng sản phẩm
             $("#decrease").click(function() {

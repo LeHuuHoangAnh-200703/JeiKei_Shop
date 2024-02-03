@@ -37,7 +37,7 @@
             </div> <?php } ?>
 
         <div class="flex flex-col justify-center items-center w-[100%]">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST"  enctype="multipart/form-data">
+            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
                 <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                     <?php
                     $type = [
@@ -69,7 +69,7 @@
                                         <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
                                         <div class="w-full">
                                             <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
-                                                <button name="add_to_cart" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add" type="submit" id="addCart"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
+                                                <button name="add_to_cart" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add" type="submit"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                                             </div>
                                         </div>
                                     </div>

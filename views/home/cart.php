@@ -1,44 +1,44 @@
-<?php $this->layout("layouts/default", ["title" => $this->e($product->name)]) ?>
+<?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
 
-<div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
-            <div class="w-full overflow-y-auto h-full">
-                <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> Giỏ Hàng</h1>
-                </div>
-                <?php
-                if (!empty($cart)) {
-                    foreach ($cart as $cartItem) {
-                ?>
-                        <div class="flex justify-center items-center flex-col m-[30px] cart_product">
-                            <div class="flex justify-start gap-2 border-b-2 border-[#333] py-[15px] cart">
-                                <div class="w-1/3">
-                                    <img src="<?php echo $cartItem['image'] ?>" alt="Product Image">
-                                </div>
-                                <div class="text-sm flex justify-center flex-col gap-[8px] font-semibold">
-                                    <h1><?php echo $cartItem['name'] ?></h1>
-                                    <p>Giá : <span class="text-[#DC143C] price"><?php echo $cartItem['price'] ?> đ</span></p>
-                                    <div class="flex items-center gap-4">
-                                        <a href="/orders/<?php echo $cartItem['product_id'] ?>" class="px-[18px] py-[6px] bg-[#333] transition-all duration-300 text-[#fff] hover:bg-[#DC143C]"><i class="fa-solid fa-cart-shopping"></i> Mua hàng</a>
-                                        <button class="px-[18px] py-[6px] bg-[#DC143C] transition-all duration-500 hover:text-[#fff] del">Xóa sản phẩm</button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-                <?php
-                    }
-                } else {
-                    echo '<div class="flex justify-center items-center mt-10">
-                    <img src="../assets/Picture1.png" class="w-[400px]" alt="">
-                </div>';
-                }
-                ?>
-            </div>
-            <div class="absolute bottom-0 w-full grid grid-cols-2 font-semibold text-[#fff]">
-                <div class="bg-[#DC143C] w-full p-2 text-center total"> đ</div>
-                <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
-            </div>
-        </div>
+<div class="w-full overflow-auto mt-6">
+    <?php
+        if ($cart) {   
+        ?>
+            <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
+        <thead>
+            <tr>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Số thứ tự</th>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Tên sản phẩm</th>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Hình ảnh</th>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Giá</th>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Thành tiền</th>
+                <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Xóa</th>
+            </tr>
+        </thead>
+        <tbody class="divide-gray-100 border-t border-slate-500 w-full">
+            <?php foreach ($cart as $index => $cartItem) : ?>
+                <tr>
+                    <td><?= $index + 1 ?></td>
+                    <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
+                    <td class="flex justify-center"><img src="<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
+                    <td><?= $this->e($cartItem['product_price']) ?></td>
+                    <td><?= $this->e($cartItem['product_price']) ?></td>
+                    <td>
+                        <form action="">
+                            <button type="submit" class="text-primary-700 bg-[#DC143C] px-4 py-2 text-[#fff]">Xóa sản phẩm</button>
+                        </form>
+                    </td>
+                </tr>
+            <?php endforeach; ?>
+        </tbody>
+    </table>
+    <?php }
+        else {
+            echo '<div class="flex justify-center items-center mt-10"><img src="../assets/Picture1.png" class="w-[350px]" alt=""></div>';
+        }
+    ?>
+</div>
 
 <?php $this->stop() ?>

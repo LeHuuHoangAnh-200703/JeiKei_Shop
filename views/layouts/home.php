@@ -61,8 +61,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 </div>
 
                 <div class="flex justify-center items-center gap-4">
-                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
-                    </div>
+                    <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
                     <a href="/cart" class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
@@ -116,7 +115,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->
-        <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
+        <!-- <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
             <div class="w-full overflow-y-auto h-full">
                 <div class="relative mt-[20px]">
                     <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> Giỏ Hàng</h1>
@@ -153,7 +152,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                 <div class="bg-[#DC143C] w-full p-2 text-center total"> đ</div>
                 <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
             </div>
-        </div>
+        </div> -->
 
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
@@ -198,7 +197,6 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
         </div>
 
         <!-- Black background when open Side bar -->
-        <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
 
         <!-- Arrow to top -->
         <a href="#top" id="backtotop" class="hidden fixed bottom-5 right-5 z-30 w-12 h-12 bg-[#DC143C] rounded-[10px] border-[3px] border-[#333] justify-center items-center text-white font-bold shadow-lg transition-all duration-500 hover:-translate-y-3"><i class="fa-solid fa-angles-up"></i></a>
@@ -215,7 +213,7 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
             </div>
         </div>
     </footer>
-    <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div>
+    <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">
         <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-[#DC143C]"></div>

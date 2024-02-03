@@ -246,7 +246,21 @@ class HomeController extends Controller
         $_SESSION['cart'] = $cart;
 
         // Redirect hoặc trả về thông báo thành công
-        redirect('/home/index', ['success' => 'Sản phẩm đã được thêm vào giỏ hàng', 'cartItem' => $cartItem]);
+        redirect('/home/cart', ['success' => 'Sản phẩm đã được thêm vào giỏ hàng', 'cartItem' => $cartItem]);
+    }
+
+    public function cart()
+    {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+
+        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+
+        // Nếu giỏ hàng không trống, tính tổng giá trị đơn hàng
+        $totalAmount = $this->calculateTotal($cart);
+
+        $this->sendPage('home/cart', ['cart' => $cart, 'totalAmount' => $totalAmount]);
     }
 
     function calculateTotal($cart)

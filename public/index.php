@@ -26,6 +26,8 @@ $router->post('/search', '\App\Controllers\HomeController@search');
 $router->get('/profile', '\App\Controllers\HomeController@showprofile');
 $router->get('/editprofile', '\App\Controllers\HomeController@editprofile');
 $router->post('/editprofile', '\App\Controllers\HomeController@saveprofile');
+$router->get('/cart', '\App\Controllers\HomeController@cart');
+$router->post('/add_to_cart/(\d+)', '\App\Controllers\HomeController@addtocart');
 
 // Admin routes
 $router->post('/admin/logout', '\App\Controllers\Auth\AdminLoginController@destroy');
