@@ -36,19 +36,24 @@
                 <p class="font-bold"><?php echo $errors; ?></p>
             </div> <?php } ?>
 
+        <?php if (isset($success)) {
+        ?><div id="success-notification" class="bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+                <p class="font-bold"><i class="fa-solid fa-check"></i> Chúc mừng</p>
+                <p class="font-bold"><?php echo $success; ?></p>
+            </div> <?php } ?>
         <div class="flex flex-col justify-center items-center w-[100%]">
-            <form action="<?php echo $_SERVER['PHP_SELF']; ?>" method="POST" enctype="multipart/form-data">
-                <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
-                    <?php
-                    $type = [
-                        ["type" => "Nintendo_OLED", "imgHeight" => "h-20"], ["type" => "Nintendo_Lite", "imgHeight" => "h-20"],
-                        ["type" => "Nintendo_Old", "imgHeight" => "h-20"]
-                    ];
-                    for ($i = 0; $i < count($type); $i++) {
-                        if (!empty($productinfo)) {
-                            foreach ($productinfo as $product) {
-                                if ($product->type == $type[$i]["type"]) {
-                    ?>
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
+                <?php
+                $type = [
+                    ["type" => "Nintendo_OLED", "imgHeight" => "h-20"], ["type" => "Nintendo_Lite", "imgHeight" => "h-20"],
+                    ["type" => "Nintendo_Old", "imgHeight" => "h-20"]
+                ];
+                for ($i = 0; $i < count($type); $i++) {
+                    if (!empty($productinfo)) {
+                        foreach ($productinfo as $product) {
+                            if ($product->type == $type[$i]["type"]) {
+                ?>
+                                <form action="/add_to_cart/<?php $this->e($product->id) ?>" method="POST" enctype="multipart/form-data">
                                     <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
                                         <div class="p-4 overflow-hidden">
                                             <div class="relative transition-all duration-300 hover:scale-105">
@@ -56,30 +61,27 @@
                                                 <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                             </div>
                                             <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
-                                                <input type="hidden" class="productID" name="productID" value="<?php echo $product->id ?>">
-                                                <input type="text" class="product_Name" name="product_Name" value="<?php echo $this->e($product->name) ?>" hidden>
                                                 <a href="/detail/<?php echo $this->e($product->id) ?>" name="product_Name" class="inline text-[17px] md:text-[13px] text-center font-semibold text-gray-800 hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
                                             </div>
                                             <div class="flex justify-between items-center py-1">
                                                 <p class="w-1/2 text-[14px] text-[#DC143C] font-semibold price" name="price"><?php echo $this->e($product->price) ?>$</p>
-                                                <input type="text" class="price" name="price" value="<?php echo $this->e($product->price) ?>" hidden>
                                                 <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php echo $this->e($product->sold_count) ?></p>
                                             </div>
                                         </div>
                                         <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
                                         <div class="w-full">
                                             <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
-                                                <button name="add_to_cart" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add" type="submit"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
+                                                <button name="add_to_cart" type="submit" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                                             </div>
                                         </div>
                                     </div>
-                    <?php }
-                            }
+                                </form>
+                <?php }
                         }
                     }
-                    ?>
-                </div>
-            </form>
+                }
+                ?>
+            </div>
         </div>
     </div>
     <!-- Notifications -->

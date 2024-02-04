@@ -120,8 +120,16 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                         <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
                     <div class="text-xs">
-                        <div class="font-medium text-gray-700"><?= $this->e(\App\SessionGuard::user()->name) ?></div>
-                        <div class="text-gray-400"><?= $this->e(\App\SessionGuard::user()->email) ?></div>
+                        <div class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
+                                                                    echo $this->e(\App\SessionGuard::user()->name);
+                                                                } else {
+                                                                    echo "Tên của bạn";
+                                                                } ?></div>
+                        <div class="text-gray-400"><?php if (\App\SessionGuard::user()) {
+                                                        echo $this->e(\App\SessionGuard::user()->email);
+                                                    } else {
+                                                        echo "Email";
+                                                    } ?></div>
                     </div>
                 </div>
             </div>

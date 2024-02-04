@@ -8,7 +8,6 @@ if (\App\SessionGuard::user() !== null) {
 }
 $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
 ?>
-
 <!DOCTYPE html>
 <html>
 
@@ -165,13 +164,15 @@ $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
                     </div>
                     <div class="text-xs">
                         <div class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
-                                                                    $this->e(\App\SessionGuard::user()->name);
-                                                                }
-                                                                echo "Tên của bạn" ?></div>
+                                                                    echo $this->e(\App\SessionGuard::user()->name);
+                                                                } else {
+                                                                    echo "Tên của bạn";
+                                                                } ?></div>
                         <div class="text-gray-400"><?php if (\App\SessionGuard::user()) {
-                                                        $this->e(\App\SessionGuard::user()->email);
-                                                    }
-                                                    echo "Email" ?></div>
+                                                        echo $this->e(\App\SessionGuard::user()->email);
+                                                    } else {
+                                                        echo "Email";
+                                                    } ?></div>
                     </div>
                 </div>
             </div>

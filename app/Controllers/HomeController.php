@@ -220,33 +220,29 @@ class HomeController extends Controller
         $product = Products::find($productId);
 
         if (!$product) {
-            return ['error' => 'Sản phẩm không tồn tại'];
+            return ["error" => "Sản phẩm không tồn tại"];
         }
 
         $userId = Guard::user()->id;
 
-        // Kiểm tra sản phẩm đã có trong giỏ hàng hay chưa
         $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
         foreach ($cart as $cartItem) {
             if ($cartItem['product_id'] == $productId) {
-                return ['error' => 'Sản phẩm đã có trong giỏ hàng của bạn'];
+                return ["error" => "Sản phẩm đã có trong giỏ hàng của bạn"];
             }
         }
 
-        // Thêm sản phẩm vào giỏ hàng
         $cartItem = [
             'user_id' => $userId,
             'product_id' => $productId,
             'product_name' => $product->name,
             'product_image' => $product->image,
-            'product_price' => $product->price,
+            'product_price' => $product->price
         ];
 
         $cart[] = $cartItem;
         $_SESSION['cart'] = $cart;
-
-        // Redirect hoặc trả về thông báo thành công
-        redirect('/home/cart', ['success' => 'Sản phẩm đã được thêm vào giỏ hàng', 'cartItem' => $cartItem]);
+        redirect('/cart', ["success" =>"Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
     }
 
     public function cart()
@@ -257,10 +253,9 @@ class HomeController extends Controller
 
         $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
 
-        // Nếu giỏ hàng không trống, tính tổng giá trị đơn hàng
         $totalAmount = $this->calculateTotal($cart);
 
-        $this->sendPage('home/cart', ['cart' => $cart, 'totalAmount' => $totalAmount]);
+        $this->sendPage("home/cart", ["cart" => $cart, "totalAmount" => $totalAmount]);
     }
 
     function calculateTotal($cart)
