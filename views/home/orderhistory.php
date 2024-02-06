@@ -39,6 +39,12 @@
                         <?php echo $this->e($order->phone) ?>
                     </b>
                 </div>
+                <div class="flex justify-start items-center gap-x-1">
+                    <p>Ngày đặt hàng :</p>
+                    <b>
+                        <?php echo $this->e($order->updated_at) ?>
+                    </b>
+                </div>
             </div>
         </div>
     <?php } ?>

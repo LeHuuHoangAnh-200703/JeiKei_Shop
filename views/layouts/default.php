@@ -6,7 +6,7 @@ if (\App\SessionGuard::user() !== null) {
 } else {
     $imageURL = $baseURL . "assets/user_avatar.jpg";
 }
-$imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
+$imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
 ?>
 
 <!DOCTYPE html>

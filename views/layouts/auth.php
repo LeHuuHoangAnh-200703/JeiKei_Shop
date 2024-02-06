@@ -1,6 +1,6 @@
 <?php
     $baseURL = "http://ecommercewebsite.localhost/";
-    $imgLogo = $baseURL . "./assets/OIG-removebg-preview.png";
+    $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
 ?>
 
 <!DOCTYPE html>
