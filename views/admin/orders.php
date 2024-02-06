@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-xl">All Orders</h2>
+        <h2 class="text-[#333] font-bold text-xl">Tất cả sản phẩm đặt hàng</h2>
     </div>
     <div id="all_products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>

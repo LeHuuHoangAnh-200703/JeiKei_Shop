@@ -242,7 +242,7 @@ class HomeController extends Controller
 
         $cart[] = $cartItem;
         $_SESSION['cart'] = $cart;
-        redirect('/cart', ["success" =>"Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
+        redirect('home/index', ["success" =>"Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
     }
 
     public function cart()

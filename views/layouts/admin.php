@@ -54,13 +54,13 @@
                     </div>
                 </div>
                 <div class="hidden sm:flex flex-col bg-[#272a2f] pt-4">
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Add Admin</a>
+                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
                     <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Orders</a>
+                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đặt hàng</a>
                     <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Customers List</a>
+                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
                     <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Add product</a>
+                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
                 </div>
             </div>
 
@@ -72,7 +72,7 @@
                         <small class="text-[#333f48] font-medium"><?= $this->e(\App\SessionGuard::admin()->email) ?></small>
                     </div>
                     <form action="/admin/logout" method="post">
-                        <button class="bg-[#DC143C] px-3 py-1 font-semibold rounded-lg text-white transition-all duration-200 hover:bg-[#333]">Log out</button>
+                        <button class="bg-[#DC143C] px-3 py-1 font-semibold rounded-lg text-white transition-all duration-200 hover:bg-[#333]">Đăng xuất</button>
                     </form>
                 </div>
                 <div id="dashboarContent" class="w-full">

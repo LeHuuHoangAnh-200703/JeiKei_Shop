@@ -3,26 +3,26 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-xl">All Products</h2>
+        <h2 class="text-[#333] font-bold text-xl">Tất cả sản phẩm</h2>
     </div>
 
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
             <thead class="bg-gray-50">
                 <tr>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">ID</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Tên sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Giá</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Loại sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Số lượng</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Tình trạng</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Hoạt động</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_1</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_2</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_3</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Ảnh_4</th>
-                    <th scope="col" class="px-6 py-4 font-medium text-gray-900">Mô tả</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tên sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Loại sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Số lượng</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tình trạng</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Hoạt động</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_1</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_2</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_3</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_4</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Mô tả</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">
