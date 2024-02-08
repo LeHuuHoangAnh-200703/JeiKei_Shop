@@ -4,7 +4,8 @@
 
 <div class="w-full overflow-auto mt-6">
     <?php
-    print_r(var_dump($cart));
+    print_r($_SESSION);
+    print_r($cart);
     if ($cart) {
     ?>
         <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">

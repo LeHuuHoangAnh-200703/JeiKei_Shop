@@ -53,8 +53,8 @@
                         foreach ($productinfo as $product) {
                             if ($product->type == $type[$i]["type"]) {
                 ?>
-                                <form action="/add_to_cart/<?php $this->e($product->id) ?>" method="POST" enctype="multipart/form-data">
-                                    <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
+                                <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
+                                    <form action="/add_to_cart/<?php echo $this->e($product->id) ?>" method="POST" enctype="multipart/form-data" id="add_to_cart_form">
                                         <div class="p-4 overflow-hidden">
                                             <div class="relative transition-all duration-300 hover:scale-105">
                                                 <img src="../assets/<?php echo $product['image']; ?>" name="image" />
@@ -68,19 +68,21 @@
                                                 <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php echo $this->e($product->sold_count) ?></p>
                                             </div>
                                         </div>
-                                        <div type="hidden" class="productID hidden"><?php echo $this->e($product->id) ?></div>
+                                        <input name="productID" type="text" id="productID" class="productID hidden" value="<?php echo $this->e($product->id) ?>">
                                         <div class="w-full">
                                             <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
                                                 <button name="add_to_cart" type="submit" class="add_to_cart w-100 text-[#333] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
                                             </div>
                                         </div>
-                                    </div>
-                                </form>
+                                    </form>
+                                </div>
+
                 <?php }
                         }
                     }
                 }
                 ?>
+
             </div>
         </div>
     </div>

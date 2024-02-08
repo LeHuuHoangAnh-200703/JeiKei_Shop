@@ -213,36 +213,38 @@ class HomeController extends Controller
 
     public function addtocart($productId)
     {
-        if (!Guard::isUserLoggedIn()) {
+        if (Guard::isUserLoggedIn()) {
+            $product = Products::find($productId);
+
+            if (!$product) {
+                return ["error" => "Sản phẩm không tồn tại"];
+            }
+
+            $userId = Guard::user()->id;
+            $cartItem = [
+                'user_id' => $userId,
+                'product_id' => $productId,
+                'product_name' => $product->name,
+                'product_image' => $product->image,
+                'product_price' => $product->price
+            ];
+            $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+            foreach ($cart as $item) {
+                if ($item['product_id'] == $productId) {
+                    $errorMessage = "Sản phấm đã có trong giỏ hàng của bạn";
+                    redirect("/cart", ["errors" => $errorMessage]);
+                    break;
+                }
+            }
+
+            $cart[] = $cartItem;
+            $_SESSION['cart'] = $cart;
+            
+        } else {
             redirect('/login');
         }
 
-        $product = Products::find($productId);
-
-        if (!$product) {
-            return ["error" => "Sản phẩm không tồn tại"];
-        }
-
-        $userId = Guard::user()->id;
-
-        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-        foreach ($cart as $cartItem) {
-            if ($cartItem['product_id'] == $productId) {
-                return ["error" => "Sản phẩm đã có trong giỏ hàng của bạn"];
-            }
-        }
-
-        $cartItem = [
-            'user_id' => $userId,
-            'product_id' => $productId,
-            'product_name' => $product->name,
-            'product_image' => $product->image,
-            'product_price' => $product->price
-        ];
-
-        $cart[] = $cartItem;
-        $_SESSION['cart'] = $cart;
-        redirect('home/index', ["success" =>"Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
+        redirect('/cart', ["success" => "Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
     }
 
     public function cart()
@@ -262,7 +264,7 @@ class HomeController extends Controller
     {
         $total = 0;
         foreach ($cart as $cartItem) {
-            $total += $cartItem['price'];
+            $total += $cartItem['product_price'];
         }
         return $total;
     }
