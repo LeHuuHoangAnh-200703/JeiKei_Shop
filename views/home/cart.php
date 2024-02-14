@@ -1,16 +1,15 @@
 <?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
-<?php $this->start("page");
-print_r($_SESSION['success']); ?>
+<?php $this->start("page") ?>
 
 <?php if (isset($_SESSION['errors'])) {
-?> <div id="success-notification" class="bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><?php echo $_SESSION['errors'] ?></p>
+?> <div class="success-notification bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
     </div> <?php } ?>
 
 <?php if (isset($_SESSION['success'])) {
-?><div id="success-notification" class="bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><?php echo $_SESSION['success'] ?></p>
+?><div class="success-notification bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+        <p class="font-bold"><i class="fa-solid fa-check"></i> <?php echo $_SESSION['success'] ?></p>
     </div> <?php } ?>
 <div class="w-full overflow-auto my-6">
     <?php

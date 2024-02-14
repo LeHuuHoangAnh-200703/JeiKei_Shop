@@ -192,21 +192,13 @@ $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
             })
 
             // Show a notification when user places an order successfully 
-            const successNotification = $("#success-notification");
+            const successNotification = $(".success-notification");
             if (successNotification.length > 0) {
                 successNotification.css("display", "block");
             }
             setTimeout(() => {
-                successNotification.css("display", "none");
-            }, 5000);
-
-            //show notify when user hit ADD button in home page
-            $(".add_to_cart").click(function(e) {
-                const notify = $("#added_to_cart_successfully");
-                setTimeout(() => {
-                    notify.css("display", "block");
-                }, 4000);
-            });
+                successNotification.css("display", "block");
+            }, 2000);
 
             //sidebar
             $(".bar").click(function() {

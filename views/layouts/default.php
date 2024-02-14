@@ -95,7 +95,7 @@ $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->
-        
+
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">
@@ -174,13 +174,14 @@ $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
             })
 
             // Show a notification when user places an order successfully 
-            const successNotification = $("#success-notification");
+            const successNotification = $(".success-notification");
+            console.log(successNotification)
             if (successNotification.length > 0) {
                 successNotification.css("display", "block");
             }
             setTimeout(() => {
                 successNotification.css("display", "none");
-            }, 5000);
+            }, 2000);
 
             // show notify when user hit ADD button in home page
             $(".add_to_cart").click(function() {
@@ -188,7 +189,7 @@ $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
                 notify.css("display", "block");
                 setTimeout(() => {
                     notify.css("display", "none");
-                }, 4000);
+                }, 2000);
             });
 
             //sidebar

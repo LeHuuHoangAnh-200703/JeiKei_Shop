@@ -191,11 +191,11 @@ class HomeController extends Controller
             $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
             $productFound = false;
             foreach ($cart as $item) {
-                if ($item['product_id'] == $productId) {
-                    $errorMessage = "Sản phấm đã có trong giỏ hàng của bạn";
+                if ($item['product_id'] === $productId) {
                     $productFound = true;
-                    $this->sendPage("/cart", ["errors" => $errorMessage]);
-                }
+                    redirect("/cart", ["errors" => 'Sản phấm đã có trong giỏ hàng của bạn']);
+                    return;
+                } 
             }
 
             if (!$productFound) {
