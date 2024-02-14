@@ -13,18 +13,18 @@ class Admin extends Model
     {
         $errors = [];
         if (!$data["name"]) {
-            $errors['email'] = 'Invalid name.';
+            $errors['email'] = 'Tên không hợp lệ.';
         }
         if (!$data['email']) {
-            $errors['email'] = 'Invalid email.';
+            $errors['email'] = 'Email không hợp lệ.';
         } elseif (static::where('email', $data['email'])->count() > 0) {
-            $errors['email'] = 'Email already in use.';
+            $errors['email'] = 'Email đã được sử dụng.';
         }
 
         if (strlen($data['password']) < 6) {
-            $errors['password'] = 'Password must be at least 6 characters.';
+            $errors['password'] = 'Mật khẩu phải có ít nhất 6 ký tự.';
         } elseif ($data['password'] != $data['password_confirmation']) {
-            $errors['password'] = 'Password confirmation does not match.';
+            $errors['password'] = 'Xác nhận mật khẩu không khớp.';
         }
         return $errors;
     }

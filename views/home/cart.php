@@ -1,35 +1,42 @@
 <?php $this->layout("layouts/default", ["title" => APPNAME]) ?>
 
-<?php $this->start("page") ?>
+<?php $this->start("page");
+print_r($_SESSION['success']); ?>
 
-<div class="w-full overflow-auto mt-6">
+<?php if (isset($_SESSION['errors'])) {
+?> <div id="success-notification" class="bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+        <p class="font-bold"><?php echo $_SESSION['errors'] ?></p>
+    </div> <?php } ?>
+
+<?php if (isset($_SESSION['success'])) {
+?><div id="success-notification" class="bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
+        <p class="font-bold"><?php echo $_SESSION['success'] ?></p>
+    </div> <?php } ?>
+<div class="w-full overflow-auto my-6">
     <?php
-    print_r($_SESSION);
-    print_r($cart);
     if ($cart) {
     ?>
-        <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
+        <table class="w-full border-collapse whitespace-nowrap bg-white text-center text-sm text-gray-500">
             <thead>
                 <tr>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Số thứ tự</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Tên sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Hình ảnh</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Giá</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Thành tiền</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Xóa</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Hoạt động</th>
                 </tr>
             </thead>
-            <tbody class="divide-gray-100 border-t border-slate-500 w-full">
+            <tbody class="border-t border-slate-500 w-full">
                 <?php foreach ($cart as $index => $cartItem) : ?>
-                    <tr>
-                        <td><?= $index + 1 ?></td>
+                    <tr class="border-b border-slate-500">
                         <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
-                        <td class="flex justify-center"><img src="<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
-                        <td><?= $this->e($cartItem['product_price']) ?></td>
-                        <td><?= $this->e($cartItem['product_price']) ?></td>
-                        <td>
-                            <form action="">
-                                <button type="submit" class="text-primary-700 bg-[#DC143C] px-4 py-2 text-[#fff]">Xóa sản phẩm</button>
+                        <td class=""><img src="../assets/<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
+                        <td><?= $this->e($cartItem['product_price']) ?>$</td>
+                        <td><?= $this->e($cartItem['product_price']) ?>$</td>
+                        <td class="flex items-center gap-4 flex-col mt-4">
+                            <a href="/orders/<?php echo $cartItem['product_id'] ?>" class="text-primary-700 bg-[#4169E1] px-[15px] py-2 text-[#fff]"> Mua sản phẩm </a>
+                            <form action="/delete/<?php echo $cartItem['product_id'] ?>" method="POST">
+                                <button type="submit" class="text-primary-700 bg-[#DC143C] px-[16px] py-2 text-[#fff] mb-4">Xóa sản phẩm</button>
                             </form>
                         </td>
                     </tr>

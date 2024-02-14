@@ -32,20 +32,20 @@ class Order extends Model
         $errors = [];
 
         if (empty($data["address"])) {
-            $errors["address"] = "Invalid address";
+            $errors["address"] = "Địa chỉ không hợp lệ";
         }
 
         // Regex to check phone number 
         $pattern = "/^(\d{3}-){2}\d{4}$/";
         if (!$data["phone"]) {
-            $errors["phone"] = "Error! Empty phone number.";
+            $errors["phone"] = "Số điện thoại đang rỗng!";
         } else if (!preg_match($pattern, $data["phone"])) {
-            $errors["phone"] = "Invalid phone number";
+            $errors["phone"] = "Số điện thoại không hợp lệ!";
         }
 
         //If the number of products the customer chooses is greater than the number of products in stock, the user is asked to re-select the appropriate quantity.
         if (!isset($data["total_amount"]) || !is_numeric($data["total_amount"]) || $data["total_amount"] <= 0) {
-            $errors["total_amount"] = "Currently there are only " . $product->quantity . "products left in stock. Please choose the appropriate quantity.";
+            $errors["total_amount"] = "Hiện tại chỉ còn lại " . $product->quantity . " vui lòng chọn số lượng phù hợp.";
         }
         return $errors;
     }

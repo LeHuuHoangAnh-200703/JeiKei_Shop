@@ -95,21 +95,7 @@ $imgLogo = $baseURL . "./assets/Nintendo_Switch_Logo.svg.png";
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->
-        <!-- <div class="cart-shop fixed top-0 right-0 bg-[#FFFAFA] w-full md:w-[500px] h-full z-20 transition-all duration-[.4s] translate-x-[100%]">
-            <div class="w-full overflow-y-auto h-full">
-                <div class="relative mt-[20px]">
-                    <h1 class="text-center font-bold text-2xl uppercase text-[#333]">JEIKEI <span class="text-[#DC143C]">SWITCH</span> CART</h1>
-                </div>
-                <div class="flex justify-center items-center flex-col m-[30px] cart_product"></div>
-            </div>
-            <div class="absolute bottom-0 w-full grid grid-cols-2 font-semibold text-[#fff]">
-                <div class="bg-[#DC143C] w-full p-2 text-center total">0 đ</div>
-                <div class="bg-[#333] w-full p-2 text-center cursor-pointer close-cart">Close</div>
-            </div>
-        </div> -->
-
-
-
+        
         <!-- Dropdown Menu -->
         <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">

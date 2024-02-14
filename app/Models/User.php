@@ -20,23 +20,23 @@ class User extends Model
         $errors = [];
 
         if (!$data['email']) {
-            $errors['email'] = 'Invalid email.';
+            $errors['email'] = 'Email không hợp lệ.';
         } elseif (static::where('email', $data['email'])->count() > 0) {
-            $errors['email'] = 'Email already in use.';
+            $errors['email'] = 'Email đã được sử dụng.';
         }
 
         if (strlen($data['password']) < 6) {
-            $errors['password'] = 'Password must be at least 6 characters.';
+            $errors['password'] = 'Mật khẩu phải có ít nhất 6 ký tự.';
         } elseif ($data['password'] != $data['password_confirmation']) {
-            $errors['password'] = 'Password confirmation does not match.';
+            $errors['password'] = 'Xác nhận mật khẩu không khớp.';
         }
 
         if (!$data['phone']) {
-            $errors["phone"] = "Invalid phone.";
+            $errors["phone"] = "Số điện thoại không hợp lệ.";
         }
 
         if (!$data["address"]) {
-            $errors["address"] = "Invalid address.";
+            $errors["address"] = "Địa chỉ không hợp lệ.";
         }
         return $errors;
     }

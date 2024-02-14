@@ -44,36 +44,8 @@ class HomeController extends Controller
 
     public function ordered($productId)
     {
-        // Get the product corresponding to the product ID
         $product = Products::find($productId);
-
-        // 
         $user = Guard::user();
-        // Receive the product color and size the customer has selected
-        // $string1 = 'color_';
-        // $string2 = 'size_';
-        // $color = "";
-        // $filteredColorKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
-        //     return strpos($key, $string1) !== false;
-        // });
-        // for ($i = 0; $i < count($filteredColorKeys); $i++) {
-        //     if ($i < 1) {
-        //         $color = $_POST[$filteredColorKeys[$i]];
-        //     } else {
-        //         $color = ',' . $_POST[$filteredColorKeys[$i]];
-        //     }
-        // }
-        // $size = "";
-        // $filteredSizeKeys = array_filter(array_keys($_POST), function ($key) use ($string1) {
-        //     return strpos($key, $string1) !== false;
-        // });
-        // for ($i = 0; $i < count($filteredSizeKeys); $i++) {
-        //     if ($i < 1) {
-        //         $size = $_POST[$filteredSizeKeys[$i]];
-        //     } else {
-        //         $size = ',' . $_POST[$filteredSizeKeys[$i]];
-        //     }
-        // }
 
         // Validate data
         $data["product_id"] = $productId;
@@ -82,8 +54,6 @@ class HomeController extends Controller
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;
-        // $data["color"] = $color;
-        // $data["size"] = $size;
         $data["amount"] = $_POST["total_amount"];
         $data["payment"] = $_POST["payment"];
         $data["address"] = $_POST["address"];
@@ -216,35 +186,33 @@ class HomeController extends Controller
         if (Guard::isUserLoggedIn()) {
             $product = Products::find($productId);
 
-            if (!$product) {
-                return ["error" => "Sản phẩm không tồn tại"];
-            }
-
             $userId = Guard::user()->id;
-            $cartItem = [
-                'user_id' => $userId,
-                'product_id' => $productId,
-                'product_name' => $product->name,
-                'product_image' => $product->image,
-                'product_price' => $product->price
-            ];
+
             $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+            $productFound = false;
             foreach ($cart as $item) {
                 if ($item['product_id'] == $productId) {
                     $errorMessage = "Sản phấm đã có trong giỏ hàng của bạn";
-                    redirect("/cart", ["errors" => $errorMessage]);
-                    break;
+                    $productFound = true;
+                    $this->sendPage("/cart", ["errors" => $errorMessage]);
                 }
             }
 
-            $cart[] = $cartItem;
-            $_SESSION['cart'] = $cart;
-            
+            if (!$productFound) {
+                $cartItem = [
+                    'user_id' => $userId,
+                    'product_id' => $productId,
+                    'product_name' => $product->name,
+                    'product_image' => $product->image,
+                    'product_price' => $product->price
+                ];
+                $cart[] = $cartItem;
+                $_SESSION['cart'] = $cart;
+                redirect("/cart", ["success" => "Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
+            }
         } else {
             redirect('/login');
         }
-
-        redirect('/cart', ["success" => "Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
     }
 
     public function cart()
@@ -254,18 +222,31 @@ class HomeController extends Controller
         }
 
         $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-
-        $totalAmount = $this->calculateTotal($cart);
-
-        $this->sendPage("home/cart", ["cart" => $cart, "totalAmount" => $totalAmount]);
+        $this->sendPage("home/cart", ["cart" => $cart]);
     }
 
-    function calculateTotal($cart)
+    public function removeProductCart($productId)
     {
-        $total = 0;
-        foreach ($cart as $cartItem) {
-            $total += $cartItem['product_price'];
+        if (Guard::isUserLoggedIn()) {
+            $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+            // Tìm vị trí sản phẩm trong giỏ hàng
+            $productIndex = -1;
+            foreach ($cart as $key => $item) {
+                if ($item['product_id'] == $productId) {
+                    $productIndex = $key;
+                    break;
+                }
+            }
+
+            if ($productIndex !== -1) {
+                unset($cart[$productIndex]);
+                $_SESSION['cart'] = $cart;
+
+                $successMessage = "Sản phẩm đã được xóa khỏi giỏ hàng";
+                redirect("/cart", ["success" => $successMessage]);
+            }
+        } else {
+            redirect('/login');
         }
-        return $total;
     }
 }

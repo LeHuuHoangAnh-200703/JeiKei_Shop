@@ -25,29 +25,29 @@ class Products extends Model
     {
         $errors = [];
         if (!is_array($data)) {
-            $errors['data'] = 'Invalid data format.';
+            $errors['data'] = 'Định dạng dữ liệu không hợp lệ.';
             return $errors;
         }
 
         if (!$data['name']) {
-            $errors['name'] = 'Name is required.';
+            $errors['name'] = 'Tên là bắt buộc.';
         }
 
         if (!$data['price']) {
-            $errors['price'] = 'Price is required.';
+            $errors['price'] = 'Giá là bắt buộc.';
         }
         if (!$data['quantity']) {
-            $errors['quantity'] = 'Quantity is required.';
+            $errors['quantity'] = 'Số lượng là bắt buộc.';
         }
 
         if (strlen($data['description']) > 2000) {
-            $errors['description'] = 'Notes must be at most 2000 characters.';
+            $errors['description'] = 'Mô tả phải dài tối đa 2000 ký tự.';
         }
 
         $imageFields = ['image', 'image_1', 'image_2', 'image_3', 'image_4'];
         foreach ($imageFields as $imageField) {
             if (($data[$imageField]) === "") {
-                $errors[$imageField] = "Please select an image file to upload.";
+                $errors[$imageField] = "Vui lòng chọn một tập tin hình ảnh để tải lên.";
             }
         }
         return $errors;
