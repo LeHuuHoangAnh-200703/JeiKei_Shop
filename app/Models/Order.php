@@ -32,7 +32,7 @@ class Order extends Model
         $errors = [];
 
         if (empty($data["address"])) {
-            $errors["address"] = "Địa chỉ không hợp lệ";
+            $errors["address"] = "Địa chỉ không hợp lệ!";
         }
 
         // Regex to check phone number 

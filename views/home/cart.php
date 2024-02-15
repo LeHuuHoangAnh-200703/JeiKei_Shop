@@ -2,15 +2,20 @@
 
 <?php $this->start("page") ?>
 
-<?php if (isset($_SESSION['errors'])) {
-?> <div class="success-notification bg-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
-    </div> <?php } ?>
+<?php if (isset($_SESSION['errors'])) : ?>
+    <div class="success-notification bg-red-100 border-[1px] border-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+        <p class="font-bold text-[#DC143C]"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
+    </div>
+    <?php unset($_SESSION['errors']); ?>
+<?php endif; ?>
 
-<?php if (isset($_SESSION['success'])) {
-?><div class="success-notification bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-check"></i> <?php echo $_SESSION['success'] ?></p>
-    </div> <?php } ?>
+<?php if (isset($_SESSION['success'])) : ?>
+    <div class="success-notification bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
+        <p class="font-bold text-green-600"><i class="fa-solid fa-circle-check"></i> <?php echo $_SESSION['success'] ?></p>
+    </div>
+    <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
+
 <div class="w-full overflow-auto my-6">
     <?php
     if ($cart) {
@@ -18,16 +23,16 @@
         <table class="w-full border-collapse whitespace-nowrap bg-white text-center text-sm text-gray-500">
             <thead>
                 <tr>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Tên sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Hình ảnh</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Giá</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Thành tiền</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-[#333f48]">Hoạt động</th>
+                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Tên sản phẩm</th>
+                    <th scope="col" class="text-base flex justify-start px-6 py-4 font-semibold text-[#333f48]">Hình ảnh</th>
+                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Giá</th>
+                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Thành tiền</th>
+                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Hoạt động</th>
                 </tr>
             </thead>
-            <tbody class="border-t border-slate-500 w-full">
+            <tbody class="w-full text-center">
                 <?php foreach ($cart as $index => $cartItem) : ?>
-                    <tr class="border-b border-slate-500">
+                    <tr class="border-t border-slate-500">
                         <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
                         <td class=""><img src="../assets/<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
                         <td><?= $this->e($cartItem['product_price']) ?>$</td>

@@ -193,12 +193,13 @@ class HomeController extends Controller
             foreach ($cart as $item) {
                 if ($item['product_id'] === $productId) {
                     $productFound = true;
-                    redirect("/cart", ["errors" => 'Sản phấm đã có trong giỏ hàng của bạn']);
-                    return;
-                } 
+                    break;
+                }
             }
 
-            if (!$productFound) {
+            if ($productFound) {
+                redirect("/cart", ["errors" => 'Sản phẩm đã có trong giỏ hàng của bạn']);
+            } else {
                 $cartItem = [
                     'user_id' => $userId,
                     'product_id' => $productId,
@@ -221,8 +222,8 @@ class HomeController extends Controller
             redirect('/login');
         }
 
-        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-        $this->sendPage("home/cart", ["cart" => $cart]);
+        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];        
+        $this->sendPage("home/cart", ["cart" => $cart]); 
     }
 
     public function removeProductCart($productId)
@@ -242,8 +243,11 @@ class HomeController extends Controller
                 unset($cart[$productIndex]);
                 $_SESSION['cart'] = $cart;
 
-                $successMessage = "Sản phẩm đã được xóa khỏi giỏ hàng";
+                $successMessage = "Sản phẩm đã được xóa khỏi giỏ hàng.";
                 redirect("/cart", ["success" => $successMessage]);
+            } else {
+                $errorsMessage = "Sản phẩm không tồn tại trong giỏ hàng.";
+                redirect("/cart", ["success" => $errorsMessage]);
             }
         } else {
             redirect('/login');
