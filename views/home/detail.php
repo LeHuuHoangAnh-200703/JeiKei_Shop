@@ -37,11 +37,15 @@
                     <span class="text-[#DC143C]">12 tháng</span>
                 </p>
             </div>
-            <ul class="ml-4 my-3 flex flex-col gap-[6px]">
+            <h2 class="my-3 text-[#333f48] bg-gray-300 pl-3 py-2 text-lg">Cấu hình chi tiết</h2>
+            <ul class="ml-4 mb-3 flex flex-col gap-[6px]">
                 <li class="list-disc text-[15px] text-[#333f48]">Hỗ trợ thẻ nhớ có dung lượng tối đa 2TB.</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 64GB.</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Cảm biến : cảm biến gia tốc, con quay hồi chuyển.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 64GB (Nintendo OLED).</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 32GB (OLD và LITE).</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Màn hình : <?php echo $this->e($product->screen); ?>.</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Độ phân giải : <?php echo $this->e($product->resolution); ?>.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Dung lượng pin : <?php echo $this->e($product->description); ?></li>
+                <li class="list-disc text-[15px] text-[#333f48]">Cảm biến : cảm biến gia tốc, con quay hồi chuyển.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm <?php echo $this->e($product->name); ?> được sản xuất hoàn toàn bởi Nintendo.</li>
             </ul>
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ $<?php echo $this->e($product->price); ?><span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>

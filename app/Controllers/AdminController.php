@@ -56,7 +56,6 @@ class AdminController extends Controller
                     $data[$image] = $imageName;
                 } else {
                     $data[$image] = '';
-                    //$data = $this->filterProductData($_POST);
                 }
             }
         }
@@ -65,7 +64,8 @@ class AdminController extends Controller
         $model_errors = Products::validate($data);
         $data['created_at'] = date('Y-m-d H:i:s');
         $data["type"] = $_POST["type"];
-
+        $data["screen"] = $_POST["screen"];
+        $data["resolution"] = $_POST["type-resolution"];
         if (empty($model_errors)) {
             $product = new Products();
             $product->fill($data);
@@ -134,6 +134,8 @@ class AdminController extends Controller
         }
         $model_errors = Products::validate($data);
         $data["type"] = $_POST["type"];
+        $data["screen"] = $_POST["screen"];
+        $data["resolution"] = $_POST["type-resolution"];
         if (empty($model_errors)) {
             $product->fill($data);
             $product->save();

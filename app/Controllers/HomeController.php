@@ -73,6 +73,8 @@ class HomeController extends Controller
             // Link the order to the currently logged in user
             $product->sold_count++;
             $product->save();
+            $product->quantity--;
+            $product->save();
             $order->user()->associate(Guard::user());
             $order->save();
             $this->sendPage('home/order', ["success" => "Đặt hàng thành công!!", "product" => $product]);
@@ -198,18 +200,19 @@ class HomeController extends Controller
             }
 
             if ($productFound) {
-                redirect("/cart", ["errors" => 'Sản phẩm đã có trong giỏ hàng của bạn']);
+                redirect("/cart", ["errors" => 'Sản phẩm này đã có trong giỏ hàng của bạn.']);
             } else {
                 $cartItem = [
                     'user_id' => $userId,
                     'product_id' => $productId,
                     'product_name' => $product->name,
                     'product_image' => $product->image,
+                    'product_quantity' => $product->quantity,
                     'product_price' => $product->price
                 ];
                 $cart[] = $cartItem;
                 $_SESSION['cart'] = $cart;
-                redirect("/cart", ["success" => "Sản phẩm đã được thêm vào giỏ hàng", "cartItem" => $cartItem]);
+                redirect("/cart", ["success" => "Sản phẩm đã được thêm vào giỏ hàng.", "cartItem" => $cartItem]);
             }
         } else {
             redirect('/login');
@@ -230,7 +233,6 @@ class HomeController extends Controller
     {
         if (Guard::isUserLoggedIn()) {
             $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
-            // Tìm vị trí sản phẩm trong giỏ hàng
             $productIndex = -1;
             foreach ($cart as $key => $item) {
                 if ($item['product_id'] == $productId) {

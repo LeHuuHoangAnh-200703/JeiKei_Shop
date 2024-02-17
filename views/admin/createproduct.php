@@ -38,6 +38,22 @@
                     <option value="Nintendo_Lite">Nintendo lite</option>
                 </select>
             </div>
+
+            <div class="flex flex-col justify-center w-full">
+                <h2 class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Màn hình</h2>
+                <select name="screen" class="outline-0 p-2 block w-[80%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
+                    <option checked value="OLED">OLED</option>
+                    <option value="LCD">LCD</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col justify-center w-full">
+                <h2 class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Độ phân giải</h2>
+                <select name="type-resolution" class="outline-0 p-2 block w-[80%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
+                    <option checked value="1280x720 pixels">1280x720 pixels</option>
+                    <option value="1080p khi dùng HDMI ở chế độ TV, 720p khi ở chế độ handheld">1080p khi dùng HDMI ở chế độ TV, 720p khi ở chế độ handheld</option>
+                </select>
+            </div>
             <div class="">
                 <div>
                     <label for="quantity" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Số lượng</label>

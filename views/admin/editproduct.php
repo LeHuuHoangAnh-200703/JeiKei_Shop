@@ -9,11 +9,11 @@
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
             <h1>
                 <?php
-                    if (isset($errors) && is_array($errors)) {
-                        foreach ($errors as $error) {
-                            echo $this->e($error) . '<br>';
-                        }
+                if (isset($errors) && is_array($errors)) {
+                    foreach ($errors as $error) {
+                        echo $this->e($error) . '<br>';
                     }
+                }
                 ?>
             </h1>
             <div class="">
@@ -46,6 +46,23 @@
                     <option checked value="Nintendo_OLED">Nintendo Oled</option>
                     <option value="Nintendo_Old">Nintendo old</option>
                     <option value="Nintendo_Lite">Nintendo lite</option>
+                </select>
+            </div>
+            <div class="flex flex-col justify-center w-full">
+                <h2 class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Màn hình</h2>
+                <select name="screen" class="outline-0 p-2 block w-[80%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
+                    <option checked value="OLED">OLED</option>
+                    <option value="LCD">LCD</option>
+                    <option value="không OLED">không OLED</option>
+                </select>
+            </div>
+
+            <div class="flex flex-col justify-center w-full">
+                <h2 class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Độ phân giải</h2>
+                <select name="type-resolution" class="outline-0 p-2 block w-[80%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
+                    <option checked value="1280x720 pixels">1280x720 pixels</option>
+                    <option checked value="1280 x 720 pixels (HDMI: 1080p60)">1280 x 720 pixels (HDMI: 1080p60)</option>
+                    <option value="1080p khi dùng HDMI ở chế độ TV, 720p khi ở chế độ handheld">1080p khi dùng HDMI ở chế độ TV, 720p khi ở chế độ handheld</option>
                 </select>
             </div>
             <div class="">

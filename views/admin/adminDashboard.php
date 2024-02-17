@@ -7,8 +7,8 @@
     </div>
 
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
-            <thead class="bg-gray-50">
+        <table class="w-full border-collapse bg-white whitespace-nowrap text-left text-sm text-gray-500">
+            <thead class="bg-gray-200">
                 <tr>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tên sản phẩm</th>
@@ -22,12 +22,15 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_2</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_3</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_4</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Mô tả</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Dung lượng pin</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Màn hình</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Độ phân giải</th>
+
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+            <tbody class="w-full">
                 <?php foreach ($productinfo as $product) : ?>
-                    <tr>
+                    <tr class="border-t border-slate-500">
                         <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($product->id) ?></th>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->name) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->price) ?></td>
@@ -52,9 +55,11 @@
                         <td><img src="../assets/<?php echo $product['image']; ?>" /> </td>
                         <td><img src="../assets/<?php echo $product['image_1']; ?>" /> </td>
                         <td><img src="../assets/<?php echo $product['image_2']; ?>" /> </td>
-                        <td><img src="../assets/<?php echo$product['image_3']; ?>" /> </td>
+                        <td><img src="../assets/<?php echo $product['image_3']; ?>" /> </td>
                         <td><img src="../assets/<?php echo $product['image_4']; ?>" /> </td>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->description) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->screen) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->resolution) ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>
