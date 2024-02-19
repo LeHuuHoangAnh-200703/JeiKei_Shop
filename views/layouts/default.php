@@ -63,7 +63,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                         </div>
-                        <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products"><?php print_r(count($_SESSION['cart'])); ?></div>
+                        <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products"><?php if (isset($_SESSION['cart'])) {
+                                                                                                                                                                                        print_r(count($_SESSION['cart']));
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo "0";
+                                                                                                                                                                                    }  ?></div>
                     </a>
                 </div>
             </nav>
