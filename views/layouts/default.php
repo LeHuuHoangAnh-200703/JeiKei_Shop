@@ -39,18 +39,21 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <header name="top">
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
-                    <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
+                    <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
                     <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
-                <div class="relative flex items-center justify-center">
-                    <ul class="ml-3 hidden md:flex lg:ml-4">
-                        <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Lịch sử đơn hàng</a>
-                        </li>
-                    </ul>
-                    <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                <ul class="hidden lg:flex">
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Trang chủ</a>
+                    </li>
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
+                    </li>
+                </ul>
+                <div class="relative flex items-center justify-start">
+                    <form action="/search" method="post" class="hidden md:block">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[320px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -87,15 +90,18 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         </button>
                     </form>
                     <li class="pb-[15px]">
+                        <a href="/" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Trang chủ</a>
+                    </li>
+                    <li class="pb-[15px]">
                         <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Lịch sử đơn hàng</a>
                     </li>
                 </ul>
             </div>
         </header>
         <!-- Navigation button to Home page-->
-        <div class="px-4">
+        <!-- <div class="px-4">
             <a href="/" class="font-bold border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] transition-all duration-300 text-[20px]">Trang chủ</a>
-        </div>
+        </div> -->
         <!-- main content -->
         <?= $this->section("page") ?>
         <!-- shopping cart -->
@@ -152,7 +158,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     </div>
     <!-- footer -->
     <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-        <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+        <div class="max-w-[1200px] mx-auto flex justify-center flex-col lg:flex-row md:justify-between items-center">
             <div class="flex flex-col md:flex-row md:text-sm">
                 <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
                 <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>

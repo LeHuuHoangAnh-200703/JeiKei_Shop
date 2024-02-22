@@ -2,7 +2,7 @@
 
 
 <?php $this->start("page") ?>
-<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] min-h-screen mx-auto mt-3 p-5">
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] h-full mx-auto mt-3 p-5">
     <div class="w-full flex justify-center">
         <div class="w-[20%] flex flex-col gap-3 list_img">
             <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
@@ -54,25 +54,40 @@
                 <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#4169E1]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
             </div>
             <hr>
-            <p class="text-center text-[15px] mt-2">Hotline đặt hàng và hỗ trợ : <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
+            <p class="text-center text-[15px] mt-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
         </div>
     </div>
 </div>
+<hr>
+<div class="flex justify-between items-center">
+    <div class="flex gap-2">
+        <img src="../assets/<?php echo $product['image']; ?>" class="w-[160px]">
+        <div class="flex flex-col gap-1 text-[#333f48] justify-center">
+            <h2 class="text-sm font-semibold"><?php echo $this->e($product->name); ?></h2>
+            <p class="text-sm font-medium">Giá bán : <span class="text-base text-[#DC143C] font-semibold">$<?php echo $this->e($product->price); ?></span></p>
+            <p class="text-sm font-medium">Nhà sản xuất :
+                <span class="text-[#DC143C]">Nintendo</span>
+            </p>
+        </div>
+    </div>
+    <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 w-[240px] h-[55px] bg-[#333] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY<span class="text-[14px] font-normal">Giao hàng tận nơi</span></a>
+</div>
+<hr>
 <div class="w-full my-5 p-5 relative flex flex-col gap-4">
     <div class="relative">
         <h1 class="text-[20px] font-medium text-[#333f48]">Đánh giá sản phẩm</h1>
         <span class="absolute left-0 bottom-0 w-[195px] bg-[#DC143C] h-[2px]"></span>
     </div>
     <form action="" method="POST">
-        <div class="grid grid-cols-6 gap-4 items-center">
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center">
             <label for="name" class="text-[#333f48] text-[17px]">Họ Tên <span class="text-[#DC143c]">*</span></label>
-            <input type="text" name="name" class="col-span-5 font-light border border-gray-400 bg-gray-100 w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
+            <input type="text" name="name" placeholder="Vui lòng nhập họ tên của bạn ..." class="col-span-5 font-light border border-gray-400 bg-gray-100 w-full lg:w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
         </div>
-        <div class="grid grid-cols-6 gap-4 items-center my-3">
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
-            <textarea type="text" name="name" class="col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
+            <textarea type="text" name="evaluate" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
         </div>
-        <div class="grid grid-cols-6 gap-4 items-center my-3">
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
             <span></span>
             <p class="col-span-5 text-[#DC143C]">Lưu ý : <span class="text-[#333f48]">HTML không được chấp nhận!</span></p>
         </div>

@@ -21,25 +21,25 @@
                     <p>Số lượng : </p>
                     <p class="text-[#DC143C]"><?php echo $this->e($order->amount) ?></p>
                 </div>
-                <div class="flex justify-start items-center gap-x-1">
+                <div class="flex gap-1">
                     <p>Phương thức thanh toán : </p>
                     <b>
                         <?php echo $this->e($order->payment) ?>
                     </b>
                 </div>
-                <div class="flex justify-start items-center gap-x-1">
+                <div class="flex gap-1">
                     <p>Địa chỉ :</p>
                     <b>
                         <?php echo $this->e($order->address) ?>
                     </b>
                 </div>
-                <div class="flex justify-start items-center gap-x-1">
+                <div class="flex gap-1">
                     <p>Số điện thoại :</p>
                     <b>
                         <?php echo $this->e($order->phone) ?>
                     </b>
                 </div>
-                <div class="flex justify-start items-center gap-x-1">
+                <div class="flex gap-1">
                     <p>Ngày đặt hàng :</p>
                     <b>
                         <?php echo $this->e($order->order_date) ?>

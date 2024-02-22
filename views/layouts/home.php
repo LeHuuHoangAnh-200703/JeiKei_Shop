@@ -39,20 +39,17 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <header name="top" class="overflow-hidden">
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
-                    <div class="md:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
+                    <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
                     <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
+                <ul class="hidden lg:flex">
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
+                    </li>
+                </ul>
                 <div class="relative flex items-center justify-center">
-                    <ul class="ml-3 hidden md:flex lg:ml-4">
-                        <!-- <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#000]">Home</a>
-                        </li> -->
-                        <li class="px-[15px] lg:px-[20px] text-[18px]">
-                            <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
-                        </li>
-                    </ul>
-                    <form action="/search" method="post" class="ml-[50px] hidden md:block">
-                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[210px] lg:w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                    <form action="/search" method="post" class="hidden md:block">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -99,12 +96,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
                     <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
                     <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
-                    <button class="bg-[#DC143C] w-[150px] text-center px-3 py-2 text-[#fff] font-medium">Tìm hiểu thêm</button>
-                    <ul class="lg:flex gap-[20px] mt-8 hidden">
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-xbox"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-playstation"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-n"></i></li>
-                        <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-solid fa-gamepad"></i></li>
+                    <ul class="lg:flex gap-[25px] mt-8 hidden">
+                        <li class="cursor-pointer"><i class="fa-brands fa-xbox hover:scale-110"></i></li>
+                        <li class="cursor-pointer"><i class="fa-brands fa-playstation hover:scale-110"></i></li>
+                        <li class="cursor-pointer"><i class="fa-solid fa-n hover:scale-110"></i></li>
+                        <li class="cursor-pointer"><i class="fa-solid fa-gamepad hover:scale-110"></i></li>
                     </ul>
                 </div>
                 <div class="relative flex justify-center items-center w-full lg:w-[40%]">
