@@ -97,8 +97,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <div class="flex justify-start flex-col gap-2 lg:w-[60%] w-full">
                     <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
                     <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
-                    <p class="mt-2 text-[14px]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
-                    <p class="text-[15px] font-semibold mb-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
+                    <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
+                    <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
                     <button class="bg-[#DC143C] w-[150px] text-center px-3 py-2 text-[#fff] font-medium">Tìm hiểu thêm</button>
                     <ul class="lg:flex gap-[20px] mt-8 hidden">
                         <li class="cursor-pointer transition-all duration-500 hover:scale-110"><i class="fa-brands fa-xbox"></i></li>

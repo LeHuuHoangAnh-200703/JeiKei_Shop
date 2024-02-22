@@ -2,7 +2,7 @@
 
 
 <?php $this->start("page") ?>
-<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] min-h-screen mx-auto mt-3 mb-5 p-5">
+<div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] min-h-screen mx-auto mt-3 p-5">
     <div class="w-full flex justify-center">
         <div class="w-[20%] flex flex-col gap-3 list_img">
             <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
@@ -15,9 +15,9 @@
         </div>
     </div>
     <div>
-        <h1 class="text-[18px] text-[#333f48] font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
-        <div class="mb-2 flex items-center gap-3">
-            <p class="text-[13px] font-medium border-r-2 border-[#333f48] pr-3">Mã máy : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
+        <h1 class="text-[18px] text-[#333f48] mb-2 font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
+        <div class="mb-2 flex lg:items-center lg:gap-3 gap-y-2 flex-col lg:flex-row">
+            <p class="text-[13px] font-medium lg:border-r-2 lg:border-[#333f48] lg:pr-3">Mã máy : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
             <p class="text-[13px] font-medium">Loại máy : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
         </div>
         <hr>
@@ -57,6 +57,27 @@
             <p class="text-center text-[15px] mt-2">Hotline đặt hàng và hỗ trợ : <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
         </div>
     </div>
+</div>
+<div class="w-full my-5 p-5 relative flex flex-col gap-4">
+    <div class="relative">
+        <h1 class="text-[20px] font-medium text-[#333f48]">Đánh giá sản phẩm</h1>
+        <span class="absolute left-0 bottom-0 w-[195px] bg-[#DC143C] h-[2px]"></span>
+    </div>
+    <form action="" method="POST">
+        <div class="grid grid-cols-6 gap-4 items-center">
+            <label for="name" class="text-[#333f48] text-[17px]">Họ Tên <span class="text-[#DC143c]">*</span></label>
+            <input type="text" name="name" class="col-span-5 font-light border border-gray-400 bg-gray-100 w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
+        </div>
+        <div class="grid grid-cols-6 gap-4 items-center my-3">
+            <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
+            <textarea type="text" name="name" class="col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
+        </div>
+        <div class="grid grid-cols-6 gap-4 items-center my-3">
+            <span></span>
+            <p class="col-span-5 text-[#DC143C]">Lưu ý : <span class="text-[#333f48]">HTML không được chấp nhận!</span></p>
+        </div>
+        <button type="submit" class="w-full py-3 text-[#fff] font-semibold bg-slate-800 transition-all duration-300 hover:bg-[#2e6da4]">Gửi đánh giá</button>
+    </form>
 </div>
 
 <?php $this->stop() ?>
