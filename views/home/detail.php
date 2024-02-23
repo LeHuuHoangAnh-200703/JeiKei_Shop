@@ -59,20 +59,6 @@
     </div>
 </div>
 <hr>
-<div class="flex justify-between items-center">
-    <div class="flex gap-2">
-        <img src="../assets/<?php echo $product['image']; ?>" class="w-[160px]">
-        <div class="flex flex-col gap-1 text-[#333f48] justify-center">
-            <h2 class="text-sm font-semibold"><?php echo $this->e($product->name); ?></h2>
-            <p class="text-sm font-medium">Giá bán : <span class="text-base text-[#DC143C] font-semibold">$<?php echo $this->e($product->price); ?></span></p>
-            <p class="text-sm font-medium">Nhà sản xuất :
-                <span class="text-[#DC143C]">Nintendo</span>
-            </p>
-        </div>
-    </div>
-    <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 w-[240px] h-[55px] bg-[#333] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY<span class="text-[14px] font-normal">Giao hàng tận nơi</span></a>
-</div>
-<hr>
 <div class="w-full my-5 p-5 relative flex flex-col gap-4">
     <div class="relative">
         <h1 class="text-[20px] font-medium text-[#333f48]">Đánh giá sản phẩm</h1>
@@ -81,11 +67,21 @@
     <form action="" method="POST">
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center">
             <label for="name" class="text-[#333f48] text-[17px]">Họ Tên <span class="text-[#DC143c]">*</span></label>
-            <input type="text" name="name" placeholder="Vui lòng nhập họ tên của bạn ..." class="col-span-5 font-light border border-gray-400 bg-gray-100 w-full lg:w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
+            <input type="text" name="name" placeholder="Vui lòng nhập họ tên của bạn ..." class="<?= isset($errors['name']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full lg:w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
+            <?php if (isset($errors['name'])) : ?>
+                <span class="text-red-500 mt-1 text-sm">
+                    <strong><?= $this->e($errors['name']) ?></strong>
+                </span>
+            <?php endif ?>
         </div>
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
-            <textarea type="text" name="evaluate" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
+            <textarea type="text" name="evaluate" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="<?= isset($errors['evaluate']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
+            <?php if (isset($errors['evaluate'])) : ?>
+                <span class="text-red-500 mt-1 text-sm">
+                    <strong><?= $this->e($errors['evaluate']) ?></strong>
+                </span>
+            <?php endif ?>
         </div>
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
             <span></span>

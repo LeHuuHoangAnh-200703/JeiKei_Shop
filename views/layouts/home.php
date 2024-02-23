@@ -43,6 +43,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <ul class="hidden lg:flex">
+                    <?php
+                        if (\App\SessionGuard::user() == null) {
+                            echo '<li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/login" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đăng nhập</a></li>';
+                        }
+                    ?>
                     <li class="px-[15px] lg:px-[20px] text-[18px]">
                         <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
                     </li>

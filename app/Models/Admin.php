@@ -13,7 +13,7 @@ class Admin extends Model
     {
         $errors = [];
         if (!$data["name"]) {
-            $errors['email'] = 'Tên không hợp lệ.';
+            $errors['name'] = 'Tên không hợp lệ.';
         }
         if (!$data['email']) {
             $errors['email'] = 'Email không hợp lệ.';
