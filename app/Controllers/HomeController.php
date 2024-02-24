@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Carts;
+use App\Models\Feedback;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
 
@@ -225,8 +226,8 @@ class HomeController extends Controller
             redirect('/login');
         }
 
-        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];        
-        $this->sendPage("home/cart", ["cart" => $cart]); 
+        $cart = isset($_SESSION['cart']) ? $_SESSION['cart'] : [];
+        $this->sendPage("home/cart", ["cart" => $cart]);
     }
 
     public function removeProductCart($productId)
@@ -254,5 +255,55 @@ class HomeController extends Controller
         } else {
             redirect('/login');
         }
+    }
+
+    public function feedbackAction($productId)
+    {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+        $product = Products::find($productId);
+        $user = Guard::user();
+        $data["product_id"] = $productId;
+        $data["user_id"] = $user->id;
+        $data["image_user"] = $user->image;
+        $data["address_user"] = $user->address;
+        $data["username"] = $_POST['name'];
+        $data["product_id"] = $product->id;
+        $data["name"] = $product->name;
+        $data["image"] = $product->image;
+        $data["description"] = $_POST['description'];
+        $data["up_date"] = date('Y-m-d H:i:s');
+        $model_errors = Feedback::validate($data);
+        if (empty($model_errors)) {
+            $feedback = new Feedback();
+            $feedback->fill($data);
+            $feedback->user()->associate(Guard::user());
+            $feedback->save();
+            $this->sendPage('home/detail', ["success" => "Cám ơn bạn đã quan tâm đến sản phẩm!", "product" => $product]);
+        } else {
+            // Hiển thị thông báo lỗi chi tiết
+            $this->sendPage('home/detail', ['errors' => $model_errors, "product" => $product]);
+            return;
+        }
+        // Save the values that the user has entered and selected in the order form.
+        $this->saveFormValues($_POST);
+
+        // Save errors into $_SESSTION["errors"]
+        $this->sendPage('home/detail', ['errors' => "Có lỗi xảy ra, vui lòng kiểm tra lại!", "product" => $product]);
+    }
+
+    public function feedback($productId)
+    {
+        $product = Products::find($productId);
+
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+        if (!$product) {
+            $this->sendNotFound();
+        }
+
+        $this->sendPage("home/detail", ["product" => $product]);
     }
 }

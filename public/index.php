@@ -29,6 +29,8 @@ $router->post('/editprofile', '\App\Controllers\HomeController@saveprofile');
 $router->get('/cart', '\App\Controllers\HomeController@cart');
 $router->post('/add_to_cart/(\d+)', '\App\Controllers\HomeController@addtocart');
 $router->post('/delete/(\d+)', '\App\Controllers\HomeController@removeProductCart');
+$router->get('/feedback/(\d+)', '\App\Controllers\HomeController@feedback');
+$router->post('/add_feedback/(\d+)', '\App\Controllers\HomeController@feedbackAction');
 // Admin routes
 $router->post('/admin/logout', '\App\Controllers\Auth\AdminLoginController@destroy');
 $router->get('/admin/login', '\App\Controllers\Auth\AdminLoginController@create');

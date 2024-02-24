@@ -6,12 +6,12 @@ use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Products;
 
-class Order extends Model
+class Feedback extends Model
 {
 
     protected $table = 'feedbacks';
     protected $fillable = [
-        'user_id', 'product_id', 'name', 'username', 'image', 'description', 'up_date'
+        'user_id', 'product_id', 'name', 'username', 'image', 'description', 'up_date', 'address_user', 'image_user'
     ];
 
     public function user()
@@ -34,8 +34,8 @@ class Order extends Model
             $errors['name'] = 'Tên không hợp lệ.';
         }
 
-        if (!$data['evaluate']) {
-            $errors['evaluate'] = 'Đánh giá không hợp lệ.';
+        if (!$data['description']) {
+            $errors['description'] = 'Đánh giá không hợp lệ.';
         }
 
         return $errors;
