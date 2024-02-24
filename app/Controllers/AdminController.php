@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\SessionGuard as Guard;
 use App\Models\Products;
 use App\Models\User;
+use App\Models\Feedback;
 
 // use Illuminate\Support\Facades\Process;
 // use League\Plates\Template\Func;
@@ -211,5 +212,11 @@ class AdminController extends Controller
         $order->state = 1;
         $order->save();
         redirect("/admin/orders");
+    }
+
+    public function showfeedback()
+    {
+        $feedbacks = Feedback::all();
+        $this->sendPage("/admin/feedback", ["feedbacks" => $feedbacks]);
     }
 }

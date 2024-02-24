@@ -4,16 +4,14 @@
 <?php $this->start("page") ?>
 <?php if (isset($errors)) {
 ?> <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
-        <p class="font-bold"><?php foreach ($errors as $error) {
-                                    echo $error . "\n";
-                                } ?></p>
+        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> <?php foreach ($errors as $error) {
+                                                                                    echo $error . "\n";
+                                                                                } ?></p>
     </div> <?php } ?>
 
 <?php if (isset($success)) {
 ?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Chúc mừng</p>
-        <p class="font-bold"><?php echo $success; ?></p>
+        <p class="font-bold"><i class="fa-solid fa-circle-check"></i> <?php echo $success; ?></p>
     </div> <?php } ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] h-full mx-auto mt-3 p-5">
     <div class="w-full flex justify-center">
@@ -78,15 +76,6 @@
         <span class="absolute left-0 bottom-0 w-[195px] bg-[#DC143C] h-[2px]"></span>
     </div>
     <form action="/add_feedback/<?php echo $product->id ?>" method="POST">
-        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center">
-            <label for="name" class="text-[#333f48] text-[17px]">Họ Tên <span class="text-[#DC143c]">*</span></label>
-            <input type="text" name="name" placeholder="Vui lòng nhập họ tên của bạn ..." class="<?= isset($errors['name']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full lg:w-[500px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800">
-            <?php if (isset($errors['name'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['name']) ?></strong>
-                </span>
-            <?php endif ?>
-        </div>
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
             <textarea type="text" name="description" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="<?= isset($errors['evaluate']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
@@ -99,6 +88,15 @@
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
             <span></span>
             <p class="col-span-5 text-[#DC143C]">Lưu ý : <span class="text-[#333f48]">HTML không được chấp nhận!</span></p>
+        </div>
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-5">
+            <h2 class="text-[#333f48] text-[17px]">Chất lượng <span class="text-[#DC143c]">*</span></h2>
+            <select name="quality" class="col-span-5 outline-0 p-2 block w-full lg:w-[40%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
+                <option checked value="Rất tệ">Rất tệ</option>
+                <option value="Bình thường">Bình thường</option>
+                <option value="Tốt">Tốt</option>
+                <option value="Tuyệt vời">Tuyệt vời</option>
+            </select>
         </div>
         <button type="submit" class="w-full py-3 text-[#fff] font-semibold bg-slate-800 transition-all duration-300 hover:bg-[#2e6da4]">Gửi đánh giá</button>
     </form>

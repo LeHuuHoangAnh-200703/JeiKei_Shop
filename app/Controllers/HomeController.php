@@ -268,11 +268,12 @@ class HomeController extends Controller
         $data["user_id"] = $user->id;
         $data["image_user"] = $user->image;
         $data["address_user"] = $user->address;
-        $data["username"] = $_POST['name'];
+        $data["username"] = $user->name;
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["image"] = $product->image;
         $data["description"] = $_POST['description'];
+        $data["quality"] = $_POST['quality'];
         $data["up_date"] = date('Y-m-d H:i:s');
         $model_errors = Feedback::validate($data);
         if (empty($model_errors)) {

@@ -44,9 +44,9 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </button>
                 <ul class="hidden lg:flex">
                     <?php
-                        if (\App\SessionGuard::user() == null) {
-                            echo '<li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/login" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đăng nhập</a></li>';
-                        }
+                    if (\App\SessionGuard::user() == null) {
+                        echo '<li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/login" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đăng nhập</a></li>';
+                    }
                     ?>
                     <li class="px-[15px] lg:px-[20px] text-[18px]">
                         <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
@@ -120,25 +120,29 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <?= $this->section("page") ?>
 
         <!-- Dropdown Menu -->
-        <div id="user_info_panel" class="absolute top-14 right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
+        <div id="user_info_panel" class="absolute top-14 overflow-hidden right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">
-                <div class="flex items-center gap-3">
+                <div class="flex items-center gap-3 overflow-hidden">
                     <div class="relative h-10 w-10">
                         <div class="w-10 h-10 rounded-full bg-slate-200 text-slate-500 flex justify-center items-center bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')">
                         </div>
                         <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
                     <div class="text-xs">
-                        <div class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
-                                                                    echo $this->e(\App\SessionGuard::user()->name);
-                                                                } else {
-                                                                    echo "Tên của bạn";
-                                                                } ?></div>
-                        <div class="text-gray-400"><?php if (\App\SessionGuard::user()) {
-                                                        echo $this->e(\App\SessionGuard::user()->email);
-                                                    } else {
-                                                        echo "Email";
-                                                    } ?></div>
+                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                            <p class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
+                                                                        echo $this->e(\App\SessionGuard::user()->name);
+                                                                    } else {
+                                                                        echo "Tên của bạn";
+                                                                    } ?></p>
+                        </div>
+                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                            <p class="text-gray-400"><?php if (\App\SessionGuard::user()) {
+                                                            echo $this->e(\App\SessionGuard::user()->email);
+                                                        } else {
+                                                            echo "Email";
+                                                        } ?></p>
+                        </div>
                     </div>
                 </div>
             </div>

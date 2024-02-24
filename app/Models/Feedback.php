@@ -11,7 +11,7 @@ class Feedback extends Model
 
     protected $table = 'feedbacks';
     protected $fillable = [
-        'user_id', 'product_id', 'name', 'username', 'image', 'description', 'up_date', 'address_user', 'image_user'
+        'user_id', 'product_id', 'name', 'username', 'image', 'description', 'up_date', 'address_user', 'image_user', 'quality'
     ];
 
     public function user()
@@ -30,12 +30,8 @@ class Feedback extends Model
 
         $errors = [];
 
-        if (!$data["name"]) {
-            $errors['name'] = 'Tên không hợp lệ.';
-        }
-
         if (!$data['description']) {
-            $errors['description'] = 'Đánh giá không hợp lệ.';
+            $errors['description'] = 'Trường đánh giá đang trống.';
         }
 
         return $errors;
