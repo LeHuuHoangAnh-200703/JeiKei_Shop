@@ -37,8 +37,8 @@
                         <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
                         <td class=""><img src="../assets/<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
                         <td><?= $this->e($cartItem['product_quantity'])?> sản phẩm</td>
-                        <td><?= $this->e($cartItem['product_price']) ?>$</td>
-                        <td><?= $this->e($cartItem['product_price']) ?>$</td>
+                        <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
+                        <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
                         <td class="flex items-center gap-4 flex-col mt-4">
                             <a href="/orders/<?php echo $cartItem['product_id'] ?>" class="text-primary-700 bg-[#4169E1] px-[15px] py-2 text-[#fff]"> Mua sản phẩm </a>
                             <form action="/delete/<?php echo $cartItem['product_id'] ?>" method="POST">

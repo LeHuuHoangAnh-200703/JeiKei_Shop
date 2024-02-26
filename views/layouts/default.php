@@ -191,7 +191,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             }
             setTimeout(() => {
                 successNotification.css("display", "none");
-            }, 2000);
+            }, 4000);
 
             // show notify when user hit ADD button in home page
             $(".add_to_cart").click(function() {
@@ -199,7 +199,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 notify.css("display", "block");
                 setTimeout(() => {
                     notify.css("display", "none");
-                }, 2000);
+                }, 4000);
             });
 
             //sidebar

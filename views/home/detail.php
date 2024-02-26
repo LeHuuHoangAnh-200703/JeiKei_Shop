@@ -35,7 +35,7 @@
         <div class="flex flex-col gap-1">
             <div class="mt-1">
                 <p class="text-[#333f48] text-[24px] font-bold"><span class="text-[#DC143C]">
-                        $<?php echo $this->e($product->price); ?></span></p>
+                        <?php echo $this->e($product->price); ?> VNĐ</span></p>
             </div>
             <div>
                 <p class="text-[#333f48] text-[14px] font-medium">Tình trạng :

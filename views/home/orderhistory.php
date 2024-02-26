@@ -16,7 +16,7 @@
             </div>
             <div class="col-span-2 flex flex-col gap-2">
                 <h1 class="text-xl font-bold"><?php echo $this->e($order->name); ?></h1>
-                <p class="text-[18px] font-bold">Giá : <span class="text-[#DC143C]">$<?php echo $this->e($order->price); ?></span></p>
+                <p class="text-[18px] font-bold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($order->price); ?> VNĐ</span></p>
                 <div class="flex justify-start items-center gap-x-2 font-bold">
                     <p>Số lượng : </p>
                     <p class="text-[#DC143C]"><?php echo $this->e($order->amount) ?></p>

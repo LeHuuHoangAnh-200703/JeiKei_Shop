@@ -5,7 +5,6 @@ namespace App\Controllers;
 use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
-use App\Models\Carts;
 use App\Models\Feedback;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
@@ -78,7 +77,7 @@ class HomeController extends Controller
             $product->save();
             $order->user()->associate(Guard::user());
             $order->save();
-            $this->sendPage('home/order', ["success" => "Đặt hàng thành công!!", "product" => $product]);
+            $this->sendPage('home/order', ["success" => "Shop sẽ cố gắng liên hệ với bạn để xác nhận đơn hàng sớm nhất.", "product" => $product]);
         }
 
         if (!empty($model_errors)) {

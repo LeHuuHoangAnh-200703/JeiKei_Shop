@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-xl">Tất cả sản phẩm đặt hàng</h2>
+        <h2 class="text-[#333] font-bold text-2xl">Đơn hàng</h2>
     </div>
     <div id="all_products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
@@ -17,7 +17,7 @@
                         <span class="text-[#DC143C]"><small class="font-semibold text-black">Giá: </small>$<?= $this->e($order->price) ?></span>
                     </div>
                     <div>
-                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> </span>$<?= $this->e($order->total_amount) ?></p>
+                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> </span><?= $this->e($order->total_amount) ?> VNĐ</p>
                     </div>
                     <div>
                         <p class="text-[#333] text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>
