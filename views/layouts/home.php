@@ -120,7 +120,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <?= $this->section("page") ?>
 
         <!-- Dropdown Menu -->
-        <div id="user_info_panel" class="absolute top-14 overflow-hidden right-[-100%] z-10 mt-2 w-60 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
+        <div id="user_info_panel" class="absolute top-14 overflow-hidden right-[-100%] z-10 mt-2 divide-y divide-gray-100 rounded-lg border border-gray-100 bg-white text-left text-sm shadow-lg transition-all">
             <div class="py-3 px-4">
                 <div class="flex items-center gap-3 overflow-hidden">
                     <div class="relative h-10 w-10">
@@ -152,16 +152,21 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             </div>
             <div class="p-1">
                 <a href="/logout" onclick="event.preventDefault(); document.getElementById('logout-form').submit();" class="flex w-full items-center gap-2 rounded-md px-3 py-2 text-gray-700 hover:bg-gray-100">
-                    <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" stroke-width="1.5" stroke="currentColor" class="h-4 w-4">
-                        <path stroke-linecap="round" stroke-linejoin="round" d="M15.75 9V5.25A2.25 2.25 0 0013.5 3h-6a2.25 2.25 0 00-2.25 2.25v13.5A2.25 2.25 0 007.5 21h6a2.25 2.25 0 002.25-2.25V15m3 0l3-3m0 0l-3-3m3 3H9" />
-                    </svg>
-                    Đăng xuất
+                    <?php if (\App\SessionGuard::user()) {
+                        echo "Đăng xuất";
+                    } else {
+                        echo "Đăng nhập";
+                    } ?>
                     <span class="inline-flex flex-1 justify-end gap-1 text-xs capitalize text-gray-400">
                         <kbd class="min-w-[1em] font-sans">⌥</kbd>
                         <kbd class="min-w-[1em] font-sans">⇧</kbd>
                         <kbd class="min-w-[1em] font-sans">Q</kbd>
                     </span>
-                    <form id="logout-form" class="d-none" action="/logout" method="POST">
+                    <?php if (\App\SessionGuard::user()) {
+                        echo '<form id="logout-form" class="d-none" action="/logout" method="POST">';
+                    } else {
+                        echo '<form id="logout-form" class="d-none" action="/login" method="POST">';
+                    } ?>
                     </form>
                 </a>
             </div>
