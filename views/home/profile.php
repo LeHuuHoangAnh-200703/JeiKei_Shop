@@ -4,14 +4,17 @@
 $timestamp = strtotime($user_data["created_at"]);
 $currentDate = strtotime(date('Y-m-d'));
 $hour = ceil(($currentDate - $timestamp) / 3600);
-
 ?>
-<div class="w-[95%] h-[647px] sm:h-[570px] mx-auto mt-3 mb-36">
+<?php if (isset($success)) {
+?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
+        <p class="font-bold"><i class="fa-solid fa-circle-check"></i> <?php echo $success; ?></p>
+    </div> <?php } ?>
+<div class="w-[95%] h-[650px] md:h-[570px] mx-auto mt-3 mb-36">
     <div class="relative h-[300px] w-full bg-center bg-cover rounded-sm" style="
-            background-image: url('./assets/wallhaven-k9ev61.jpg');
+            background-image: url('./assets/wallhaven-57gq69.png');
           ">
 
-        <div class="w-[90%] bg-[#fdfdfd] sm:h-[500px] absolute top-32 left-[50%] translate-x-[-50%] mx-auto shadow-lg rounded-md pt-[50px] px-2 sm:px-10 pb-10 sm:pb-0 h-fit ">
+        <div class="w-[90%] bg-[#fdfdfd] absolute top-32 left-[50%] translate-x-[-50%] mx-auto shadow-lg rounded-md pt-[50px] px-2 sm:px-10 pb-10 sm:pb-0 h-fit ">
             <div style="<?php
                         if (isset($user_data["image"])) {
                             echo "background-image:url('" . $user_data['image'] . "')";
@@ -21,12 +24,12 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                         ?>" class="w-[100px] h-[100px] bg-[#fff] rounded-full shadow-lg absolute left-1/2 translate-x-[-50%] -top-[50px] bg-center bg-cover">
 
             </div>
-            <div class="flex justify-between items-center px-2 lg:px-24">
+            <div class="flex justify-between items-center flex-col lg:flex-row gap-4 px-2 lg:px-24">
                 <ul class="flex gap-x-6">
                     <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Đã đặt hàng</span></li>
                     <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo  $hour ?></span><span class="text-slate-400">Giờ</span></li>
                 </ul>
-                <a href="/editprofile" class="px-2 py-1 sm:px-5 sm:py-2 bg-[#FFD700] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">Chỉnh sửa hồ sơ</a>
+                <a href="/editprofile" class="px-3 py-2 sm:px-5 sm:py-2 bg-[#4169E1] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">Chỉnh sửa hồ sơ</a>
             </div>
             <div class="text-center mt-12 pb-4">
                 <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">

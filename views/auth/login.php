@@ -8,7 +8,7 @@
     ?>
         <div id="success-notification" class="bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
             <p class="font-bold"><i class="fa-solid fa-check"></i> Đăng ký tài khoản thành công</p>
-            <p>Tiếp tục đăng nhập để tiến hành mua hàng!!</p>
+            <p>Tiếp tục đăng nhập để tiến hành mua hàng!</p>
         </div>
     <?php } ?>
 
@@ -38,7 +38,7 @@
                     </span>
                 <?php endif ?>
 
-                <button class="block bg-[#5429FF] text-[#fff] mt-4 p-2 font-bold rounded-sm transition-all duration-300 hover:bg-[#2ea9d2] focus:ring focus:bg-[#4169E1] active:bg-[#4169E1]">Đăng nhập</button>
+                <button type="submit" class="block bg-[#5429FF] text-[#fff] mt-4 p-2 font-bold rounded-sm transition-all duration-300 hover:bg-[#2ea9d2] focus:ring focus:bg-[#4169E1] active:bg-[#4169E1]">Đăng nhập</button>
                 <div class="flex items-center gap-1 justify-center">
                     <p class="text-[14px] text-[#333] font-semibold">Nếu chưa có tài khoản?</p>
                     <a href="/register" class="text-[15px] text-[#5429FF] font-semibold cursor-pointer hover:underline">Đăng ký</a>

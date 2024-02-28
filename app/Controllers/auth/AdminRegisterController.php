@@ -32,7 +32,7 @@ class AdminRegisterController extends Controller
         if (empty($model_errors)) {
             $this->createUser($data);
 
-            $messages = ['success' => 'User has been created successfully.'];
+            $messages = ['success' => 'Người dùng đã được tạo thanh công.'];
             redirect('/admin/login', ['messages' => $messages]);
         }
         redirect('/admin/register', ['errors' => $model_errors]);

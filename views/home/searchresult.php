@@ -8,7 +8,7 @@
         ?>
             <div class="group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-lg style">
                 <div class="p-4">
-                    <div class="relative transition-all duration-300 hover:scale-110 hover:shadow-xl">
+                    <div class="relative transition-all duration-300 hover:scale-105">
                         <img src="../assets/<?php echo $result['image']; ?>" />
                         <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($result->id) ?>"></a>
                     </div>

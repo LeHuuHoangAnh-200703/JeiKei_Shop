@@ -173,7 +173,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
             </div>
             <div class="md:text-sm">
-                <p>Products provided by Nintendo | JeiKei</p>
+                <p>Products provided by Nintendo</p>
             </div>
         </div>
     </footer>

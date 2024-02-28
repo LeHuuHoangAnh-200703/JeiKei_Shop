@@ -7,8 +7,8 @@
     if (isset($messages["success"])) {
     ?>
         <div id="success-notification" class="bg-green-500 text-white px-4 py-2 fixed top-0 right-0 m-4 rounded-md shadow-lg animate__animated animate__backInRight">
-            <p class="font-bold"><i class="fa-solid fa-check"></i> Registered successfully</p>
-            <p>Continue logging in to use the application</p>
+            <p class="font-bold"><i class="fa-solid fa-check"></i> Đăng ký thành công!</p>
+            <p>Tiếp tục đăng nhập để sử dụng ứng dụng.</p>
         </div>
     <?php } ?>
 

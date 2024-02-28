@@ -28,13 +28,13 @@ class AdminLoginController extends Controller
         $admin_credentials = $this->filterUserCredentials($_POST);
         $errors = [];
         $admin = Admin::where('email', $admin_credentials['email'])->first();
-        
-        if (!$admin) {
-            $errors['email'] = 'Invalid email';
+        $regex = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
+        if (!$admin || !preg_match($regex, $admin)) {
+            $errors['email'] = 'Email không hợp lệ.';
         } else if (Guard::adminlogin($admin, $admin_credentials)) {
             redirect('/admin');
         } else {
-            $errors['password'] = 'Invalid password.';
+            $errors['password'] = 'Mật khẩu không hợp lệ.';
         }
         // Đăng nhập không thành công: lưu giá trị trong form, trừ password
         $this->saveFormValues($_POST, ['password']);

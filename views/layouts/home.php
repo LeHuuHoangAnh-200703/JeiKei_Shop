@@ -98,7 +98,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <div class="mt-8 flex justify-between items-center w-full px-4 flex-wrap">
                 <div class="flex justify-start flex-col gap-2 lg:w-[60%] w-full">
                     <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
-                    <p class="lg:text-6xl text-4xl font-semibold">Nintendo Switch</p>
+                    <p class="lg:text-6xl text-4xl font-semibold">Nintendo <span class="text-[#DC143C]">Switch</span></p>
                     <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
                     <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
                     <ul class="lg:flex gap-[25px] mt-8 hidden">
@@ -179,13 +179,13 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     </div>
     <!-- footer -->
     <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-        <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+        <div class="max-w-[1200px] mx-auto flex justify-center flex-col lg:flex-row md:justify-between items-center">
             <div class="flex flex-col md:flex-row md:text-sm">
                 <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
                 <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
             </div>
             <div class="md:text-sm">
-                <p>Products provided by Nintendo | JeiKei</p>
+                <p>Products provided by Nintendo</p>
             </div>
         </div>
     </footer>

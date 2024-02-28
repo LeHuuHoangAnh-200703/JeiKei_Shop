@@ -16,10 +16,10 @@
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] h-full mx-auto mt-3 p-5">
     <div class="w-full flex justify-center">
         <div class="w-[20%] flex flex-col gap-3 list_img">
-            <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#333f48] transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+            <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
         </div>
         <div class="w-[80%] flex items-start">
             <img src="../assets/<?php echo $product['image']; ?>" alt="" class="img_main">
@@ -58,7 +58,7 @@
                 <li class="list-disc text-[15px] text-[#333f48]">Cảm biến : cảm biến gia tốc, con quay hồi chuyển.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm <?php echo $this->e($product->name); ?> được sản xuất hoàn toàn bởi Nintendo.</li>
             </ul>
-            <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ $<?php echo $this->e($product->price); ?><span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
+            <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ <?php echo $this->e($product->price); ?> VNĐ<span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
             <div class="flex md:items-center gap-2 flex-col md:flex-row">
                 <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 md:border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Có <span class="font-bold"><?php echo $product->sold_count ?></span> lượt mua sản phẩm</p>
                 <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#4169E1]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
@@ -77,12 +77,17 @@
     <form action="/add_feedback/<?php echo $product->id ?>" method="POST">
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
-            <textarea type="text" name="description" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="<?= isset($errors['evaluate']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
-            <?php if (isset($errors['descriptione'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['description']) ?></strong>
-                </span>
-            <?php endif ?>
+            <textarea type="text" name="description" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="<?= isset($errors['description']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
+        </div>
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
+            <span></span>
+            <div class="col-span-5">
+                <?php if (isset($errors['description'])) : ?>
+                    <span class="text-red-500 mt-1 text-sm">
+                        <strong><?= $this->e($errors['description']) ?></strong>
+                    </span>
+                <?php endif ?>
+            </div>
         </div>
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
             <span></span>

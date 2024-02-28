@@ -31,13 +31,13 @@ class LoginController extends Controller
 
         if (!$user) {
             // Người dùng không tồn tại...
-            $errors['email'] = 'Invalid email';
+            $errors['email'] = 'Email không hợp lệ.';
         } else if (Guard::login($user, $user_credentials)) {
             // Đăng nhập thành công...
             redirect('/home');
         } else {
             // Sai mật khẩu...
-            $errors['password'] = 'Invalid password.';
+            $errors['password'] = 'Mật khẩu không hợp lệ.';
         }
 
         // Đăng nhập không thành công: lưu giá trị trong form, trừ password

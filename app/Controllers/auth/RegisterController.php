@@ -40,7 +40,7 @@ class RegisterController extends Controller
             // Dữ liệu hợp lệ...
             $this->createUser($data);
 
-            $messages = ['success' => 'User has been created successfully.'];
+            $messages = ['success' => 'Người dùng đã được tạo thanh công.'];
             redirect('/login', ['messages' => $messages]);
         }
 
