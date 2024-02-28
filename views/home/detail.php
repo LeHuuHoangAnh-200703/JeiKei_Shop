@@ -28,7 +28,7 @@
     <div>
         <h1 class="text-[18px] text-[#333f48] mb-2 font-semibold lg:text-[24px]"><?php echo $this->e($product->name); ?></h1>
         <div class="mb-2 flex lg:items-center lg:gap-3 gap-y-2 flex-col lg:flex-row">
-            <p class="text-[13px] font-medium lg:border-r-2 lg:border-[#333f48] lg:pr-3">Mã máy : <span class="text-[#DC143C]">(Đang cập nhật ...)</span></p>
+            <p class="text-[13px] font-medium lg:border-r-2 lg:border-[#333f48] lg:pr-3">Mã máy : <span class="text-[#DC143C]">1420<?php echo $this->e($product->id); ?>*</span></p>
             <p class="text-[13px] font-medium">Loại máy : <span class="text-[#DC143C]"><?php echo $this->e($product->type); ?></span></p>
         </div>
         <hr>
@@ -51,8 +51,7 @@
             <h2 class="my-3 text-[#333f48] bg-gray-300 pl-3 py-2 text-lg">Cấu hình chi tiết</h2>
             <ul class="ml-4 mb-3 flex flex-col gap-[6px]">
                 <li class="list-disc text-[15px] text-[#333f48]">Hỗ trợ thẻ nhớ có dung lượng tối đa 2TB.</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 64GB (Nintendo OLED).</li>
-                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong 32GB (OLD và LITE).</li>
+                <li class="list-disc text-[15px] text-[#333f48]">Bộ nhớ trong : <?php echo $this->e($product->memory); ?> </li>
                 <li class="list-disc text-[15px] text-[#333f48]">Màn hình : <?php echo $this->e($product->screen); ?>.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Độ phân giải : <?php echo $this->e($product->resolution); ?>.</li>
                 <li class="list-disc text-[15px] text-[#333f48]">Dung lượng pin : <?php echo $this->e($product->description); ?></li>

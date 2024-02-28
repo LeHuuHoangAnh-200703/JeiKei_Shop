@@ -192,7 +192,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">
-        <div class="w-16 h-16 border-4 border-dashed rounded-full animate-spin dark:border-[#DC143C]"></div>
+        <div class="rounded-md h-12 w-12 border-4 border-t-4 border-[#DC143C] animate-spin absolute"></div>
     </div>
 
     <!-- Javascript and Jquery code -->

@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/default", ["title" => "Order history"]) ?>
+<?php $this->layout("layouts/default", ["title" => "Lịch sử đơn hàng"]) ?>
 
 <?php $this->start("page") ?>
 <div class="mx-auto mb-5 p-5">

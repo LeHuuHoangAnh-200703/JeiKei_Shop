@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/admin", ["title" => "Admin Feedback"]) ?>
+<?php $this->layout("layouts/admin", ["title" => "Phản hồi người dùng"]) ?>
 
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">

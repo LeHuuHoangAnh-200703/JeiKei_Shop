@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/admin", ["title" => "Orders"]) ?>
+<?php $this->layout("layouts/admin", ["title" => "Đơn hàng"]) ?>
 
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
@@ -12,12 +12,14 @@
                 <div class="p-4">
                     <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
                     <p class="font-semibold"><?= $this->e($order->username) ?></p>
-                    <div class="flex justify-between items-center">
-                        <span class="font-normal text-[#4169E1]"><small class="font-semibold text-black">Ngày :</small> <?= $this->e($order->order_date) ?></span>
-                        <span class="text-[#DC143C]"><small class="font-semibold text-black">Giá: </small>$<?= $this->e($order->price) ?></span>
+                    <div>
+                        <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Liên lạc :</small> <?= $this->e($order->phone) ?></span>
                     </div>
                     <div>
-                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> </span><?= $this->e($order->total_amount) ?> VNĐ</p>
+                        <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Ngày đặt :</small> <?= $this->e($order->order_date) ?></span>
+                    </div>
+                    <div>
+                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> <?= $this->e($order->total_amount) ?> VNĐ</span></p>
                     </div>
                     <div>
                         <p class="text-[#333] text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>

@@ -70,7 +70,6 @@ class HomeController extends Controller
         if (empty($model_errors)) {
             $order = new Order();
             $order->fill($data);
-            // Link the order to the currently logged in user
             $product->sold_count++;
             $product->save();
             $product->quantity--;

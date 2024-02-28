@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/admin", ["title" => "Admin Dashboard"]) ?>
+<?php $this->layout("layouts/admin", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
@@ -7,7 +7,7 @@
     </div>
 
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <table class="w-full border-collapse bg-white whitespace-nowrap text-left text-sm text-gray-500">
+        <table class="w-full border-collapse bg-white whitespace-nowrap text-center text-sm text-gray-500">
             <thead class="bg-gray-200">
                 <tr>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
@@ -16,16 +16,16 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Loại sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Số lượng</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tình trạng</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Hoạt động</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_1</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_2</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_3</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh_4</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Dung lượng pin</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Màn hình</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Độ phân giải</th>
-
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Bộ nhớ</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Hoạt động</th>
                 </tr>
             </thead>
             <tbody class="w-full">
@@ -44,6 +44,15 @@
                                 Paid
                             </span>
                         </td>
+                        <td><img class="w-[125px]" src="../assets/<?php echo $product['image']; ?>" /> </td>
+                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_1']; ?>" /> </td>
+                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_2']; ?>" /> </td>
+                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_3']; ?>" /> </td>
+                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_4']; ?>" /> </td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->description) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->screen) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->resolution) ?></td>
+                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->memory) ?></td>
                         <td class="flex justify-center gap-4 px-6 py-4 font-medium flex-col">
                             <a href="/admin/editproduct/<?= $product->id ?>" class="text-center bg-[#4169E1] px-2 py-2 text-[#fff]">Edit</a>
                             <form class="form-inline" action="/admin/delete/<?= $product->id ?>" method="POST">
@@ -52,14 +61,6 @@
                                 </button>
                             </form>
                         </td>
-                        <td><img src="../assets/<?php echo $product['image']; ?>" /> </td>
-                        <td><img src="../assets/<?php echo $product['image_1']; ?>" /> </td>
-                        <td><img src="../assets/<?php echo $product['image_2']; ?>" /> </td>
-                        <td><img src="../assets/<?php echo $product['image_3']; ?>" /> </td>
-                        <td><img src="../assets/<?php echo $product['image_4']; ?>" /> </td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->description) ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->screen) ?></td>
-                        <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->resolution) ?></td>
                     </tr>
                 <?php endforeach ?>
             </tbody>

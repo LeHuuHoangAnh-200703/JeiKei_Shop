@@ -6,7 +6,7 @@ error_reporting(E_ALL);
 
 require_once __DIR__ . '/../bootstrap.php';
 
-define('APPNAME', 'Nintendo Switch | JeiKei Shop');
+define('APPNAME', 'JeiKei Shop | Nintendo Switch');
 
 session_start();
 

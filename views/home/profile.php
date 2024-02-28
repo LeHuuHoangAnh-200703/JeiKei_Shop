@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/default", ["title" => "Your profile"]) ?>
+<?php $this->layout("layouts/default", ["title" => "Hồ sơ của bạn"]) ?>
 
 <?php $this->start("page");
 $timestamp = strtotime($user_data["created_at"]);
@@ -16,9 +16,9 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                         if (isset($user_data["image"])) {
                             echo "background-image:url('" . $user_data['image'] . "')";
                         } else {
-                            echo "background-image:url('./assets/user_avatar.jpg')";
+                            echo "background-image:url('../assets/user_avatar.jpg')";
                         }
-                        ?>" class="w-[100px] h-[100px] rounded-full shadow-lg absolute left-1/2 translate-x-[-50%] -top-[50px] bg-center bg-cover">
+                        ?>" class="w-[100px] h-[100px] bg-[#fff] rounded-full shadow-lg absolute left-1/2 translate-x-[-50%] -top-[50px] bg-center bg-cover">
 
             </div>
             <div class="flex justify-between items-center px-2 lg:px-24">

@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/default", ["title" => "Your profile"]) ?>
+<?php $this->layout("layouts/default", ["title" => "Hồ sơ của bạn"]) ?>
 
 <?php $this->start("page");
 

@@ -67,6 +67,7 @@ class AdminController extends Controller
         $data["type"] = $_POST["type"];
         $data["screen"] = $_POST["screen"];
         $data["resolution"] = $_POST["type-resolution"];
+        $data["memory"] = $_POST["type-memory"];
         if (empty($model_errors)) {
             $product = new Products();
             $product->fill($data);
@@ -137,6 +138,7 @@ class AdminController extends Controller
         $data["type"] = $_POST["type"];
         $data["screen"] = $_POST["screen"];
         $data["resolution"] = $_POST["type-resolution"];
+        $data["memory"] = $_POST["type-memory"];
         if (empty($model_errors)) {
             $product->fill($data);
             $product->save();
