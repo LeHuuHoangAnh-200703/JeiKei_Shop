@@ -40,7 +40,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
                     <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
-                    <a href="/home" class="test text-[18px] md:text-[20px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
+                    <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
                 </button>
                 <ul class="hidden lg:flex">
                     <?php
@@ -129,14 +129,14 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <span class="absolute right-0 bottom-0 h-2 w-2 rounded-full bg-green-400 ring ring-white"></span>
                     </div>
                     <div class="text-xs">
-                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                        <div class="whitespace-nowrap text-ellipsis overflow-hidden">
                             <p class="font-medium text-gray-700"><?php if (\App\SessionGuard::user()) {
                                                                         echo $this->e(\App\SessionGuard::user()->name);
                                                                     } else {
                                                                         echo "Tên của bạn";
                                                                     } ?></p>
                         </div>
-                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                        <div class="whitespace-nowrap text-ellipsis overflow-hidden">
                             <p class="text-gray-400"><?php if (\App\SessionGuard::user()) {
                                                             echo $this->e(\App\SessionGuard::user()->email);
                                                         } else {
@@ -192,7 +192,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     <!-- <div class="opacity-toggle absolute top-0 left-0 w-full opacity-50 bg-[#333] h-full z-10 hidden transition-all duration-100"></div> -->
     <!-- Loading -->
     <div id="loading" class="fixed top-0 left-0 w-full h-screen bg-[rgba(0,0,0,.7)] flex justify-center items-center">
-        <div class="rounded-md h-12 w-12 border-4 border-t-4 border-[#DC143C] animate-spin absolute"></div>
+        <div class="animate-spin ease-linear rounded-full w-14 h-14 border-t-4 border-b-4 border-[#DC143C] ml-3"></div>
     </div>
 
     <!-- Javascript and Jquery code -->

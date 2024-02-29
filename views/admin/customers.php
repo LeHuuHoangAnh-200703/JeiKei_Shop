@@ -6,7 +6,7 @@
         <h2 class="text-[#333] font-bold text-2xl">Danh sách người dùng</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
+        <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>

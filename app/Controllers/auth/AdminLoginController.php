@@ -28,8 +28,7 @@ class AdminLoginController extends Controller
         $admin_credentials = $this->filterUserCredentials($_POST);
         $errors = [];
         $admin = Admin::where('email', $admin_credentials['email'])->first();
-        $regex = "^[a-zA-Z0-9.!#$%&'*+/=?^_`{|}~-]+@[a-zA-Z0-9-]+(?:\.[a-zA-Z0-9-]+)*$";
-        if (!$admin || !preg_match($regex, $admin)) {
+        if (!$admin) {
             $errors['email'] = 'Email không hợp lệ.';
         } else if (Guard::adminlogin($admin, $admin_credentials)) {
             redirect('/admin');

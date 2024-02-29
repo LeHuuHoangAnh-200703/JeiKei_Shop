@@ -53,11 +53,11 @@
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->screen) ?></td>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->resolution) ?></td>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->memory) ?></td>
-                        <td class="flex justify-center gap-4 px-6 py-4 font-medium flex-col">
-                            <a href="/admin/editproduct/<?= $product->id ?>" class="text-center bg-[#4169E1] px-2 py-2 text-[#fff]">Edit</a>
+                        <td class="flex justify-center gap-4 px-6 py-4 flex-col">
+                            <a href="/admin/editproduct/<?= $product->id ?>" class="text-center bg-[#4169E1] px-2 py-2 text-[#fff]">Sửa sản phẩm</a>
                             <form class="form-inline" action="/admin/delete/<?= $product->id ?>" method="POST">
                                 <button type="submit" class="text-primary-700 bg-[#DC143C] px-4 py-2 text-[#fff]" name="delete-product">
-                                    <i alt="Delete"></i> Delete
+                                    <i alt="Delete"></i> Xóa sản phẩm
                                 </button>
                             </form>
                         </td>

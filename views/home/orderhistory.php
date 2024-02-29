@@ -4,7 +4,7 @@
 <div class="mx-auto mb-5 p-5">
     <div class="relative w-full flex justify-center mb-3">
         <h1 class="text-[30px] font-semibold">Lịch sử đơn hàng</h1>
-        <div class="absolute bottom-0 w-[300px] h-1 bg-[#DC143C]"></div>
+        <div class="absolute bottom-0 w-[280px] h-1 bg-[#DC143C]"></div>
     </div>
 
     <?php
@@ -14,7 +14,7 @@
             <div class="w-full flex items-center justify-center">
                 <img src="../assets/<?php echo ($order['image']); ?>" />
             </div>
-            <div class="col-span-2 flex flex-col gap-2">
+            <div class="col-span-2 flex flex-col gap-2 items-start justify-center">
                 <h1 class="text-xl font-bold"><?php echo $this->e($order->name); ?></h1>
                 <p class="text-[18px] font-bold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($order->price); ?> VNĐ</span></p>
                 <div class="flex justify-start items-center gap-x-2 font-bold">

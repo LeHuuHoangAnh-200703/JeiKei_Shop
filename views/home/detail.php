@@ -61,25 +61,25 @@
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ <?php echo $this->e($product->price); ?> VNĐ<span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
             <div class="flex md:items-center gap-2 flex-col md:flex-row">
                 <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 md:border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Có <span class="font-bold"><?php echo $product->sold_count ?></span> lượt mua sản phẩm</p>
-                <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#4169E1]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
+                <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#DC143D]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
             </div>
             <hr>
-            <p class="text-center text-[15px] mt-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#4169E1]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
+            <p class="text-center text-[15px] mt-4">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"><i class="fa-solid fa-square-phone-flip"></i> 079.965.8592</span> (7:30-22:00)</p>
         </div>
     </div>
 </div>
 <hr>
 <div class="w-full my-5 p-5 relative flex flex-col gap-4">
     <div class="relative">
-        <h1 class="text-[20px] font-medium text-[#333f48]">Đánh giá sản phẩm</h1>
-        <span class="absolute left-0 bottom-0 w-[195px] bg-[#DC143C] h-[2px]"></span>
+        <h1 class="text-[22px] font-semibold text-[#333f48]">Đánh giá sản phẩm</h1>
+        <span class="absolute left-0 bottom-0 w-[215px] bg-[#DC143C] h-[2px]"></span>
     </div>
     <form action="/add_feedback/<?php echo $product->id ?>" method="POST">
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <label for="name" class="text-[#333f48] text-[17px]">Đánh giá của bạn <span class="text-[#DC143c]">*</span></label>
             <textarea type="text" name="description" placeholder="Vui lòng đánh giá sản phẩm tại đây ..." class="<?= isset($errors['description']) ? 'border-red-500' : '' ?> col-span-5 border border-gray-400 bg-gray-100 w-full h-[100px] p-2 rounded-[4px] outline-none hover:border-slate-800 focus:border-slate-800"></textarea>
         </div>
-        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center">
             <span></span>
             <div class="col-span-5">
                 <?php if (isset($errors['description'])) : ?>
@@ -89,7 +89,7 @@
                 <?php endif ?>
             </div>
         </div>
-        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-3">
+        <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center my-3">
             <span></span>
             <p class="col-span-5 text-[#DC143C]">Lưu ý : <span class="text-[#333f48]">HTML không được chấp nhận!</span></p>
         </div>
