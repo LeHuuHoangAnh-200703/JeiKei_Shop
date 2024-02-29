@@ -1,7 +1,7 @@
 <?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
-<div class="w-full mx-auto mb-8">
+<div class="w-full mx-auto my-8">
     <div class="w-full flex justify-between items-start flex-col lg:flex-row p-4 gap-3 lg:gap-3 md:gap-x-[60px]">
         <div class="w-[20%] hidden lg:block flex-col py-1 px-2">
             <h2 class="py-2 flex items-center gap-2 text-[#333f48]"><i class="fa-solid fa-gamepad text-xl text-[#DC143C]"></i><strong> Loại máy</strong></h2>

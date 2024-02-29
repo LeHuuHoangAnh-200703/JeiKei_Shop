@@ -116,6 +116,13 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             </div>
         </header>
         <hr class="lg:my-10 mb-10">
+        <div style="background-image: url('../assets/PLP_Hero_Characters_Splatoon_3_BG_tile.png');" class="w-full bg-[#DC143C] flex justify-between items-center rounded-lg p-6">
+            <div class="p-5 bg-white backdrop-blur-lg w-[45%] rounded-md">
+                <h1 class="text-[30px] font-semibold">Nintendo Switch</h1>
+                <p class="text-[14px]">JeiKei Shop hệ thống bán lẻ các sản phẩm công nghệ, mua sắm vô số mặt hàng của Nintendo.</p>
+            </div>
+            <img src="../assets/z5204960400605_26b64bbdfdfaad97c75be56bb8163485-removebg-preview.png" class="w-[400px]" alt="">
+        </div>
         <!-- main content -->
         <?= $this->section("page") ?>
 
