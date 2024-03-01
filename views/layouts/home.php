@@ -54,7 +54,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </ul>
                 <div class="relative flex items-center justify-center">
                     <form action="/search" method="post" class="hidden md:block">
-                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[350px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="<?php if(\App\SessionGuard::user() == null) { echo 'w-[250px]';} else {echo 'w-[350px]';}?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -116,12 +116,13 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             </div>
         </header>
         <hr class="lg:my-10 mb-10">
-        <div style="background-image: url('../assets/PLP_Hero_Characters_Splatoon_3_BG_tile.png');" class="w-full bg-[#DC143C] flex justify-between items-center rounded-lg p-6">
-            <div class="p-5 bg-white backdrop-blur-lg w-[45%] rounded-md">
-                <h1 class="text-[30px] font-semibold">Nintendo Switch</h1>
+        <div style="background-image: url('../assets/PLP_Hero_Characters_Splatoon_3_BG_tile.png');" class="w-full flex justify-between flex-col lg:flex-row items-center">
+            <div style="background-color: rgba(0, 0, 0, 0.5);" class="p-5 m-7 w-full lg:w-[45%] lg:rounded-md text-[#fff] flex flex-col gap-2">
+                <h1 class="text-[32px] font-semibold">Nintendo Switch</h1>
                 <p class="text-[14px]">JeiKei Shop hệ thống bán lẻ các sản phẩm công nghệ, mua sắm vô số mặt hàng của Nintendo.</p>
+                <p class="text-[14px]">Góp ý : <span class="text-[#FFD700] font-semibold">jeikei@gmail.com</span></p>
             </div>
-            <img src="../assets/z5204960400605_26b64bbdfdfaad97c75be56bb8163485-removebg-preview.png" class="w-[400px]" alt="">
+            <img src="../assets/z5204960400605_26b64bbdfdfaad97c75be56bb8163485-removebg-preview.png" class="w-[450px]" alt="">
         </div>
         <!-- main content -->
         <?= $this->section("page") ?>
