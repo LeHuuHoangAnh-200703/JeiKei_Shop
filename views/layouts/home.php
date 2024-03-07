@@ -119,13 +119,13 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             </div>
         </div>
         <hr class="lg:my-10 mb-10">
-        <div style="background-image: url('../assets/PLP_Hero_Characters_Splatoon_3_BG_tile.png');" class="w-full flex justify-between flex-col lg:flex-row items-center">
-            <div style="background-color: rgba(0, 0, 0, 0.5);" class="p-5 m-7 w-full lg:w-[45%] lg:rounded-md text-[#fff] flex flex-col gap-2">
+        <div style="background-image: url('../assets/mario.png');" class="w-full flex justify-between flex-col bg-cover bg-center gap-6 lg:flex-row items-center p-7">
+            <div style="background-color: rgba(0, 0, 0, 0.5);" class="p-5 w-full lg:w-[45%] text-[#fff] flex flex-col gap-2">
                 <h1 class="text-[32px] font-semibold">Nintendo Switch</h1>
                 <p class="text-[14px]">JeiKei Shop hệ thống bán lẻ các sản phẩm công nghệ, mua sắm vô số mặt hàng của Nintendo.</p>
                 <p class="text-[14px]">Góp ý : <span class="text-[#FFD700] font-semibold">jeikei@gmail.com</span></p>
             </div>
-            <img src="../assets/z5204960400605_26b64bbdfdfaad97c75be56bb8163485-removebg-preview.png" class="w-[450px]" alt="">
+            <img src="../assets/z5227501410029_71677b8790ffa87d4bb72debf5914fed-removebg-preview.png" class="w-[300px]" alt="">
         </div>
         <!-- main content -->
         <?= $this->section("page") ?>
