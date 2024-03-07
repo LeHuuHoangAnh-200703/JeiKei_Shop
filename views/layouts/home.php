@@ -40,7 +40,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <nav class="flex items-center justify-between top-0 left-0 w-full px-4 py-[15px]">
                 <button class="flex items-center gap-x-4">
                     <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
-                    <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
+                    <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">Shop</span></a>
                 </button>
                 <ul class="hidden lg:flex">
                     <?php
@@ -54,7 +54,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </ul>
                 <div class="relative flex items-center justify-center">
                     <form action="/search" method="post" class="hidden md:block">
-                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="<?php if(\App\SessionGuard::user() == null) { echo 'w-[250px]';} else {echo 'w-[350px]';}?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="<?php if (\App\SessionGuard::user() == null) {
+                                                                                                        echo 'w-[250px]';
+                                                                                                    } else {
+                                                                                                        echo 'w-[350px]';
+                                                                                                    } ?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -95,26 +99,25 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </li>
                 </ul>
             </div>
-            <div class="mt-8 flex justify-between items-center w-full px-4 flex-wrap">
-                <div class="flex justify-start flex-col gap-2 lg:w-[60%] w-full">
-                    <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
-                    <p class="lg:text-6xl text-4xl font-semibold">Nintendo <span class="text-[#DC143C]">Switch</span></p>
-                    <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn. Xin cảm ơn !</p>
-                    <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
-                    <ul class="lg:flex gap-[25px] mt-8 hidden">
-                        <li class="cursor-pointer"><i class="fa-brands fa-xbox hover:scale-110"></i></li>
-                        <li class="cursor-pointer"><i class="fa-brands fa-playstation hover:scale-110"></i></li>
-                        <li class="cursor-pointer"><i class="fa-solid fa-n hover:scale-110"></i></li>
-                        <li class="cursor-pointer"><i class="fa-solid fa-gamepad hover:scale-110"></i></li>
-                    </ul>
-                </div>
-                <div class="relative flex justify-center items-center w-full lg:w-[40%]">
-                    <div class="before:absolute before:bg-[#DC143C] before:bottom-[-50%] before:left-[50%] before:translate-x-[-50%] lg:before:top-0 before:w-[450px] before:h-[450px] lg:before:w-[320px] lg:before:h-[320px] before:-z-10 before:rounded-full">
-                        <img src="./assets/./Picture32-removebg-preview.png" alt="" class="z-10 w-[450px]">
-                    </div>
-                </div>
-            </div>
         </header>
+        <div class="my-10 flex justify-between items-center w-full px-4 flex-wrap">
+            <div class="flex justify-start flex-col gap-2 lg:w-[55%] w-full">
+                <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
+                <p class="lg:text-6xl text-4xl font-semibold">Nintendo <span class="text-[#DC143C]">Switch</span></p>
+                <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn.</p>
+                <p class="text-[15px] font-semibold first-letter:text-[#333f48]">Địa chỉ của Shop : <span class="text-[#DC143C]"> Ấp Tân Trị 2 - Xã Tân Phú - Thị Xã Long Mỹ - Tỉnh Hậu Giang.</span></p>
+                <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
+                <ul class="lg:flex gap-[25px] mt-8 hidden">
+                    <li class="cursor-pointer"><i class="fa-brands fa-xbox hover:scale-110"></i></li>
+                    <li class="cursor-pointer"><i class="fa-brands fa-playstation hover:scale-110"></i></li>
+                    <li class="cursor-pointer"><i class="fa-solid fa-n hover:scale-110"></i></li>
+                    <li class="cursor-pointer"><i class="fa-solid fa-gamepad hover:scale-110"></i></li>
+                </ul>
+            </div>
+            <div class="relative flex justify-center items-center w-full lg:w-[45%]">
+                <img src="./assets/./background.png" alt="" class="z-10 w-full">
+            </div>
+        </div>
         <hr class="lg:my-10 mb-10">
         <div style="background-image: url('../assets/PLP_Hero_Characters_Splatoon_3_BG_tile.png');" class="w-full flex justify-between flex-col lg:flex-row items-center">
             <div style="background-color: rgba(0, 0, 0, 0.5);" class="p-5 m-7 w-full lg:w-[45%] lg:rounded-md text-[#fff] flex flex-col gap-2">
