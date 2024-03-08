@@ -32,7 +32,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                 <a href="/editprofile" class="px-3 py-2 sm:px-5 sm:py-2 bg-[#4169E1] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">Chỉnh sửa hồ sơ</a>
             </div>
             <div class="text-center mt-12 pb-4">
-                <h3 class="text-4xl font-semibold leading-normal mb-2 text-blueGray-700">
+                <h3 class="text-2xl font-semibold leading-normal mb-2 text-blueGray-700">
                     <?= htmlspecialchars($user_data["name"]) ?>
                 </h3>
                 <div class="text-sm leading-normal mt-0 mb-2 text-[#4169E1] font-bold uppercase">
