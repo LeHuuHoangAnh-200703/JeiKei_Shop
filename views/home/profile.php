@@ -46,7 +46,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
                     <i class="fa-solid fa-phone mr-2 text-lg text-[#4169E1]"></i> <?= htmlspecialchars($user_data["phone"]) ?>
                 </div>
                 <hr />
-                <div class="mt-5">
+                <div class="my-5 text-[15px]">
                     <p>
                         Chào mừng <span class="uppercase"><?= htmlspecialchars($user_data["name"]) ?></span> đã đến với JEIKEI SHOP, chúng tôi mong rằng tại đây sẽ thõa mãn được những nhu cầu của bạn. Chúng tôi luôn sẳn sàng hỗ trợ bạn , nếu cần thì mong bạn liên hệ đến Hotline ở trang chủ. Xin cám ơn!!
                     </p>
