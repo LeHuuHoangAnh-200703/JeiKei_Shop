@@ -41,7 +41,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <button class="flex items-center gap-x-4">
                     <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                     </div>
-                    <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SWITCH</span></a>
+                    <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SHOP</span></a>
                 </button>
                 <ul class="hidden lg:flex">
                     <li class="px-[15px] lg:px-[20px] text-[18px]">
