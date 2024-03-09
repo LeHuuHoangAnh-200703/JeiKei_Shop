@@ -18,6 +18,9 @@ class User extends Model
     public static function validate(array $data)
     {
         $errors = [];
+        if ($data['name'] == "") {
+            $errors['name'] = 'Tên không hợp lệ.';
+        } 
 
         if (!$data['email']) {
             $errors['email'] = 'Email không hợp lệ.';

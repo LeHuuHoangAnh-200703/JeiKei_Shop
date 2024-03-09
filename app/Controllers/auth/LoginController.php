@@ -27,16 +27,17 @@ class LoginController extends Controller
     {
         $user_credentials = $this->filterUserCredentials($_POST);
         $errors = [];
+        $emailIvalid = filter_var($user_credentials['email'], FILTER_VALIDATE_EMAIL);
         $user = User::where('email', $user_credentials['email'])->first();
 
-        if (!$user) {
-            // Người dùng không tồn tại...
+        if ($user_credentials['email'] === "" || $user_credentials['password'] === "") {
+            $errors['email'] = "Email không hợp lệ.";
+            $errors['password'] = "Mật không hợp lệ.";
+        }else if (!$user || !$emailIvalid) {
             $errors['email'] = 'Email không hợp lệ.';
-        } else if (Guard::login($user, $user_credentials)) {
-            // Đăng nhập thành công...
+        }else if (Guard::login($user, $user_credentials)) {
             redirect('/home');
         } else {
-            // Sai mật khẩu...
             $errors['password'] = 'Mật khẩu không hợp lệ.';
         }
 

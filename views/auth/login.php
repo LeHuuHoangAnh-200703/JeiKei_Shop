@@ -23,9 +23,10 @@
                     <p class="text-[13px] text-[#333f48] font-semibold">Vui lòng điền đầy đủ thông tin để đăng nhập.</p>
                 </div>
                 <label for="" class="font-semibold text-[16px]">Email</label>
-                <input name="email" id="email" type="text" required autofocus placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?>  block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md" name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>">
+                <input name="email" id="email" type="text" autofocus placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?>  block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:ring-sky-700 rounded-md" name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>">
                 <?php if (isset($errors['email'])) : ?>
                     <span class="text-red-500">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
                         <strong><?= $this->e($errors['email']) ?></strong>
                     </span>
                 <?php endif ?>
@@ -34,6 +35,7 @@
                 <input name="password" id="password" type="password" placeholder="••••••••" class=" <?= isset($errors['password']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['password'])) : ?>
                     <span class="text-red-500">
+                        <i class="fa-solid fa-triangle-exclamation"></i>
                         <strong><?= $this->e($errors['password']) ?></strong>
                     </span>
                 <?php endif ?>

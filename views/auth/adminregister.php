@@ -10,7 +10,7 @@
                     <p class="text-[13px] text-[#333f48] font-semibold">Vui lòng điền đầy đủ thông tin để đăng ký.</p>
                 </div>
                 <label for="name" class="font-semibold text-[16px]">Tên của bạn</label>
-                <input name="name" value="<?= isset($old['name']) ? $this->e($old['name']) : '' ?>" required autofocus type="text" placeholder="Jackson Micheal" class="<?= isset($errors['name']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
+                <input name="name" value="<?= isset($old['name']) ? $this->e($old['name']) : '' ?>" autofocus type="text" placeholder="Jackson Micheal" class="<?= isset($errors['name']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['name'])) : ?>
                     <span class="text-red-500">
                         <i class="fa-solid fa-triangle-exclamation"></i>
@@ -19,7 +19,7 @@
                 <?php endif ?>
 
                 <label for="email" class="font-semibold text-[16px]">Email</label>
-                <input name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>" required autofocus type="email" placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
+                <input name="email" value="<?= isset($old['email']) ? $this->e($old['email']) : '' ?>" autofocus type="email" placeholder="name@gmail.com" class="<?= isset($errors['email']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['email'])) : ?>
                     <span class="text-red-500">
                         <i class="fa-solid fa-triangle-exclamation"></i>
@@ -29,7 +29,7 @@
 
 
                 <label for="password" class="font-semibold text-[16px]">Mật khẩu</label>
-                <input type="password" placeholder="••••••••" id="password" name="password" required class="<?= isset($errors['password']) ? ' border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
+                <input type="password" placeholder="••••••••" id="password" name="password" class="<?= isset($errors['password']) ? ' border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['password'])) : ?>
                     <span class="text-red-500">
                         <i class="fa-solid fa-triangle-exclamation"></i>
@@ -39,7 +39,7 @@
 
 
                 <label for="password-confirm" class="font-semibold text-[16px]">Nhập lại mật khẩu</label>
-                <input placeholder="••••••••" id="password-confirm" type="password" name="password_confirmation" required class="<?= isset($errors['password_confirmation']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:border-sky-700 focus:ring-sky-700 rounded-md">
+                <input placeholder="••••••••" id="password-confirm" type="password" name="password_confirmation" class="<?= isset($errors['password']) ? 'border-red-500' : '' ?> block text-[#333f48] border border-[#333f48] p-[6px] focus:outline-none focus:ring-sky-700 rounded-md">
                 <?php if (isset($errors['password'])) : ?>
                     <span class="text-red-500">
                         <i class="fa-solid fa-triangle-exclamation"></i>

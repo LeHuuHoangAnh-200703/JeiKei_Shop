@@ -33,7 +33,6 @@ class RegisterController extends Controller
 
         $data = $this->filterUserData($_POST);
         $model_errors = User::validate($data);
-
         $data['created_at'] = date('Y-m-d H:i:s');
 
         if (empty($model_errors)) {
