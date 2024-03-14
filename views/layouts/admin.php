@@ -1,6 +1,6 @@
 <?php
-    $baseURL = "http://ecommercewebsite.localhost/";
-    $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png";
+$baseURL = "http://ecommercewebsite.localhost/";
+$imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png";
 ?>
 
 <!DOCTYPE html>
@@ -10,7 +10,7 @@
     <meta charset="utf-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1">
-    <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo?>" />
+    <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo ?>" />
     <title><?= $this->e($title) ?></title>
     <!-- <link rel="stylesheet" href="./css/output.css"> -->
     <script src="https://cdn.tailwindcss.com"></script>
@@ -49,20 +49,16 @@
                         <i class="fa-solid fa-bars"></i>
                     </div>
                     <div>
-                        <i class="fa-solid fa-fire text-[#fff]"></i>
-                        <a href="/admin" class="text-[20px] font-semibold">Dashboard</a>
+                        <i class="fa-solid fa-gamepad text-[#fff]"></i>
+                        <a href="/admin" class="text-[18px] font-bold uppercase">Dashboard</a>
                     </div>
                 </div>
-                <div class="hidden sm:flex flex-col bg-[#272a2f] pt-4">
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
-                    <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đặt hàng</a>
-                    <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
-                    <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
-                    <hr>
-                    <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
+                <div class="hidden sm:flex flex-col pt-4">
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                 </div>
             </div>
 
@@ -85,10 +81,10 @@
         <!-- Sidebar -->
         <div id="sidebar" class="fixed bg-[#272a2f] w-[80%] h-screen top-0 -left-[100%] p-5 transition-all duration-300">
             <div id="closesidebar" class="text-white mb-2"><i class="fa-solid fa-arrow-left"></i></div>
-            <div> 
+            <div>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đặt hàng</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
                 <hr>
@@ -100,16 +96,16 @@
     </div>
     <!-- Footer -->
     <footer class="bg-[#24355a] text-[#fff] p-5 w-full font-medium">
-            <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
-                <div class="flex flex-col md:flex-row md:text-sm">
-                    <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
-                    <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
-                </div>
-                <div class="md:text-sm">
-                    <p>Products provided by Nintendo | JeiKei</p>
-                </div>
+        <div class="max-w-[1200px] mx-auto flex justify-center flex-col md:flex-row md:justify-between items-center">
+            <div class="flex flex-col md:flex-row md:text-sm">
+                <p class="mr-5">© 2023 JeiKei, Inc. All rights reserved.</p>
+                <p class="md:border-l-2 md:border-l-[#fff] px-4">Designed and Managed by JeiKei</p>
             </div>
-        </footer>
+            <div class="md:text-sm">
+                <p>Products provided by Nintendo | JeiKei</p>
+            </div>
+        </div>
+    </footer>
 
     <!-- Scripts -->
     <script src="https://code.jquery.com/jquery-3.7.1.js" integrity="sha256-eKhayi8LEQwp4NKxN+CfCh+3qOVUtJn3QNZ0TciWLP4=" crossorigin="anonymous"></script>

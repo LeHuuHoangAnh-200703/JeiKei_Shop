@@ -57,7 +57,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="<?php if (\App\SessionGuard::user() == null) {
                                                                                                         echo 'w-[250px]';
                                                                                                     } else {
-                                                                                                        echo 'w-[350px]';
+                                                                                                        echo 'w-[300px]';
                                                                                                     } ?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
@@ -67,6 +67,16 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
 
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
+                    <a href="/cart" class="relative">
+                        <div class="relative border border-[#a3a3a3] rounded">
+                            <i class="fa-solid fa-truck-fast p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
+                        </div>
+                        <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products"><?php if (isset($_SESSION['cart'])) {
+                                                                                                                                                                                        print_r(count($_SESSION['cart']));
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo "0";
+                                                                                                                                                                                    }  ?></div>
+                    </a>
                     <a href="/cart" class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>

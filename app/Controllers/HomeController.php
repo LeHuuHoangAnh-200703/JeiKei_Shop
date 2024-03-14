@@ -60,9 +60,8 @@ class HomeController extends Controller
         $data["phone"] = $_POST["phone"];
         $data["image"] = $product->image;
         //Calculate the total amount that the customer must pay
-        $total_pay = (float)$data["amount"] * (float)$product->price;
-        $data["total_amount"] = sprintf("%.2f", $total_pay);
-
+        $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
+        $data["total_amount"] = number_format($total_pay,3,',',',');
         //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
 

@@ -5,12 +5,14 @@
     <div class="text-center py-4">
         <h2 class="text-[#333] font-bold text-2xl">Đơn hàng</h2>
     </div>
-    <div id="all_products" class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-x-5 gap-y-5 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
+    <div id="all_products" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 p-3 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
-            <div class="relative w-[250px] bg-white text-black border border-1 m-3">
+            <div class="relative h-[410px] bg-white text-black border border-1 m-3 whitespace-nowrap shadow rounded">
                 <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('../assets/<?php echo $order['image']; ?>')"></div>
-                <div class="p-4">
-                    <h3 class="mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
+                <div class="p-4 overflow-hidden">
+                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                        <h3 class="inline mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
+                    </div>
                     <p class="font-semibold"><?= $this->e($order->username) ?></p>
                     <div>
                         <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Liên lạc :</small> <?= $this->e($order->phone) ?></span>
@@ -19,13 +21,13 @@
                         <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Ngày đặt :</small> <?= $this->e($order->order_date) ?></span>
                     </div>
                     <div>
-                        <p class="text-[#333] text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> <?= $this->e($order->total_amount) ?> VNĐ</span></p>
+                        <p class="text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> <?= $this->e($order->total_amount) ?> VNĐ</span></p>
                     </div>
                     <div>
-                        <p class="text-[#333] text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>
+                        <p class="text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>
                     </div>
                     <div class="mb-3">
-                        <p class="text-[#333] text-[15px] font-semibold">Phương thức : <span class="font-normal text-[#4169E1]"> <?= $this->e($order->payment) ?></span>
+                        <p class="text-[15px] font-semibold">Phương thức : <span class="font-normal text-[#4169E1]"> <?= $this->e($order->payment) ?></span>
                         </p>
                     </div>
                     <div class="flex justify-between items-center">
