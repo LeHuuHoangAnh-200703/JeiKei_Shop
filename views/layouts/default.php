@@ -48,12 +48,12 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Trang chủ</a>
                     </li>
                     <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
+                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
                     </li>
                 </ul>
                 <div class="relative flex items-center justify-start">
                     <form action="/search" method="post" class="hidden md:block">
-                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[320px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+                        <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[250px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
                         <button type="submit">
                             <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[9px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
@@ -93,7 +93,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <a href="/" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Trang chủ</a>
                     </li>
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Lịch sử đơn hàng</a>
+                        <a href="/view_order" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors hover:text-[#DC143C]">Đơn hàng của bạn</a>
                     </li>
                 </ul>
             </div>

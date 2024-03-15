@@ -2,9 +2,9 @@
 
 <?php $this->start("page") ?>
 <div class="mx-auto mb-5 p-5">
-    <div class="relative w-full flex justify-center mb-3">
-        <h1 class="text-[30px] font-semibold">Lịch sử đơn hàng</h1>
-        <div class="absolute bottom-0 w-[280px] h-1 bg-[#DC143C]"></div>
+    <div class="relative w-full flex justify-center mb-5">
+        <h1 class="text-[25px] font-semibold">Lịch sử đơn hàng</h1>
+        <div class="absolute bottom-0 w-[250px] h-1 bg-[#DC143C]"></div>
     </div>
 
     <?php

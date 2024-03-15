@@ -49,7 +49,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     }
                     ?>
                     <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/orderhistory" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Lịch sử đơn hàng</a>
+                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
                     </li>
                 </ul>
                 <div class="relative flex items-center justify-center">
@@ -67,16 +67,6 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
 
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
-                    <a href="/cart" class="relative">
-                        <div class="relative border border-[#a3a3a3] rounded">
-                            <i class="fa-solid fa-truck-fast p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
-                        </div>
-                        <div class="absolute top-[-25%] right-[-20%] bg-[#DC143C] w-6 h-6 flex justify-center items-center rounded-[50%] font-medium text-[#fff] count_products"><?php if (isset($_SESSION['cart'])) {
-                                                                                                                                                                                        print_r(count($_SESSION['cart']));
-                                                                                                                                                                                    } else {
-                                                                                                                                                                                        echo "0";
-                                                                                                                                                                                    }  ?></div>
-                    </a>
                     <a href="/cart" class="relative">
                         <div class="relative border border-[#a3a3a3] rounded">
                             <i class="fa-sharp fa-solid fa-cart-shopping p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
@@ -105,7 +95,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         </button>
                     </form>
                     <li class="pb-[15px]">
-                        <a href="/orderhistory" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Lịch sử đơn hàng</a>
+                        <a href="/view_order" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Đơn hàng của bạn</a>
                     </li>
                 </ul>
             </div>

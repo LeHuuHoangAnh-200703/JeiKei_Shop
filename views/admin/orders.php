@@ -30,24 +30,29 @@
                         <p class="text-[15px] font-semibold">Phương thức : <span class="font-normal text-[#4169E1]"> <?= $this->e($order->payment) ?></span>
                         </p>
                     </div>
-                    <div class="flex justify-between items-center">
-                        <form action="/admin/deleteorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="px-4 py-2 bg-[#DC143C] text-[#fff] font-medium rounded-md">Delete</button>
+                    <div class="flex justify-between items-center w-full gap-4">
+                        <form action="/admin/deleteorder/<?= $order->id ?>" class="w-[35%]" method="post">
+                            <button type="submit" class="px-4 py-2 bg-[#DC143C] text-[#fff] font-semibold rounded-md">Xóa đơn</button>
                         </form>
-                        <form action="/admin/updateorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="px-4 py-2 bg-[#4169E1] text-[#fff] font-medium rounded-md">Update</button>
+                        <form action="/admin/updateorder/<?= $order->id ?>" class="w-full" method="post">
+                            <button type="submit" class="w-full py-2 bg-[#4169E1] text-[#fff] font-semibold rounded-md">Cập nhật</button>
                         </form>
                     </div>
                 </div>
                 <?php
                 if ($order->state == 1) {
                     echo '<div class="absolute -right-4 top-4">
+                    <span class="w-fit h-fit bg-[#FF4500] px-3 py-2 font-semibold">Đang giao</span>
+                    <span class="absolute right-0 w-[27px] h-[39px] bg-[#ae4e2c] z-[-1] skew-y-[333deg]"></span>
+                </div>';
+                } else if ($order->state == 2) {
+                    echo '<div class="absolute -right-4 top-4">
                     <span class="w-fit h-fit bg-green-400 px-3 py-2 font-semibold">Đã giao</span>
                     <span class="absolute right-0 w-[27px] h-[39px] bg-green-600 z-[-1] skew-y-[333deg]"></span>
                 </div>';
                 } else {
                     echo ' <div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-yellow-400 px-3 py-2 font-semibold">Chưa giao </span>
+                    <span class="w-fit h-fit bg-yellow-400 px-3 py-2 font-semibold">Đang xử lý hàng </span>
                     <span class="absolute right-0 w-[27px] h-[39px] bg-yellow-600 z-[-1] skew-y-[333deg]"></span>
                 </div>';
                 }

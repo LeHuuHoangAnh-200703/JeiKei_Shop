@@ -61,7 +61,7 @@ class HomeController extends Controller
         $data["image"] = $product->image;
         //Calculate the total amount that the customer must pay
         $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
-        $data["total_amount"] = number_format($total_pay,3,',',',');
+        $data["total_amount"] = number_format($total_pay, 3, ',', ',');
         //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
 
@@ -303,5 +303,15 @@ class HomeController extends Controller
         }
 
         $this->sendPage("home/detail", ["product" => $product]);
+    }
+
+    public function showOrder()
+    {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+        $customer = User::find(Guard::user()->id);
+        $viewOrders = $customer->orders;
+        $this->sendPage("home/orderInformation", ["viewOrders" => $viewOrders]);
     }
 }

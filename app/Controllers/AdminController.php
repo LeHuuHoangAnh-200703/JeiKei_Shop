@@ -211,8 +211,13 @@ class AdminController extends Controller
         if (!$order) {
             $this->sendNotFound();
         }
-        $order->state = 1;
-        $order->save();
+        if ($order->state >= 1) {
+            $order->state = 2;
+            $order->save();
+        } else {
+            $order->state = 1;
+            $order->save();
+        }
         redirect("/admin/orders");
     }
 
