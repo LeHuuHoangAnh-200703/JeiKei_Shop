@@ -314,4 +314,18 @@ class HomeController extends Controller
         $viewOrders = $customer->orders;
         $this->sendPage("home/orderInformation", ["viewOrders" => $viewOrders]);
     }
+
+    public function cancelOrder($orderId) {
+        $order = Order::find($orderId);
+        if (!$order) {
+            $this->sendNotFound();
+        }
+        if ($order->state < 1) {
+            $order->delete();
+
+            redirect("/view_order", ["success" => "Đã hủy đơn hàng thành công."]);
+        } else {
+            redirect("/view_order", ["errors" => "Đơn hàng đang được vận chuyển, không thể hủy."]);
+        }
+    }
 }

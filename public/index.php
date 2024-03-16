@@ -32,6 +32,7 @@ $router->post('/delete/(\d+)', '\App\Controllers\HomeController@removeProductCar
 $router->get('/feedback/(\d+)', '\App\Controllers\HomeController@feedback');
 $router->post('/add_feedback/(\d+)', '\App\Controllers\HomeController@feedbackAction');
 $router->get('/view_order', '\App\Controllers\HomeController@showOrder');
+$router->post('/cancle_order/(\d+)', '\App\Controllers\HomeController@cancelOrder');
 // Admin routes
 $router->post('/admin/logout', '\App\Controllers\Auth\AdminLoginController@destroy');
 $router->get('/admin/login', '\App\Controllers\Auth\AdminLoginController@create');
