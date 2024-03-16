@@ -51,6 +51,7 @@ class HomeController extends Controller
         $data["product_id"] = $productId;
         $data["user_id"] = $user->id;
         $data["username"] = $user->name;
+        $data["image_user"] = $user->image;
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;

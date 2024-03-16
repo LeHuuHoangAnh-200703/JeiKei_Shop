@@ -3,61 +3,56 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Đơn hàng</h2>
+        <h2 class="text-[#333] font-bold text-2xl">Tất cả đơn hàng</h2>
     </div>
-    <div id="all_products" class="grid grid-cols-1 md:grid-cols-2 gap-x-6 p-3 justify-items-center w-full overflow-x-scroll overflow-y-scroll">
+    <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
-            <div class="relative h-[410px] bg-white text-black border border-1 m-3 whitespace-nowrap shadow rounded">
-                <div class="h-[150px] bg-contain bg-no-repeat bg-center" style="background-image: url('../assets/<?php echo $order['image']; ?>')"></div>
-                <div class="p-4 overflow-hidden">
-                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
-                        <h3 class="inline mb-3 font-semibold"><?= $this->e($order->name) ?></h3>
+            <div class="relative bg-white">
+                <div class="shadow-md mb-6 border">
+                    <div class="p-4 flex lg:justify-between justify-center items-center flex-col lg:flex-row gap-3">
+                        <div class="flex gap-2">
+                            <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('../<?php echo ($order['image_user']); ?>')"></div>
+                            <p class="font-semibold flex items-center p-1 text-[14px]"><?php echo $this->e($order->username); ?></p>
+                        </div>
+                        <div class="flex gap-2 items-center text-[14px] text-[#008B8B]">
+                            <i class="fa-solid fa-box-open"></i>
+                            <?php if ($this->e($order->state) > 1) {
+                                echo "<p>Đơn hàng đã giao thành công</p>";
+                            } else if ($this->e($order->state) == 1) {
+                                echo "<p>Đơn hàng đang được giao</p>";
+                            } else {
+                                echo "<p>Đơn hàng đang được xử lý</p>";
+                            } ?>
+                        </div>
                     </div>
-                    <p class="font-semibold"><?= $this->e($order->username) ?></p>
-                    <div>
-                        <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Liên lạc :</small> <?= $this->e($order->phone) ?></span>
+                    <hr>
+                    <div class="flex gap-3 items-center p-4">
+                        <img src="../assets/<?php echo ($order['image']); ?>" class="w-[100px] lg:w-[150px]" alt="">
+                        <div class="flex flex-col gap-1 w-full overflow-hidden">
+                            <div class="overflow-hidden text-ellipsis whitespace-nowrap w-full">
+                                <p class="text-[15px] font-semibold inline"><?php echo $this->e($order->name); ?></p>
+                            </div>
+                            <div class="flex justify-between flex-col lg:flex-row">
+                                <p class="text-[13px]">Ngày đặt : <span class="text-[#DC143C]"><?php echo $this->e($order->order_date); ?></span></p>
+                                <p class="text-[13px]">Số lượng : <span class="text-[#DC143C]"><?php echo $this->e($order->amount); ?></span></p>
+                            </div>
+                            <p class="text-[13px]">Giá : <span class="text-[#DC143C]"><?php echo $this->e($order->price); ?> đ</span></p>
+                            <p class="text-[13px]">Số điện thoại : <span class="text-[#DC143C]"><?php echo $this->e($order->phone); ?></span></p>
+                            <p class="text-[13px]">Địa chỉ : <span class="text-[#DC143C]"><?php echo $this->e($order->address); ?></span></p>
+                            <p class="text-[13px]">Phương thức thanh toán : <span class="text-[#DC143C]"><?php echo $this->e($order->payment); ?></span></p>
+                        </div>
                     </div>
-                    <div>
-                        <span class="font-normal text-[15px] text-[#4169E1]"><small class="font-semibold text-[15px] text-black">Ngày đặt :</small> <?= $this->e($order->order_date) ?></span>
-                    </div>
-                    <div>
-                        <p class="text-[15px] font-semibold">Tổng tiền : <span class="font-normal text-[#DC143C]"> <?= $this->e($order->total_amount) ?> VNĐ</span></p>
-                    </div>
-                    <div>
-                        <p class="text-[15px] font-semibold">Địa chỉ : <span class="font-normal text-[#333]"><?= $this->e($order->address) ?> </span></p>
-                    </div>
-                    <div class="mb-3">
-                        <p class="text-[15px] font-semibold">Phương thức : <span class="font-normal text-[#4169E1]"> <?= $this->e($order->payment) ?></span>
-                        </p>
-                    </div>
-                    <div class="flex justify-between items-center w-full gap-4">
-                        <form action="/admin/deleteorder/<?= $order->id ?>" class="w-[35%]" method="post">
+                    <hr>
+                    <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo $this->e($order->total_amount); ?> đ</span></p>
+                    <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
+                        <form action="/admin/deleteorder/<?= $order->id ?>" method="post">
                             <button type="submit" class="px-4 py-2 bg-[#DC143C] text-[#fff] font-semibold rounded-md">Xóa đơn</button>
                         </form>
-                        <form action="/admin/updateorder/<?= $order->id ?>" class="w-full" method="post">
-                            <button type="submit" class="w-full py-2 bg-[#4169E1] text-[#fff] font-semibold rounded-md">Cập nhật</button>
+                        <form action="/admin/updateorder/<?= $order->id ?>" method="post">
+                            <button type="submit" class="py-2 px-4 bg-[#4169E1] text-[#fff] font-semibold rounded-md">Cập nhật</button>
                         </form>
                     </div>
                 </div>
-                <?php
-                if ($order->state == 1) {
-                    echo '<div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-[#FF4500] px-3 py-2 font-semibold">Đang giao</span>
-                    <span class="absolute right-0 w-[27px] h-[39px] bg-[#ae4e2c] z-[-1] skew-y-[333deg]"></span>
-                </div>';
-                } else if ($order->state == 2) {
-                    echo '<div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-green-400 px-3 py-2 font-semibold">Đã giao</span>
-                    <span class="absolute right-0 w-[27px] h-[39px] bg-green-600 z-[-1] skew-y-[333deg]"></span>
-                </div>';
-                } else {
-                    echo ' <div class="absolute -right-4 top-4">
-                    <span class="w-fit h-fit bg-yellow-400 px-3 py-2 font-semibold">Đang xử lý hàng </span>
-                    <span class="absolute right-0 w-[27px] h-[39px] bg-yellow-600 z-[-1] skew-y-[333deg]"></span>
-                </div>';
-                }
-                ?>
-
             </div>
         <?php endforeach ?>
     </div>
