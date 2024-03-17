@@ -70,9 +70,8 @@ class HomeController extends Controller
         if (empty($model_errors)) {
             $order = new Order();
             $order->fill($data);
-            $product->sold_count++;
-            $product->save();
-            $product->quantity--;
+            $product->sold_count+=(int)$_POST['total_amount'];
+            $product->quantity-=(int)$_POST['total_amount'];
             $product->save();
             $order->user()->associate(Guard::user());
             $order->save();

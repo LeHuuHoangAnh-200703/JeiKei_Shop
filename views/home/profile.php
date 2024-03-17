@@ -26,7 +26,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
             </div>
             <div class="flex justify-between items-center flex-col lg:flex-row gap-4 px-2 lg:px-24">
                 <ul class="flex gap-x-6">
-                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Đã đặt hàng</span></li>
+                    <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo $amountoforder ?></span><span class="text-slate-400">Số đơn hàng</span></li>
                     <li class="flex flex-col items-center"><span class="font-bold text-lg text-[#DC134C]"><?php echo  $hour ?></span><span class="text-slate-400">Giờ</span></li>
                 </ul>
                 <a href="/editprofile" class="px-3 py-2 sm:px-5 sm:py-2 bg-[#4169E1] text-sm sm:text-md rounded-md font-medium sm:font-bold text-white shadow-md">Chỉnh sửa hồ sơ</a>
