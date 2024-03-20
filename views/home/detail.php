@@ -60,7 +60,11 @@
             </ul>
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ <?php echo $this->e($product->price); ?> VNĐ<span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
             <div class="flex md:items-center gap-2 flex-col md:flex-row">
-                <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 md:border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Có <span class="font-bold"><?php echo $product->sold_count ?></span> lượt mua sản phẩm</p>
+                <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 md:border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Đã bán <span class="font-bold"><?php if ($this->e($product->test) == null) {
+                                                                                                                                                                        echo "0";
+                                                                                                                                                                    } else {
+                                                                                                                                                                        echo $this->e($product->test);
+                                                                                                                                                                    } ?></span> sản phẩm</p>
                 <p class="text-[#333f48] ml-2 text-[15px]"><i class="fa-solid fa-eye text-[#DC143D]"></i> Có <span class="font-bold"><?php echo $product->view_count ?></span> lượt xem sản phẩm</p>
             </div>
             <hr>

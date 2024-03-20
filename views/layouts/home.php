@@ -105,8 +105,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <p class="text-[18px] text-[#DC143C] font-bold uppercase">JeiKei Shop</p>
                 <p class="lg:text-6xl text-4xl font-semibold">Nintendo <span class="text-[#DC143C]">Switch</span></p>
                 <p class="mt-2 text-[14px] text-[#333f48]"><span class="text-[#DC143C] font-semibold">JeiKei Shop</span> cam kết mối liên hệ này xuất phát từ sự trân trọng của chúng tôi, cam kết phục vụ sản phẩm với chất lượng tốt nhất, tạo mối liên kết đến từng khách hàng, thực hiện trách nhiệm với cộng đồng tại nơi chúng tôi hoạt động kinh doanh. Nếu có thắc mắc xin hãy liên hệ đến Hotline dưới đây để được hỗ trợ tốt hơn.</p>
-                <p class="text-[15px] font-semibold first-letter:text-[#333f48]">Địa chỉ của Shop : <span class="text-[#DC143C]"> Ấp Tân Trị 2 - Xã Tân Phú - Thị Xã Long Mỹ - Tỉnh Hậu Giang.</span></p>
-                <p class="text-[15px] font-semibold mb-4 text-[#333f48]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
+                <p class="text-[15px] font-semibold text-[#333]">Địa chỉ của Shop : <span class="text-[#DC143C]"> Ấp Tân Trị 2 - Xã Tân Phú - Thị Xã Long Mỹ - Tỉnh Hậu Giang.</span></p>
+                <p class="text-[15px] font-semibold mb-4 text-[#333]">Hotline đặt hàng và hỗ trợ : <span class="text-[#DC143C]"> 079.965.8592</span> <span class="font-normal">(7:30-22:00)</span></p>
                 <ul class="lg:flex gap-[25px] mt-8 hidden">
                     <li class="cursor-pointer"><i class="fa-brands fa-xbox hover:scale-110"></i></li>
                     <li class="cursor-pointer"><i class="fa-brands fa-playstation hover:scale-110"></i></li>

@@ -1,6 +1,8 @@
 <?php $this->layout("layouts/home", ["title" => APPNAME]) ?>
 
-<?php $this->start("page") ?>
+<?php $this->start("page");
+
+?>
 <div class="w-full mx-auto my-8">
     <div class="w-full flex justify-between items-start flex-col lg:flex-row p-4 gap-3 lg:gap-3 md:gap-x-[60px]">
         <div class="w-[20%] hidden lg:block flex-col py-1 px-2">
@@ -49,36 +51,39 @@
                     ["type" => "Nintendo_Old", "imgHeight" => "h-20"]
                 ];
                 for ($i = 0; $i < count($type); $i++) {
-                    if (!empty($productinfo)) {
-                        foreach ($productinfo as $product) {
-                            if ($product->type == $type[$i]["type"]) {
+                    foreach ($productinfo as $product) {
+                        if ($product->type == $type[$i]["type"]) {
                 ?>
-                                <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
-                                    <form action="/add_to_cart/<?php echo $this->e($product->id) ?>" method="POST" enctype="multipart/form-data" id="add_to_cart_form">
-                                        <div class="p-4 overflow-hidden">
-                                            <div class="relative transition-all duration-300 hover:scale-105">
-                                                <img src="../assets/<?php echo $product['image']; ?>" name="image" />
-                                                <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
-                                            </div>
-                                            <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
-                                                <a href="/detail/<?php echo $this->e($product->id) ?>" name="product_Name" class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
-                                            </div>
-                                            <div class="flex justify-between items-center py-1">
-                                                <p class="w-1/2 text-[14px] text-[#DC143C] font-semibold price" name="price"><?php echo $this->e($product->price) ?> VNĐ</p>
-                                                <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php echo $this->e($product->sold_count) ?></p>
-                                            </div>
+                            <div class="<?php echo $type[$i]["type"] ?> group flex flex-col items-center w-full overflow-hidden rounded-md bg-white shadow-md style">
+                                <form action="/add_to_cart/<?php echo $this->e($product->id) ?>" method="POST" enctype="multipart/form-data" id="add_to_cart_form">
+                                    <div class="p-4 overflow-hidden">
+                                        <div class="relative transition-all duration-300 hover:scale-105">
+                                            <img src="../assets/<?php echo $product['image']; ?>" name="image" />
+                                            <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                         </div>
-                                        <input name="productID" type="text" id="productID" class="productID hidden" value="<?php echo $this->e($product->id) ?>">
-                                        <div class="w-full">
-                                            <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
-                                                <button name="add_to_cart" type="submit" class="add_to_cart w-100 text-[#333f48] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
-                                            </div>
+                                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
+                                            <a href="/detail/<?php echo $this->e($product->id) ?>" name="product_Name" class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name) ?></a>
                                         </div>
-                                    </form>
-                                </div>
+                                        <div class="flex justify-between items-center py-1">
+                                            <p class="w-1/2 text-[14px] text-[#DC143C] font-semibold price" name="price"><?php echo $this->e($product->price) ?> VNĐ</p>
+                                            <p class="text-[14px] text-[#DC143C] font-semibold">Đã bán : <?php if ($this->e($product->test) == null) {
+                                                                                                                echo "0";
+                                                                                                            } else {
+                                                                                                                echo $this->e($product->test);
+                                                                                                            } ?>
+                                            </p>
+                                        </div>
+                                    </div>
+                                    <input name="productID" type="text" id="productID" class="productID hidden" value="<?php echo $this->e($product->id) ?>">
+                                    <div class="w-full">
+                                        <div class="px-3 pb-3 w-full flex justify-center flex-col gap-3">
+                                            <button name="add_to_cart" type="submit" class="add_to_cart w-100 text-[#333f48] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button>
+                                        </div>
+                                    </div>
+                                </form>
+                            </div>
 
-                <?php }
-                        }
+                <?php   }
                     }
                 }
                 ?>

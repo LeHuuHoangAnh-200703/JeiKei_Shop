@@ -55,26 +55,42 @@ class HomeController extends Controller
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;
+
         $data["amount"] = $_POST["total_amount"];
+
         $data["payment"] = $_POST["payment"];
         $data["address"] = $_POST["address"];
         $data["phone"] = $_POST["phone"];
         $data["image"] = $product->image;
         //Calculate the total amount that the customer must pay
+
         $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
+
         $data["total_amount"] = number_format($total_pay, 3, ',', ',');
+
         //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
 
         $model_errors = Order::validate($data);
+
+
         if (empty($model_errors)) {
+
             $order = new Order();
+
+            // $product->sold_count += $_POST["total_amount"];
+            $product->test +=  $_POST["total_amount"];
+
             $order->fill($data);
-            $product->sold_count+=(int)$_POST['total_amount'];
-            $product->quantity-=(int)$_POST['total_amount'];
+
+            $product->quantity -= $order->amount;
+
             $product->save();
+
             $order->user()->associate(Guard::user());
+
             $order->save();
+
             $this->sendPage('home/order', ["success" => "Shop sẽ cố gắng liên hệ với bạn để xác nhận đơn hàng sớm nhất.", "product" => $product]);
         }
 
@@ -315,7 +331,8 @@ class HomeController extends Controller
         $this->sendPage("home/orderInformation", ["viewOrders" => $viewOrders]);
     }
 
-    public function cancelOrder($orderId) {
+    public function cancelOrder($orderId)
+    {
         $order = Order::find($orderId);
         if (!$order) {
             $this->sendNotFound();
