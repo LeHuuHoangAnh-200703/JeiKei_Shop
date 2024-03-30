@@ -28,6 +28,16 @@ class HomeController extends Controller
         ]);
     }
 
+    public function create()
+    {
+        $this->sendPage('home/orderInformation', [
+            'errors' => session_get_once('errors'),
+            'success' => session_get_once('success'),
+            'old' => $this->getSavedFormValues(),
+            "test" => "Create product page is opened..."
+        ]);
+    }
+
     public function order($productId)
     {
         $product = Products::find($productId);
@@ -334,14 +344,20 @@ class HomeController extends Controller
     public function cancelOrder($orderId)
     {
         $order = Order::find($orderId);
+        $productId = $order->product_id;
+        $product = Products::find($productId);
         if (!$order) {
             $this->sendNotFound();
         }
         if ($order->state < 1) {
             $order->delete();
-            redirect("/view_order", ["success" => "Đã hủy đơn hàng thành công."]);
+            $product->test--;
+            $product->save();
+            $success = "Đã hủy đơn hàng thành công.";
+            redirect("/view_order", ["success" => $success]);
         } else {
-            redirect("/view_order", ["errors" => "Đơn hàng đang được vận chuyển, không thể hủy."]);
+            $errors = "Đơn hàng đang được vận chuyển, không thể hủy.";
+            redirect("/view_order", ["errors" => $errors]);
         }
     }
 }

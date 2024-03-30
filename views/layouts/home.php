@@ -42,16 +42,6 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <div class="lg:hidden bar relative border border-[#a3a3a3] rounded"><i class="fa-solid fa-bars p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i></div>
                     <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">Shop</span></a>
                 </button>
-                <ul class="hidden lg:flex">
-                    <?php
-                    if (\App\SessionGuard::user() == null) {
-                        echo '<li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/login" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đăng nhập</a></li>';
-                    }
-                    ?>
-                    <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
-                    </li>
-                </ul>
                 <div class="relative flex items-center justify-center">
                     <form action="/search" method="post" class="hidden md:block">
                         <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="<?php if (\App\SessionGuard::user() == null) {
@@ -64,7 +54,16 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         </button>
                     </form>
                 </div>
-
+                <ul class="hidden lg:flex">
+                    <?php
+                    if (\App\SessionGuard::user() == null) {
+                        echo '<li class="px-[15px] lg:px-[20px] text-[18px]"><a href="/login" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đăng nhập</a></li>';
+                    }
+                    ?>
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
+                    </li>
+                </ul>
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
                     <a href="/cart" class="relative">
@@ -82,8 +81,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <div class="sidebar fixed top-0 -left-[100%] bg-[#fff] p-4 w-full h-full z-40">
                 <div class="mb-4">
                     <button class="closed">
-                        <div class="relative border border-[#a3a3a3] rounded w-[40px] h-[40px]">
-                            <i class="fa-solid fa-x p-[12px] ease-out duration-[0.4s] hover:scale-[1.1]"></i>
+                        <div class="relative border-2 border-[#DC143C] rounded-full w-[50px] h-[50px]">
+                            <i class="fa-solid fa-x p-4 ease-out duration-[0.4s] hover:scale-[1.1]"></i>
                         </div>
                     </button>
                 </div>
@@ -94,6 +93,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                             <div class="absolute top-0 right-0 rounded-e-md bg-[#DC143C] px-3 py-[6.8px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
                         </button>
                     </form>
+                    <?php
+                    if (\App\SessionGuard::user() == null) {
+                        echo '<li class="pb-[15px]"><a href="/login" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Đăng nhập</a></li>';
+                    }
+                    ?>
                     <li class="pb-[15px]">
                         <a href="/view_order" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Đơn hàng của bạn</a>
                     </li>
@@ -227,7 +231,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             }
             setTimeout(() => {
                 successNotification.css("display", "block");
-            }, 4000);
+            }, 3000);
 
             //sidebar
             $(".bar").click(function() {

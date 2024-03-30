@@ -199,10 +199,14 @@ class AdminController extends Controller
     public function deleteorder($orderId)
     {
         $order = Order::find($orderId);
+        $productId = $order->product_id;
+        $product = Products::find($productId);
         if (!$order) {
             $this->sendNotFound();
         }
         $order->delete();
+        $product->test--;
+        $product->save();
         redirect("/admin/orders");
     }
 

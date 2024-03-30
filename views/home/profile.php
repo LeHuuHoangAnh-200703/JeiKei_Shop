@@ -5,13 +5,22 @@ $timestamp = strtotime($user_data["created_at"]);
 $currentDate = strtotime(date('Y-m-d'));
 $hour = ceil(($currentDate - $timestamp) / 3600);
 ?>
-<?php if (isset($success)) {
-?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-circle-check"></i> <?php echo $success; ?></p>
-    </div> <?php } ?>
+<?php if (isset($_SESSION['errors'])) : ?>
+    <div class="success-notification bg-red-100 border-[1px] border-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+        <p class="font-bold text-[#DC143C]"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
+    </div>
+    <?php unset($_SESSION['errors']); ?>
+<?php endif; ?>
+
+<?php if (isset($_SESSION['success'])) : ?>
+    <div class="success-notification bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
+        <p class="font-bold text-green-600"><i class="fa-solid fa-circle-check"></i> <?php echo $_SESSION['success'] ?></p>
+    </div>
+    <?php unset($_SESSION['success']); ?>
+<?php endif; ?>
 <div class="w-[95%] h-[650px] md:h-[570px] mx-auto mt-3 mb-36">
-    <div class="relative h-[300px] w-full bg-center bg-cover rounded-sm" style="
-            background-image: url('./assets/wallhaven-57gq69.png');
+    <div class="relative h-[300px] w-full bg-center bg-cover rounded-md" style="
+            background-image: url('./assets/z5300330066078_500c69306f95b52da4635cb3e9b37424.jpg');
           ">
 
         <div class="w-[90%] bg-[#fdfdfd] absolute top-32 left-[50%] translate-x-[-50%] mx-auto shadow-lg rounded-md pt-[50px] px-2 sm:px-10 pb-10 sm:pb-0 h-fit ">

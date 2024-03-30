@@ -43,14 +43,6 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </div>
                     <a href="/home" class="test text-[22px] md:text-[24px] font-bold uppercase">JEIKEI <span class="text-[#DC143C]">SHOP</span></a>
                 </button>
-                <ul class="hidden lg:flex">
-                    <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Trang chủ</a>
-                    </li>
-                    <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
-                    </li>
-                </ul>
                 <div class="relative flex items-center justify-start">
                     <form action="/search" method="post" class="hidden md:block">
                         <input name="search" type="text" placeholder="Tìm kiếm sản phẩm ..." class="relative border-[1.2px] outline-none border-[#646464] bg-transparent w-[250px] p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
@@ -59,7 +51,14 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         </button>
                     </form>
                 </div>
-
+                <ul class="hidden lg:flex">
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Trang chủ</a>
+                    </li>
+                    <li class="px-[15px] lg:px-[20px] text-[18px]">
+                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
+                    </li>
+                </ul>
                 <div class="flex justify-center items-center gap-4">
                     <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('<?php echo $imageURL; ?>')"></div>
                     <a href="/cart" class="relative">
@@ -204,7 +203,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             }
             setTimeout(() => {
                 successNotification.css("display", "none");
-            }, 4000);
+            }, 3000);
 
             // show notify when user hit ADD button in home page
             $(".add_to_cart").click(function() {
