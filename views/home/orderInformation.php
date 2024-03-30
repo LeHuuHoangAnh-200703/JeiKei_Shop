@@ -5,7 +5,7 @@
 <div class="w-full overflow-auto my-6">
     <?php if (isset($errors)) {
     ?> <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
-            <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Đặt hàng thất bại!!</p>
+            <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
             <p class="font-bold"><?php foreach ($errors as $error) {
                                         echo $error . "\n";
                                     } ?></p>
@@ -13,7 +13,7 @@
 
     <?php if (isset($success)) {
     ?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-            <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Đặt hàng thành công!! </p>
+            <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Chức mừng </p>
             <p class="font-bold"><?php echo $success; ?></p>
         </div> <?php } ?>
     <div class="mx-auto mb-5 p-5">

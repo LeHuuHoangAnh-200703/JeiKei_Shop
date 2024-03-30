@@ -54,11 +54,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </div>
                 </div>
                 <div class="hidden sm:flex flex-col pt-4">
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-2 text-white hover:bg-[#EEEDEE] hover:text-black transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                 </div>
             </div>
 
@@ -119,7 +119,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             }
             setTimeout(() => {
                 successNotification.css('display', 'none');
-            }, 5000);
+            }, 3000);
 
 
             // Toggle dashboard sidebar

@@ -2,6 +2,18 @@
 
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
+    <?php if (isset($success)) { ?>
+        <div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
+            <p class="font-bold"><i class="fa-solid fa-check"></i> Chúc mừng</p>
+            <p class="font-bold"><?php echo $success; ?></p>
+        </div>
+    <?php } ?>
+    <?php if (isset($errors)) { ?>
+        <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+            <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
+            <p class="font-bold"><?php echo $errors; ?></p>
+        </div>
+    <?php } ?>
     <div class="text-center py-4">
         <h2 class="text-[#333] font-bold text-2xl">Tất cả đơn hàng</h2>
     </div>

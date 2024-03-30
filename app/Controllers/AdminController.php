@@ -34,6 +34,7 @@ class AdminController extends Controller
     {
         $this->sendPage('admin/createproduct', [
             'errors' => session_get_once('errors'),
+            'success' => session_get_once('success'),
             'old' => $this->getSavedFormValues(),
             "test" => "Create product page is opened..."
         ]);
@@ -73,7 +74,8 @@ class AdminController extends Controller
             $product->fill($data);
             $product->belongsTo(Order::class);
             $product->save();
-            redirect('/admin');
+            $success = "Thêm sản phẩm thành công.";
+            redirect('/admin/addproduct', ["success" => $success]);
         }
         // Lưu các giá trị của form vào $_SESSION['form']
         $this->saveFormValues($_POST);

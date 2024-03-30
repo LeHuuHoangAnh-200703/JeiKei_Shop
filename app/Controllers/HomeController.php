@@ -263,7 +263,7 @@ class HomeController extends Controller
                 redirect("/cart", ["success" => $successMessage]);
             } else {
                 $errorsMessage = "Sản phẩm không tồn tại trong giỏ hàng.";
-                redirect("/cart", ["success" => $errorsMessage]);
+                redirect("/cart", ["errors" => $errorsMessage]);
             }
         } else {
             redirect('/login');
@@ -339,7 +339,6 @@ class HomeController extends Controller
         }
         if ($order->state < 1) {
             $order->delete();
-
             redirect("/view_order", ["success" => "Đã hủy đơn hàng thành công."]);
         } else {
             redirect("/view_order", ["errors" => "Đơn hàng đang được vận chuyển, không thể hủy."]);
