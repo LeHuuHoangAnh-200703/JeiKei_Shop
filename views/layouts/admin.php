@@ -50,7 +50,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </div>
                     <div class="flex gap-3 items-center">
                         <div class=" w-12 h-12 p-2 rounded-full bg-[#fff] flex items-center justify-center">
-                            <img src="../assets../png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png" class="w-full h-full" alt="">
+                            <img src="<?php $baseURL ?>/assets../png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png" class="w-full h-full" alt="">
                         </div>
                         <div class="flex flex-col">
                             <p class="font-bold text-[18px]">JeiKei Shop</p>
