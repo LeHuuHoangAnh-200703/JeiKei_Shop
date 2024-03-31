@@ -48,17 +48,23 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <div id="opensidebar" class="block sm:hidden">
                         <i class="fa-solid fa-bars"></i>
                     </div>
-                    <div>
-                        <i class="fa-solid fa-gamepad text-[#fff]"></i>
-                        <a href="/admin" class="text-[18px] font-bold uppercase">Dashboard</a>
+                    <div class="flex gap-3 items-center">
+                        <div class=" w-12 h-12 p-2 rounded-full bg-[#fff] flex items-center justify-center">
+                            <img src="../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png" alt="">
+                        </div>
+                        <div class="flex flex-col">
+                            <p class="font-bold text-[18px]">JeiKei Shop</p>
+                        </div>
                     </div>
                 </div>
                 <div class="hidden sm:flex flex-col pt-4">
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
-                    <a class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
+                    <p class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white">Menu</p>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Dashboard</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[10px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                 </div>
             </div>
 
@@ -66,8 +72,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <div class="w-full sm:w-[80%] h-full">
                 <div class="h-[60px] border border-b-2 border-b-[#272a2f] flex justify-between px-8 items-center">
                     <div>
-                        <p class="font-bold text-[16px]"><?= $this->e(\App\SessionGuard::admin()->name) ?></p>
-                        <small class="text-[#333f48] font-medium"><?= $this->e(\App\SessionGuard::admin()->email) ?></small>
+                        <p class="font-bold text-[18px]"><?= $this->e(\App\SessionGuard::admin()->name) ?></p>
+                        <small class="text-[12px] font-semibold"><?= $this->e(\App\SessionGuard::admin()->email) ?></small>
                     </div>
                     <form action="/admin/logout" method="post">
                         <button class="bg-[#DC143C] px-3 py-1 font-semibold rounded-lg text-white transition-all duration-200 hover:bg-[#333]">Đăng xuất</button>
@@ -82,6 +88,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <div id="sidebar" class="fixed bg-[#272a2f] w-[80%] h-screen top-0 -left-[100%] p-5 transition-all duration-300">
             <div id="closesidebar" class="text-white mb-2"><i class="fa-solid fa-arrow-left"></i></div>
             <div>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
@@ -90,7 +98,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/addproduct"><i class="fa-solid fa-comments"></i> Đánh giá</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
             </div>
         </div>
     </div>

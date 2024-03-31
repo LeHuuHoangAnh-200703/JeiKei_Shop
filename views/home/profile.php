@@ -19,7 +19,7 @@ $hour = ceil(($currentDate - $timestamp) / 3600);
     <?php unset($_SESSION['success']); ?>
 <?php endif; ?>
 <div class="w-[95%] h-[650px] md:h-[570px] mx-auto mt-3 mb-36">
-    <div class="relative h-[300px] w-full bg-center bg-cover rounded-md" style="
+    <div class="relative h-[300px] w-full bg-center bg-cover rounded-md " style="
             background-image: url('./assets/z5300330066078_500c69306f95b52da4635cb3e9b37424.jpg');
           ">
 
