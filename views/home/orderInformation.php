@@ -46,7 +46,7 @@
                                 <p class="text-[15px] font-semibold inline"><?php echo $this->e($view->name); ?></p>
                             </div>
                             <div class="flex justify-between flex-col lg:flex-row">
-                                <p class="text-[13px]">Ngày đặt : <span class="text-[#DC143C]"><?php echo $this->e($view->order_date); ?></span></p>
+                                <p class="text-[13px]">Ngày đặt hàng : <span class="text-[#DC143C]"><?php echo $this->e($view->order_date); ?></span></p>
                                 <p class="text-[13px]">Số lượng : <span class="text-[#DC143C]"><?php echo $this->e($view->amount); ?></span></p>
                             </div>
                             <p class="text-[13px]">Giá : <span class="text-[#DC143C]"><?php echo $this->e($view->price); ?> đ</span></p>

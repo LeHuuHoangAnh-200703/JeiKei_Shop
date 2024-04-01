@@ -26,7 +26,7 @@
         <form action="/orders/<?= $this->e($product->id) ?>" method="POST" class="col-span-2">
             <h1 class="text-[25px] font-semibold py-2"><?php echo $this->e($product->name); ?></h1>
             <p class="text-[18px] font-semibold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($product->price); ?> VNĐ</span></p>
-            <p class="text-[18px] font-semibold py-2 flex justify-start items-center gap-x-2">Kho :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> <small>sản phẩm có sẳn</small></span></p>
+            <p class="text-[18px] font-semibold py-2 flex justify-start items-center gap-x-2">Còn lại :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> <small>sản phẩm có sẳn</small></span></p>
             <div class="py-1">
                 <p class="text-[18px] font-semibold">Số lượng sản phẩm : </p>
                 <div class="py-2 flex">

@@ -45,7 +45,7 @@
                                 <p class="text-[15px] font-semibold inline"><?php echo $this->e($order->name); ?></p>
                             </div>
                             <div class="flex justify-between flex-col lg:flex-row">
-                                <p class="text-[13px]">Ngày đặt : <span class="text-[#DC143C]"><?php echo $this->e($order->order_date); ?></span></p>
+                                <p class="text-[13px]">Ngày đặt hàng : <span class="text-[#DC143C]"><?php echo $this->e($order->order_date); ?></span></p>
                                 <p class="text-[13px]">Số lượng : <span class="text-[#DC143C]"><?php echo $this->e($order->amount); ?></span></p>
                             </div>
                             <p class="text-[13px]">Giá : <span class="text-[#DC143C]"><?php echo $this->e($order->price); ?> đ</span></p>
@@ -58,60 +58,16 @@
                     <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo $this->e($order->total_amount); ?> đ</span></p>
                     <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
                         <form action="/admin/deleteorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="px-4 py-2 bg-[#DC143C] text-[#fff] font-semibold rounded-md">Xóa đơn</button>
+                            <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Xóa đơn</button>
                         </form>
                         <form action="/admin/updateorder/<?= $order->id ?>" method="post">
-                            <button type="submit" class="py-2 px-4 bg-[#4169E1] text-[#fff] font-semibold rounded-md">Cập nhật</button>
+                            <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Cập nhật</button>
                         </form>
                     </div>
                 </div>
             </div>
         <?php endforeach ?>
     </div>
-    <!-- <div class="row">
-        <div class="col-12">
-            <div class="overflow-x-auto">
-                <table class="w-full border-collapse bg-white text-left text-sm text-gray-500">
-                    <thead class="bg-gray-50">
-                        <tr>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">ID</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Name</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Price</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Size</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Color</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Amount</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Order date</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">Total Pay</th>
-                            <th scope="col" class="px-6 py-4 font-medium text-gray-900">User</th>
-                        </tr>
-                    </thead>
-                    <tbody class="divide-y divide-gray-100 border-t border-gray-100">
-                        <?php foreach ($orders as $order) : ?>
-                            <tr>
-                                <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($order->id) ?></th>
-                                <td class="px-6 py-4"><?= $this->e($order->name) ?></td>
-                                <td class="px-6 py-4"><?= $this->e($order->price) ?></td>
-                                <td class="px-6 py-4"><?= $this->e($order->size) ?></td>
-                                <td class="px-6 py-4"><?= $this->e($order->color) ?></td>
-
-
-                                <td class="px-6 py-4"><?= $this->e($order->order_date) ?></td>
-                                <td class="px-6 py-4"><?= $this->e($order->total_amount) ?></td>
-                                <td class="px-6 py-4"><?= $this->e($order->username) ?></td>
-                                <td class="flex justify-end gap-4 px-6 py-4 font-medium">
-                                    <a href="/admin/editproduct/<?= $order->id ?>" class="text-center bg-[#4169E1] px-4 py-2 text-[#fff]">Edit</a>
-                                    <form class="form-inline ml-1" action="/admin/delete/<?= $order->id ?>" method="POST">
-                                        <button type="submit" class="text-primary-700 bg-[#DC143C] px-4 py-2 text-[#fff]" name="delete-product">
-                                            <i alt="Delete"></i> Delete
-                                        </button>
-                                    </form>
-                                </td>
-                            </tr>
-                        <?php endforeach ?>
-                    </tbody>
-                </table>
-            </div> -->
-    <!-- Table Ends Here -->
 </div>
 </div>
 </div>
