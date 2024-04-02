@@ -100,7 +100,7 @@
         <div class="grid lg:grid-cols-6 grid-cols-1 gap-2 lg:gap-4 items-center mb-5">
             <h2 class="text-[#333f48] text-[17px]">Chất lượng <span class="text-[#DC143c]">*</span></h2>
             <select name="quality" class="col-span-5 outline-0 p-2 block w-full lg:w-[40%] rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 cursor-pointer">
-                <option checked value="Rất tệ">Rất tệ</option>
+                <option checked value="Tệ">Tệ</option>
                 <option value="Bình thường">Bình thường</option>
                 <option value="Tốt">Tốt</option>
                 <option value="Tuyệt vời">Tuyệt vời</option>

@@ -356,7 +356,7 @@ class HomeController extends Controller
             $success = "Đã hủy đơn hàng thành công.";
             redirect("/view_order", ["success" => $success]);
         } else {
-            $errors = "Đơn hàng đang được vận chuyển, không thể hủy.";
+            $errors = "Đơn hàng đã được xử lý, không thể hủy.";
             redirect("/view_order", ["errors" => $errors]);
         }
     }
