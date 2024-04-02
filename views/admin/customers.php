@@ -15,7 +15,7 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Liên lạc</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Địa chỉ</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ngày tạo</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Xóa</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Điều chỉnh</th>
                 </tr>
             </thead>
             <tbody class="divide-y divide-gray-100 border-t border-gray-100">

@@ -28,7 +28,7 @@
                     <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Còn lại</th>
                     <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Giá</th>
                     <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Thành tiền</th>
-                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Hoạt động</th>
+                    <th scope="col" class="text-base px-6 py-4 font-semibold text-[#333f48]">Điều chỉnh</th>
                 </tr>
             </thead>
             <tbody class="w-full text-center">
@@ -36,7 +36,7 @@
                     <tr class="border-t border-slate-500">
                         <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
                         <td class=""><img src="../assets/<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
-                        <td><?= $this->e($cartItem['product_quantity'])?> sản phẩm</td>
+                        <td><?= $this->e($cartItem['product_quantity']) ?> sản phẩm</td>
                         <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
                         <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
                         <td class="flex items-center gap-4 flex-col mt-4">

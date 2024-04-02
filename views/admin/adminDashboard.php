@@ -36,7 +36,7 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Màn hình</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Độ phân giải</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Bộ nhớ</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Hoạt động</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Điều chỉnh</th>
                 </tr>
             </thead>
             <tbody class="w-full">
