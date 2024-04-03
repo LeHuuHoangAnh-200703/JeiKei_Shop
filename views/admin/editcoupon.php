@@ -9,14 +9,14 @@
         </div>
     <?php } ?>
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Tạo mã giảm giá</h2>
+        <h2 class="text-[#333] font-bold text-2xl">Chỉnh sửa mã giảm giá</h2>
     </div>
     <form action="/admin/addcoupon" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
             <div class="">
                 <div>
                     <label for="name_coupon" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Tên mã giảm giá</label>
-                    <input name="name_coupon" autofocus type="text" id="name_coupon" class="<?= isset($errors['name_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
+                    <input value="<?= $this->e($coupon['name']) ?>" name="name_coupon" autofocus type="text" id="name_coupon" class="<?= isset($errors['name_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
                     <?php if (isset($errors['name_coupon'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['name_coupon']) ?></strong>

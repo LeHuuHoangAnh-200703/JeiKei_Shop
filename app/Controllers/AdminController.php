@@ -221,11 +221,12 @@ class AdminController extends Controller
         if ($order->state >= 1) {
             $order->state = 2;
             $order->save();
+            redirect("/admin/orders", ['success' => 'Đơn hàng đã được giao thành công.']);
         } else {
             $order->state = 1;
             $order->save();
+            redirect("/admin/orders", ['success' => 'Đơn hàng đã được chuyển đi.']);
         }
-        redirect("/admin/orders");
     }
 
     public function showfeedback()
@@ -244,10 +245,13 @@ class AdminController extends Controller
         ]);
     }
 
-    public function addcoupon() {
+    public function addcoupon()
+    {
         $data["coupon_code"] = $_POST["coupon_code"];
         $data["num_uses"] = $_POST["num_uses"];
+        $data["name_coupon"] = $_POST["name_coupon"];
         $data["expiration_date"] = $_POST["expiration_date"];
+        $data["price_coupon"] = $_POST["price_coupon"];
         $data['created_at'] = date('Y-m-d H:i:s');
         $model_errors = Coupons::validate($data);
         if (empty($model_errors)) {
@@ -261,8 +265,40 @@ class AdminController extends Controller
         redirect('/admin/addcoupon', ['errors' => $model_errors]);
     }
 
-    public function showcoupon() {
+    public function showcoupon()
+    {
         $coupons = Coupons::all();
         $this->sendPage("/admin/coupon", ["coupons" => $coupons]);
+    }
+
+    public function destroyCoupon($couponId)
+    {
+        $coupon = Coupons::find($couponId);
+        if (!$coupon) {
+            $this->sendNotFound();
+        } else {
+            $coupon->delete();
+            redirect('/admin/coupon', ['success' => "Xóa mã giảm giá thành công."]);
+        }
+    }
+
+    public function editCoupon($couponId)
+    {
+        $coupon = Coupons::find($couponId);
+        $data["coupon_code"] = $_POST["coupon_code"];
+        $data["num_uses"] = $_POST["num_uses"];
+        $data["name_coupon"] = $_POST["name_coupon"];
+        $data["expiration_date"] = $_POST["expiration_date"];
+        $data["price_coupon"] = $_POST["price_coupon"];
+        $data['updated_at'] = date('Y-m-d H:i:s');
+        $model_errors = Coupons::validate($data);
+        if (empty($model_errors)) {
+            $coupon->fill($data);
+            $coupon->save();
+            $success = "Chỉnh sửa mã giảm giá thành công.";
+            redirect('/admin/editcoupon/' . $couponId, ["success" => $success]);
+        }
+        $this->saveFormValues($_POST);
+        redirect('/admin/editcoupon/' . $couponId, ['errors' => $model_errors]);
     }
 }

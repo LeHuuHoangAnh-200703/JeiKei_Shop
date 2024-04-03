@@ -53,6 +53,8 @@ $router->get('/admin/feedback', '\App\Controllers\AdminController@showfeedback')
 $router->get('/admin/addcoupon', '\App\Controllers\AdminController@createcoupon');
 $router->post('/admin/addcoupon', '\App\Controllers\AdminController@addcoupon');
 $router->get('/admin/coupon', '\App\Controllers\AdminController@showcoupon');
+$router->post('/admin/deletecoupon/(\d+)', '\App\Controllers\AdminController@destroyCoupon');
+$router->get('/admin/editcoupon/(\d+)', '\App\Controllers\AdminController@editCoupon');
 // Default routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');

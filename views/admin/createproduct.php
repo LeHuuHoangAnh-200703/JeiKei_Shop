@@ -39,7 +39,6 @@
                             <strong><?= $this->e($errors['price']) ?></strong>
                         </span>
                     <?php endif ?>
-
                 </div>
             </div>
             <div class="flex flex-col justify-center w-full">

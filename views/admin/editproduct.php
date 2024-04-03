@@ -7,15 +7,6 @@
     </div>
     <form action="<?= '/admin/' . $this->e($product['id']) ?>" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
-            <h1>
-                <?php
-                if (isset($errors) && is_array($errors)) {
-                    foreach ($errors as $error) {
-                        echo $this->e($error) . '<br>';
-                    }
-                }
-                ?>
-            </h1>
             <div class="">
                 <div>
                     <label for="name" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Tên sản phẩm</label>
@@ -25,7 +16,6 @@
                             <strong><?= $this->e($errors['name']) ?></strong>
                         </span>
                     <?php endif ?>
-
                 </div>
             </div>
             <div class="">
@@ -37,7 +27,6 @@
                             <strong><?= $this->e($errors['price']) ?></strong>
                         </span>
                     <?php endif ?>
-
                 </div>
             </div>
             <div>
@@ -82,7 +71,6 @@
                             <strong><?= $this->e($errors['quantity']) ?></strong>
                         </span>
                     <?php endif ?>
-
                 </div>
             </div>
             <div class="">
