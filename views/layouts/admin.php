@@ -65,8 +65,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Danh sách người dùng</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupons"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupons"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
                 </div>
             </div>
 

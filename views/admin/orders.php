@@ -1,4 +1,4 @@
-<?php $this->layout("layouts/admin", ["title" => "Đơn hàng"]) ?>
+<?php $this->layout("layouts/admin", ["title" => APPNAME]) ?>
 
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">

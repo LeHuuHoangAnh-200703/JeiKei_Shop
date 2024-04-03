@@ -50,8 +50,9 @@ $router->get('/admin/orders', '\App\Controllers\AdminController@showorders');
 $router->post('/admin/deleteorder/(\d+)', '\App\Controllers\AdminController@deleteorder');
 $router->post('/admin/updateorder/(\d+)', '\App\Controllers\AdminController@updateorder');
 $router->get('/admin/feedback', '\App\Controllers\AdminController@showfeedback');
-$router->post('/admin/addcoupons', '\App\Controllers\AdminController@addcoupon');
-$router->get('/admin/coupons', '\App\Controllers\AdminController@showcoupon');
+$router->get('/admin/addcoupon', '\App\Controllers\AdminController@createcoupon');
+$router->post('/admin/addcoupon', '\App\Controllers\AdminController@addcoupon');
+$router->get('/admin/coupon', '\App\Controllers\AdminController@showcoupon');
 // Default routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');

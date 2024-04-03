@@ -7,6 +7,7 @@ use App\SessionGuard as Guard;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Feedback;
+use App\Models\Coupons;
 
 // use Illuminate\Support\Facades\Process;
 // use League\Plates\Template\Func;
@@ -231,5 +232,37 @@ class AdminController extends Controller
     {
         $feedbacks = Feedback::all();
         $this->sendPage("/admin/feedback", ["feedbacks" => $feedbacks]);
+    }
+
+    public function createcoupon()
+    {
+        $this->sendPage('admin/createcoupon', [
+            'errors' => session_get_once('errors'),
+            'success' => session_get_once('success'),
+            'old' => $this->getSavedFormValues(),
+            "test" => "Create product page is opened..."
+        ]);
+    }
+
+    public function addcoupon() {
+        $data["coupon_code"] = $_POST["coupon_code"];
+        $data["num_uses"] = $_POST["num_uses"];
+        $data["expiration_date"] = $_POST["expiration_date"];
+        $data['created_at'] = date('Y-m-d H:i:s');
+        $model_errors = Coupons::validate($data);
+        if (empty($model_errors)) {
+            $coupon = new Coupons();
+            $coupon->fill($data);
+            $coupon->save();
+            $success = "Tạo mã giảm giá thành công.";
+            redirect('/admin/addcoupon', ["success" => $success]);
+        }
+        $this->saveFormValues($_POST);
+        redirect('/admin/addcoupon', ['errors' => $model_errors]);
+    }
+
+    public function showcoupon() {
+        $coupons = Coupons::all();
+        $this->sendPage("/admin/coupon", ["coupons" => $coupons]);
     }
 }
