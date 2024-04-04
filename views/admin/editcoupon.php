@@ -11,12 +11,12 @@
     <div class="text-center py-4">
         <h2 class="text-[#333] font-bold text-2xl">Chỉnh sửa mã giảm giá</h2>
     </div>
-    <form action="/admin/addcoupon" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
+    <form action="/admin/coupon/<?= $this->e($coupon['id']) ?>" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
             <div class="">
                 <div>
                     <label for="name_coupon" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Tên mã giảm giá</label>
-                    <input value="<?= $this->e($coupon['name']) ?>" name="name_coupon" autofocus type="text" id="name_coupon" class="<?= isset($errors['name_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
+                    <input value="<?= $this->e($coupon['name_coupon']) ?>" name="name_coupon" autofocus type="text" id="name_coupon" class="<?= isset($errors['name_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
                     <?php if (isset($errors['name_coupon'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['name_coupon']) ?></strong>
@@ -27,7 +27,7 @@
             <div class="">
                 <div>
                     <label for="coupon_code" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Mã giảm giá</label>
-                    <input name="coupon_code" autofocus type="text" id="coupon_code" class="<?= isset($errors['coupon_code']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
+                    <input value="<?= $this->e($coupon['coupon_code']) ?>" name="coupon_code" autofocus type="text" id="coupon_code" class="<?= isset($errors['coupon_code']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Nhập mã giảm giá ..." />
                     <?php if (isset($errors['coupon_code'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['coupon_code']) ?></strong>
@@ -38,7 +38,7 @@
             <div class="">
                 <div>
                     <label for="price_coupon" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Giá trị mã giảm giá</label>
-                    <input min="1" name="price_coupon" autofocus type="number" id="price_coupon" class="<?= isset($errors['price_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="10VNĐ" />
+                    <input value="<?= $this->e($coupon['price_coupon']) ?>" min="1" name="price_coupon" autofocus type="number" id="price_coupon" class="<?= isset($errors['price_coupon']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="10VNĐ" />
                     <?php if (isset($errors['price_coupon'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['price_coupon']) ?></strong>
@@ -49,7 +49,7 @@
             <div class="">
                 <div>
                     <label for="num_uses" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Số lần sử dụng</label>
-                    <input min="1" name="num_uses" autofocus type="number" id="num_uses" class="<?= isset($errors['num_uses']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Số lần sử dụng ..." />
+                    <input value="<?= $this->e($coupon['num_uses']) ?>" min="1" name="num_uses" autofocus type="number" id="num_uses" class="<?= isset($errors['num_uses']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Số lần sử dụng ..." />
                     <?php if (isset($errors['num_uses'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['num_uses']) ?></strong>
@@ -61,7 +61,7 @@
             <div class="">
                 <div>
                     <label for="expiration_date" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Ngày hết hạn</label>
-                    <input min="1" name="expiration_date" autofocus type="date" id="expiration_date" class="<?= isset($errors['expiration_date']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Số lần sử dụng ..." />
+                    <input value="<?= $this->e($coupon['expiration_date']) ?>" min="1" name="expiration_date" autofocus type="date" id="expiration_date" class="<?= isset($errors['expiration_date']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="Số lần sử dụng ..." />
                     <?php if (isset($errors['expiration_date'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['expiration_date']) ?></strong>

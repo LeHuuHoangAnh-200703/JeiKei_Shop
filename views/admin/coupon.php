@@ -34,7 +34,7 @@
                             <form action="/admin/deletecoupon/<?php echo $coupon->id ?>" method="post">
                                 <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Xóa mã</button>
                             </form>
-                            <a href="/admin/editcoupon/<?php echo $coupon->id ?>" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Chỉnh sửa mã</a>
+                            <a href="/admin/editcoupon/<?= $coupon->id ?>" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Chỉnh sửa mã</a>
                         </div>
                     </div>
                 </div>

@@ -285,6 +285,22 @@ class AdminController extends Controller
     public function editCoupon($couponId)
     {
         $coupon = Coupons::find($couponId);
+        if (!$coupon) {
+            $this->sendNotFound();
+        }
+        $form_values = $this->getSavedFormValues();
+        $data = [
+            'errors' => session_get_once('errors'),
+            'coupon' => (!empty($form_values)) ?
+                array_merge($form_values, ['id' => $coupon->id]) :
+                $coupon->toArray()
+        ];
+        $this->sendPage('/admin/editcoupon', $data);
+    }
+
+    public function updateCoupon($couponId)
+    {
+        $coupon = Coupons::find($couponId);
         $data["coupon_code"] = $_POST["coupon_code"];
         $data["num_uses"] = $_POST["num_uses"];
         $data["name_coupon"] = $_POST["name_coupon"];
@@ -296,9 +312,9 @@ class AdminController extends Controller
             $coupon->fill($data);
             $coupon->save();
             $success = "Chỉnh sửa mã giảm giá thành công.";
-            redirect('/admin/editcoupon/' . $couponId, ["success" => $success]);
+            redirect('/admin/coupon', ["success" => $success]);
         }
         $this->saveFormValues($_POST);
-        redirect('/admin/editcoupon/' . $couponId, ['errors' => $model_errors]);
+        redirect('/admin/coupon', ['errors' => $model_errors]);
     }
 }

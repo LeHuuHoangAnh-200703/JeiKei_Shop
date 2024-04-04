@@ -12,7 +12,7 @@
                 <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="all">Tất cả</li>
                 <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_OLED">Nintendo OLED</li>
                 <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_Lite">Nintendo lite</li>
-                <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_Old">Nintendo Old</li>
+                <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_Old">Nintendo Cũ</li>
             </ul>
         </div>
         <div class="relative block lg:hidden w-full">

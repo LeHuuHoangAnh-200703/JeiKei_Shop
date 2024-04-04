@@ -306,7 +306,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 $(".Nintendo_Lite").hide();
                 $(".Nintendo_Old").show();
             });
-            $("#all").click(function() {
+            $("#all_1").click(function() {
                 $(".style").show();
             });
 

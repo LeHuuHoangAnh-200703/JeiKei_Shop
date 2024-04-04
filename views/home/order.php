@@ -4,7 +4,7 @@
 <div class="mx-auto p-5 mb-5">
     <?php if (isset($errors)) {
     ?> <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
-            <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Đặt hàng thất bại!!</p>
+            <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Đặt hàng thất bại.</p>
             <p class="font-bold"><?php foreach ($errors as $error) {
                                         echo $error . "\n";
                                     } ?></p>
@@ -12,7 +12,7 @@
 
     <?php if (isset($success)) {
     ?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-            <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Đặt hàng thành công!! </p>
+            <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Đặt hàng thành công. </p>
             <p class="font-bold"><?php echo $success; ?></p>
         </div> <?php } ?>
     <div class="relative w-full flex justify-center mb-3">
@@ -20,19 +20,22 @@
         <div class="absolute bottom-0 w-36 h-1 bg-[#DC143C]"></div>
     </div>
     <div class="w-full h-full grid grid-cols-1 md:grid-cols-3 gap-7 border rounded-xl p-5 shadow-md justify-center items-start">
-        <div class="w-full flex items-center justify-center">
+        <div class="w-full flex flex-col items-center justify-center">
             <img src="../assets/<?php echo $product['image']; ?>" />
         </div>
         <form action="/orders/<?= $this->e($product->id) ?>" method="POST" class="col-span-2">
             <h1 class="text-[25px] font-semibold py-2"><?php echo $this->e($product->name); ?></h1>
-            <p class="text-[18px] font-semibold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($product->price); ?> VNĐ</span></p>
-            <p class="text-[18px] font-semibold py-2 flex justify-start items-center gap-x-2">Còn lại :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> <small>sản phẩm có sẳn</small></span></p>
+            <div class="flex flex-col lg:flex-row lg:items-center lg:gap-4">
+                <p class="text-[16px] font-semibold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($product->price); ?> VNĐ</span></p>
+                <span class="font-bold lg:block hidden">|</span>
+                <p class="text-[16px] font-semibold py-2 flex justify-start items-center gap-x-2">Còn lại :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> sản phẩm có sẳn</span></p>
+            </div>
             <div class="py-1">
-                <p class="text-[18px] font-semibold">Số lượng sản phẩm : </p>
+                <p class="text-[16px] font-semibold">Số lượng sản phẩm : </p>
                 <div class="py-2 flex">
-                    <button type="button" id="decrease" class="text-lg border border-1  py-1 px-3"><i class="fa-solid fa-minus"></i></button>
+                    <button type="button" id="decrease" class="text-lg border border-1 py-1 px-3"><i class="fa-solid fa-minus"></i></button>
                     <input id="quantity" name="total_amount" value="1" style="appearance: textfield;" type="number" min="1" class="text-lg border border-1 font-semibold h-10 w-12 text-center" />
-                    <button type="button" id="increase" class="text-lg border border-1  py-1 px-3"><i class="fa-solid fa-plus"></i></button>
+                    <button type="button" id="increase" class="text-lg border border-1 py-1 px-3"><i class="fa-solid fa-plus"></i></button>
                 </div>
                 <?php if (isset($errors['total_amount'])) : ?>
                     <span class="text-red-500 mt-1 text-sm">
@@ -40,7 +43,7 @@
                     </span>
                 <?php endif ?>
             </div>
-            <p class="text-[18px] font-semibold mb-2">Chọn phương thức thanh toán :</p>
+            <p class="text-[16px] font-semibold mb-2">Chọn phương thức thanh toán :</p>
             <select class="relative mb-2 border-2 p-2 rounded-md cursor-pointer outline-none" name="payment">
                 <div class="flex justify-between items-center p-[10px] border-1 rounded-[6px] cursor-pointer clickdown_2">
                     <p class="font-semibold">Direct payment</p>
@@ -52,7 +55,7 @@
                 </div>
             </select>
             <div class="flex flex-col bg-[#333f48] p-2">
-                <p class="text-[18px] font-semibold pb-2 text-[#fff]">Địa chỉ nhận hàng :</p>
+                <p class="text-[16px] font-semibold pb-2 text-[#fff]">Địa chỉ nhận hàng :</p>
                 <div class="flex flex-col gap-2">
                     <input name="address" type="text" placeholder="#-#-#" class="p-2 border-none outline-none text-[#333]">
                     <?php if (isset($errors['address'])) : ?>
