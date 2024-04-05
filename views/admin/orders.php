@@ -46,6 +46,11 @@
                             <p class="text-[13px]">Số điện thoại : <span class="text-[#DC143C]"><?php echo $this->e($order->phone); ?></span></p>
                             <p class="text-[13px]">Địa chỉ : <span class="text-[#DC143C]"><?php echo $this->e($order->address); ?></span></p>
                             <p class="text-[13px]">Phương thức thanh toán : <span class="text-[#DC143C]"><?php echo $this->e($order->payment); ?></span></p>
+                            <p class="text-[13px]">Mã giảm giá đã áp dụng : <span class="text-[#DC143C]"><?php if ($this->e($order->coupon) == null) {
+                                                                                                                echo "Không áp dụng mã giảm giá.";
+                                                                                                            } else {
+                                                                                                                echo $this->e($order->coupon);
+                                                                                                            }?></span></p>
                         </div>
                     </div>
                     <hr>

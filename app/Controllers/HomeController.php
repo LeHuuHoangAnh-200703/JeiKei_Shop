@@ -6,6 +6,7 @@ use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Feedback;
+use App\Models\Coupons;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
 
@@ -56,7 +57,6 @@ class HomeController extends Controller
     {
         $product = Products::find($productId);
         $user = Guard::user();
-
         // Validate data
         $data["product_id"] = $productId;
         $data["user_id"] = $user->id;
@@ -65,42 +65,56 @@ class HomeController extends Controller
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;
-
         $data["amount"] = $_POST["total_amount"];
-
         $data["payment"] = $_POST["payment"];
         $data["address"] = $_POST["address"];
         $data["phone"] = $_POST["phone"];
+        $data["coupon"] = $_POST['coupon'];
         $data["image"] = $product->image;
         //Calculate the total amount that the customer must pay
 
-        $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
-
-        $data["total_amount"] = number_format($total_pay, 3, ',', ',');
-
+        // $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
+        // $data["total_amount"] = number_format($total_pay, 3, ',', ',');
         //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
+        if (!empty($data["coupon"])) {
+            $couponCode = $data["coupon"];
+            $coupon = Coupons::where('coupon_code', $couponCode)->first();
+            if ($coupon) {
+                if ($coupon->num_uses <= 0 || $coupon->expiration_date < date('Y-m-d H:i:s')) {
+                    redirect($product->id, ['errors' => "Mã giảm giá không khả dụng hoặc đã hết hạn."]);
+                } else {
+                    $data["coupon_id"] = $coupon->id;
+                    $data["total_amount"] = (float)$product->price * $data["amount"]; // Tính tổng ban đầu
+                    $data["total_amount"] -= $coupon->price_coupon; // Áp dụng giảm giá
+                    $data["total_amount"] = number_format($data["total_amount"], 3, ',', ','); // Định dạng tiền
+                    if ($coupon->num_uses <= 0) {
+                        $coupon->num_uses = 0;
+                        $coupon->save();
+                    } else {
+                        $coupon->num_uses--;
+                        $coupon->save();
+                    }
+                }
+            } else {
+                redirect($product->id, ['errors' => "Mã giảm giá không hợp lệ."]);
+            }
+        } else {
+            $data["coupon_id"] = null;
+            $data["total_amount"] = (float)$product->price * $data["amount"]; // Tính tổng ban đầu
+            $data["total_amount"] = number_format($data["total_amount"], 3, ',', ','); // Định dạng tiền
+        }
 
         $model_errors = Order::validate($data);
 
-
         if (empty($model_errors)) {
-
             $order = new Order();
-
-            // $product->sold_count += $_POST["total_amount"];
             $product->test +=  $_POST["total_amount"];
-
             $order->fill($data);
-
             $product->quantity -= $order->amount;
-
             $product->save();
-
             $order->user()->associate(Guard::user());
-
             $order->save();
-
             $this->sendPage('home/order', ["success" => "Shop sẽ cố gắng liên hệ với bạn để xác nhận đơn hàng sớm nhất.", "product" => $product]);
         }
 
@@ -109,11 +123,7 @@ class HomeController extends Controller
             $this->sendPage('home/order', ['errors' => $model_errors, "product" => $product]);
             return;
         }
-
-        // Save the values that the user has entered and selected in the order form.
         $this->saveFormValues($_POST);
-
-        // Save errors into $_SESSTION["errors"]
         $this->sendPage('home/order', ['errors' => "Có lỗi xảy ra, vui lòng kiểm tra lại!!", "product" => $product]);
     }
 

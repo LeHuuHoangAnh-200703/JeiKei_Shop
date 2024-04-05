@@ -5,6 +5,7 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Model;
 use App\Models\User;
 use App\Models\Products;
+use App\Models\Coupons;
 
 class Order extends Model
 {
@@ -12,7 +13,7 @@ class Order extends Model
     protected $table = 'orders';
     protected $fillable = [
         'user_id', 'product_id', 'name', 'price',
-        'amount', 'order_date', 'total_amount', 'username', 'address', 'phone', 'payment', 'image', 'image_user'
+        'amount', 'order_date', 'total_amount', 'username', 'address', 'phone', 'payment', 'image', 'image_user','coupon_id', 'coupon'
     ];
 
     public function user()
@@ -23,6 +24,11 @@ class Order extends Model
     public function product()
     {
         return $this->belongsTo(Products::class, 'product_id');
+    }
+
+    public function coupon()
+    {
+        return $this->belongsTo(Coupons::class, 'coupon_id');
     }
     public static function validate(array $data)
     {

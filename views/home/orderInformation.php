@@ -51,6 +51,11 @@
                             </div>
                             <p class="text-[13px]">Giá : <span class="text-[#DC143C]"><?php echo $this->e($view->price); ?> đ</span></p>
                             <p class="text-[13px]">Phương thức thanh toán : <span class="text-[#DC143C]"><?php echo $this->e($view->payment); ?></span></p>
+                            <p class="text-[13px]">Mã giảm giá của shop : <span class="text-[#DC143C]"><?php if ($this->e($view->coupon) == null) {
+                                                                                                                echo "Không áp dụng mã giảm giá.";
+                                                                                                            } else {
+                                                                                                                echo $this->e($view->coupon);
+                                                                                                            }?></span></p>
                         </div>
                     </div>
                     <hr>

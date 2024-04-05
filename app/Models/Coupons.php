@@ -1,13 +1,18 @@
 <?php
 
 namespace App\Models;
-
+use App\Models\Order;
 use Illuminate\Database\Eloquent\Model;
 
 class Coupons extends Model
 {
     protected $table = 'coupons';
     protected $fillable = ['coupon_code', 'num_uses', 'expiration_date', 'created_at', 'updated_at', 'name_coupon', 'price_coupon'];
+
+    public function orders()
+    {
+        return $this->hasMany(Order::class, 'coupon_id');
+    }
 
     public static function validate(array $data)
     {

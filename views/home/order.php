@@ -15,6 +15,12 @@
             <p class="font-bold"><i class="fa-solid fa-circle-check"></i> Đặt hàng thành công. </p>
             <p class="font-bold"><?php echo $success; ?></p>
         </div> <?php } ?>
+    <?php if (isset($_SESSION['errors'])) : ?>
+        <div class="success-notification bg-red-100 border-[1px] border-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+            <p class="font-bold text-[#DC143C]"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
+        </div>
+        <?php unset($_SESSION['errors']); ?>
+    <?php endif; ?>
     <div class="relative w-full flex justify-center mb-3">
         <h1 class="text-[30px] font-semibold">Đặt hàng</h1>
         <div class="absolute bottom-0 w-36 h-1 bg-[#DC143C]"></div>
@@ -44,7 +50,7 @@
                 <?php endif ?>
             </div>
             <p class="text-[16px] font-semibold mb-2">Chọn phương thức thanh toán :</p>
-            <select class="relative mb-2 border-2 p-2 rounded-md cursor-pointer outline-none" name="payment">
+            <select class="relative mb-2 border-2 border-[#333f48] p-2 rounded-md cursor-pointer outline-none" name="payment">
                 <div class="flex justify-between items-center p-[10px] border-1 rounded-[6px] cursor-pointer clickdown_2">
                     <p class="font-semibold">Direct payment</p>
                     <i class="fa-solid fa-caret-down rotate-180 ease-out duration-500 dropdown_2"></i>
@@ -54,6 +60,12 @@
                     <option class="transition-all duration-300 hover:text-[#4169E1] cursor-pointer py-1" value="Thanh toán qua thẻ">Thanh toán qua thẻ</option>
                 </div>
             </select>
+            <div class="mb-3">
+                <p class="text-[16px] font-semibold mb-2">Nhập mã giảm giá : </p>
+                <div class="flex gap-3 items-center">
+                    <input type="text" id="coupon" name="coupon" class="block p-2 border-2 border-[#333f48] rounded-md outline-none" placeholder="Nhập mã giảm giá ...">
+                </div>
+            </div>
             <div class="flex flex-col bg-[#333f48] p-2">
                 <p class="text-[16px] font-semibold pb-2 text-[#fff]">Địa chỉ nhận hàng :</p>
                 <div class="flex flex-col gap-2">

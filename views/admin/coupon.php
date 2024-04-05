@@ -23,8 +23,16 @@
                             <p class="text-[#333f48] text-[18px] font-semibold"><?php echo $this->e($coupon->name_coupon); ?></p>
                             <p class="text-[#333f48] text-[14px] font-medium">Mã giảm giá : <span class="font-semibold text-[#DC143C]"><?php echo $this->e($coupon->coupon_code); ?></span></p>
                             <p class="text-[#333f48] text-[14px] font-medium">Giá trị mã giảm giá : <span class="font-semibold text-[#DC143C]"><?php echo $this->e($coupon->price_coupon); ?> VNĐ</span></p>
-                            <p class="text-[#333f48] text-[14px] font-medium">Ngày hết hạn : <span class="font-semibold text-[#DC143C]"><?php echo $this->e($coupon->expiration_date); ?></span></p>
-                            <p class="text-[#333f48] text-[14px] font-medium">Số lần sử dụng : <span class="font-semibold text-[#DC143C]"><?php echo $this->e($coupon->num_uses); ?></span></p>
+                            <p class="text-[#333f48] text-[14px] font-medium">Ngày hết hạn : <span class="font-semibold text-[#DC143C]"><?php if ($this->e($coupon->expiration_date) < date('Y-m-d H:i:s')) {
+                                                                                                                                            echo "Mã giảm giá đã hết hạn.";
+                                                                                                                                        } else {
+                                                                                                                                            echo $this->e($coupon->expiration_date);
+                                                                                                                                        } ?></span></p>
+                            <p class="text-[#333f48] text-[14px] font-medium">Số lần sử dụng : <span class="font-semibold text-[#DC143C]"><?php if ($this->e($coupon->num_uses) <= 0) {
+                                                                                                                                                echo "Mã giảm giá đã được sử dụng hết.";
+                                                                                                                                            } else {
+                                                                                                                                                echo $this->e($coupon->num_uses);
+                                                                                                                                            }?></span></p>
                         </div>
                     </div>
                     <hr>
