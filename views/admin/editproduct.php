@@ -20,11 +20,22 @@
             </div>
             <div class="">
                 <div>
-                    <label for="price" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Giá</label>
+                    <label for="price" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Giá bán</label>
                     <input value="<?= $this->e($product['price']) ?>" min="1" name="price" required autofocus type="number" id="price" class="<?= isset($errors['price']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="10VNĐ" />
                     <?php if (isset($errors['price'])) : ?>
                         <span class="text-red-500 mt-1 text-sm">
                             <strong><?= $this->e($errors['price']) ?></strong>
+                        </span>
+                    <?php endif ?>
+                </div>
+            </div>
+            <div class="">
+                <div>
+                    <label for="PurchasePrice" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Giá nhập sản phẩm</label>
+                    <input value="<?= $this->e($product['PurchasePrice']) ?>" min="1" name="PurchasePrice" required autofocus type="number" id="PurchasePrice" class="<?= isset($errors['PurchasePrice']) ? 'border-red-500' : '' ?> outline-0 p-2 block w-full rounded-md border shadow-md focus:border-blue-300 focus:ring focus:ring-blue-300 focus:ring-opacity-50 disabled:cursor-not-allowed disabled:bg-gray-50 disabled:text-gray-500" placeholder="10VNĐ" />
+                    <?php if (isset($errors['PurchasePrice'])) : ?>
+                        <span class="text-red-500 mt-1 text-sm">
+                            <strong><?= $this->e($errors['PurchasePrice']) ?></strong>
                         </span>
                     <?php endif ?>
                 </div>

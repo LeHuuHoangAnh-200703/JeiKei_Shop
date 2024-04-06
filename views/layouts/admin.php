@@ -49,7 +49,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <i class="fa-solid fa-bars"></i>
                     </div>
                     <div class="flex gap-3 items-center">
-                        <div class=" w-12 h-12 p-2 rounded-full bg-[#fff] flex items-center justify-center">
+                        <div class=" w-12 h-12 p-2 rounded-full bg-[#fff] border-[3px] border-[#333] flex items-center justify-center">
                             <img src="<?php $baseURL ?>/assets../png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png" class="w-full h-full" alt="">
                         </div>
                         <div class="flex flex-col">
@@ -59,8 +59,8 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </div>
                 <div class="hidden sm:flex flex-col pt-4">
                     <p class="w-full flex items-center gap-x-2 font-semibold px-4 py-[10px] text-white">Menu</p>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Dashboard</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Người dùng</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
@@ -90,9 +90,9 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <div id="sidebar" class="fixed bg-[#272a2f] w-[80%] h-screen top-0 -left-[100%] p-5 transition-all duration-300">
             <div id="closesidebar" class="text-white mb-2"><i class="fa-solid fa-arrow-left"></i></div>
             <div>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin"><i class="fa-solid fa-house"></i> Dashboard</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm Admin</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
                 <hr>
@@ -102,9 +102,9 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/feedback"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/feedback"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
             </div>
         </div>
     </div>

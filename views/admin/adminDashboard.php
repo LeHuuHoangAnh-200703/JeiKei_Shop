@@ -23,7 +23,8 @@
                 <tr>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tên sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá bán</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá nhập sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Loại sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Số lượng</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tình trạng</th>
@@ -45,6 +46,7 @@
                         <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($product->id) ?></th>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->name) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->price) ?></td>
+                        <td class="px-6 py-4"><?= $this->e($product->PurchasePrice) ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->type)  ?></td>
                         <td class="px-6 py-4"><?= $this->e($product->quantity) ?></td>
                         <td class="px-6 py-4">
