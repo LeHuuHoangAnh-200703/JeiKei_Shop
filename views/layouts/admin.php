@@ -66,7 +66,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-user-tie"></i> Quản lý kho</a>
+                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                 </div>
             </div>
 
@@ -106,7 +106,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/warehouse"><i class="fa-solid fa-user-tie"></i> Quản lý kho</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
             </div>
         </div>
     </div>

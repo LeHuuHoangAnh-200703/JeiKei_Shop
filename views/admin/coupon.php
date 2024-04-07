@@ -15,7 +15,7 @@
         <?php
         foreach ($coupons as $coupon) {
         ?>
-            <div class="border shadow-md rounded-md m-3">
+            <div class="border-2 border-[#cecece] shadow-md rounded-md m-3">
                 <div class="m-5">
                     <div class="flex gap-x-2 mb-2 items-center">
                         <img src="../assets/z5313072515118_d9cabc9ab0ffac7f7e00fd1feb792394.jpg" alt="" class="w-[100px] lg:w-[150px]">

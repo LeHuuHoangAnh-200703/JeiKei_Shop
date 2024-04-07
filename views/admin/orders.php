@@ -14,7 +14,7 @@
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>
             <div class="relative bg-white">
-                <div class="shadow-md mb-6 border">
+                <div class="shadow-md mb-6 mx-2 border-2 border-[#cecece] rounded">
                     <div class="p-4 flex lg:justify-between justify-center items-center flex-col lg:flex-row gap-3">
                         <div class="flex gap-2">
                             <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('../<?php echo ($order['image_user']); ?>')"></div>

@@ -14,47 +14,68 @@
     </div> <?php } ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Quản lý kho</h2>
+        <h2 class="text-[#333] font-bold text-2xl">Thống kê</h2>
     </div>
 
-    <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <table class="w-full border-collapse bg-white whitespace-nowrap text-center text-sm text-gray-500">
-            <thead class="bg-gray-200">
-                <tr>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tên sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá bán</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Giá nhập sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Kho</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Đã bán</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Điều chỉnh</th>
-                </tr>
-            </thead>
-            <tbody class="w-full">
-                <?php foreach ($warehouses as $warehouse) : ?>
-                    <?php if ($warehouse->quantity > 0) { ?>
-                        <tr class="border-t border-slate-500">
-                            <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($warehouse->id) ?></th>
-                            <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($warehouse->name) ?></td>
-                            <td><img class="w-[125px]" src="../assets/<?php echo $warehouse['image']; ?>" /> </td>
-                            <td class="px-6 py-4"><?= $this->e($warehouse->price) ?></td>
-                            <td class="px-6 py-4"><?= $this->e($warehouse->PurchasePrice) ?></td>
-                            <td class="px-6 py-4"><?= $this->e($warehouse->quantity) ?></td>
-                            <td class="px-6 py-4"><?= $this->e($warehouse->test) ?></td>
-                            <td class="flex justify-center gap-4 px-6 py-4 flex-col">
-                                <a href="/admin/editproduct/<?= $warehouse->id ?>" class="text-center bg-[#4169E1] px-2 py-2 text-[#fff]">Sửa sản phẩm</a>
-                                <form class="form-inline" action="/admin/delete/<?= $warehouse->id ?>" method="POST">
-                                    <button type="submit" class="text-primary-700 bg-[#DC143C] px-4 py-2 text-[#fff]" name="delete-product">
-                                        <i alt="Delete"></i> Xóa sản phẩm
-                                    </button>
-                                </form>
-                            </td>
-                        </tr>
-                    <?php } ?>
-                <?php endforeach ?>
-            </tbody>
-        </table>
+    <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
+        <div class="grid grid-cols-2 gap-4 w-full p-2">
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3">
+                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG DOANH THU</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-[14px] font-semibold">Hôm nay : <span class="text-[#DC143C]">1.250.000 VNĐ</span></p>
+                    <i class="fa-solid fa-chart-column text-[#DC143C] text-[30px]"></i>
+                </div>
+                <hr class="my-2">
+                <p class="text-[14px] font-semibold">Tổng cộng 6 đơn hàng.</p>
+            </div>
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG SẢN PHẨM ĐÃ BÁN</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]">10 sản phẩm</span></p>
+                    <i class="fa-solid fa-truck-fast text-[#DC143C] text-[30px]"></i>
+                </div>
+                <hr class="my-2">
+                <p class="text-[14px] font-semibold">Có 3 lần đánh giá sản phẩm.</p>
+            </div>
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG GIÁ TRỊ ĐÃ MUA</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">13.200.000 VNĐ</span></p>
+                    <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
+                </div>
+                <hr class="my-2">
+                <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
+            </div>
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG GIÁ TRỊ BÁN LẠI</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">17.230.000 VNĐ</span></p>
+                    <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
+                </div>
+                <hr class="my-2">
+                <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
+            </div>
+        </div>
+        <?php foreach ($warehouses as $warehouse) : ?>
+            <div class="shadow-md border-2 border-[#cecece] mx-2 my-4 rounded">
+                <div class="flex items-center p-2">
+                    <img class="w-[125px]" src="../assets/<?php echo $warehouse['image']; ?>" />
+                    <div class="flex flex-col gap-1 w-full">
+                        <p class="text-[14px] font-semibold"><?= $this->e($warehouse->name) ?></p>
+                        <p class="text-[14px] font-semibold">Giá bán ra : <span class="text-[#DC143C]"><?= $this->e($warehouse->price) ?> VNĐ</span></p>
+                        <p class="text-[14px] font-semibold">Giá nhập vào : <span class="text-[#DC143C]"><?= $this->e($warehouse->PurchasePrice) ?> VNĐ</span></p>
+                        <div class="flex flex-col lg:flex-row justify-between">
+                            <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $this->e($warehouse->test) ?> sản phẩm</span></p>
+                            <p class="text-[14px] font-semibold">Hiện tại : <span class="text-[#DC143C]"> còn <?php if ($this->e($warehouse->quantity) > 0) {
+                                                                                                                   echo $this->e($warehouse->quantity); echo " sản phẩm";
+                                                                                                                } else {
+                                                                                                                    echo "Đã bán hết.";
+                                                                                                                }  ?> </span></p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        <?php endforeach ?>
     </div>
 </div>
 <?php $this->stop() ?>
