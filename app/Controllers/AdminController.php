@@ -318,4 +318,9 @@ class AdminController extends Controller
         $this->saveFormValues($_POST);
         redirect('/admin/coupon', ['errors' => $model_errors]);
     }
+
+    public function showWarehouse() {
+        $warehouses = Products::all();
+        $this->sendPage("/admin/warehouse", ["warehouses" => $warehouses]);
+    }
 }
