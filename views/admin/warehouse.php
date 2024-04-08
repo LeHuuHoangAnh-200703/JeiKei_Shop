@@ -18,8 +18,8 @@
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
         <div class="relative mb-4">
-            <form action="/search" method="post" class="relative flex items-center justify-center gap-1">
-                <input name="search" type="date" placeholder="Tìm kiếm theo ngày ..." class="relative w-[270px] rounded outline-none shadow border-2 border-[#cecece] bg-transparent p-1 placeholder:text-[#808080]">
+            <form action="/admin/search" method="post" class="relative flex items-center justify-center gap-1">
+                <input name="date" type="date" placeholder="Tìm kiếm theo ngày ..." class="relative w-[270px] rounded outline-none shadow border-2 border-[#cecece] bg-transparent p-1 placeholder:text-[#808080]">
                 <button type="submit">
                     <div class="bg-[#DC143C] shadow px-4 py-[8px] rounded cursor-pointer text-[14px] font-semibold text-[#fff]">Tìm kiếm</div>
                 </button>
@@ -30,7 +30,7 @@
             <div class="border-2 border-[#cecece] shadow-md rounded p-3">
                 <p class="text-[12px] font-semibold mb-2">TỔNG DOANH THU</p>
                 <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Doanh thu : <span class="text-[#DC143C]"><?= number_format($totalRevenue, 0, ',', '.') ?> VNĐ</span></p>
+                    <p class="text-[14px] font-semibold">Doanh thu : <span class="text-[#DC143C]"><?= number_format($totalRevenue, 3, '.', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-chart-column text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
@@ -43,12 +43,12 @@
                     <i class="fa-solid fa-truck-fast text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
-                <p class="text-[14px] font-semibold">Có <span class="text-[#DC143C]">3</span> lượt đánh giá sản phẩm.</p>
+                <p class="text-[14px] font-semibold">Có <span class="text-[#DC143C]"><?= $totalFeedbacks ?></span> lượt đánh giá sản phẩm.</p>
             </div>
             <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
                 <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ ĐÃ MUA</p>
                 <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">13.200.000 VNĐ</span></p>
+                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($TotalPurchasePrice, 3, '.', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
@@ -57,7 +57,7 @@
             <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
                 <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ BÁN LẠI</p>
                 <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">17.230.000 VNĐ</span></p>
+                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($TotalSellingPrice, 3, '.', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
@@ -74,8 +74,8 @@
                         <p class="text-[14px] font-semibold">Giá nhập vào : <span class="text-[#DC143C]"><?= $this->e($warehouse->PurchasePrice) ?> VNĐ</span></p>
                         <div class="flex flex-col lg:flex-row justify-between">
                             <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $this->e($warehouse->test) ?> sản phẩm</span></p>
-                            <p class="text-[14px] font-semibold">Hiện tại : <span class="text-[#DC143C]"> còn <?php if ($this->e($warehouse->quantity) > 0) {
-                                                                                                                    echo $this->e($warehouse->quantity);
+                            <p class="text-[14px] font-semibold">Hiện tại : <span class="text-[#DC143C]"> <?php if ($this->e($warehouse->quantity) > 0) {
+                                                                                                                    echo "Còn lại ". $this->e($warehouse->quantity);
                                                                                                                     echo " sản phẩm";
                                                                                                                 } else {
                                                                                                                     echo "Đã bán hết.";

@@ -57,7 +57,6 @@ class HomeController extends Controller
     {
         $product = Products::find($productId);
         $user = Guard::user();
-        // Validate data
         $data["product_id"] = $productId;
         $data["user_id"] = $user->id;
         $data["username"] = $user->name;
@@ -71,12 +70,8 @@ class HomeController extends Controller
         $data["phone"] = $_POST["phone"];
         $data["coupon"] = $_POST['coupon'];
         $data["image"] = $product->image;
-        //Calculate the total amount that the customer must pay
-
-        // $total_pay = (float)$_POST["total_amount"] * (float)$product->price;
-        // $data["total_amount"] = number_format($total_pay, 3, ',', ',');
-        //Take the current time as the customer's purchase time
         $data["order_date"] = date('Y-m-d H:i:s');
+
         if (!empty($data["coupon"])) {
             $couponCode = $data["coupon"];
             $coupon = Coupons::where('coupon_code', $couponCode)->first();
@@ -85,9 +80,9 @@ class HomeController extends Controller
                     redirect($product->id, ['errors' => "Mã giảm giá không khả dụng hoặc đã hết hạn."]);
                 } else {
                     $data["coupon_id"] = $coupon->id;
-                    $data["total_amount"] = (float)$product->price * $data["amount"]; // Tính tổng ban đầu
-                    $data["total_amount"] -= $coupon->price_coupon; // Áp dụng giảm giá
-                    $data["total_amount"] = number_format($data["total_amount"], 3, ',', ','); // Định dạng tiền
+                    $data["total_amount"] = (float)$product->price * $data["amount"];
+                    $data["total_amount"] -= $coupon->price_coupon;
+                    $data["total_amount"] = number_format($data["total_amount"], 3, '.', '.');
                     if ($coupon->num_uses <= 0) {
                         $coupon->num_uses = 0;
                         $coupon->save();
@@ -101,8 +96,8 @@ class HomeController extends Controller
             }
         } else {
             $data["coupon_id"] = null;
-            $data["total_amount"] = (float)$product->price * $data["amount"]; // Tính tổng ban đầu
-            $data["total_amount"] = number_format($data["total_amount"], 3, ',', ','); // Định dạng tiền
+            $data["total_amount"] = (float)$product->price * $data["amount"];
+            $data["total_amount"] = number_format($data["total_amount"], 3, '.', '.');
         }
 
         $model_errors = Order::validate($data);

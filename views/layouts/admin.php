@@ -129,7 +129,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     <script>
         $(document).ready(function() {
             // Show notify 
-            const successNotification = $('#success-notification');
+            const successNotification = $('.success-notification');
             if (successNotification.length > 0) {
                 successNotification.css('display', 'block');
             }

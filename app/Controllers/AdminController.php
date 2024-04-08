@@ -327,30 +327,48 @@ class AdminController extends Controller
 
     public function statistics($date = null)
     {
-        if ($date === null) {
-            $date = date('Y-m-d');
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['date'])) {
+            $date = $_POST['date'];
+        } else {
+            if ($date === null) {
+                $date = date('Y-m-d');
+            }
         }
 
         $currentDate = date('Y-m-d');
-        if ($date > $currentDate) {
-            $errors = "Ngày không hợp lệ.";
-            $this->sendPage('admin/warehouse', ['errors' => $errors]);
-            return;
-        }
-
         $totalRevenue = Order::whereDate('created_at', $date)->sum('total_amount');
         $totalProductsSold = Order::whereDate('created_at', $date)->sum('amount');
         $totalOrders = Order::whereDate('created_at', $date)->count();
         $totalFeedbacks = Feedback::whereDate('created_at', $date)->count();
         $warehouses = Products::all();
-        $this->sendPage('admin/warehouse', 
-        [
-            'date' => $date,
-            'totalRevenue' => $totalRevenue,
-            'totalProductsSold' => $totalProductsSold,
-            'totalOrders' => $totalOrders,
-            'totalFeedbacks' => $totalFeedbacks,
-            'warehouses' => $warehouses
-        ]);
+        $TotalSellingPrice = Products::sum('price');
+        $TotalPurchasePrice = Products::sum('PurchasePrice');
+        if ($date > $currentDate) {
+            $errors = "Ngày không hợp lệ.";
+            $this->sendPage('admin/warehouse', [
+                'errors' => $errors,
+                'date' => $date,
+                'totalRevenue' => $totalRevenue ?? '0',
+                'totalProductsSold' => $totalProductsSold ?? '0',
+                'totalOrders' => $totalOrders ?? '0',
+                'totalFeedbacks' => $totalFeedbacks ?? '0',
+                'TotalSellingPrice' => $TotalSellingPrice,
+                'TotalPurchasePrice' => $TotalPurchasePrice,
+                'warehouses' => $warehouses
+            ]);
+        }
+        $this->sendPage(
+            'admin/warehouse',
+            [
+                'date' => $date,
+                'totalRevenue' => $totalRevenue,
+                'totalProductsSold' => $totalProductsSold,
+                'totalOrders' => $totalOrders,
+                'totalFeedbacks' => $totalFeedbacks,
+                'TotalSellingPrice' => $TotalSellingPrice,
+                'TotalPurchasePrice' => $TotalPurchasePrice,
+                'warehouses' => $warehouses
+            ]
+        );
     }
 }

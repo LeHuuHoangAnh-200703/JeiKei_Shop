@@ -34,7 +34,11 @@
             <div class="flex flex-col lg:flex-row lg:items-center lg:gap-4">
                 <p class="text-[16px] font-semibold">Giá : <span class="text-[#DC143C]"><?php echo $this->e($product->price); ?> VNĐ</span></p>
                 <span class="font-bold lg:block hidden">|</span>
-                <p class="text-[16px] font-semibold py-2 flex justify-start items-center gap-x-2">Còn lại :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php echo $this->e($product->quantity); ?> sản phẩm có sẳn</span></p>
+                <p class="text-[16px] font-semibold py-2 flex justify-start items-center gap-x-2">Tình trạng :<span class="text-[#DC143C] flex justify-center items-center gap-x-1"><?php if ($this->e($product->quantity) > 0) {
+                                                                                                                                                                                        echo "vẫn còn " . $this->e($product->quantity) . " sản phẩm";
+                                                                                                                                                                                    } else {
+                                                                                                                                                                                        echo "Hết hàng";
+                                                                                                                                                                                    } ?></span></p>
             </div>
             <div class="py-1">
                 <p class="text-[16px] font-semibold">Số lượng sản phẩm : </p>
@@ -43,11 +47,6 @@
                     <input id="quantity" name="total_amount" value="1" style="appearance: textfield;" type="number" min="1" class="text-lg border border-1 font-semibold h-10 w-12 text-center" />
                     <button type="button" id="increase" class="text-lg border border-1 py-1 px-3"><i class="fa-solid fa-plus"></i></button>
                 </div>
-                <?php if (isset($errors['total_amount'])) : ?>
-                    <span class="text-red-500 mt-1 text-sm">
-                        <strong><i class="fa-solid fa-triangle-exclamation"></i> <?= $this->e($errors['total_amount']) ?></strong>
-                    </span>
-                <?php endif ?>
             </div>
             <p class="text-[16px] font-semibold mb-2">Chọn phương thức thanh toán :</p>
             <select class="relative mb-2 border-2 border-[#333f48] p-2 rounded-md cursor-pointer outline-none" name="payment">

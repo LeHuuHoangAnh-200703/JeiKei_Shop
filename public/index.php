@@ -57,6 +57,7 @@ $router->post('/admin/deletecoupon/(\d+)', '\App\Controllers\AdminController@des
 $router->get('/admin/editcoupon/(\d+)', '\App\Controllers\AdminController@editCoupon');
 $router->post('/admin/coupon/(\d+)', '\App\Controllers\AdminController@updateCoupon');
 $router->get('/admin/warehouse', '\App\Controllers\AdminController@statistics');
+$router->post('/admin/search', '\App\Controllers\AdminController@statistics');
 // Default routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');

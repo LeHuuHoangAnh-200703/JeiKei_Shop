@@ -39,7 +39,11 @@
             </div>
             <div>
                 <p class="text-[#333f48] text-[14px] font-medium">Tình trạng :
-                    <span class="text-[#DC143C]">vẫn còn <?php echo $this->e($product->quantity); ?> sản phẩm.</span>
+                    <span class="text-[#DC143C]"><?php if ($this->e($product->quantity) > 0) {
+                                                        echo "vẫn còn " . $this->e($product->quantity) . "sản phẩm.";
+                                                    } else {
+                                                        echo "Hết hàng";
+                                                    } ?> </span>
                 </p>
                 <p class="text-[#333f48] text-[14px] font-medium my-1">Nhà sản xuất :
                     <span class="text-[#DC143C]">Nintendo</span>

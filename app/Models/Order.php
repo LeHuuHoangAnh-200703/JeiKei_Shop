@@ -49,6 +49,10 @@ class Order extends Model
             $errors["phone"] = "Số điện thoại không hợp lệ!";
         }
 
+        if(($product->quantity) <= 0) {
+            $errors["total_amount"] = "Hiện tại sản phẩm đã hết hàng, vui lòng chọn sản phẩm khác.";
+        }
+
         //If the number of products the customer chooses is greater than the number of products in stock, the user is asked to re-select the appropriate quantity.
         if (!isset($data["total_amount"]) || $data["total_amount"] <= 0) {
             $errors["total_amount"] = "Hiện tại chỉ còn lại " . $product->quantity . " vui lòng chọn số lượng phù hợp.";
