@@ -16,7 +16,18 @@
     <div class="text-center py-4">
         <h2 class="text-[#333] font-bold text-2xl">Thống kê</h2>
     </div>
-
+    <div class="relative flex items-center justify-center mb-4">
+        <form action="/search" method="post" class="relative hidden md:block">
+            <input name="search" type="text" placeholder="Tìm kiếm theo ngày ..." class="<?php if (\App\SessionGuard::user() == null) {
+                                                                                            echo 'w-[250px]';
+                                                                                        } else {
+                                                                                            echo 'w-[300px]';
+                                                                                        } ?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
+            <button type="submit">
+                <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[8.5px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
+            </button>
+        </form>
+    </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
         <div class="grid grid-cols-2 gap-4 w-full p-2">
             <div class="border-2 border-[#cecece] shadow-md rounded p-3">
@@ -67,7 +78,8 @@
                         <div class="flex flex-col lg:flex-row justify-between">
                             <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $this->e($warehouse->test) ?> sản phẩm</span></p>
                             <p class="text-[14px] font-semibold">Hiện tại : <span class="text-[#DC143C]"> còn <?php if ($this->e($warehouse->quantity) > 0) {
-                                                                                                                   echo $this->e($warehouse->quantity); echo " sản phẩm";
+                                                                                                                    echo $this->e($warehouse->quantity);
+                                                                                                                    echo " sản phẩm";
                                                                                                                 } else {
                                                                                                                     echo "Đã bán hết.";
                                                                                                                 }  ?> </span></p>

@@ -32,17 +32,19 @@
                 <li class="py-2 text-[#fff] px-3 cursor-pointer hover:text-[#DC143C] mb-1 font-medium transition-all duration-200" id="Nintendo_Old_1">Nintendo Old</li>
             </ul>
         </div>
-        <?php if (isset($errors)) {
-        ?> <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
-                <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
-                <p class="font-bold"><?php echo $errors; ?></p>
-            </div> <?php } ?>
+        <?php if (isset($_SESSION['errors'])) : ?>
+            <div class="success-notification bg-red-100 border-[1px] border-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+                <p class="font-bold text-[#DC143C]"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
+            </div>
+            <?php unset($_SESSION['errors']); ?>
+        <?php endif; ?>
 
-        <?php if (isset($success)) {
-        ?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-                <p class="font-bold"><i class="fa-solid fa-check"></i> Chúc mừng</p>
-                <p class="font-bold"><?php echo $success; ?></p>
-            </div> <?php } ?>
+        <?php if (isset($_SESSION['success'])) : ?>
+            <div class="success-notification bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
+                <p class="font-bold text-green-600"><i class="fa-solid fa-circle-check"></i> <?php echo $_SESSION['success'] ?></p>
+            </div>
+            <?php unset($_SESSION['success']); ?>
+        <?php endif; ?>
         <div class="flex flex-col justify-center items-center w-[100%]">
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                 <?php

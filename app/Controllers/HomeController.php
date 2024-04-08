@@ -154,6 +154,10 @@ class HomeController extends Controller
 
     public function search()
     {
+        if (empty($_POST["search"])) {
+            $errorMessage = "Vui lòng nhập nội dung tìm kiếm!";
+            redirect("home", ["errors" => $errorMessage]);
+        }
         $products = Products::all();
 
         $resultArray = [];
@@ -162,13 +166,10 @@ class HomeController extends Controller
                 $resultArray[$product->id] = $product;
                 continue;
             }
-            // } else if (stripos($product->type, $_POST["search"]) !== false) {
-            //     $resultArray[$product->id] = $product;
-            // }
         }
         if (empty($resultArray)) {
             $errorMessage = "Không tìm thấy sản phẩm '" . $_POST["search"] . "' vui lòng nhập lại!";
-            $this->sendPage("home/index", ["errors" => $errorMessage]);
+            redirect("home", ["errors" => $errorMessage]);
         } else {
             $this->sendPage("home/searchresult", ["resultArray" => $resultArray]);
         }
