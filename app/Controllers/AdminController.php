@@ -319,8 +319,38 @@ class AdminController extends Controller
         redirect('/admin/coupon', ['errors' => $model_errors]);
     }
 
-    public function showWarehouse() {
+    // public function showWarehouse()
+    // {
+    //     $warehouses = Products::all();
+    //     $this->sendPage("/admin/warehouse", ["warehouses" => $warehouses]);
+    // }
+
+    public function statistics($date = null)
+    {
+        if ($date === null) {
+            $date = date('Y-m-d');
+        }
+
+        $currentDate = date('Y-m-d');
+        if ($date > $currentDate) {
+            $errors = "Ngày không hợp lệ.";
+            $this->sendPage('admin/warehouse', ['errors' => $errors]);
+            return;
+        }
+
+        $totalRevenue = Order::whereDate('created_at', $date)->sum('total_amount');
+        $totalProductsSold = Order::whereDate('created_at', $date)->sum('amount');
+        $totalOrders = Order::whereDate('created_at', $date)->count();
+        $totalFeedbacks = Feedback::whereDate('created_at', $date)->count();
         $warehouses = Products::all();
-        $this->sendPage("/admin/warehouse", ["warehouses" => $warehouses]);
+        $this->sendPage('admin/warehouse', 
+        [
+            'date' => $date,
+            'totalRevenue' => $totalRevenue,
+            'totalProductsSold' => $totalProductsSold,
+            'totalOrders' => $totalOrders,
+            'totalFeedbacks' => $totalFeedbacks,
+            'warehouses' => $warehouses
+        ]);
     }
 }

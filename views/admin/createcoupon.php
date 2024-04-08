@@ -9,7 +9,7 @@
         </div>
     <?php } ?>
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Tạo mã giảm giá</h2>
+        <h2 class="text-[#333] font-bold text-[20px]">TẠO MÃ GIẢM GIÁ</h2>
     </div>
     <form action="/admin/addcoupon" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">

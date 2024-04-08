@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Đánh giá của người dùng</h2>
+        <h2 class="text-[#333] font-bold text-[20px]">ĐÁNH GIÁ CỦA NGƯỜI DÙNG</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <div class="border shadow-md rounded-md">

@@ -14,42 +14,39 @@
     </div> <?php } ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Thống kê</h2>
-    </div>
-    <div class="relative flex items-center justify-center mb-4">
-        <form action="/search" method="post" class="relative hidden md:block">
-            <input name="search" type="text" placeholder="Tìm kiếm theo ngày ..." class="<?php if (\App\SessionGuard::user() == null) {
-                                                                                            echo 'w-[250px]';
-                                                                                        } else {
-                                                                                            echo 'w-[300px]';
-                                                                                        } ?> relative border-[1.2px] outline-none border-[#646464] bg-transparent p-2 rounded-e-[5px] rounded-s-[5px] placeholder:text-[#808080]">
-            <button type="submit">
-                <div class="absolute top-0 right-0 rounded-e-md translate-x-[50%] bg-[#DC143C] px-4 py-[8.5px] cursor-pointer"><i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i></div>
-            </button>
-        </form>
+        <h2 class="text-[#333] font-bold text-[20px]">THỐNG KÊ</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
-        <div class="grid grid-cols-2 gap-4 w-full p-2">
+        <div class="relative mb-4">
+            <form action="/search" method="post" class="relative flex items-center justify-center gap-1">
+                <input name="search" type="date" placeholder="Tìm kiếm theo ngày ..." class="relative w-[270px] rounded outline-none shadow border-2 border-[#cecece] bg-transparent p-1 placeholder:text-[#808080]">
+                <button type="submit">
+                    <div class="bg-[#DC143C] shadow px-4 py-[8px] rounded cursor-pointer text-[14px] font-semibold text-[#fff]">Tìm kiếm</div>
+                </button>
+            </form>
+        </div>
+        <p class="mx-2 mb-3 font-semibold text-[16px]">Thống kê ngày : <?= $date ?></p>
+        <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full p-2">
             <div class="border-2 border-[#cecece] shadow-md rounded p-3">
-                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG DOANH THU</p>
+                <p class="text-[12px] font-semibold mb-2">TỔNG DOANH THU</p>
                 <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Hôm nay : <span class="text-[#DC143C]">1.250.000 VNĐ</span></p>
+                    <p class="text-[14px] font-semibold">Doanh thu : <span class="text-[#DC143C]"><?= number_format($totalRevenue, 0, ',', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-chart-column text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
-                <p class="text-[14px] font-semibold">Tổng cộng 6 đơn hàng.</p>
+                <p class="text-[14px] font-semibold">Tổng cộng <span class="text-[#DC143C]"><?= $totalOrders ?></span> đơn hàng.</p>
             </div>
             <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
-                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG SẢN PHẨM ĐÃ BÁN</p>
+                <p class="text-[12px] font-semibold mb-2">TỔNG SẢN PHẨM ĐÃ BÁN</p>
                 <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]">10 sản phẩm</span></p>
+                    <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $totalProductsSold ?> sản phẩm</span></p>
                     <i class="fa-solid fa-truck-fast text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
-                <p class="text-[14px] font-semibold">Có 3 lần đánh giá sản phẩm.</p>
+                <p class="text-[14px] font-semibold">Có <span class="text-[#DC143C]">3</span> lượt đánh giá sản phẩm.</p>
             </div>
             <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
-                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG GIÁ TRỊ ĐÃ MUA</p>
+                <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ ĐÃ MUA</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">13.200.000 VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
@@ -58,7 +55,7 @@
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
             <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
-                <p class="text-[12px] font-semibold mb-2 text-[#DC143C]">TỔNG GIÁ TRỊ BÁN LẠI</p>
+                <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ BÁN LẠI</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]">17.230.000 VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>

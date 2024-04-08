@@ -9,7 +9,7 @@
         <?php unset($_SESSION['success']); ?>
     <?php endif; ?>
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Tất cả đơn hàng</h2>
+        <h2 class="text-[#333] font-bold text-[20px]">DANH SÁCH ĐƠN HÀNG</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <?php foreach ($orders as $order) : ?>

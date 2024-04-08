@@ -56,7 +56,7 @@ $router->get('/admin/coupon', '\App\Controllers\AdminController@showcoupon');
 $router->post('/admin/deletecoupon/(\d+)', '\App\Controllers\AdminController@destroyCoupon');
 $router->get('/admin/editcoupon/(\d+)', '\App\Controllers\AdminController@editCoupon');
 $router->post('/admin/coupon/(\d+)', '\App\Controllers\AdminController@updateCoupon');
-$router->get('/admin/warehouse', '\App\Controllers\AdminController@showWarehouse');
+$router->get('/admin/warehouse', '\App\Controllers\AdminController@statistics');
 // Default routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');

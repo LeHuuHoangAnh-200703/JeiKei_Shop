@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Cập nhật sản phẩm</h2>
+        <h2 class="text-[#333] font-bold text-[20px]">CẬP NHẬT SẢN PHẨM</h2>
     </div>
     <form action="<?= '/admin/' . $this->e($product['id']) ?>" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
         <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">

@@ -3,7 +3,7 @@
 <?php $this->start("page") ?>
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="text-center py-4">
-        <h2 class="text-[#333] font-bold text-2xl">Danh sách người dùng</h2>
+        <h2 class="text-[#333] font-bold text-[20px]">DANH SÁCH NGƯỜI DÙNG</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
         <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
