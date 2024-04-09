@@ -340,6 +340,8 @@ class AdminController extends Controller
         $totalProductsSold = Order::whereDate('created_at', $date)->sum('amount');
         $totalOrders = Order::whereDate('created_at', $date)->count();
         $totalFeedbacks = Feedback::whereDate('created_at', $date)->count();
+        $totalPriceOrder = Order::whereDate('created_at',$date)->sum('price');
+        $totalPurchasePriceOrder = Order::whereDate('created_at',$date)->sum('PurchasePrice');
         $warehouses = Products::all();
         $TotalSellingPrice = Products::sum('price');
         $TotalPurchasePrice = Products::sum('PurchasePrice');

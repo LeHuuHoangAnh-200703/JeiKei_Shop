@@ -64,6 +64,7 @@ class HomeController extends Controller
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
         $data["price"] = $product->price;
+        $data["PurchasePrice"] = $product->PurchasePrice;
         $data["amount"] = $_POST["total_amount"];
         $data["payment"] = $_POST["payment"];
         $data["address"] = $_POST["address"];
