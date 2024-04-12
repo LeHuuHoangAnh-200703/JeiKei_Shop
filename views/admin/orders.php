@@ -54,7 +54,7 @@
                         </div>
                     </div>
                     <hr>
-                    <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo $this->e($order->total_amount); ?> đ</span></p>
+                    <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo number_format($this->e($order->total_amount), 3, '.', '.') ?> đ</span></p>
                     <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
                         <form action="/admin/deleteorder/<?= $order->id ?>" method="post">
                             <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Xóa đơn</button>

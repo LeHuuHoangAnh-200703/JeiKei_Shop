@@ -63,6 +63,15 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
+            <div class="col-span-2 border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+                <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN NGÀY <?= $date ?> CỦA JEIKEI SHOP</p>
+                <div class="flex justify-between items-center">
+                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>
+                    <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
+                </div>
+                <hr class="my-2">
+                <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
+            </div>
         </div>
         <?php foreach ($warehouses as $warehouse) : ?>
             <div class="shadow-md border-2 border-[#cecece] mx-2 my-4 rounded">

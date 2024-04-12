@@ -83,7 +83,7 @@ class HomeController extends Controller
                     $data["coupon_id"] = $coupon->id;
                     $data["total_amount"] = (float)$product->price * $data["amount"];
                     $data["total_amount"] -= $coupon->price_coupon;
-                    $data["total_amount"] = number_format($data["total_amount"], 3, '.', '.');
+                    $data["total_amount"] = $data["total_amount"];
                     if ($coupon->num_uses <= 0) {
                         $coupon->num_uses = 0;
                         $coupon->save();
@@ -98,7 +98,7 @@ class HomeController extends Controller
         } else {
             $data["coupon_id"] = null;
             $data["total_amount"] = (float)$product->price * $data["amount"];
-            $data["total_amount"] = number_format($data["total_amount"], 3, '.', '.');
+            $data["total_amount"] = $data["total_amount"];
         }
 
         $model_errors = Order::validate($data);

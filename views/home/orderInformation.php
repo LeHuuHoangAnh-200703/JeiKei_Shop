@@ -61,7 +61,7 @@
                     <hr>
                     <div class="flex justify-between flex-col lg:flex-row">
                         <p class="text-[15px] p-4">Chú ý : <span class="text-[#DC143C]">Đơn hàng chỉ có thể hủy khi chưa được vận chuyển.</span></p>
-                        <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo $this->e($view->total_amount); ?> đ</span></p>
+                        <p class="text-[15px] px-4 pb-2 pt-4 text-end">Tổng số tiền : <span class="text-[#DC143C]"><?php echo number_format($this->e($view->total_amount), 3, '.', '.') ?> đ</span></p>
                     </div>
                     <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
                         <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Hủy đơn hàng</button>

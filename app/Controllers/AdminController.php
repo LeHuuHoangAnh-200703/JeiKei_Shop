@@ -342,9 +342,10 @@ class AdminController extends Controller
         $totalFeedbacks = Feedback::whereDate('created_at', $date)->count();
         $totalPriceOrder = Order::whereDate('created_at',$date)->sum('price');
         $totalPurchasePriceOrder = Order::whereDate('created_at',$date)->sum('PurchasePrice');
+        $totalProfit =  $totalRevenue - ($totalPriceOrder-$totalPurchasePriceOrder);
         $warehouses = Products::all();
-        $TotalSellingPrice = Products::sum('price');
-        $TotalPurchasePrice = Products::sum('PurchasePrice');
+        $TotalSellingPrice = Order::whereDate('created_at', $date)->sum('price');
+        $TotalPurchasePrice = Order::whereDate('created_at', $date)->sum('PurchasePrice');
         if ($date > $currentDate) {
             $errors = "Ngày không hợp lệ.";
             $this->sendPage('admin/warehouse', [
@@ -356,6 +357,7 @@ class AdminController extends Controller
                 'totalFeedbacks' => $totalFeedbacks ?? '0',
                 'TotalSellingPrice' => $TotalSellingPrice,
                 'TotalPurchasePrice' => $TotalPurchasePrice,
+                'totalProfit' => $totalProfit,
                 'warehouses' => $warehouses
             ]);
         }
@@ -369,6 +371,7 @@ class AdminController extends Controller
                 'totalFeedbacks' => $totalFeedbacks,
                 'TotalSellingPrice' => $TotalSellingPrice,
                 'TotalPurchasePrice' => $TotalPurchasePrice,
+                'totalProfit' => $totalProfit,
                 'warehouses' => $warehouses
             ]
         );
