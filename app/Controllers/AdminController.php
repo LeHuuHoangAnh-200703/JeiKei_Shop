@@ -325,46 +325,78 @@ class AdminController extends Controller
     //     $this->sendPage("/admin/warehouse", ["warehouses" => $warehouses]);
     // }
 
-    public function statistics($date = null)
+    public function statistics($date = null, $interval = 'daily')
     {
-        if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['date'])) {
-            $date = $_POST['date'];
-        } else {
-            if ($date === null) {
-                $date = date('Y-m-d');
-            }
+        if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['interval'])) {
+            $interval = $_POST['interval'];
         }
 
-        $currentDate = date('Y-m-d');
-        $totalRevenue = Order::whereDate('created_at', $date)->sum('total_amount');
-        $totalProductsSold = Order::whereDate('created_at', $date)->sum('amount');
-        $totalOrders = Order::whereDate('created_at', $date)->count();
-        $totalFeedbacks = Feedback::whereDate('created_at', $date)->count();
-        $totalPriceOrder = Order::whereDate('created_at',$date)->sum('price');
-        $totalPurchasePriceOrder = Order::whereDate('created_at',$date)->sum('PurchasePrice');
-        $totalProfit =  $totalRevenue - ($totalPriceOrder-$totalPurchasePriceOrder);
-        $warehouses = Products::all();
-        $TotalSellingPrice = Order::whereDate('created_at', $date)->sum('price');
-        $TotalPurchasePrice = Order::whereDate('created_at', $date)->sum('PurchasePrice');
-        if ($date > $currentDate) {
-            $errors = "Ngày không hợp lệ.";
-            $this->sendPage('admin/warehouse', [
-                'errors' => $errors,
-                'date' => $date,
-                'totalRevenue' => $totalRevenue ?? '0',
-                'totalProductsSold' => $totalProductsSold ?? '0',
-                'totalOrders' => $totalOrders ?? '0',
-                'totalFeedbacks' => $totalFeedbacks ?? '0',
-                'TotalSellingPrice' => $TotalSellingPrice,
-                'TotalPurchasePrice' => $TotalPurchasePrice,
-                'totalProfit' => $totalProfit,
-                'warehouses' => $warehouses
-            ]);
+        switch ($interval) {
+            case 'weekly':
+                $startDate = date('Y-m-d', strtotime('monday this week'));
+                $endDate = date('Y-m-d', strtotime('sunday this week'));
+                break;
+            case 'monthly':
+                $startDate = date('Y-m-01');
+                $endDate = date('Y-m-t');
+                break;
+            case 'last_week':
+                $startDate = date('Y-m-d', strtotime('monday last week'));
+                $endDate = date('Y-m-d', strtotime('sunday last week'));
+                break;
+            case 'last_month':
+                $startDate = date('Y-m-d', strtotime('first day of last month'));
+                $endDate = date('Y-m-d', strtotime('last day of last month'));
+                break;
+            default:
+                $startDate = $endDate = date('Y-m-d');
         }
+    
+        $currentDate = date('Y-m-d');
+    
+        $totalRevenue = Order::whereDate('created_at', '>=', $startDate)
+                                ->whereDate('created_at', '<=', $endDate)
+                                ->sum('total_amount');
+    
+        $totalProductsSold = Order::whereDate('created_at', '>=', $startDate)
+                                    ->whereDate('created_at', '<=', $endDate)
+                                    ->sum('amount');
+    
+        $totalOrders = Order::whereDate('created_at', '>=', $startDate)
+                                ->whereDate('created_at', '<=', $endDate)
+                                ->count();
+    
+        $totalFeedbacks = Feedback::whereDate('created_at', '>=', $startDate)
+                                    ->whereDate('created_at', '<=', $endDate)
+                                    ->count();
+    
+        $totalPriceOrder = Order::whereDate('created_at', '>=', $startDate)
+                                    ->whereDate('created_at', '<=', $endDate)
+                                    ->sum('price');
+    
+        $totalPurchasePriceOrder = Order::whereDate('created_at', '>=', $startDate)
+                                            ->whereDate('created_at', '<=', $endDate)
+                                            ->sum('PurchasePrice');
+    
+        $totalProfit =  $totalRevenue - ($totalPriceOrder - $totalPurchasePriceOrder);
+    
+        $warehouses = Products::all();
+    
+        $TotalSellingPrice = Order::whereDate('created_at', '>=', $startDate)
+                                    ->whereDate('created_at', '<=', $endDate)
+                                    ->sum('price');
+    
+        $TotalPurchasePrice = Order::whereDate('created_at', '>=', $startDate)
+                                    ->whereDate('created_at', '<=', $endDate)
+                                    ->sum('PurchasePrice');
+    
         $this->sendPage(
             'admin/warehouse',
             [
                 'date' => $date,
+                'interval' => $interval,
+                'startDate' => $startDate,
+                'endDate' => $endDate,
                 'totalRevenue' => $totalRevenue,
                 'totalProductsSold' => $totalProductsSold,
                 'totalOrders' => $totalOrders,

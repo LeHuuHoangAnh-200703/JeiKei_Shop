@@ -19,13 +19,18 @@
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
         <div class="relative mb-4">
             <form action="/admin/search" method="post" class="relative flex items-center justify-center gap-1">
-                <input name="date" type="date" placeholder="Tìm kiếm theo ngày ..." class="relative w-[270px] rounded outline-none shadow border-2 border-[#cecece] bg-transparent p-1 placeholder:text-[#808080]">
+                <select name="interval" class="relative w-[270px] rounded font-semibold cursor-pointer outline-none shadow border-2 border-[#cecece] bg-transparent p-2 placeholder:text-[#808080]">
+                    <option value="daily">Hôm nay</option>
+                    <option value="weekly">Tuần</option>
+                    <option value="monthly">Tháng</option>
+                    <option value="last_week">Tuần trước</option>
+                    <option value="last_month">Tháng trước</option>
+                </select>
                 <button type="submit">
                     <div class="bg-[#DC143C] shadow px-4 py-[8px] rounded cursor-pointer text-[14px] font-semibold text-[#fff]">Tìm kiếm</div>
                 </button>
             </form>
         </div>
-        <p class="mx-2 mb-3 font-semibold text-[16px]">Thống kê ngày : <?= $date ?></p>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full p-2">
             <div class="border-2 border-[#cecece] shadow-md rounded p-3">
                 <p class="text-[12px] font-semibold mb-2">TỔNG DOANH THU</p>
@@ -64,7 +69,7 @@
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
             <div class="col-span-2 border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
-                <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN NGÀY <?= $date ?> CỦA JEIKEI SHOP</p>
+                <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN CỦA JEIKEI SHOP</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
@@ -84,11 +89,11 @@
                         <div class="flex flex-col lg:flex-row justify-between">
                             <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $this->e($warehouse->test) ?> sản phẩm</span></p>
                             <p class="text-[14px] font-semibold">Hiện tại : <span class="text-[#DC143C]"> <?php if ($this->e($warehouse->quantity) > 0) {
-                                                                                                                    echo "Còn lại ". $this->e($warehouse->quantity);
-                                                                                                                    echo " sản phẩm";
-                                                                                                                } else {
-                                                                                                                    echo "Đã bán hết.";
-                                                                                                                }  ?> </span></p>
+                                                                                                                echo "Còn lại " . $this->e($warehouse->quantity);
+                                                                                                                echo " sản phẩm";
+                                                                                                            } else {
+                                                                                                                echo "Đã bán hết.";
+                                                                                                            }  ?> </span></p>
                         </div>
                     </div>
                 </div>
