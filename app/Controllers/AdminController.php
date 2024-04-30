@@ -319,12 +319,6 @@ class AdminController extends Controller
         redirect('/admin/coupon', ['errors' => $model_errors]);
     }
 
-    // public function showWarehouse()
-    // {
-    //     $warehouses = Products::all();
-    //     $this->sendPage("/admin/warehouse", ["warehouses" => $warehouses]);
-    // }
-
     public function statistics($date = null, $interval = 'daily')
     {
         if ($_SERVER['REQUEST_METHOD'] === 'POST' || isset($_POST['interval'])) {

@@ -20,14 +20,13 @@
                             <div id="user_info" class="w-10 h-10 border border-1 border-slate-950 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover" style="background-image:url('../<?php echo ($order['image_user']); ?>')"></div>
                             <p class="font-semibold flex items-center p-1 text-[14px]"><?php echo $this->e($order->username); ?></p>
                         </div>
-                        <div class="flex gap-2 items-center text-[14px] text-[#008B8B]">
-                            <i class="fa-solid fa-box-open"></i>
+                        <div class="flex gap-1 items-center text-[14px] text-[#008B8B]">
                             <?php if ($this->e($order->state) > 1) {
-                                echo "<p>Đơn hàng đã giao thành công</p>";
+                                echo "<i class='fa-solid fa-circle-check'></i><p>Đơn hàng đã giao thành công</p>";
                             } else if ($this->e($order->state) == 1) {
-                                echo "<p>Đơn hàng đang được giao</p>";
+                                echo "<i class='fa-solid fa-truck-fast'></i><p>Đơn hàng đang được giao</p>";
                             } else {
-                                echo "<p>Đơn hàng đang được xử lý</p>";
+                                echo "<i class='fa-solid fa-box-open'></i><p>Đơn hàng đang được xử lý</p>";
                             } ?>
                         </div>
                     </div>
