@@ -331,8 +331,8 @@ class AdminController extends Controller
                 $endDate = date('Y-m-d', strtotime('sunday this week'));
                 break;
             case 'monthly':
-                $startDate = date('Y-m-01');
-                $endDate = date('Y-m-t');
+                $startDate = date('Y-m-d', strtotime('first day of this month'));
+                $endDate = date('Y-m-d', strtotime('last day of this month'));
                 break;
             case 'last_week':
                 $startDate = date('Y-m-d', strtotime('monday last week'));

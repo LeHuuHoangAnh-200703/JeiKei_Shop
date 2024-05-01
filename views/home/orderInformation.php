@@ -28,13 +28,12 @@
                             <p class="font-semibold flex items-center p-1 text-[14px]">JeiKei Shop</p>
                         </div>
                         <div class="flex gap-2 items-center text-[14px] text-[#008B8B]">
-                            <i class="fa-solid fa-truck"></i>
                             <?php if ($this->e($view->state) > 1) {
-                                echo "<p>Đơn hàng đã giao thành công</p>";
+                                echo "<i class='fa-solid fa-circle-check'></i><p>Đơn hàng đã giao thành công</p>";
                             } else if ($this->e($view->state) == 1) {
-                                echo "<p>Đơn hàng đang được giao</p>";
+                                echo "<i class='fa-solid fa-truck'></i><p>Đơn hàng đang được giao</p>";
                             } else {
-                                echo "<p>Đơn hàng đang được xử lý</p>";
+                                echo "<i class='fa-solid fa-box-open'></i><p><p>Đơn hàng đang được xử lý</p>";
                             } ?>
                         </div>
                     </div>

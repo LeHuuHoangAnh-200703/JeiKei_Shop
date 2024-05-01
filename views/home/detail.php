@@ -40,7 +40,7 @@
             <div>
                 <p class="text-[#333f48] text-[14px] font-medium">Tình trạng :
                     <span class="text-[#DC143C]"><?php if ($this->e($product->quantity) > 0) {
-                                                        echo "vẫn còn " . $this->e($product->quantity) . "sản phẩm.";
+                                                        echo "vẫn còn " . $this->e($product->quantity) . " sản phẩm.";
                                                     } else {
                                                         echo "Hết hàng";
                                                     } ?> </span>

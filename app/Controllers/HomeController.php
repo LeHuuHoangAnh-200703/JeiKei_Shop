@@ -313,14 +313,11 @@ class HomeController extends Controller
             $feedback->save();
             $this->sendPage('home/detail', ["success" => "Cám ơn bạn đã quan tâm đến sản phẩm!", "product" => $product]);
         } else {
-            // Hiển thị thông báo lỗi chi tiết
             $this->sendPage('home/detail', ['errors' => $model_errors, "product" => $product]);
             return;
         }
-        // Save the values that the user has entered and selected in the order form.
         $this->saveFormValues($_POST);
 
-        // Save errors into $_SESSTION["errors"]
         $this->sendPage('home/detail', ['errors' => "Có lỗi xảy ra, vui lòng kiểm tra lại!", "product" => $product]);
     }
 
