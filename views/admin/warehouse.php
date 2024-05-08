@@ -19,7 +19,7 @@
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
         <div class="relative mb-4">
             <form action="/admin/search" method="post" class="relative flex items-center justify-center gap-1">
-                <select name="interval" class="relative w-[270px] rounded font-semibold cursor-pointer outline-none shadow border-2 border-[#cecece] bg-transparent p-2 placeholder:text-[#808080]">
+                <select name="interval" class="relative w-[230px] lg:w-[270px] rounded font-semibold cursor-pointer outline-none shadow border-2 border-[#cecece] bg-transparent p-2 placeholder:text-[#808080]">
                     <option value="daily">Hôm nay</option>
                     <option value="weekly">Tuần</option>
                     <option value="monthly">Tháng</option>
@@ -68,7 +68,7 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
-            <div class="col-span-2 border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 w-full lg:col-span-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
                 <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN CỦA JEIKEI SHOP</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>

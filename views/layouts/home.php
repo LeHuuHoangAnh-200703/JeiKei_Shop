@@ -95,11 +95,11 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </form>
                     <?php
                     if (\App\SessionGuard::user() == null) {
-                        echo '<li class="pb-[15px]"><a href="/login" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Đăng nhập</a></li>';
+                        echo '<li class="pb-[15px]"><a href="/login" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] hover:text-[#DC143C] font-semibold text-[20px] transition-colors ">Đăng nhập</a></li>';
                     }
                     ?>
                     <li class="pb-[15px]">
-                        <a href="/view_order" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] transition-colors ">Đơn hàng của bạn</a>
+                        <a href="/view_order" class="border-b-2 border-transparent hover:border-b-2 hover:border-[#DC143C] font-semibold text-[20px] hover:text-[#DC143C] transition-colors ">Đơn hàng của bạn</a>
                     </li>
                 </ul>
             </div>
