@@ -232,7 +232,7 @@ class AdminController extends Controller
 
     public function showfeedback()
     {
-        $feedbacks = Feedback::all();
+        $feedbacks = Feedback::orderBy('created_at', 'desc')->get();
         $this->sendPage("/admin/feedback", ["feedbacks" => $feedbacks]);
     }
 
@@ -268,7 +268,7 @@ class AdminController extends Controller
 
     public function showcoupon()
     {
-        $coupons = Coupons::all();
+        $coupons = Coupons::orderBy('created_at', 'desc')->get();
         $this->sendPage("/admin/coupon", ["coupons" => $coupons]);
     }
 

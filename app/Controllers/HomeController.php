@@ -341,7 +341,7 @@ class HomeController extends Controller
             redirect('/login');
         }
         $customer = User::find(Guard::user()->id);
-        $viewOrders = $customer->orders;
+        $viewOrders = $customer->orders()->orderBy('created_at', 'desc')->get();
         $this->sendPage("home/orderInformation", ["viewOrders" => $viewOrders]);
     }
 
