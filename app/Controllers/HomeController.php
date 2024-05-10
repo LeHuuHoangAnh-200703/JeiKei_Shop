@@ -355,7 +355,7 @@ class HomeController extends Controller
         }
         if ($order->state < 1) {
             $order->delete();
-            $product->test--;
+            $product->test-=$order->amount;
             $product->save();
             $success = "Đã hủy đơn hàng thành công.";
             redirect("/view_order", ["success" => $success]);

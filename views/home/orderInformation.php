@@ -64,7 +64,7 @@
                     </div>
                     <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
                         <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Hủy đơn hàng</button>
-                        <a href="/orders/<?php echo $this->e($view->product_id); ?>" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Mua lại</a>
+                        <a href="/orders/<?php echo $this->e($view->product_id); ?>" class="<?php if($this->e($view->state) > 1) { echo 'block';} else {echo 'hidden';}?> text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Mua lại</a>
                     </div>
                 </div>
             </form>

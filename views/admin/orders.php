@@ -49,7 +49,7 @@
                                                                                                                 echo "Không áp dụng mã giảm giá.";
                                                                                                             } else {
                                                                                                                 echo $this->e($order->coupon);
-                                                                                                            }?></span></p>
+                                                                                                            } ?></span></p>
                         </div>
                     </div>
                     <hr>

@@ -54,8 +54,8 @@ class Order extends Model
         }
 
         //If the number of products the customer chooses is greater than the number of products in stock, the user is asked to re-select the appropriate quantity.
-        if (!isset($data["total_amount"]) || $data["total_amount"] <= 0) {
-            $errors["total_amount"] = "Hiện tại chỉ còn lại " . $product->quantity . " vui lòng chọn số lượng phù hợp.";
+        if (!isset($data["amount"]) || $data["amount"] > $product->quantity) {
+            $errors["amount"] = "Hiện tại chỉ còn lại " . $product->quantity . " vui lòng chọn số lượng phù hợp.";
         }
         return $errors;
     }

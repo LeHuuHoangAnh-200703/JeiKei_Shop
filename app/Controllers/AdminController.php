@@ -193,7 +193,7 @@ class AdminController extends Controller
 
     public function showorders()
     {
-        $orders = Order::all();
+        $orders = Order::orderBy('created_at', 'desc')->get();
         $this->sendPage("/admin/orders", ["orders" => $orders]);
     }
 
