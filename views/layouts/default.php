@@ -52,11 +52,13 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </form>
                 </div>
                 <ul class="hidden lg:flex">
-                    <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Trang chủ</a>
+                    <li class="px-[15px] lg:px-[20px] text-[18px] group">
+                        <a href="/" class="font-bold">Trang chủ</a>
+                        <div class="h-[2px] bg-[#DC143C] scale-x-0 group-hover:scale-100 rounded-full transition-all ease-out origin-left duration-500"></div>
                     </li>
-                    <li class="px-[15px] lg:px-[20px] text-[18px]">
-                        <a href="/view_order" class="no-underline font-semibold text-[18px] border-b-[2px] border-[transparent] ease-in-out duration-[0.4s] hover:border-b-[2px] hover:border-[#DC143C]">Đơn hàng của bạn</a>
+                    <li class="px-[15px] lg:px-[20px] text-[18px] group">
+                        <a href="/view_order" class="font-bold">Đơn hàng của bạn</a>
+                        <div class="h-[2px] bg-[#DC143C] scale-x-0 group-hover:scale-100 rounded-full transition-all ease-out origin-left duration-500"></div>
                     </li>
                 </ul>
                 <div class="flex justify-center items-center gap-4">

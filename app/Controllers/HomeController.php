@@ -23,9 +23,12 @@ class HomeController extends Controller
 
     public function index()
     {
+        $products = Products::all();
+        $productinfo = $products->isEmpty() ? [] : $products;
+
         $this->sendPage('home/index', [
             'userinfo' => Guard::user(),
-            'productinfo' => Products::all(),
+            'productinfo' => $productinfo,
         ]);
     }
 
