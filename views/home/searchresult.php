@@ -10,7 +10,18 @@
                 <form action="/add_to_cart/<?php echo $this->e($result->id) ?>" method="POST" enctype="multipart/form-data" id="add_to_cart_form">
                     <div class="p-4">
                         <div class="relative transition-all duration-300 hover:scale-105">
-                            <img src="../assets/<?php echo $result['image']; ?>" />
+                            <?php
+                            $images = json_decode($result->images, true);
+                            $index = 0;
+                            if (is_array($images) && !empty($images)) :
+                                foreach ($images as $item_product) : ?>
+                                    <?php if ($index == 0) { ?>
+                                        <img src="../assets/<?php echo $item_product ?>" />
+                                    <?php break;
+                                    } ?>
+                                <?php endforeach;
+                                ?>
+                            <?php endif; ?>
                             <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($result->id) ?>"></a>
                         </div>
                         <div class="text-ellipsis whitespace-nowrap overflow-hidden w-52">

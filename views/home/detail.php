@@ -24,7 +24,7 @@
                     foreach ($images as $item_product) : ?>
                         <img src="../assets/<?php echo $item_product ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
                     <?php endforeach;
-                ?>
+                    ?>
                 <?php endif; ?>
             </div>
             <div class="w-[75%] flex items-start">
@@ -38,31 +38,41 @@
                         <?php break;
                         } ?>
                     <?php endforeach;
-                ?>
+                    ?>
                 <?php endif; ?>
             </div>
         </div>
-        <div class="">
-            <h1 class="font-semibold text-xl text-[#333f48]">Các sản phẩm liên quan</h1>
+        <div class="my-5">
+            <h1 class="font-semibold text-[18px] text-[#333f48]">Các sản phẩm liên quan</h1>
             <div class="w-full flex gap-4 py-4 overflow-auto">
-                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
-                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
-                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
-                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
-                    </div>
-                </div>
-                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
-                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
-                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
-                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
-                    </div>
-                </div>
-                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
-                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
-                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
-                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
-                    </div>
-                </div>
+                <?php if (!empty($relatedProducts)): ?>
+                    <?php foreach ($relatedProducts as $relatedProduct): ?>
+                        <div class="border-2 border-[#dbdbdb] rounded-lg p-2 flex flex-col shadow cursor-pointer">
+                            <?php
+                            $images = json_decode($relatedProduct->images, true);
+                            $index = 0;
+                            if (is_array($images) && !empty($images)) :
+                                foreach ($images as $item_product) : ?>
+                                    <?php if ($index == 0) { ?>
+                                        <div class="relative transition-all duration-300 hover:scale-105">
+                                            <img src="../assets/<?php echo $item_product ?>" class="w-[200px] hover:scale-105 ease-in-out duration-300" />
+                                            <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?= $relatedProduct->id ?>"></a>
+                                        </div>
+                                    <?php break;
+                                    } ?>
+                                <?php endforeach;
+                                ?>
+                            <?php endif; ?>
+                            <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
+                                <a href="/detail/<?= $relatedProduct->id ?>" name="product_Name" class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?= $relatedProduct->name ?></a>
+                                <p class="text-[#333f48] text-[14px] font-bold"><span class="text-[#DC143C]">
+                                        <?= $relatedProduct->price ?> VNĐ</span></p>
+                            </div>
+                        </div>
+                    <?php endforeach; ?>
+                <?php else: ?>
+                    <p>Không có sản phẩm liên quan.</p>
+                <?php endif; ?>
             </div>
         </div>
     </div>

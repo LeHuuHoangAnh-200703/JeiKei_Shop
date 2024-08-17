@@ -68,20 +68,11 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 w-full lg:col-span-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
                 <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>
                     <i class="fa-solid fa-dollar-sign text-[#DC143C] text-[30px]"></i>
-                </div>
-                <hr class="my-2">
-                <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
-            </div>
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
-                <p class="text-[12px] font-semibold mb-2">SỐ ĐƠN HÀNG ĐƯỢC CHUYỂN ĐI</p>
-                <div class="flex justify-between items-center">
-                    <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>
-                    <i class="fa-solid fa-truck-fast text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>

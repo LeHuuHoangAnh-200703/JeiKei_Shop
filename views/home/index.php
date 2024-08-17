@@ -7,7 +7,7 @@
     <div class="w-full flex justify-between items-start flex-col lg:flex-row p-4 gap-3 lg:gap-3 md:gap-x-[60px]">
         <div class="w-[20%] hidden lg:block flex-col py-1 px-2">
             <h2 class="py-2 flex items-center gap-2 text-[#333f48]"><i class="fa-solid fa-gamepad text-xl text-[#DC143C]"></i><strong> Nintendo Switch</strong></h2>
-            <hr />
+            <hr class="border border-[#333f48] rounded-full" />
             <ul>
                 <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="all">Tất cả</li>
                 <li class="py-[6px] px-3 text-[#333f48] border border-1 cursor-pointer hover:border-[#DC143C] hover:text-[#DC143C] transition-all duration-100 my-3" id="Nintendo_OLED">Nintendo OLED</li>

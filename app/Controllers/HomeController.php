@@ -126,6 +126,12 @@ class HomeController extends Controller
         $this->sendPage('home/order', ['errors' => "Có lỗi xảy ra, vui lòng kiểm tra lại!!", "product" => $product]);
     }
 
+    public function getRelatedProducts($product)
+    {
+        return Products::where('type', $product->type)
+            ->where('id', '!=', $product->id)
+            ->get();
+    }
 
     public function detail($productId)
     {
@@ -137,9 +143,13 @@ class HomeController extends Controller
         $product->view_count++;
         $product->save();
 
-        $this->sendPage("home/detail", ["product" => $product]);
-    }
+        $relatedProducts = $this->getRelatedProducts($product);
 
+        $this->sendPage("home/detail", [
+            "product" => $product,
+            "relatedProducts" => $relatedProducts
+        ]);
+    }
 
     public function orderhistory()
     {
@@ -240,7 +250,7 @@ class HomeController extends Controller
                     'user_id' => $userId,
                     'product_id' => $productId,
                     'product_name' => $product->name,
-                    'product_image' => $product->image,
+                    'product_image' => $product->images,
                     'product_quantity' => $product->quantity,
                     'product_price' => $product->price
                 ];
@@ -358,7 +368,7 @@ class HomeController extends Controller
         }
         if ($order->state < 1) {
             $order->delete();
-            $product->test-=$order->amount;
+            $product->test -= $order->amount;
             $product->save();
             $success = "Đã hủy đơn hàng thành công.";
             redirect("/view_order", ["success" => $success]);
