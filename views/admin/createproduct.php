@@ -104,38 +104,10 @@
                 </div>
             </div>
             <label class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Chọn ảnh chính sản phẩm :</label>
-            <input type="file" name="image" class="<?= isset($errors['image']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
-            <?php if (isset($errors['image'])) : ?>
+            <input type="file" name="images[]" multiple class="<?= isset($errors['images']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
+            <?php if (isset($errors['images'])) : ?>
                 <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['image']) ?></strong>
-                </span>
-            <?php endif ?>
-            <label class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Chọn ảnh chi tiết :</label>
-            <input type="file" name="image_1" class="<?= isset($errors['image']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
-            <?php if (isset($errors['image'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['image']) ?></strong>
-                </span>
-            <?php endif ?>
-            <label class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Chọn ảnh chi tiết :</label>
-            <input type="file" name="image_2" class="<?= isset($errors['image']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
-            <?php if (isset($errors['image'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['image']) ?></strong>
-                </span>
-            <?php endif ?>
-            <label class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Chọn ảnh chi tiêt :</label>
-            <input type="file" name="image_3" class="<?= isset($errors['image']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
-            <?php if (isset($errors['image'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['image']) ?></strong>
-                </span>
-            <?php endif ?>
-            <label class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Chọn ảnh chi tiết :</label>
-            <input type="file" name="image_4" class="<?= isset($errors['image']) ? 'text-red-500' : 'text-[#4169E1]' ?> font-bold">
-            <?php if (isset($errors['image'])) : ?>
-                <span class="text-red-500 mt-1 text-sm">
-                    <strong><?= $this->e($errors['image']) ?></strong>
+                    <strong><?= $this->e($errors['images']) ?></strong>
                 </span>
             <?php endif ?>
             <div class="text-center">

@@ -8,7 +8,7 @@ use App\Models\Order;
 class Products extends Model
 {
     protected $table = 'products';
-    protected $fillable = ['name', 'description', 'price', 'image', 'type', 'quantity', 'created_at', 'updated_at', 'view_count', 'sold_count', 'image_1', 'image_2', 'image_3', 'image_4', 'screen', 'resolution', 'memory', 'test', 'PurchasePrice'];
+    protected $fillable = ['name', 'description', 'price', 'images', 'type', 'quantity', 'created_at', 'updated_at', 'view_count', 'sold_count', 'screen', 'resolution', 'memory', 'test', 'PurchasePrice'];
     public function orders()
     {
         return $this->hasMany(Order::class, 'product_id');
@@ -49,11 +49,8 @@ class Products extends Model
             $errors['description'] = 'Mô tả phải dài tối đa 2000 ký tự.';
         }
 
-        $imageFields = ['image', 'image_1', 'image_2', 'image_3', 'image_4'];
-        foreach ($imageFields as $imageField) {
-            if (($data[$imageField]) === "") {
-                $errors[$imageField] = "Vui lòng chọn một tập tin hình ảnh để tải lên.";
-            }
+        if (empty($data['images']) || count($data['images']) === 0) {
+            $errors['images'] = 'Vui lòng chọn ít nhất một hình ảnh để tải lên.';
         }
         return $errors;
     }

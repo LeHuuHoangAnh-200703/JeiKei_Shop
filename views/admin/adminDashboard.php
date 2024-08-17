@@ -29,10 +29,10 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Số lượng</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Tình trạng</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
+                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Dung lượng pin</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Màn hình</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Độ phân giải</th>
@@ -57,11 +57,18 @@
                                 Paid
                             </span>
                         </td>
-                        <td><img class="w-[125px]" src="../assets/<?php echo $product['image']; ?>" /> </td>
-                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_1']; ?>" /> </td>
-                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_2']; ?>" /> </td>
-                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_3']; ?>" /> </td>
-                        <td><img class="w-[150px]" src="../assets/<?php echo $product['image_4']; ?>" /> </td>
+                        <?php
+                        // Chuyển đổi JSON images thành mảng
+                        $images = json_decode($product->images, true);
+
+                        // Kiểm tra xem biến $images có phải là mảng và không rỗng
+                        if (is_array($images) && !empty($images)) :
+                            foreach ($images as $item_product) : ?>
+                                <td><img class="w-[125px]" src="../assets/<?php echo $item_product ?>" /> </td>
+                            <?php endforeach;
+                        else : ?>
+                            <td>Không có ảnh nào</td>
+                        <?php endif; ?>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->description) ?></td>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->screen) ?></td>
                         <td class="px-6 py-4 whitespace-nowrap"><?= $this->e($product->resolution) ?></td>

@@ -42,24 +42,15 @@ class AdminController extends Controller
     }
     public function store()
     {
-        $imageFiles = [
-            "image",
-            "image_1",
-            "image_2",
-            "image_3",
-            "image_4"
-        ];
         $data = $this->filterProductData($_POST);
-        foreach ($imageFiles as $image) {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
-                $file = $_FILES[$image];
-                if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                    $imageName = $file['name'];
-                    move_uploaded_file($file['tmp_name'], 'assets/' . $imageName);
-                    $data[$image] = $imageName;
-                } else {
-                    $data[$image] = '';
-                }
+        $data['images'] = [];
+        $files = $_FILES['images'];
+
+        for ($i = 0; $i < count($files['name']); $i++) {
+            if ($files['error'][$i] === 0 && getimagesize($files['tmp_name'][$i])) {
+                $imageName = $files['name'][$i];
+                move_uploaded_file($files['tmp_name'][$i], 'assets/' . $imageName);
+                $data['images'][] = $imageName;
             }
         }
 
@@ -89,7 +80,7 @@ class AdminController extends Controller
             'name' => $data['name'] ?? '',
             'price' => $data['price'] ?? '',
             'PurchasePrice' => $data['PurchasePrice'] ?? '',
-            'image' => $data["image"] ?? '',
+            'image' => $data["images"] ?? '',
             'quantity' => $data["quantity"] ?? '',
             'description' => $data["description"] ?? ''
         ];
@@ -117,25 +108,15 @@ class AdminController extends Controller
             $this->sendNotFound();
         }
 
-        $imageFiles = [
-            "image",
-            "image_1",
-            "image_2",
-            "image_3",
-            "image_4"
-        ];
         $data = $this->filterProductData($_POST);
-        foreach ($imageFiles as $image) {
-            if ($_SERVER['REQUEST_METHOD'] === 'POST' && isset($_FILES[$image])) {
-                $file = $_FILES[$image];
-                if ($file['error'] === 0 && getimagesize($file['tmp_name'])) {
-                    $imageName = $file['name'];
-                    move_uploaded_file($file['tmp_name'], 'assets/' . $imageName);
-                    $data[$image] = $imageName;
-                } else {
-                    $data[$image] = $product->$image;
-                    //$data = $this->filterProductData($_POST);
-                }
+        $data['images'] = [];
+        $files = $_FILES['images'];
+
+        for ($i = 0; $i < count($files['name']); $i++) {
+            if ($files['error'][$i] === 0 && getimagesize($files['tmp_name'][$i])) {
+                $imageName = $files['name'][$i];
+                move_uploaded_file($files['tmp_name'][$i], 'assets/' . $imageName);
+                $data['images'][] = $imageName;
             }
         }
         $model_errors = Products::validate($data);
