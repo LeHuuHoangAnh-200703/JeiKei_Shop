@@ -73,7 +73,7 @@ class HomeController extends Controller
         $data["address"] = $_POST["address"];
         $data["phone"] = $_POST["phone"];
         $data["coupon"] = $_POST['coupon'];
-        $data["image"] = $product->image;
+        $data["image"] = $product->images;
         $data["order_date"] = date('Y-m-d H:i:s');
 
         if (!empty($data["coupon"])) {
@@ -304,7 +304,7 @@ class HomeController extends Controller
         $data["username"] = $user->name;
         $data["product_id"] = $product->id;
         $data["name"] = $product->name;
-        $data["image"] = $product->image;
+        $data["image"] = $product->images;
         $data["description"] = $_POST['description'];
         $data["quality"] = $_POST['quality'];
         $data["up_date"] = date('Y-m-d H:i:s');

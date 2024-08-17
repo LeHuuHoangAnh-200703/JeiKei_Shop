@@ -90,7 +90,18 @@
         <?php foreach ($warehouses as $warehouse) : ?>
             <div class="shadow-md border-2 border-[#cecece] mx-2 my-4 rounded">
                 <div class="flex items-center p-2">
-                    <img class="w-[125px]" src="../assets/<?php echo $warehouse['image']; ?>" />
+                    <?php
+                    $images = json_decode($warehouse->images, true);
+                    $index = 0;
+                    if (is_array($images) && !empty($images)) :
+                        foreach ($images as $item_product) : ?>
+                            <?php if ($index == 0) { ?>
+                                <img class="w-[125px]" src="../assets/<?php echo $item_product ?>" />
+                            <?php break;
+                            } ?>
+                        <?php endforeach;
+                        ?>
+                    <?php endif; ?>
                     <div class="flex flex-col gap-1 w-full">
                         <p class="text-[14px] font-semibold"><?= $this->e($warehouse->name) ?></p>
                         <p class="text-[14px] font-semibold">Giá bán ra : <span class="text-[#DC143C]"><?= $this->e($warehouse->price) ?> VNĐ</span></p>

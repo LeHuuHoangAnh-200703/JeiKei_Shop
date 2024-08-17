@@ -32,7 +32,18 @@
                     </div>
                     <hr>
                     <div class="flex gap-3 items-center p-4">
-                        <img src="../assets/<?php echo ($order['image']); ?>" class="w-[100px] lg:w-[150px]" alt="">
+                        <?php
+                        $images = json_decode($order->image, true);
+                        $index = 0;
+                        if (is_array($images) && !empty($images)) :
+                            foreach ($images as $item_product) : ?>
+                                <?php if ($index == 0) { ?>
+                                    <img class="w-[100px] lg:w-[150px]" src="../assets/<?php echo $item_product ?>" />
+                                <?php break;
+                                } ?>
+                            <?php endforeach;
+                            ?>
+                        <?php endif; ?>
                         <div class="flex flex-col gap-1 w-full overflow-hidden">
                             <div class="overflow-hidden text-ellipsis whitespace-nowrap w-full">
                                 <p class="text-[15px] font-semibold inline"><?php echo $this->e($order->name); ?></p>

@@ -27,7 +27,18 @@
     </div>
     <div class="w-full h-full grid grid-cols-1 md:grid-cols-3 gap-7 border rounded-xl p-5 shadow-md justify-center items-start">
         <div class="w-full flex flex-col items-center justify-center">
-            <img src="../assets/<?php echo $product['image']; ?>" />
+            <?php
+            $images = json_decode($product->images, true);
+            $index = 0;
+            if (is_array($images) && !empty($images)) :
+                foreach ($images as $item_product) : ?>
+                    <?php if ($index == 0) { ?>
+                        <img src="../assets/<?php echo $item_product ?>" />
+                    <?php break;
+                    } ?>
+                <?php endforeach;
+                ?>
+            <?php endif; ?>
         </div>
         <form action="/orders/<?= $this->e($product->id) ?>" method="POST" class="col-span-2">
             <h1 class="text-[25px] font-semibold py-2"><?php echo $this->e($product->name); ?></h1>

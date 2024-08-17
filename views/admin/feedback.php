@@ -19,7 +19,18 @@
                         </div>
                     </div>
                     <div class="flex flex-col lg:flex-row">
-                        <img src="../assets/<?php echo ($feedback['image']); ?>" alt="" class="w-[120px] lg:w-[150px]">
+                        <?php
+                        $images = json_decode($feedback->image, true);
+                        $index = 0;
+                        if (is_array($images) && !empty($images)) :
+                            foreach ($images as $item_product) : ?>
+                                <?php if ($index == 0) { ?>
+                                    <img class="w-[120px] lg:w-[150px]" src="../assets/<?php echo $item_product ?>" />
+                                <?php break;
+                                } ?>
+                            <?php endforeach;
+                            ?>
+                        <?php endif; ?>
                         <div class="flex flex-col items-start justify-center">
                             <p class="text-[#333f48] text-[16px] font-semibold"><?php echo $this->e($feedback->name); ?></p>
                             <p class="text-[#333f48] text-[14px] font-medium">Chất lượng : <span class="font-semibold text-[#DC143C]"><?php echo $this->e($feedback->quality); ?></span></p>

@@ -49,7 +49,8 @@
             <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-4 justify-center">
                 <?php
                 $type = [
-                    ["type" => "Nintendo_OLED", "imgHeight" => "h-20"], ["type" => "Nintendo_Lite", "imgHeight" => "h-20"],
+                    ["type" => "Nintendo_OLED", "imgHeight" => "h-20"],
+                    ["type" => "Nintendo_Lite", "imgHeight" => "h-20"],
                     ["type" => "Nintendo_Old", "imgHeight" => "h-20"]
                 ];
                 for ($i = 0; $i < count($type); $i++) {
@@ -60,7 +61,17 @@
                                 <form action="/add_to_cart/<?php echo $this->e($product->id) ?>" method="POST" enctype="multipart/form-data" id="add_to_cart_form">
                                     <div class="p-4 overflow-hidden">
                                         <div class="relative transition-all duration-300 hover:scale-105">
-                                            <img src="../assets/<?php echo $product['image']; ?>" name="image" />
+                                            <?php
+                                            $images = json_decode($product->images, true);
+                                            $index = 0;
+                                            if (is_array($images) && !empty($images)) :
+                                                foreach ($images as $item_product) : ?>
+                                                <?php if($index == 0) {?>
+                                                    <img src="../assets/<?php echo $item_product?>" />
+                                                <?php break;}?>
+                                                <?php endforeach;
+                                            ?>
+                                            <?php endif; ?>
                                             <a class="w-full h-full absolute cursor-pointer top-0 left-0" href="/detail/<?php echo $this->e($product->id) ?>"></a>
                                         </div>
                                         <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden">
@@ -78,9 +89,9 @@
                                     </div>
                                     <?php if ($this->e($product->quantity) > 0) {
                                         echo '<input name="productID" type="text" id="productID" class="productID hidden" value="<?php echo $this->e($product->id) ?>"><div class="w-full"><div class="px-3 pb-3 w-full flex justify-center flex-col gap-3"><button name="add_to_cart" type="submit" class="add_to_cart w-100 text-[#333f48] py-1 font-semibold transition-all duration-150 hover:underline hover:text-[#DC143C] focus-visible:outline-none focus-visible:ring active:opacity-60/90 add"><i class="fa-solid fa-circle-plus"></i> Thêm giỏ hàng</button></div></div>';
-                                        } else {
-                                            echo '<p class="text-[16px] text-[#333f48] text-center font-semibold">Tình trạng : <span class="text-[#DC143C]">Hết hàng</span></p>';
-                                        }?>
+                                    } else {
+                                        echo '<p class="text-[16px] text-[#333f48] text-center font-semibold">Tình trạng : <span class="text-[#DC143C]">Hết hàng</span></p>';
+                                    } ?>
                                 </form>
                             </div>
                 <?php   }

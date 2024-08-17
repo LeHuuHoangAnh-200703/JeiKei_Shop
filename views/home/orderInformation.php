@@ -39,7 +39,18 @@
                     </div>
                     <hr>
                     <div class="flex gap-3 items-center p-4">
-                        <img src="../assets/<?php echo ($view['image']); ?>" class="w-[100px] lg:w-[150px]" alt="">
+                        <?php
+                        $images = json_decode($view->image, true);
+                        $index = 0;
+                        if (is_array($images) && !empty($images)) :
+                            foreach ($images as $item_product) : ?>
+                                <?php if ($index == 0) { ?>
+                                    <img class="w-[100px] lg:w-[150px]" src="../assets/<?php echo $item_product ?>" />
+                                <?php break;
+                                } ?>
+                            <?php endforeach;
+                            ?>
+                        <?php endif; ?>
                         <div class="flex flex-col gap-1 w-full overflow-hidden">
                             <div class="overflow-hidden text-ellipsis whitespace-nowrap w-full">
                                 <p class="text-[15px] font-semibold inline"><?php echo $this->e($view->name); ?></p>
@@ -51,10 +62,10 @@
                             <p class="text-[13px]">Giá : <span class="text-[#DC143C]"><?php echo $this->e($view->price); ?> đ</span></p>
                             <p class="text-[13px]">Phương thức thanh toán : <span class="text-[#DC143C]"><?php echo $this->e($view->payment); ?></span></p>
                             <p class="text-[13px]">Mã giảm giá của shop : <span class="text-[#DC143C]"><?php if ($this->e($view->coupon) == null) {
-                                                                                                                echo "Không áp dụng mã giảm giá.";
-                                                                                                            } else {
-                                                                                                                echo $this->e($view->coupon);
-                                                                                                            }?></span></p>
+                                                                                                            echo "Không áp dụng mã giảm giá.";
+                                                                                                        } else {
+                                                                                                            echo $this->e($view->coupon);
+                                                                                                        } ?></span></p>
                         </div>
                     </div>
                     <hr>
@@ -64,7 +75,11 @@
                     </div>
                     <div class="flex justify-end gap-4 px-4 pt-2 pb-4">
                         <button type="submit" class="text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#DC143C]">Hủy đơn hàng</button>
-                        <a href="/orders/<?php echo $this->e($view->product_id); ?>" class="<?php if($this->e($view->state) > 1) { echo 'block';} else {echo 'hidden';}?> text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Mua lại</a>
+                        <a href="/orders/<?php echo $this->e($view->product_id); ?>" class="<?php if ($this->e($view->state) > 1) {
+                                                                                                echo 'block';
+                                                                                            } else {
+                                                                                                echo 'hidden';
+                                                                                            } ?> text-[13px] font-semibold py-2 px-3 text-[#fff] bg-[#4169E1]">Mua lại</a>
                     </div>
                 </div>
             </form>

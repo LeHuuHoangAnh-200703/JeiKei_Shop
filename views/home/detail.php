@@ -17,13 +17,29 @@
     <div class="w-full flex flex-col overflow-auto">
         <div class="flex justify-center">
             <div class="w-[20%] flex flex-col gap-3 list_img">
-                <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-                <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-                <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-                <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+                <?php
+                $images = json_decode($product->images, true);
+                $index = 0;
+                if (is_array($images) && !empty($images)) :
+                    foreach ($images as $item_product) : ?>
+                        <img src="../assets/<?php echo $item_product ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+                    <?php endforeach;
+                ?>
+                <?php endif; ?>
             </div>
             <div class="w-[75%] flex items-start">
-                <img src="../assets/<?php echo $product['image']; ?>" alt="" class="img_main">
+                <?php
+                $images = json_decode($product->images, true);
+                $index = 0;
+                if (is_array($images) && !empty($images)) :
+                    foreach ($images as $item_product) : ?>
+                        <?php if ($index == 0) { ?>
+                            <img class="img_main" src="../assets/<?php echo $item_product ?>" />
+                        <?php break;
+                        } ?>
+                    <?php endforeach;
+                ?>
+                <?php endif; ?>
             </div>
         </div>
         <div class="">

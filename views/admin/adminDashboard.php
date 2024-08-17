@@ -32,7 +32,6 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
-                    <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Ảnh chi tiết sản phẩm</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Dung lượng pin</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Màn hình</th>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Độ phân giải</th>
