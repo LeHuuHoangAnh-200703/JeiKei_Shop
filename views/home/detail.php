@@ -14,15 +14,40 @@
         <p class="font-bold"><i class="fa-solid fa-circle-check"></i> <?php echo $success; ?></p>
     </div> <?php } ?>
 <div class="grid grid-cols-1 lg:grid-cols-2 lg:gap-x-6 gap-y-6 w-[100%] h-full mx-auto mt-3 p-5">
-    <div class="w-full flex justify-center">
-        <div class="w-[20%] flex flex-col gap-3 list_img">
-            <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
-            <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border border-[#dbdbdb] w-[100px] lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+    <div class="w-full flex flex-col overflow-auto">
+        <div class="flex justify-center">
+            <div class="w-[20%] flex flex-col gap-3 list_img">
+                <img src="../assets/<?php echo $product['image_1']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+                <img src="../assets/<?php echo $product['image_2']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+                <img src="../assets/<?php echo $product['image_3']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+                <img src="../assets/<?php echo $product['image_4']; ?>" alt="" class="border-2 border-[#dbdbdb] w-[100px] rounded-xl lg:w-[75px] cursor-pointer hover:border-[#24577e] hover:shadow-md transition-all duration-200">
+            </div>
+            <div class="w-[75%] flex items-start">
+                <img src="../assets/<?php echo $product['image']; ?>" alt="" class="img_main">
+            </div>
         </div>
-        <div class="w-[80%] flex items-start">
-            <img src="../assets/<?php echo $product['image']; ?>" alt="" class="img_main">
+        <div class="">
+            <h1 class="font-semibold text-xl text-[#333f48]">Các sản phẩm liên quan</h1>
+            <div class="w-full flex gap-4 py-4 overflow-auto">
+                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
+                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
+                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
+                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
+                    </div>
+                </div>
+                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
+                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
+                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
+                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
+                    </div>
+                </div>
+                <div class="border-2 border-[#dbdbdb] rounded-lg flex flex-col shadow">
+                    <img src="../assets/<?php echo $product['image']; ?>" alt="" class="w-[180px] cursor-pointer hover:scale-105 transition-all duration-300">
+                    <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden p-2">
+                        <p class="inline text-[17px] md:text-[13px] text-center font-semibold text-[#333f48] hover:text-[#DC134C] transition-all duration-300 cursor-pointer py-2 name"><?php echo $this->e($product->name); ?></p>
+                    </div>
+                </div>
+            </div>
         </div>
     </div>
     <div>
@@ -63,7 +88,7 @@
                 <li class="list-disc text-[15px] text-[#333f48]">Sản phẩm <?php echo $this->e($product->name); ?> được sản xuất hoàn toàn bởi Nintendo.</li>
             </ul>
             <a href="/orders/<?php echo $product->id ?>" class="flex flex-col justify-center items-center gap-x-1 bg-[#333] py-[6px] font-bold hover:bg-[#DC143C] text-[#fff] transition-all duration-[0.4s]"> MUA NGAY VỚI GIÁ <?php echo $this->e($product->price); ?> VNĐ<span class="text-[14px] font-normal">Đặt mua giao hàng tận nơi</span></a>
-            <div class="flex md:items-center gap-2 flex-col md:flex-row">
+            <div class="flex md:items-center justify-center gap-2 flex-col md:flex-row">
                 <p class="text-[#333f48] ml-2 my-2 text-[15px] pr-4 md:border-r-2"><i class="fa-solid fa-tag text-[#A0522D]"></i> Đã bán <span class="font-bold"><?php if ($this->e($product->test) == null) {
                                                                                                                                                                         echo "0";
                                                                                                                                                                     } else {

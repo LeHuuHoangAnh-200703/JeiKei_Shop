@@ -58,6 +58,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </div>
                 </div>
                 <div class="hidden sm:flex flex-col pt-4">
+                <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
@@ -66,7 +67,6 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
                     <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                 </div>
             </div>
 
