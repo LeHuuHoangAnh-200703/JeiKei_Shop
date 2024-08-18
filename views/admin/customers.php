@@ -6,7 +6,7 @@
         <h2 class="text-[#333] font-bold text-[20px]">DANH SÁCH NGƯỜI DÙNG</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <table class="w-full border-collapse bg-white text-center text-sm text-gray-500">
+        <table class="w-full rounded-lg border-2 border-[#cecece] bg-white text-center text-sm text-gray-500">
             <thead class="bg-gray-50">
                 <tr>
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">ID</th>
@@ -18,7 +18,7 @@
                     <th scope="col" class="px-6 py-4 font-semibold text-gray-900">Điều chỉnh</th>
                 </tr>
             </thead>
-            <tbody class="divide-y divide-gray-100 border-t border-gray-100">
+            <tbody class="divide-y divide-gray-100 bg-white border-t border-[#cecece]">
                 <?php foreach ($customers as $customer) : ?>
                     <tr>
                         <th class="px-6 py-4 font-medium text-gray-900"><?= $this->e($customer->id) ?></th>

@@ -12,7 +12,7 @@
         <h2 class="text-[#333] font-bold text-[20px]">TẠO MÃ GIẢM GIÁ</h2>
     </div>
     <form action="/admin/addcoupon" method="POST" enctype="multipart/form-data" id="all_products" class="w-full overflow-y-scroll">
-        <div class="flex flex-col w-full md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
+        <div class="flex flex-col w-full bg-white md:w-[70%] mx-auto gap-4 border-2 rounded-xl shadow-md p-5 m-2">
             <div class="">
                 <div>
                     <label for="name_coupon" class="font-bold mb-1 block text-sm text-gray-700 after:ml-0.5 after:text-red-500 after:content-['*']">Tên mã giảm giá</label>

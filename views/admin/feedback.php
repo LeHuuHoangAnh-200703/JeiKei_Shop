@@ -6,7 +6,7 @@
         <h2 class="text-[#333] font-bold text-[20px]">ĐÁNH GIÁ CỦA NGƯỜI DÙNG</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll">
-        <div class="border shadow-md rounded-md">
+        <div class="shadow-md rounded-md bg-white border-2 border-[#cecece]">
             <?php
             foreach ($feedbacks as $feedback) {
             ?>

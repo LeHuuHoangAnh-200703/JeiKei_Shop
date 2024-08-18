@@ -17,7 +17,7 @@
         <h2 class="text-[#333] font-bold text-[20px]">THỐNG KÊ</h2>
     </div>
     <div id="all_products" class="w-full overflow-x-scroll overflow-y-scroll text-[#333f48]">
-        <div class="relative mb-4">
+        <div class="relative mb-4 bg-white">
             <form action="/admin/search" method="post" class="relative flex items-center justify-center gap-1">
                 <select name="interval" class="relative w-[230px] lg:w-[270px] rounded font-semibold cursor-pointer outline-none shadow border-2 border-[#cecece] bg-transparent p-2 placeholder:text-[#808080]">
                     <option value="daily">Hôm nay</option>
@@ -32,7 +32,7 @@
             </form>
         </div>
         <div class="grid grid-cols-1 lg:grid-cols-2 gap-4 w-full p-2">
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3">
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 bg-white">
                 <p class="text-[12px] font-semibold mb-2">TỔNG DOANH THU</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Doanh thu : <span class="text-[#DC143C]"><?= number_format($totalRevenue, 3, '.', '.') ?> VNĐ</span></p>
@@ -41,16 +41,16 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">Tổng cộng <span class="text-[#DC143C]"><?= $totalOrders ?></span> đơn hàng.</p>
             </div>
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48] bg-white">
                 <p class="text-[12px] font-semibold mb-2">TỔNG SẢN PHẨM ĐÃ BÁN</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Đã bán : <span class="text-[#DC143C]"><?= $totalProductsSold ?> sản phẩm</span></p>
-                    <i class="fa-solid fa-cart-plus text-[#DC143C] text-[30px]"></i>
+                    <i class="fa-solid fa-cart-shopping text-[#DC143C] text-[30px]"></i>
                 </div>
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">Có <span class="text-[#DC143C]"><?= $totalFeedbacks ?></span> lượt đánh giá sản phẩm.</p>
             </div>
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48] bg-white">
                 <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ ĐÃ MUA</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($TotalPurchasePrice, 3, '.', '.') ?> VNĐ</span></p>
@@ -59,7 +59,7 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
-            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48] bg-white">
                 <p class="text-[12px] font-semibold mb-2">TỔNG GIÁ TRỊ BÁN LẠI</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($TotalSellingPrice, 3, '.', '.') ?> VNĐ</span></p>
@@ -68,7 +68,7 @@
                 <hr class="my-2">
                 <p class="text-[14px] font-semibold">JeiKei Shop <span class="text-[#DC143C]">|</span> Nintendo Switch</p>
             </div>
-            <div class="border-2 w-full lg:col-span-2 border-[#cecece] shadow-md rounded p-3 text-[#333f48]">
+            <div class="border-2 w-full lg:col-span-2 border-[#cecece] bg-white shadow-md rounded p-3 text-[#333f48]">
                 <p class="text-[12px] font-semibold mb-2">TỔNG LỢI NHUẬN</p>
                 <div class="flex justify-between items-center">
                     <p class="text-[14px] font-semibold">Tổng : <span class="text-[#DC143C]"><?= number_format($totalProfit, 3, '.', '.') ?> VNĐ</span></p>
@@ -79,7 +79,7 @@
             </div>
         </div>
         <?php foreach ($warehouses as $warehouse) : ?>
-            <div class="shadow-md border-2 border-[#cecece] mx-2 my-4 rounded">
+            <div class="shadow-md border-2 border-[#cecece] mx-2 my-4 rounded bg-white">
                 <div class="flex items-center p-2">
                     <?php
                     $images = json_decode($warehouse->images, true);

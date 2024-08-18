@@ -13,11 +13,12 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     <link rel="icon" type="image/x-icon" href="<?php echo $imgLogo ?>" />
     <title><?= $this->e($title) ?></title>
     <!-- <link rel="stylesheet" href="./css/output.css"> -->
-    <script src="https://cdn.tailwindcss.com"></script>
-
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link href="https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Caprasimo&family=Fruktur:ital@1&family=Kanit:wght@400;500&family=Kaushan+Script&family=Lilita+One&family=Luckiest+Guy&family=Lunasima&family=Mr+Dafoe&family=Open+Sans:wght@500;600&family=Orbitron:wght@600&family=Permanent+Marker&family=Poppins:wght@500&family=Roboto+Slab&family=Staatliches&family=Yellowtail&display=swap" rel="stylesheet">
     <!-- Styles -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" />
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css">
+    <script src="https://cdn.tailwindcss.com"></script>
 </head>
 <style>
     #dashboarContent {
@@ -49,7 +50,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                         <i class="fa-solid fa-bars"></i>
                     </div>
                     <div class="flex gap-3 items-center">
-                        <div class=" w-12 h-12 p-2 rounded-full bg-[#fff] border-[3px] border-[#333] flex items-center justify-center">
+                        <div class="w-12 h-12 p-2 rounded-full bg-[#fff] border-[3px] border-[#333] flex items-center justify-center">
                             <img src="<?php $baseURL ?>/assets../png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png" class="w-full h-full" alt="">
                         </div>
                         <div class="flex flex-col">
@@ -58,15 +59,16 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     </div>
                 </div>
                 <div class="hidden sm:flex flex-col pt-4">
-                <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Người dùng</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
-                    <a class="w-full flex items-center gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/orders"><i class="fa-solid fa-cart-shopping"></i> Đơn hàng</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/customers"><i class="fa-solid fa-users"></i> Người dùng</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addproduct"><i class="fa-solid fa-plus"></i> Thêm sản phẩm</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/feedback"><i class="fa-solid fa-comments"></i> Đánh giá</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/coupon"><i class="fa-solid fa-gift"></i> Mã giảm giá</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
+                    <a class="w-full flex items-center text-[14px] gap-x-2 font-medium px-4 py-[8px] text-white hover:bg-[#DC143C] hover:text-[#fff] transition-all duration-300" href="/admin/chatbox"><i class="fa-solid fa-comments"></i> Trò chuyện</a>
                 </div>
             </div>
 
@@ -74,14 +76,14 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             <div class="w-full sm:w-[80%] h-full">
                 <div class="h-[60px] border border-b-2 border-b-[#272a2f] flex justify-between px-8 items-center">
                     <div>
-                        <p class="font-bold text-[18px]"><?= $this->e(\App\SessionGuard::admin()->name) ?></p>
+                        <p class="font-bold text-[16px]"><?= $this->e(\App\SessionGuard::admin()->name) ?></p>
                         <small class="text-[12px] font-semibold"><?= $this->e(\App\SessionGuard::admin()->email) ?></small>
                     </div>
                     <form action="/admin/logout" method="post">
-                        <button class="bg-[#DC143C] px-3 py-1 font-semibold rounded-lg text-white transition-all duration-200 hover:bg-[#333]">Đăng xuất</button>
+                        <button class="bg-[#DC143C] text-[14px] px-4 py-2 font-semibold rounded-lg text-white transition-all duration-200 hover:bg-[#333]">Đăng xuất</button>
                     </form>
                 </div>
-                <div id="dashboarContent" class="w-full">
+                <div id="dashboarContent" class="w-full bg-slate-50">
                     <?= $this->section("page") ?>
                 </div>
             </div>
