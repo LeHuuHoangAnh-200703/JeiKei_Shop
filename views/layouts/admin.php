@@ -92,7 +92,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
         <div id="sidebar" class="fixed bg-[#272a2f] w-[80%] h-screen top-0 -left-[100%] p-5 transition-all duration-300">
             <div id="closesidebar" class="text-white mb-2"><i class="fa-solid fa-arrow-left"></i></div>
             <div>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/register"><i class="fa-solid fa-user-plus"></i> Thêm quản trị</a>
                 <hr>
@@ -108,7 +108,9 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 <hr>
                 <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/addcoupon"><i class="fa-solid fa-ticket"></i> Thêm mã giảm giá</a>
                 <hr>
-                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/warehouse"><i class="fa-solid fa-chart-simple"></i> Thống kê</a>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin"><i class="fa-solid fa-house"></i> Sản phẩm</a>
+                <hr>
+                <a class="w-full flex items-center gap-x-1 px-4 py-2 text-white hover:bg-white hover:text-black" href="/admin/chatbox"><i class="fa-solid fa-comments"></i> Trò chuyện</a>
             </div>
         </div>
     </div>

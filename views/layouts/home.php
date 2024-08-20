@@ -187,7 +187,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </a>
             </div>
         </div>
-
+        <a href="" id="chat" class="fixed bottom-24 right-5 z-30 flex text-[20px] w-12 h-12 bg-[#4169E1] rounded-full border-[3px] shadow-lg border-[#333] justify-center items-center text-white font-bold transition-all duration-500 hover:-translate-y-3"><i class="fa-solid fa-comments"></i></a>
         <!-- Black background when open Side bar -->
 
         <!-- Arrow to top -->

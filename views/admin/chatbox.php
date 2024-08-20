@@ -14,9 +14,14 @@
     </div> <?php } ?>
 
 <style>
-    .chat,
-    .chat-window {
+    .chat, .chat-window{
         height: calc(100vh - 120px);
+    }
+
+    @media screen and (max-width: 768px) {
+        .chat, .chat-window{
+            height: calc(100vh - 200px);
+        }
     }
 </style>
 <div class="w-[95%] mx-auto h-[100%]">
