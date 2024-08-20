@@ -14,12 +14,15 @@
     </div> <?php } ?>
 
 <style>
-    .chat, .chat-window{
+    .chat,
+    .chat-window {
         height: calc(100vh - 120px);
     }
 
     @media screen and (max-width: 768px) {
-        .chat, .chat-window{
+
+        .chat,
+        .chat-window {
             height: calc(100vh - 200px);
         }
     }
@@ -38,7 +41,7 @@
                 </button>
             </form>
             <div class="overflow-auto flex flex-col gap-3">
-                <div class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
+                <div data-name="Hoàng Khang Anh" data-avatar="../assets/B2105599_LêHữuHoàngAnh.jpg" class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
                     <div class="relative">
                         <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover">
                             <div class="bg-[#fff] w-3 h-3 rounded-full absolute bottom-0 right-0">
@@ -53,7 +56,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
+                <div data-name="Hoàng Khang" data-avatar="../assets/download.jpg" class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
                     <div class="relative">
                         <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover">
                             <div class="bg-[#fff] w-3 h-3 rounded-full absolute bottom-0 right-0">
@@ -62,7 +65,7 @@
                         </div>
                     </div>
                     <div class="flex flex-col justify-center overflow-hidden">
-                        <p class="font-semibold text-[12px]">Lê Hữu Hoàng Anh</p>
+                        <p class="font-semibold text-[12px]">Hoàng Khang</p>
                         <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden text-gray-400">
                             <p class="inline font-medium text-[10px]">Hình ảnh</p>
                         </div>
@@ -76,18 +79,18 @@
                     <i class="fa-solid fa-arrow-left text-[#DC143C] text-[20px] lg:hidden block"></i>
                 </button>
                 <div class="flex gap-2 items-center justify-center">
-                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
-                    <p class="font-medium text-[14px]">Lê Hữu Hoàng Anh</p>
+                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="user-avatar w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <p class="user-name font-medium text-[14px]">Lê Hữu Hoàng Anh</p>
                 </div>
             </div>
             <hr class="h-[1.5px] bg-[#cecece]">
             <div style="height: calc(100vh - 45vh);" class="flex-1 overflow-y-auto my-2">
                 <div class="px-3 py-3 flex gap-3 items-center">
                     <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
-                    <span class="p-3 text-[14px] w-[300px] bg-[#cecece] shadow rounded-full flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
                 </div>
                 <div class="px-3 py-3 flex justify-end items-center gap-3">
-                    <span class="p-3 text-[14px] w-[300px] text-white shadow bg-[#DC143C] rounded-full flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn</span>
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] text-white shadow bg-[#DC143C] rounded-2xl flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn</span>
                     <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="w-10 h-10 rounded-full border-2 border-[#8d8d8d] flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
                 </div>
             </div>

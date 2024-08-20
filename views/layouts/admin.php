@@ -150,13 +150,27 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 $("#sidebar").addClass("left-0");
             });
 
+            function updateChat(userName, userAvatar) {
+                $(".chat-window .user-name").text(userName);
+                $(".chat-window .user-avatar").css("background-image", "url(" + userAvatar + ")");
+            }
+
             $(".user-item").each(function(index, item) {
                 $(item).click(function() {
-                    $(".chat").hide();
-                    $(".chat-window").show();
+                    var userName = $(this).data("name");
+                    var userAvatar = $(this).data("avatar");
+
+                    if ($(window).width() >= 1024) {
+                        // Cập nhật khung chat nếu kích thước màn hình >= 1024px
+                        updateChat(userName, userAvatar);
+                    } else {
+                        // Ẩn chat và hiện chat window như logic ban đầu nếu kích thước màn hình < 1024px
+                        $(".chat").hide();
+                        $(".chat-window").show();
+                        updateChat(userName, userAvatar);
+                    }
                 });
             });
-            console.log($(".back-Chat"))
 
             $(".back-Chat").click(function() {
                 $(".chat").show();

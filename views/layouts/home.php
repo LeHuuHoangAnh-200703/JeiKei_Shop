@@ -187,7 +187,36 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </a>
             </div>
         </div>
-        <a href="" id="chat" class="fixed bottom-24 right-5 z-30 flex text-[20px] w-12 h-12 bg-[#4169E1] rounded-full border-[3px] shadow-lg border-[#333] justify-center items-center text-white font-bold transition-all duration-500 hover:-translate-y-3"><i class="fa-solid fa-comments"></i></a>
+        <div class="chatBox fixed top-20 right-10 w-[350px] h-[350px] bg-white rounded-lg z-20 shadow translate-x-[120%] transition-all duration-300">
+            <div class="px-3 py-2 flex gap-4 items-center justify-between w-full bg-[#DC143C] rounded-t-md roud">
+                <div class="flex gap-2 items-center justify-center">
+                    <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="bg-white w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <p class="font-medium text-[14px] text-white">JeiKei Shop</p>
+                </div>
+                <button class="close-Chat pr-2">
+                    <i class="fa-solid fa-x text-[#fff] text-[20px]"></i>
+                </button>
+            </div>
+            <div style="height: 220px;" class="flex-1 overflow-y-auto my-2">
+                <div class="px-3 py-3 flex justify-start items-center gap-3 w-full">
+                    <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="w-10 h-10 rounded-full border-2 border-[#8d8d8d] flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] text-white shadow bg-[#DC143C] rounded-2xl flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span>
+                </div>
+                <div class="px-3 py-3 flex justify-end items-center gap-3">
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                </div>
+            </div>
+            <div class="absolute bottom-0 left-0 px-3 py-3 w-full">
+                <form action="">
+                    <div class="flex justify-between items-center gap-6">
+                        <input type="text" placeholder="Tin nhắn của bạn ..." class="w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none">
+                        <button class="px-8 py-3 bg-[#DC143C] text-[12px] rounded-xl text-white font-semibold">Gửi</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+        <button class="chat fixed bottom-20 right-5 z-30 flex text-[20px] w-12 h-12 bg-[#4169E1] rounded-full border-[3px] shadow-lg border-[#333] justify-center items-center text-white font-bold transition-all duration-500 hover:-translate-y-3"><i class="fa-solid fa-comments"></i></button>
         <!-- Black background when open Side bar -->
 
         <!-- Arrow to top -->
@@ -349,6 +378,14 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     $("#backtotop").removeClass("flex");
                 }
             });
+
+            $(".chat").click(function() {
+                $(".chatBox").removeClass('translate-x-[120%]');
+            })
+
+            $(".close-Chat").click(function() {
+                $(".chatBox").addClass('translate-x-[120%]');
+            })
         });
     </script>
 </body>
