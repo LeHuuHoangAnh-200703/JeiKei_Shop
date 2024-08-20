@@ -146,19 +146,20 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             });
             $("#opensidebar").click(function() {
                 $("#sidebar").addClass("left-0");
-            })
+            });
 
+            $(".user-item").each(function(index, item) {
+                $(item).click(function() {
+                    $(".chat").hide();
+                    $(".chat-window").show();
+                });
+            });
+            console.log($(".back-Chat"))
 
-
-            // $('.bar').click(function() {
-            //     $('.sidebar').removeClass('left-[-100%]');
-            // })
-            // $('.closed').click(function() {
-            //     $('.sidebar').addClass('left-[-100%]');
-            // })
-            // $("#user_info").click(function() {
-            //     $("#user_info_panel").toggleClass("right-4");
-            // });
+            $(".back-Chat").click(function() {
+                $(".chat").show();
+                $(".chat-window").hide();
+            });
         })
     </script>
 
