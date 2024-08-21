@@ -32,6 +32,45 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
     <!-- <link rel="stylesheet" href="./css/test.css"> -->
 </head>
 
+<style>
+    .chatBox {
+        height: calc(100vh - 230px);
+    }
+
+    .chatContent {
+        height: calc(100vh - 360px);
+    }
+
+    @media (max-width: 1024px) {
+        .chatBox {
+            height: calc(100vh - 240px);
+        }
+
+        .chatContent {
+            height: calc(100vh - 330px);
+        }
+    }
+
+    @media (max-width: 768px) {
+        .chatBox {
+            height: calc(100vh - 230px);
+        }
+
+        .chatContent {
+            height: calc(100vh - 360px);
+        }
+    }
+
+    @media (max-width: 480px) {
+        .chatBox {
+            height: calc(100vh - 230px);
+        }
+
+        .chatContent {
+            height: calc(100vh - 360px);
+        }
+    }
+</style>
 
 <body class="relative">
     <div id="content" class="relative w-full max-w-[1200px] m-auto md:flex-row min-h-screen overflow-x-hidden hidden">
@@ -187,7 +226,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                 </a>
             </div>
         </div>
-        <div class="chatBox fixed top-20 right-10 w-[350px] h-[350px] bg-white rounded-lg z-20 shadow translate-x-[120%] transition-all duration-300">
+        <div class="chatBox fixed top-20 lg:right-10 right-3 lg:w-[350px] w-[340px] bg-white rounded-lg z-20 shadow translate-x-[120%] transition-all duration-300">
             <div class="px-3 py-2 flex gap-4 items-center justify-between w-full bg-[#DC143C] rounded-t-md roud">
                 <div class="flex gap-2 items-center justify-center">
                     <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="bg-white w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
@@ -197,10 +236,22 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
                     <i class="fa-solid fa-x text-[#fff] text-[20px]"></i>
                 </button>
             </div>
-            <div style="height: 220px;" class="flex-1 overflow-y-auto my-2">
+            <div class="chatContent flex-1 overflow-y-auto my-2">
                 <div class="px-3 py-3 flex justify-start items-center gap-3 w-full">
                     <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="w-10 h-10 rounded-full border-2 border-[#8d8d8d] flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
                     <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] text-white shadow bg-[#DC143C] rounded-2xl flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn hhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhhh</span>
+                </div>
+                <div class="px-3 py-3 flex justify-end items-center gap-3">
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                </div>
+                <div class="px-3 py-3 flex justify-end items-center gap-3">
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                </div>
+                <div class="px-3 py-3 flex justify-end items-center gap-3">
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
                 </div>
                 <div class="px-3 py-3 flex justify-end items-center gap-3">
                     <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[12px] w-[200px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
