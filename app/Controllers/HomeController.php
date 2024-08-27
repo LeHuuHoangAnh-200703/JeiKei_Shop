@@ -19,6 +19,18 @@ class HomeController extends Controller
         // }
 
         parent::__construct();
+
+        if (Guard::isUserLoggedIn()) {
+            $this->updateOnlineUser(Guard::user()->id, 1);
+        }
+    }
+
+    public function updateOnlineUser($userId, $status) {
+        $user = User::find($userId);
+        if ($user) {
+            $user->is_online = $status;
+            $user->save();
+        }
     }
 
     public function index()

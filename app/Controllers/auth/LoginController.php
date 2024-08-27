@@ -48,6 +48,14 @@ class LoginController extends Controller
 
     public function destroy()
     {
+        $userId = Guard::user()->id;
+        if ($userId) {
+            $user = User::find($userId);
+            if ($user) {
+                $user->is_online = 0;
+                $user->save();
+            }
+        }
         Guard::logout();
         redirect('/login');
     }

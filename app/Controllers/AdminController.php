@@ -386,7 +386,7 @@ class AdminController extends Controller
 
     public function showChatBox()
     {
-        $coupons = Coupons::orderBy('created_at', 'desc')->get();
-        $this->sendPage("/admin/chatbox", ["coupons" => $coupons]);
+        $customersChat = User::all();
+        $this->sendPage("/admin/chatbox", ["customersChat" => $customersChat]);
     }
 }

@@ -431,7 +431,7 @@ $imgLogo = $baseURL . "./assets/nintendo-switch-logo-E671C9A32A-seeklogo.com.png
             });
 
             $(".chat").click(function() {
-                $(".chatBox").removeClass('translate-x-[120%]');
+                $(".chatBox").toggleClass('translate-x-[120%]');
             })
 
             $(".close-Chat").click(function() {

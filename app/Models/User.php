@@ -9,7 +9,7 @@ use Illuminate\Database\Eloquent\Model;
 class User extends Model
 {
     protected $table = 'customers';
-    protected $fillable = ['name', 'email', 'password', 'phone', 'address','image', 'created_at'];
+    protected $fillable = ['name', 'email', 'password', 'phone', 'address','image', 'created_at', 'is_online'];
 
     public function orders()
     {

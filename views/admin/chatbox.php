@@ -41,68 +41,57 @@
                 </button>
             </form>
             <div class="overflow-auto flex flex-col gap-3">
-                <div data-name="Hoàng Khang Anh" data-avatar="../assets/B2105599_LêHữuHoàngAnh.jpg" class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
-                    <div class="relative">
-                        <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover">
-                            <div class="bg-[#fff] w-3 h-3 rounded-full absolute bottom-0 right-0">
-                                <span class="absolute inset-0 m-auto w-2 h-2 bg-green-400 rounded-full"></span>
+                <?php foreach ($customersChat as $customer) : ?>
+                    <div data-name="<?php echo $this->e($customer->name) ?>" data-avatar="../<?php echo $this->e($customer->image) ?>" class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
+                        <div class="relative">
+                            <div style="background-image: url('../<?php echo $this->e($customer->image) ?>');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover">
+                                <div class="bg-[#fff] w-3 h-3 rounded-full absolute bottom-0 right-0">
+                                    <span class="<?php if ($customer->is_online == 1) {
+                                                        echo "bg-green-400";
+                                                    } else {
+                                                        echo "bg-orange-400";
+                                                    } ?> absolute inset-0 m-auto w-2 h-2 rounded-full"></span>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="flex flex-col justify-center overflow-hidden">
+                            <p class="font-semibold text-[12px]"><?php echo $this->e($customer->name) ?></p>
+                            <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden text-gray-400">
+                                <p class="inline font-medium text-[10px]">Hình ảnh</p>
                             </div>
                         </div>
                     </div>
-                    <div class="flex flex-col justify-center overflow-hidden">
-                        <p class="font-semibold text-[12px]">Lê Hữu Hoàng Anh</p>
-                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden text-gray-400">
-                            <p class="inline font-medium text-[10px]">Hình ảnh</p>
-                        </div>
-                    </div>
-                </div>
-                <div data-name="Hoàng Khang" data-avatar="../assets/download.jpg" class="user-item flex gap-3 hover:bg-slate-200 p-2 rounded-full cursor-pointer duration-200 transition-all">
-                    <div class="relative">
-                        <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover">
-                            <div class="bg-[#fff] w-3 h-3 rounded-full absolute bottom-0 right-0">
-                                <span class="absolute inset-0 m-auto w-2 h-2 bg-green-400 rounded-full"></span>
-                            </div>
-                        </div>
-                    </div>
-                    <div class="flex flex-col justify-center overflow-hidden">
-                        <p class="font-semibold text-[12px]">Hoàng Khang</p>
-                        <div class="w-52 whitespace-nowrap text-ellipsis overflow-hidden text-gray-400">
-                            <p class="inline font-medium text-[10px]">Hình ảnh</p>
-                        </div>
-                    </div>
-                </div>
+                <?php endforeach ?>
             </div>
         </div>
         <div class="chat-window relative w-full hidden lg:block bg-white border-2 border-[#cecece] rounded-xl shadow">
-            <div class="px-3 py-3 flex gap-4 items-center w-full">
+            <div class="px-3 lg:px-0 py-3 flex gap-4 items-center w-full">
                 <button class="back-Chat">
                     <i class="fa-solid fa-arrow-left text-[#DC143C] text-[20px] lg:hidden block"></i>
                 </button>
                 <div class="flex gap-2 items-center justify-center">
-                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="user-avatar w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <div style="background-image: url('../<?php echo $this->e($customer->image) ?>');" class="user-avatar w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
                     <p class="user-name font-medium text-[14px]">Lê Hữu Hoàng Anh</p>
                 </div>
             </div>
             <hr class="h-[1.5px] bg-[#cecece]">
             <div style="height: calc(100vh - 45vh);" class="flex-1 overflow-y-auto my-2">
                 <div class="px-3 py-3 flex gap-3 items-center">
-                    <div style="background-image: url('../assets/B2105599_LêHữuHoàngAnh.jpg');" class="w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
-                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] bg-[#cecece] shadow rounded-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
+                    <div style="background-image: url('../<?php echo $this->e($customer->image) ?>');" class="user-avatar w-10 h-10 rounded-full flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] bg-[#cecece] shadow rounded-t-2xl rounded-r-2xl flex justify-center items-center">Hello, My name is HoangAnh</span>
                 </div>
                 <div class="px-3 py-3 flex justify-end items-center gap-3">
-                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] text-white shadow bg-[#DC143C] rounded-2xl flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn</span>
-                    <div style="background-image: url('../assets/png-transparent-nintendo-switch-wii-u-lumo-logo-nintendo-angle-text-nintendo-removebg-preview.png');" class="w-10 h-10 rounded-full border-2 border-[#8d8d8d] flex justify-center items-center cursor-pointer bg-center bg-cover"></div>
+                    <span style="overflow-wrap: break-word; word-break: break-word; white-space: normal;" class="p-3 text-[14px] w-[300px] text-white shadow bg-[#DC143C] rounded-t-2xl rounded-l-2xl flex justify-center items-center">Xin chào hoàng anh, jeikei shop có thể giúp gì cho bạn</span>
                 </div>
-            </div>
-            <div class="absolute bottom-0 left-0 px-3 py-3 w-full">
-                <form action="">
-                    <div class="flex justify-between items-center gap-6">
-                        <input type="text" placeholder="Tin nhắn của bạn ..." class="w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none">
-                        <button class="px-8 py-3 bg-[#DC143C] text-[12px] rounded-xl text-white font-semibold">Gửi</button>
-                    </div>
-                </form>
+                <div class="absolute bottom-0 left-0 px-3 py-3 w-full">
+                    <form action="">
+                        <div class="flex justify-between items-center gap-6">
+                            <input type="text" placeholder="Tin nhắn của bạn ..." class="w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none">
+                            <button class="px-8 py-3 bg-[#DC143C] text-[12px] rounded-xl text-white font-semibold">Gửi</button>
+                        </div>
+                    </form>
+                </div>
             </div>
         </div>
     </div>
-</div>
-<?php $this->stop() ?>
+    <?php $this->stop() ?>
