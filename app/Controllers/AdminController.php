@@ -187,6 +187,10 @@ class AdminController extends Controller
         if (!$order) {
             $this->sendNotFound();
         }
+
+        if ($order->state >= 1) {
+            redirect("/admin/orders", ['errors' => 'Đơn hàng đã được chuyển đi không thể hủy.']);
+        }
         $order->delete();
         $product->test--;
         $product->save();

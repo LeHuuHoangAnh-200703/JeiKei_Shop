@@ -8,6 +8,12 @@
         </div>
         <?php unset($_SESSION['success']); ?>
     <?php endif; ?>
+    <?php if (isset($_SESSION['errors'])) : ?>
+        <div class="success-notification bg-red-100 border-[1px] border-[#DC143C] text-white px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
+            <p class="font-bold text-[#DC143C]"><i class="fa-solid fa-triangle-exclamation"></i> <?php echo $_SESSION['errors'] ?></p>
+        </div>
+        <?php unset($_SESSION['errors']); ?>
+    <?php endif; ?>
     <div class="text-center py-4">
         <h2 class="text-[#333] font-bold text-[20px]">DANH SÁCH ĐƠN HÀNG</h2>
     </div>
