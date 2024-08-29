@@ -6,6 +6,9 @@ use App\Models\Order;
 use App\Models\Products;
 use App\Models\User;
 use App\Models\Feedback;
+use App\Models\Chat;
+use App\Models\Messages;
+use Illuminate\Http\Request;
 use App\Models\Coupons;
 use App\SessionGuard as Guard;
 use Illuminate\Support\Facades\Process;
@@ -388,5 +391,15 @@ class HomeController extends Controller
             $errors = "Đơn hàng đã được xử lý, không thể hủy.";
             redirect("/view_order", ["errors" => $errors]);
         }
+    }
+
+    public function showChatBox()
+    {
+        if (!Guard::isUserLoggedIn()) {
+            redirect('/login');
+        }
+        $customer = User::find(Guard::user()->id);
+        $viewOrders = $customer->orders()->orderBy('created_at', 'desc')->get();
+        $this->sendPage("home/chatbox", ["viewOrders" => $viewOrders]);
     }
 }

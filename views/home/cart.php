@@ -35,7 +35,15 @@
                 <?php foreach ($cart as $index => $cartItem) : ?>
                     <tr class="border-t border-slate-500">
                         <td class="whitespace-nowrap"><?= $this->e($cartItem['product_name']) ?></td>
-                        <td class=""><img src="../assets/<?= $this->e($cartItem['product_image']) ?>" class="w-[100px]" alt=""></td>
+                        <td class="">
+                            <?php
+                            $productImages = json_decode($cartItem['product_image'], true);
+
+                            if (is_array($productImages) && isset($productImages)) {
+                                echo '<img src="../assets/' . htmlspecialchars($productImages[0]) . '" alt="" class="w-[100px]">';
+                            }
+                            ?>
+                        </td>
                         <td><?= $this->e($cartItem['product_quantity']) ?> sản phẩm</td>
                         <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
                         <td><?= $this->e($cartItem['product_price']) ?> VNĐ</td>
