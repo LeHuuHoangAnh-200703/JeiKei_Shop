@@ -330,45 +330,45 @@ class AdminController extends Controller
             default:
                 $startDate = $endDate = date('Y-m-d');
         }
-    
+
         $currentDate = date('Y-m-d');
-    
+
         $totalRevenue = Order::whereDate('created_at', '>=', $startDate)
-                                ->whereDate('created_at', '<=', $endDate)
-                                ->sum('total_amount');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('total_amount');
+
         $totalProductsSold = Order::whereDate('created_at', '>=', $startDate)
-                                    ->whereDate('created_at', '<=', $endDate)
-                                    ->sum('amount');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('amount');
+
         $totalOrders = Order::whereDate('created_at', '>=', $startDate)
-                                ->whereDate('created_at', '<=', $endDate)
-                                ->count();
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->count();
+
         $totalFeedbacks = Feedback::whereDate('created_at', '>=', $startDate)
-                                    ->whereDate('created_at', '<=', $endDate)
-                                    ->count();
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->count();
+
         $totalPriceOrder = Order::whereDate('created_at', '>=', $startDate)
-                                    ->whereDate('created_at', '<=', $endDate)
-                                    ->sum('price');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('price');
+
         $totalPurchasePriceOrder = Order::whereDate('created_at', '>=', $startDate)
-                                            ->whereDate('created_at', '<=', $endDate)
-                                            ->sum('PurchasePrice');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('PurchasePrice');
+
         $totalProfit =  $totalRevenue - ($totalPriceOrder - $totalPurchasePriceOrder);
-    
+
         $warehouses = Products::all();
-    
+
         $TotalSellingPrice = Order::whereDate('created_at', '>=', $startDate)
-                                    ->whereDate('created_at', '<=', $endDate)
-                                    ->sum('price');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('price');
+
         $TotalPurchasePrice = Order::whereDate('created_at', '>=', $startDate)
-                                    ->whereDate('created_at', '<=', $endDate)
-                                    ->sum('PurchasePrice');
-    
+            ->whereDate('created_at', '<=', $endDate)
+            ->sum('PurchasePrice');
+
         $this->sendPage(
             'admin/warehouse',
             [
@@ -392,5 +392,27 @@ class AdminController extends Controller
     {
         $customersChat = User::all();
         $this->sendPage("/admin/chatbox", ["customersChat" => $customersChat]);
+    }
+
+    public function searchUser()
+    {
+        if (empty($_POST["find_Name"])) {
+            $errorMessage = "Vui lòng nhập nội dung tìm kiếm!";
+            redirect("admin/chatbox", ["errors" => $errorMessage, "customersChat" => User::all()]);
+        }
+
+        $users = User::where('name', 'LIKE', '%' . $_POST["find_Name"] . '%')->get();
+
+        if ($users->isEmpty()) {
+            $errorMessage = "Không tìm thấy người dùng '" . $_POST["find_Name"] . "' vui lòng nhập lại!";
+            $this->sendPage("admin/chatbox", [
+                "customersChat" => User::all(),
+                "errors" => $errorMessage
+            ]);
+        } else {
+            $this->sendPage("admin/chatbox", [
+                "customersChat" => $users
+            ]);
+        }
     }
 }

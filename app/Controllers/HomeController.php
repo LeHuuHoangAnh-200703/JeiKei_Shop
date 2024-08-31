@@ -28,7 +28,8 @@ class HomeController extends Controller
         }
     }
 
-    public function updateOnlineUser($userId, $status) {
+    public function updateOnlineUser($userId, $status)
+    {
         $user = User::find($userId);
         if ($user) {
             $user->is_online = $status;

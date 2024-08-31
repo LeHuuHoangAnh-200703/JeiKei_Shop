@@ -2,14 +2,12 @@
 
 <?php $this->start("page") ?>
 <?php if (isset($errors)) {
-?> <div class="success-notification text-[#DC143C] bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-triangle-exclamation"></i> Thất bại</p>
+?> <div class="success-notification text-[#DC143C] z-20 bg-red-100 border-[1px] border-[#DC143C] px-4 py-2 fixed top-0 right-0 m-4 shadow-md shadow-red-300 animate__animated animate__backInRight">
         <p class="font-bold"><?php echo $errors; ?></p>
     </div> <?php } ?>
 
 <?php if (isset($success)) {
-?><div class="success-notification text-green-600 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
-        <p class="font-bold"><i class="fa-solid fa-check"></i> Chúc mừng</p>
+?><div class="success-notification text-green-600 z-20 bg-green-100 border-[1px] border-[#3CB371] px-4 py-[10px] fixed top-0 right-0 m-4 shadow-md shadow-green-200 animate__animated animate__backInRight">
         <p class="font-bold"><?php echo $success; ?></p>
     </div> <?php } ?>
 
@@ -27,6 +25,7 @@
         }
     }
 </style>
+
 <div class="w-[95%] mx-auto h-[100%]">
     <div class="flex gap-5 p-2">
         <div class="chat relative lg:w-[35%] w-full flex flex-col gap-3 p-3 bg-white border-2 border-[#cecece] rounded-xl shadow">
@@ -34,9 +33,9 @@
                 <h2 class="font-semibold text-[16px]">Đoạn chat</h2>
                 <i class="fa-solid fa-comments"></i>
             </div>
-            <form action="" class="relative">
-                <input type="text" class="relative w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none" placeholder="Tìm kiếm tên khách hàng ...">
-                <button class="absolute top-[6px] right-2 w-8 h-8 rounded-full bg-[#DC143C]">
+            <form action="/admin/searchUser" method="post" class="relative">
+                <input type="text" name="find_Name" class="relative w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none" placeholder="Tìm kiếm tên khách hàng ...">
+                <button type="submit" class="absolute top-[6px] right-2 w-8 h-8 rounded-full bg-[#DC143C]">
                     <i class="text-[#fff] fa-solid fa-magnifying-glass cursor-pointer"></i>
                 </button>
             </form>

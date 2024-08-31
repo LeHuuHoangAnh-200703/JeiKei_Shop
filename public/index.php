@@ -62,6 +62,7 @@ $router->post('/admin/coupon/(\d+)', '\App\Controllers\AdminController@updateCou
 $router->get('/admin/warehouse', '\App\Controllers\AdminController@statistics');
 $router->post('/admin/search', '\App\Controllers\AdminController@statistics');
 $router->get('/admin/chatbox', '\App\Controllers\AdminController@showChatBox');
+$router->post('/admin/searchUser', '\App\Controllers\AdminController@searchUser');
 // Default routes
 $router->get('/', '\App\Controllers\HomeController@index');
 $router->get('/home', '\App\Controllers\HomeController@index');

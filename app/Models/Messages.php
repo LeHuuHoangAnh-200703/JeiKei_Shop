@@ -19,4 +19,9 @@ class Messages extends Model
     {
         return $this->belongsTo(Admin::class);
     }
+
+    public function chat()
+    {
+        return $this->belongsTo(Chat::class);
+    }
 }

@@ -53,7 +53,7 @@
                 <div class="absolute bottom-0 left-0 px-3 py-3 w-full">
                     <form action="">
                         <div class="flex justify-between items-center gap-6">
-                            <input type="text" placeholder="Tin nhắn của bạn ..." class="w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none">
+                            <input type="text" name="message" placeholder="Tin nhắn của bạn ..." class="w-full border p-3 text-[12px] bg-slate-200 rounded-2xl outline-none">
                             <button class="px-8 py-3 bg-[#DC143C] text-[12px] rounded-xl text-white font-semibold">Gửi</button>
                         </div>
                     </form>
