@@ -9,7 +9,7 @@ $dotenv->load(); // Tải các biến môi trường từ .env file
 
 use Illuminate\Database\Capsule\Manager;
 
-$manager = new Manager(); // Đối tượng dùng để quản lý cơ sở dữ liệu 
+$manager = new Manager();
 
 $manager->addConnection([ // Thêm những thông tin cấu hình để kết nối đến database ở đây.
 	'driver'    => 'mysql',
